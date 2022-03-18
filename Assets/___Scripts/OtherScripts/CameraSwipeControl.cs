@@ -6,7 +6,6 @@ public class CameraSwipeControl : MonoBehaviour, IBeginDragHandler, IDragHandler
 {
     public GameObject PivotPoint;
     public GameObject CameraPos;
-    public GameObject PauseMenuUI;
     [Range(0, 0.5f)] public float moveTime;
 
     private readonly float _swipeAngle = 120;
