@@ -4,35 +4,17 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 5452867532418555953
-    second: Engine_1_Warp
+      74: 7515371561053693088
+    second: Engine|Engine_1Action.004
   - first:
-      74: 5109693281022222664
-    second: Engine_1|Engine_2Action.004
+      74: -6997793841083855491
+    second: Engine|Engine_2Action.004
   - first:
-      74: -6339846185813669336
-    second: Engine_1|Engine_TurboAction.007
+      74: 932443242698043539
+    second: Engine|Engine_TurboAction.007
   - first:
-      74: 7351993191038028320
-    second: Charger_Engine_Turbo_Warp
-  - first:
-      74: 1621465657009324817
-    second: Engine_Turbo|Engine_2Action.004
-  - first:
-      74: 8132588042047821693
-    second: Engine_Turbo|Engine_TurboAction.007
-  - first:
-      74: -560371409195330257
-    second: Charger_Engine_2_Warp
-  - first:
-      74: -3306054812700196707
-    second: Engine_2|Engine_2Action.004
-  - first:
-      74: -259287997026108600
-    second: Engine_2|Engine_TurboAction.007
-  - first:
-      74: -8611364684970941624
-    second: Charger_Engine_1_Warp
+      74: 1254838892798119514
+    second: EngineWarp
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -62,73 +44,15 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Charger_Engine_1_Warp
-      takeName: Engine_1|Engine_1Action.004
+      name: EngineWarp
+      takeName: Engine|EngineAction
       internalID: 0
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Charger_Engine_Turbo_Warp
-      takeName: Engine_Turbo|Engine_1Action.004
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Charger_Engine_2_Warp
-      takeName: Engine_2|Engine_1Action.004
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
+      cycleOffset: 5.07
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0

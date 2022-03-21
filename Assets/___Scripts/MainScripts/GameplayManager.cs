@@ -4,16 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
+    [Header("Gameplay")]
     public DifficultyManager DifficultyManager;
-    public ScoreCounter ScoreCounter;
-    public HighScoreCounter HighScoreCounter;
-    public ChargeSatellitesBonus ChargeBonus;
-    public DischargeShieldBonus DischargeShieldBonus;
-    public PauseMenu Canvas;
-    public bool isDicharged = false;
     public int energyIncrement, energyDecrement;
     public int maxEnergyLevel, minEnergyLevel = 0, currentEnergyLevel;
     public float decrementDelay;
+    [HideInInspector]
+    public bool isDicharged = false;
+    [Header("Score")]
+    public ScoreCounter ScoreCounter;
+    public HighScoreCounter HighScoreCounter;
+    [Header("Bonuses")]
+    public ChargeSatellitesBonus ChargeBonus;
+    public DischargeShieldBonus DischargeShieldBonus;
+    [Header("UI")]
+    public PauseMenu Canvas;
+    [Header("Animations")]
+    public Animator Animator;
+    public string animationName;
 
     private readonly int _chargeBonusCooldown = 10;
     private bool _enteredChargeBonusCooldown = false;
@@ -36,6 +44,11 @@ public class GameplayManager : MonoBehaviour
         if (isDicharged || PauseMenu.isGamePaused) return;
         AddScore();
         ChargeSatellite();
+        PlayAnimation(animationName);
+    }
+    private void PlayAnimation(string animationName)
+    {
+        Animator.Play(animationName);
     }
     private void AddScore()
     {

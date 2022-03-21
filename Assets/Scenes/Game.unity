@@ -1567,18 +1567,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyManager: {fileID: 195060218}
-  ScoreCounter: {fileID: 780041487}
-  HighScoreCounter: {fileID: 0}
-  ChargeBonus: {fileID: 329890401}
-  DischargeShieldBonus: {fileID: 825052911}
-  Canvas: {fileID: 788322775}
-  isDicharged: 0
   energyIncrement: 100
   energyDecrement: 150
   maxEnergyLevel: 5000
   minEnergyLevel: 0
   currentEnergyLevel: 5000
   decrementDelay: 1
+  isDicharged: 0
+  ScoreCounter: {fileID: 780041487}
+  HighScoreCounter: {fileID: 0}
+  ChargeBonus: {fileID: 329890401}
+  DischargeShieldBonus: {fileID: 825052911}
+  Canvas: {fileID: 788322775}
+  Animator: {fileID: 0}
+  animationName: 
 --- !u!136 &490625526
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1698,18 +1700,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyManager: {fileID: 195060218}
-  ScoreCounter: {fileID: 780041487}
-  HighScoreCounter: {fileID: 0}
-  ChargeBonus: {fileID: 329890401}
-  DischargeShieldBonus: {fileID: 825052911}
-  Canvas: {fileID: 788322775}
-  isDicharged: 0
   energyIncrement: 100
   energyDecrement: 150
   maxEnergyLevel: 5000
   minEnergyLevel: 0
   currentEnergyLevel: 5000
   decrementDelay: 1
+  isDicharged: 0
+  ScoreCounter: {fileID: 780041487}
+  HighScoreCounter: {fileID: 0}
+  ChargeBonus: {fileID: 329890401}
+  DischargeShieldBonus: {fileID: 825052911}
+  Canvas: {fileID: 788322775}
+  Animator: {fileID: 0}
+  animationName: 
 --- !u!4 &596667728
 Transform:
   m_ObjectHideFlags: 0
@@ -1853,18 +1857,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DifficultyManager: {fileID: 195060218}
-  ScoreCounter: {fileID: 780041487}
-  HighScoreCounter: {fileID: 0}
-  ChargeBonus: {fileID: 329890401}
-  DischargeShieldBonus: {fileID: 825052911}
-  Canvas: {fileID: 788322775}
-  isDicharged: 0
   energyIncrement: 100
   energyDecrement: 150
   maxEnergyLevel: 5000
   minEnergyLevel: 0
   currentEnergyLevel: 5000
   decrementDelay: 1
+  isDicharged: 0
+  ScoreCounter: {fileID: 780041487}
+  HighScoreCounter: {fileID: 0}
+  ChargeBonus: {fileID: 329890401}
+  DischargeShieldBonus: {fileID: 825052911}
+  Canvas: {fileID: 788322775}
+  Animator: {fileID: 698741027}
+  animationName: EngineWarp
 --- !u!4 &703204589
 Transform:
   m_ObjectHideFlags: 0
