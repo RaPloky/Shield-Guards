@@ -4,32 +4,35 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -6051157502594148483
-    second: Engine_1|Engine_1Action.002
+      74: 5452867532418555953
+    second: Engine_1_Warp
   - first:
-      74: -5919349000880369640
-    second: Engine_1|Engine_2Action
+      74: 5109693281022222664
+    second: Engine_1|Engine_2Action.004
   - first:
-      74: -2266238623002797572
-    second: Engine_1|Engine_TurboAction
+      74: -6339846185813669336
+    second: Engine_1|Engine_TurboAction.007
   - first:
-      74: 3541030201542834805
-    second: Engine_Turbo|Engine_1Action.002
+      74: 7351993191038028320
+    second: Charger_Engine_Turbo_Warp
   - first:
-      74: 1228573677766488029
-    second: Engine_Turbo|Engine_2Action
+      74: 1621465657009324817
+    second: Engine_Turbo|Engine_2Action.004
   - first:
-      74: -4783481541264144100
-    second: Engine_Turbo|Engine_TurboAction
+      74: 8132588042047821693
+    second: Engine_Turbo|Engine_TurboAction.007
   - first:
-      74: -4256498778471599193
-    second: Engine_2|Engine_1Action.002
+      74: -560371409195330257
+    second: Charger_Engine_2_Warp
   - first:
-      74: -5386648103597358575
-    second: Engine_2|Engine_2Action
+      74: -3306054812700196707
+    second: Engine_2|Engine_2Action.004
   - first:
-      74: 6013109708439329263
-    second: Engine_2|Engine_TurboAction
+      74: -259287997026108600
+    second: Engine_2|Engine_TurboAction.007
+  - first:
+      74: -8611364684970941624
+    second: Charger_Engine_1_Warp
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -59,8 +62,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Engine_1|Engine_TurboAction
-      takeName: Engine_1|Engine_TurboAction
+      name: Charger_Engine_1_Warp
+      takeName: Engine_1|Engine_1Action.004
       internalID: 0
       firstFrame: 0
       lastFrame: 59
@@ -88,8 +91,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Engine_Turbo|Engine_TurboAction
-      takeName: Engine_Turbo|Engine_TurboAction
+      name: Charger_Engine_Turbo_Warp
+      takeName: Engine_Turbo|Engine_1Action.004
       internalID: 0
       firstFrame: 0
       lastFrame: 59
@@ -117,8 +120,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Engine_2|Engine_TurboAction
-      takeName: Engine_2|Engine_TurboAction
+      name: Charger_Engine_2_Warp
+      takeName: Engine_2|Engine_1Action.004
       internalID: 0
       firstFrame: 0
       lastFrame: 59
