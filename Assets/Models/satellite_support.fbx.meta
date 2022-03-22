@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 8b744e30bdecdd04080ece1f565e3da4
+guid: 105980ace52a70e41937364f081d4688
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 7515371561053693088
-    second: Engine|Engine_1Action.004
+      74: 5098666331369248430
+    second: Wings|WingsAction
   - first:
-      74: -6997793841083855491
-    second: Engine|Engine_2Action.004
+      74: 6022050065578186468
+    second: Wings|WingsAction.001
   - first:
-      74: 932443242698043539
-    second: Engine|Engine_TurboAction.007
+      74: 5920538307817867236
+    second: Wings|WingsAction.002
   - first:
-      74: 1254838892798119514
-    second: EngineWarp
+      74: 8492792275664773269
+    second: WingRot
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,15 +44,15 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: EngineWarp
-      takeName: Engine|EngineAction
+      name: WingRot
+      takeName: Wings|WingsAction.003
       internalID: 0
-      firstFrame: 8
-      lastFrame: 35
+      firstFrame: 15
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 5.07
+      cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0

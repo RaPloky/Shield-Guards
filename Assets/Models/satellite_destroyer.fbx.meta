@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 8b744e30bdecdd04080ece1f565e3da4
+guid: 2440d51e29ce65d4d815e0cb9d976a84
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: 7515371561053693088
-    second: Engine|Engine_1Action.004
+      74: 8463989660289756089
+    second: Rotor|AttackRotor_1Action
   - first:
-      74: -6997793841083855491
-    second: Engine|Engine_2Action.004
+      74: -2769767178331775963
+    second: Rotor|AttackRotor_2Action
   - first:
-      74: 932443242698043539
-    second: Engine|Engine_TurboAction.007
+      74: 7922455755888568234
+    second: Rotor|EnginePartAction
   - first:
-      74: 1254838892798119514
-    second: EngineWarp
+      74: 6214377197099054324
+    second: RotorWarp
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,15 +44,15 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: EngineWarp
-      takeName: Engine|EngineAction
+      name: RotorWarp
+      takeName: Rotor|RotorAction
       internalID: 0
-      firstFrame: 8
-      lastFrame: 35
+      firstFrame: 12
+      lastFrame: 34
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 5.07
+      cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
