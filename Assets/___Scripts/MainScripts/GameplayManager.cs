@@ -21,7 +21,7 @@ public class GameplayManager : MonoBehaviour
     public PauseMenu Canvas;
     [Header("Animations")]
     public Animator Animator;
-    public string animationName;
+    public string triggerName;
 
     private readonly int _chargeBonusCooldown = 10;
     private bool _enteredChargeBonusCooldown = false;
@@ -44,11 +44,11 @@ public class GameplayManager : MonoBehaviour
         if (isDicharged || PauseMenu.isGamePaused) return;
         AddScore();
         ChargeSatellite();
-        PlayAnimation(animationName);
+        PlayAnimationOnTrigger(triggerName);
     }
-    private void PlayAnimation(string animationName)
+    private void PlayAnimationOnTrigger(string triggerName)
     {
-        Animator.Play(animationName);
+        Animator.SetTrigger(triggerName);
     }
     private void AddScore()
     {

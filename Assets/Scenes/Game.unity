@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.00072941073, g: 0.0033555361, b: 0.017519912, a: 1}
+  m_IndirectSpecularColor: {r: 0.0008469679, g: 0.0023598666, b: 0.020340554, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   DischargeShieldBonus: {fileID: 825052911}
   Canvas: {fileID: 788322775}
   Animator: {fileID: 0}
-  animationName: 
+  triggerName: 
 --- !u!136 &490625526
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   DischargeShieldBonus: {fileID: 825052911}
   Canvas: {fileID: 788322775}
   Animator: {fileID: 0}
-  animationName: 
+  triggerName: 
 --- !u!4 &596667728
 Transform:
   m_ObjectHideFlags: 0
@@ -1870,7 +1870,7 @@ MonoBehaviour:
   DischargeShieldBonus: {fileID: 825052911}
   Canvas: {fileID: 788322775}
   Animator: {fileID: 698741027}
-  animationName: EngineWarp
+  triggerName: StartWarp
 --- !u!4 &703204589
 Transform:
   m_ObjectHideFlags: 0
