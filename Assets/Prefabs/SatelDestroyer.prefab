@@ -278,10 +278,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8144127274952838258, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53711b81fec8377439181e333e7e4c10, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3903af83dc78da1428a0a3daf092e8ba, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08884c3ea9acc2e4699b06ad8b9a12a9, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08884c3ea9acc2e4699b06ad8b9a12a9, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 627a25fef7acea24cac5d376f283ec41, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: f6348a3a063f7874f98f5ba7a8c53a40, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: c90164f9b53d98d41a97ffcbe67a849b, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49ddf3ffe86caa243bc27212e5ae0acc, type: 2}
+    - target: {fileID: -6652725513331149018, guid: 2440d51e29ce65d4d815e0cb9d976a84,
+        type: 3}
+      propertyPath: m_Materials.Array.data[7]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2fa3af70911e0e448916e6d6e6b87ccb, type: 2}
     - target: {fileID: 919132149155446097, guid: 2440d51e29ce65d4d815e0cb9d976a84,
         type: 3}
       propertyPath: m_Name
-      value: satellite_destroyer
+      value: Body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2440d51e29ce65d4d815e0cb9d976a84, type: 3}
