@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3137816482904604612
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831262947943760534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7026040708d57c4e81ec791f3deebd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3137816481452988280
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,25 +201,6 @@ MonoBehaviour:
   enemyIsSpawned: 0
   spawnFreezed: 0
   needToSpawn: 
---- !u!95 &3137816482904604612
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2831262947943760534}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b7026040708d57c4e81ec791f3deebd7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3137816482904604615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,11 +278,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5122729196051506736, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad19068dd62cf8f438097d6b4e95c6da, type: 2}
+    - target: {fileID: -5122729196051506736, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e60bd779b579fc54aa92a9fcc4af758d, type: 2}
     - target: {fileID: 919132149155446097, guid: 105980ace52a70e41937364f081d4688,
         type: 3}
       propertyPath: m_Name
-      value: satellite_support
+      value: Body
       objectReference: {fileID: 0}
+    - target: {fileID: 4080020272530054921, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Name
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad19068dd62cf8f438097d6b4e95c6da, type: 2}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7de30591ddec4344b0dbd92c2582cfd, type: 2}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 02d4d02a26ca05d458569fcd83482f54, type: 2}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: abbdf4d0d6549a549be647b92181dbf0, type: 2}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f5e8b356fe8c1647b27520390c581aa, type: 2}
+    - target: {fileID: 8414172340292014655, guid: 105980ace52a70e41937364f081d4688,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 241699804d67bd8428dcb349c4cae6d3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 105980ace52a70e41937364f081d4688, type: 3}
 --- !u!1 &2831262947943760534 stripped
