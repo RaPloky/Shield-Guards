@@ -2,8 +2,8 @@
 
 abstract public class EnemyCommonValues : MonoBehaviour
 {
-    public Transform spawnManagerTrans;
-    public GameObject satelliteToDamage;
+    [HideInInspector] public Transform spawnManagerTrans;
+    [HideInInspector] public GameObject satelliteToDamage;
     public int damageToSatellite;
     public int scoreReward;
 

@@ -47,8 +47,8 @@ public class MeteorBehaviour : EnemyCommonValues
     {
         if (!_isMeteorDraggedAway) 
         {
-            _meteorRb.AddTorque(transform.position.x * addForceMultiplier,
-                transform.position.y * addForceMultiplier, 0, ForceMode.Impulse);
+            _meteorRb.AddTorque(-transform.position.x * addForceMultiplier,
+                -transform.position.y * addForceMultiplier, 0, ForceMode.Impulse);
             FollowSatelliteToDamageIt();
         }
         else
