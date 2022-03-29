@@ -698,7 +698,7 @@ MonoBehaviour:
     type: 3}
   attackDelayDecrease: 0.05
   delayLimit: 0.35
-  MeteorPrefab: {fileID: 6964964491286373427, guid: c28749c79992e03459908c4e4a402537,
+  MeteorPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   damageIncrease: 50
   damageLimit: 3000
@@ -5067,6 +5067,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 2945086110019492616, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
+        type: 3}
     - target: {fileID: 2945086110019492618, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: m_Name
@@ -5196,6 +5202,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3137816481452988286, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
+        type: 3}
     - target: {fileID: 3137816481915902128, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: m_Name
@@ -5385,6 +5397,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3697162972308263499, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
+        type: 3}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: Canvas
