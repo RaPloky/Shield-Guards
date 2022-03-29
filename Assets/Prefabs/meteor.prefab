@@ -94,7 +94,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.012
+  m_Radius: 0.015
   m_Center: {x: -0.00021984428, y: 0.00025602657, z: -0.0003570094}
 --- !u!114 &6964964491286373429
 MonoBehaviour:
@@ -113,7 +113,7 @@ MonoBehaviour:
   damageToSatellite: 1000
   scoreReward: 1500
   addForceMultiplier: 200
-  inputPosAskedDifference: 250
+  inputPosAskedDifference: 200
   speed: 15
 --- !u!54 &7281881249241604654
 Rigidbody:
