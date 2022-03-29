@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 776201582003001730}
   - component: {fileID: -8575855367037936004}
   m_Layer: 0
-  m_Name: ufo
+  m_Name: UFO
   m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.690427, y: 1.6904267, z: 0.36510316}
+  m_Size: {x: 1.48, y: 1.48, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0.0860883}
 --- !u!114 &776201582003001730
 MonoBehaviour:
