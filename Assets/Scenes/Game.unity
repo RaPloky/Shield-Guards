@@ -791,13 +791,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227651284}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0876919, w: 0.99614763}
+  m_LocalRotation: {x: -0, y: -0, z: 0.06665888, w: 0.99777585}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.731, y: 0.731, z: 0.731}
   m_Children: []
   m_Father: {fileID: 131416588}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.062}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.6440005}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.5253448, y: -15.296509}
@@ -2839,6 +2839,7 @@ GameObject:
   - component: {fileID: 1055768785}
   - component: {fileID: 1055768787}
   - component: {fileID: 1055768786}
+  - component: {fileID: 1055768788}
   m_Layer: 5
   m_Name: ChargeCount
   m_TagString: Untagged
@@ -2962,6 +2963,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055768784}
   m_CullTransparentMesh: 0
+--- !u!114 &1055768788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055768784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus: {fileID: 329890401}
 --- !u!1 &1077532890
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3226,7 @@ GameObject:
   - component: {fileID: 1196009952}
   - component: {fileID: 1196009954}
   - component: {fileID: 1196009953}
+  - component: {fileID: 1196009955}
   m_Layer: 5
   m_Name: ShieldCount
   m_TagString: Untagged
@@ -3335,6 +3350,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196009951}
   m_CullTransparentMesh: 0
+--- !u!114 &1196009955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196009951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus: {fileID: 825052911}
 --- !u!1 &1214227927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,7 +3954,7 @@ MonoBehaviour:
   bonusCounter: 1
   chanceToInstantiate: 50
   satelDestroyer: {fileID: 596667727}
-  ufoPrefab: {fileID: 6958197541019346913, guid: bc867e92200b675429d7cd0d96932a78,
+  ufoPrefab: {fileID: 776201582003001730, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
   destroyedUfosCurrCount: 0
   destroyedUfosCountGoal: 5
@@ -3979,6 +4007,7 @@ GameObject:
   - component: {fileID: 1677800946}
   - component: {fileID: 1677800948}
   - component: {fileID: 1677800947}
+  - component: {fileID: 1677800949}
   m_Layer: 5
   m_Name: DestroyCount
   m_TagString: Untagged
@@ -4102,6 +4131,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677800945}
   m_CullTransparentMesh: 0
+--- !u!114 &1677800949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677800945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus: {fileID: 1593458060}
 --- !u!1 &1710077949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +5016,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 2945086110019492618, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 2945086110672181126, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -4988,6 +5035,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8239615
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945086110672181126, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945086110672181129, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
@@ -5097,6 +5154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 3137816481452988280, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902128, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: m_Name
@@ -5197,6 +5259,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.823961
       objectReference: {fileID: 0}
+    - target: {fileID: 3137816482062090980, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816482062090980, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816482062090981, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOSpawner
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe32a09700204fe4497d752370e95994, type: 3}
 --- !u!1 &3155095433423450823
@@ -5275,6 +5352,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 3697162972308263477, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorSpawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: Canvas
@@ -5374,6 +5456,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.823961
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973777704318, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973777704318, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973777704318, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973777704319, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_Name
+      value: UFOSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f0d08d7c66f6444a647e135acf5e02, type: 3}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8575855367037936004}
   m_Layer: 0
   m_Name: ufo
-  m_TagString: Untagged
+  m_TagString: UFO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 0}
   damageToSatellite: 50
   scoreReward: 500
-  attackDelay: 1
+  attackDelay: 0.95
   enemyHealth: 1000
   damageToEnemy: 150
 --- !u!95 &-8575855367037936004
