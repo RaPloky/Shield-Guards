@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ScrollMenuBG : MonoBehaviour
 {
-    [SerializeField] private RectTransform BG;
-    [SerializeField] private float scrollSpeedX;
-    [SerializeField] private float scrollLimitX;
-    private float scrollStartPosX;
+    [SerializeField] RectTransform BG;
+    [SerializeField] float scrollSpeedX;
+    [SerializeField] float scrollLimitX;
+    private float _scrollStartPosX;
 
     private void Awake()
     {
         // Start position is x-position at first frame:
-        scrollStartPosX = BG.anchoredPosition.x;
+        _scrollStartPosX = BG.anchoredPosition.x;
     }
 
     private void Update()
@@ -21,7 +21,7 @@ public class ScrollMenuBG : MonoBehaviour
 
         if (BG.anchoredPosition.x <= scrollLimitX)
         {
-            BG.anchoredPosition = new Vector2(scrollStartPosX, BG.anchoredPosition.y);
+            BG.anchoredPosition = new Vector2(_scrollStartPosX, BG.anchoredPosition.y);
         }
     }
 }

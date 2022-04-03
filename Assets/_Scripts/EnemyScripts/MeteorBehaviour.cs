@@ -2,9 +2,9 @@
 
 public class MeteorBehaviour : EnemyCommonValues
 {
-    public int addForceMultiplier = 200;
-    public int inputPosAskedDifference = 250;
-    public float speed = 15;
+    [SerializeField] int addForceMultiplier = 200;
+    [SerializeField] int inputPosAskedDifference = 250;
+    [SerializeField] float speed = 15;
 
     private Rigidbody _meteorRb;
     private Vector3 _currInputPos;

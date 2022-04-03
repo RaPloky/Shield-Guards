@@ -5,15 +5,14 @@ public class ShowEnergyLevel : MonoBehaviour
 {
     public DischargeShieldBonus dischargeShieldBonus;
 
-    [SerializeField]
-    private GameObject _satellite;
+    [SerializeField] GameObject satellite;
     private GameplayManager _satelliteEnergyComponent;
     private TextMeshProUGUI _energyLevelToShow;
     private int _criticalEnergyLevel;
 
     void Awake()
     {
-        _satelliteEnergyComponent = _satellite.GetComponent<GameplayManager>();
+        _satelliteEnergyComponent = satellite.GetComponent<GameplayManager>();
         _energyLevelToShow = gameObject.GetComponent<TextMeshProUGUI>();
         _criticalEnergyLevel = dischargeShieldBonus.criticalEnergyLevel;
     }

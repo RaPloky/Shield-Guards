@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RotatePlanet : MonoBehaviour
 {
-    private Transform planetTransform;
-    [SerializeField] private Vector3 rotateDirection;
-    [SerializeField] private bool randomize;
-    [SerializeField] private float randomizeRange;
+    private Transform _planetTransform;
+    [SerializeField] Vector3 rotateDirection;
+    [SerializeField] bool randomize;
+    [SerializeField] float randomizeRange;
     void Awake()
     {
-        planetTransform = GetComponent<Transform>();
+        _planetTransform = GetComponent<Transform>();
         if (randomize)
         {
             rotateDirection.x = Random.Range(-randomizeRange, randomizeRange);
@@ -20,6 +20,6 @@ public class RotatePlanet : MonoBehaviour
     }
     void FixedUpdate()
     {
-        planetTransform.Rotate(rotateDirection);
+        _planetTransform.Rotate(rotateDirection);
     }
 }

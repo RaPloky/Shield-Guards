@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class CameraSmoothFollow : MonoBehaviour
 {
-    public Transform target;
-    public GameObject lookAt;
+    [SerializeField] Transform target;
+    [SerializeField] GameObject lookAt;
+    [SerializeField][Range(0f,1f)] float smoothSpeed;
 
-    [SerializeField][Range(0f,1f)] 
-    private float smoothSpeed;
-
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, target.position, smoothSpeed);
         transform.position = smoothedPosition;
-    }
-    private void FixedUpdate()
-    {
         transform.LookAt(lookAt.transform);
     }
 }
