@@ -1,29 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &2945086111242993197
-Animator:
-  serializedVersion: 3
+--- !u!111 &397435104
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2602629679143253609}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2e52d3206d1941f44988ca7d7ce60541, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8d94efa98d21d714f9405b2df6bbfdc2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8d94efa98d21d714f9405b2df6bbfdc2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2945086110019492618
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8036472158150980250, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -31,7 +27,7 @@ GameObject:
   - component: {fileID: 2945086110019492619}
   - component: {fileID: 2945086110019492616}
   m_Layer: 0
-  m_Name: MeteorSpawnManager0
+  m_Name: MeteorSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,8 +36,7 @@ GameObject:
 --- !u!4 &2945086110019492619
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8036472158150980245, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945086110019492618}
@@ -55,8 +50,7 @@ Transform:
 --- !u!114 &2945086110019492616
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1345629369, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945086110019492618}
@@ -65,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7fcc7cedd862e488c4e8a87d043852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6964964491286373427, guid: c28749c79992e03459908c4e4a402537,
+  enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   spawnDelay: 4
   chanceToInstantiate: 100
@@ -75,8 +69,7 @@ MonoBehaviour:
 --- !u!1 &2945086110672181129
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8036472158412516799, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -84,7 +77,7 @@ GameObject:
   - component: {fileID: 2945086110672181126}
   - component: {fileID: 2945086110672181127}
   m_Layer: 0
-  m_Name: UFOSpawnManager0
+  m_Name: UFOSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,14 +86,13 @@ GameObject:
 --- !u!4 &2945086110672181126
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8036472158412516798, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945086110672181129}
   m_LocalRotation: {x: 0.52395445, y: -0.07890604, z: -0.12629484, w: 0.838627}
-  m_LocalPosition: {x: -1.6701721, y: -6.3400006, z: 2.1004262}
-  m_LocalScale: {x: 2.1818192, y: 2.1818192, z: 2.1818187}
+  m_LocalPosition: {x: -1.87, y: -6.03, z: 2.1}
+  m_LocalScale: {x: 1.8239615, y: 1.8239615, z: 1.8239615}
   m_Children: []
   m_Father: {fileID: 2945086111247811555}
   m_RootOrder: 0
@@ -108,8 +100,7 @@ Transform:
 --- !u!114 &2945086110672181127
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8036472158412516793, guid: 47138fa3722b02e4cbb8602b0a13f973,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2945086110672181129}
@@ -199,8 +190,7 @@ MonoBehaviour:
   ChargeBonus: {fileID: 0}
   DischargeShieldBonus: {fileID: 0}
   Canvas: {fileID: 0}
-  Animator: {fileID: 2945086111242993197}
-  triggerName: StartWarp
+  animations: {fileID: 397435104}
 --- !u!1001 &2945086109659810616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -327,6 +317,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: -6364948667936875869, guid: 8b744e30bdecdd04080ece1f565e3da4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.00001
       objectReference: {fileID: 0}
     - target: {fileID: -1149181631115322615, guid: 8b744e30bdecdd04080ece1f565e3da4,
         type: 3}
