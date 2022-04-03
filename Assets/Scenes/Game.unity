@@ -395,6 +395,28 @@ RectTransform:
   m_AnchoredPosition: {x: -121.6, y: 263.3}
   m_SizeDelta: {x: 127, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &153187273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4580055212501828252, guid: f2f0d08d7c66f6444a647e135acf5e02,
+    type: 3}
+  m_PrefabInstance: {fileID: 3697162974029953675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &153187274
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153187273}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: de4be253daf1e9c4b87cb638dcd40fd6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: de4be253daf1e9c4b87cb638dcd40fd6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &165873615
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,6 +5557,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
+      propertyPath: animations
+      value: 
+      objectReference: {fileID: 153187274}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
       propertyPath: ChargeBonus
       value: 
       objectReference: {fileID: 329890401}
@@ -5653,7 +5680,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: UFOSpawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3802251257035970598, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802251257035970598, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 3802251257035970598, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90.00001
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3697162974248845250, guid: f2f0d08d7c66f6444a647e135acf5e02, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f2f0d08d7c66f6444a647e135acf5e02, type: 3}
 --- !u!33 &6243593003743468814
 MeshFilter:
