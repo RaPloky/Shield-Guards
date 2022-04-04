@@ -91,7 +91,7 @@ Animator:
   m_GameObject: {fileID: 3864492737340301539}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3b514db586b8b2c469c8f5491b4e604d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -112,8 +112,9 @@ GameObject:
   - component: {fileID: 5181030111862794137}
   - component: {fileID: 5181030111862794136}
   - component: {fileID: 5181030111862794139}
+  - component: {fileID: 352878400929964997}
   m_Layer: 0
-  m_Name: Meteor_New
+  m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,3 +183,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!111 &352878400929964997
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181030111862794138}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 76915f576ba54b14f9038e74f102f7f4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 76915f576ba54b14f9038e74f102f7f4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
