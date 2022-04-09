@@ -11,8 +11,8 @@ public class UFOBehaviour : EnemyCommonValues
 
     private void Awake()
     {
-        SetOnAwake();
         spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
+        SetOnAwake();
         gameObject.transform.position = spawnManagerTrans.position;
         _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
     }
@@ -50,7 +50,7 @@ public class UFOBehaviour : EnemyCommonValues
         }
         else
         {
-            DoDamage(satelliteToDamage);
+            DoDamage(_satelliteEnergy);
             StartCoroutine(DamagePlayer());
         }
     }

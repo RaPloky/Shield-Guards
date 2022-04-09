@@ -15,8 +15,8 @@ public class MeteorBehaviour : EnemyCommonValues
 
     private void Awake()
     {
-        SetOnAwake();
         spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
+        SetOnAwake();
         gameObject.transform.position = spawnManagerTrans.position;
         _meteorRb = gameObject.GetComponent<Rigidbody>();
     }
@@ -63,7 +63,7 @@ public class MeteorBehaviour : EnemyCommonValues
             // Avoiding case when energy level could be below the zero: 
             if (coll.gameObject.GetComponent<GameplayManager>().currentEnergyLevel > 0)
             {
-                DoDamage(satelliteToDamage);
+                DoDamage(_satelliteEnergy);
             }
             // Enabling to spawn meteor again:
             DestroyAndStartSpawn(spawnManagerTrans);
