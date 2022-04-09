@@ -33,8 +33,8 @@ public class DifficultyManager : MonoBehaviour
     public GameObject ChargeBonus;
     public int chargeChanceDecrease;
 
-    private UFOBehaviour _UFO;
-    private MeteorBehaviour _Meteor;
+    private UFOBehavior _UFO;
+    private MeteorBehavior _Meteor;
     private DischargeShieldBonus _Shield;
     private ChargeSatellitesBonus _Charge;
     private DestroyUfosBonus _DestroyUfo;
@@ -44,8 +44,8 @@ public class DifficultyManager : MonoBehaviour
 
     private void Awake()
     {
-        _UFO = UFOPrefab.GetComponent<UFOBehaviour>();
-        _Meteor = MeteorPrefab.GetComponent<MeteorBehaviour>();
+        _UFO = UFOPrefab.GetComponent<UFOBehavior>();
+        _Meteor = MeteorPrefab.GetComponent<MeteorBehavior>();
         _Shield = ShieldBonus.GetComponent<DischargeShieldBonus>();
         _DestroyUfo = DestroyUfoBonus.GetComponent<DestroyUfosBonus>();
         _Charge = ChargeBonus.GetComponent<ChargeSatellitesBonus>();

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MeteorBehaviour : EnemyCommonValues
+public class MeteorBehavior : EnemyCommonValues
 {
     [SerializeField] int addForceMultiplier = 200;
     [SerializeField] int inputPosAskedDifference = 250;
@@ -15,9 +15,9 @@ public class MeteorBehaviour : EnemyCommonValues
 
     private void Awake()
     {
-        spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
+        _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         SetOnAwake();
-        gameObject.transform.position = spawnManagerTrans.position;
+        gameObject.transform.position = _spawnManagerTrans.position;
         _meteorRb = gameObject.GetComponent<Rigidbody>();
     }
     private void OnMouseOver()
@@ -60,32 +60,31 @@ public class MeteorBehaviour : EnemyCommonValues
     {
         if (coll.gameObject.CompareTag("Satellite") && !_isCollisionDetected)
         {
-            // Avoiding case when energy level could be below the zero: 
             if (coll.gameObject.GetComponent<GameplayManager>().currentEnergyLevel > 0)
             {
                 DoDamage(_satelliteEnergy);
             }
             // Enabling to spawn meteor again:
-            DestroyAndStartSpawn(spawnManagerTrans);
+            DestroyAndStartSpawn(_spawnManagerTrans);
             _isCollisionDetected = true;
         }
         else if (coll.gameObject.CompareTag("UFO") && !_isCollisionDetected)
         {
             // Enabling to spawn meteor again:
-            DestroyAndStartSpawn(spawnManagerTrans);
+            DestroyAndStartSpawn(_spawnManagerTrans);
             // Enabling to spawn UFO again:
             DestroyAndStartSpawn(coll.gameObject.transform.parent.transform);
             _isCollisionDetected = true;
         }
         else
         {
-            DestroyAndStartSpawn(spawnManagerTrans);
+            DestroyAndStartSpawn(_spawnManagerTrans);
         }
     }
     private void FollowSatelliteToDamageIt()
     {
         // Following the player:
-        _meteorRb.AddForce((satelliteToDamage.transform.position - transform.position) * speed,
+        _meteorRb.AddForce((_satelliteToDamage.transform.position - transform.position) * speed,
             ForceMode.Impulse);
     }
     private void DragMeteorAway()
@@ -97,6 +96,6 @@ public class MeteorBehaviour : EnemyCommonValues
     }
     private void DestroyMeteorAfterDrag()
     {
-        DestroyAndStartSpawn(spawnManagerTrans);
+        DestroyAndStartSpawn(_spawnManagerTrans);
     }
 }

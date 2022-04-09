@@ -195,8 +195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -180}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: -0.00017547607, y: -185.1}
+  m_SizeDelta: {x: 27.892265, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48807393
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 6
+  m_Spacing: 7.24
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -4967,6 +4967,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 15522544275176723, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: satelliteToFollow
+      value: 
+      objectReference: {fileID: 703204589}
+    - target: {fileID: 2945086110019492619, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: Canvas
@@ -5066,6 +5076,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 3137816481452988287, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902128, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: m_Name
@@ -5225,6 +5240,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710077951}
     m_Modifications:
+    - target: {fileID: 3697162972308263476, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: Canvas

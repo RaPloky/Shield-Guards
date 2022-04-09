@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class UFOBehaviour : EnemyCommonValues
+public class UFOBehavior : EnemyCommonValues
 {
     private DestroyUfosBonus _destroyUfosBonus;
 
@@ -11,9 +11,9 @@ public class UFOBehaviour : EnemyCommonValues
 
     private void Awake()
     {
-        spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
+        _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         SetOnAwake();
-        gameObject.transform.position = spawnManagerTrans.position;
+        gameObject.transform.position = _spawnManagerTrans.position;
         _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
     }
     private void Start()
@@ -26,7 +26,7 @@ public class UFOBehaviour : EnemyCommonValues
         TakeDamage();
         if (enemyHealth <= 0)
         {
-            DestroyAndStartSpawn(spawnManagerTrans);
+            DestroyAndStartSpawn(_spawnManagerTrans);
             _destroyUfosBonus.destroyedUfosCurrCount++;
             AddScore();
             // Instantiate anti-UFO bonus:
@@ -38,7 +38,7 @@ public class UFOBehaviour : EnemyCommonValues
     }
     private void FixedUpdate()
     {
-        gameObject.transform.position = spawnManagerTrans.position;
+        gameObject.transform.position = _spawnManagerTrans.position;
     }
     private IEnumerator DamagePlayer()
     {

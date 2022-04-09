@@ -4,7 +4,7 @@ using UnityEngine;
 public class DestroyUfosBonus : BonusManager
 {
     public GameplayManager satelDestroyer;
-    public UFOBehaviour ufoPrefab;
+    public UFOBehavior ufoPrefab;
 
     public int destroyedUfosCurrCount;
     public int destroyedUfosCountGoal;

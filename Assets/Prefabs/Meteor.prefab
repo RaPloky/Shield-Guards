@@ -160,12 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb46828c0343f94e9a9966f227eaf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManagerTrans: {fileID: 0}
-  satelliteToDamage: {fileID: 0}
-  damageToSatellite: 1150
-  scoreReward: 1500
+  damageToSatellite: 1300
+  destroyReward: 0
   addForceMultiplier: 200
-  inputPosAskedDifference: 200
+  inputPosAskedDifference: 150
   speed: 15
 --- !u!54 &5181030111862794139
 Rigidbody:
