@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
+    [SerializeField] GameplayManager satelliteToDamage;
+
     public GameObject enemyPrefab;
     public float spawnDelay;
     [Range(0, 100)] public float chanceToInstantiate;

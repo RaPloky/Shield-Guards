@@ -270,15 +270,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2831262947943760534}
-  m_LocalRotation: {x: -0.0000009536743, y: -0.7071068, z: -0.7071068, w: -0.0000009536743}
-  m_LocalPosition: {x: 0.009435, y: -0.85663, z: 0.009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.40493998, y: 0.40493995, z: 0.40494004}
   m_Children:
   - {fileID: 4119382040357391522}
   - {fileID: 2751236388944944019}
   m_Father: {fileID: 3137816481915902135}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -120.00001, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &3137816482265219397
 Animation:
   m_ObjectHideFlags: 0
@@ -295,56 +295,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &3137816481452988280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3137816481452988287}
-  - component: {fileID: 3137816481452988286}
-  m_Layer: 0
-  m_Name: MeteorSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3137816481452988287
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137816481452988280}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00414068, y: -70.93389, z: 30.003172}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3137816481915902135}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3137816481452988286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137816481452988280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7fcc7cedd862e488c4e8a87d043852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
-    type: 3}
-  spawnDelay: 8
-  chanceToInstantiate: 100
-  enemyIsSpawned: 0
-  spawnFreezed: 0
-  needToSpawn: 
 --- !u!1 &3137816481915902128
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,16 +320,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137816481915902128}
-  m_LocalRotation: {x: -0.61237246, y: 0.3535534, z: 0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: -70.556, y: 0.55, z: -40.799}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_Children:
-  - {fileID: 3137816482062090980}
-  - {fileID: 3137816481452988287}
   - {fileID: 3170949796539766828}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 60.000004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60.000004}
 --- !u!136 &3137816481915902133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -392,8 +340,8 @@ CapsuleCollider:
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.925, z: 0}
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3137816481915902134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,56 +368,6 @@ MonoBehaviour:
   DischargeShieldBonus: {fileID: 0}
   Canvas: {fileID: 0}
   animations: {fileID: 3137816482265219397}
---- !u!1 &3137816482062090981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3137816482062090980}
-  - component: {fileID: 3137816482062090987}
-  m_Layer: 0
-  m_Name: UFOSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3137816482062090980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137816482062090981}
-  m_LocalRotation: {x: 0.54667777, y: -0.12467273, z: -0.18410505, w: 0.80728275}
-  m_LocalPosition: {x: -1.84, y: -5.41, z: 2.1031566}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
-  m_Children: []
-  m_Father: {fileID: 3137816481915902135}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 56.798004, y: -47.323, z: -52.349003}
---- !u!114 &3137816482062090987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137816482062090981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c7fcc7cedd862e488c4e8a87d043852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
-    type: 3}
-  spawnDelay: 2
-  chanceToInstantiate: 100
-  enemyIsSpawned: 0
-  spawnFreezed: 0
-  needToSpawn: 
 --- !u!1 &3430439409390619794
 GameObject:
   m_ObjectHideFlags: 0
