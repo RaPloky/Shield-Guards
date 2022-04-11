@@ -5,20 +5,18 @@ using UnityEngine.SceneManagement;
 public class GameplayManager : MonoBehaviour
 {
     [Header("Gameplay")]
-    public DifficultyManager DifficultyManager;
+    [SerializeField] DifficultyManager DifficultyManager;
     public int energyIncrement, energyDecrement;
     public int maxEnergyLevel, minEnergyLevel = 0, currentEnergyLevel;
     public float decrementDelay;
     [HideInInspector]
     public bool isDicharged = false;
     [Header("Score")]
-    public ScoreCounter ScoreCounter;
-    public HighScoreCounter HighScoreCounter;
+    [SerializeField] ScoreCounter ScoreCounter;
     [Header("Bonuses")]
     public ChargeSatellitesBonus ChargeBonus;
-    public DischargeShieldBonus DischargeShieldBonus;
     [Header("UI")]
-    public PauseMenu Canvas;
+    [SerializeField] PauseMenu Canvas;
     [Header("Animations")]
     [SerializeField] Animation animations;
 
@@ -52,16 +50,12 @@ public class GameplayManager : MonoBehaviour
     }
     private void AddScore()
     {
-        // Multipling on satellites count is neccessary for game design -
-        // it shall to motivate player to hold ALL satellites with non-zero
-        // energy. Score with 3 satellites will be much more bigger than score
-        // with 1 or 2 satellites:
-        ScoreCounter.currentScore += energyIncrement * ScoreCounter.scoreMultiplier * DifficultyManager.satellites.Count;
+        ScoreCounter.currentScore += energyIncrement * ScoreCounter.scoreMultiplier * DifficultyManager.satellites.Length;
     }
     private void PowerOffSatellite()
     {
-        DifficultyManager.satellites.Remove(gameObject);
-        if (Mathf.Approximately(DifficultyManager.satellites.Count, 0))
+        DifficultyManager.activeSatellites.Remove(gameObject);
+        if (Mathf.Approximately(DifficultyManager.activeSatellites.Count, 0))
         {
             Canvas.LoadLoseMenu();
         }

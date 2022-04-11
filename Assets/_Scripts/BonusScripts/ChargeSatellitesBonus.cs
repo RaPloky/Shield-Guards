@@ -1,9 +1,10 @@
-﻿public class ChargeSatellitesBonus : BonusManager
+﻿using UnityEngine;
+public class ChargeSatellitesBonus : BonusManager
 {
-    public DifficultyManager Manager;
-    public GameplayManager satelCharger;
-    public int bonusEnergyIncrement;
-    public int incrementDebuff;
+    [SerializeField] DifficultyManager Manager;
+    [SerializeField] GameplayManager satelCharger;
+    [SerializeField] int bonusEnergyIncrement;
+    [SerializeField] int incrementDebuff;
 
     private bool _isDebuffed = false;
 
@@ -24,7 +25,7 @@
     {
         foreach (var satel in Manager.satellites)
         {
-            satel.GetComponent<GameplayManager>().energyIncrement -= incrementDebuff;
+            satel.energyIncrement -= incrementDebuff;
         }
     }
     public override void ActivateBonus()
@@ -33,14 +34,19 @@
 
         foreach (var satel in Manager.satellites)
         {
-            int currEnergy = satel.GetComponent<GameplayManager>().currentEnergyLevel;
-            int maxEnergy = satel.GetComponent<GameplayManager>().maxEnergyLevel;
+            int currEnergy = satel.currentEnergyLevel;
+            int maxEnergy = satel.maxEnergyLevel;
 
-            if (currEnergy + bonusEnergyIncrement < maxEnergy)
-                satel.GetComponent<GameplayManager>().currentEnergyLevel += bonusEnergyIncrement;
-            // In case, when bonus energy can't be added bcz energy limit, it charges to maximum:
-            else
-                satel.GetComponent<GameplayManager>().currentEnergyLevel = maxEnergy;
+            if (satel.isDicharged) {
+                continue;
+            }
+            if (currEnergy + bonusEnergyIncrement < maxEnergy) {
+                satel.currentEnergyLevel += bonusEnergyIncrement;
+            }
+            // Case when currEnergy + bonusEnergyIncrement >= maxEnergy:
+            else {
+                satel.currentEnergyLevel = maxEnergy;
+            }
         }
         bonusCounter--;
     }

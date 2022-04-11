@@ -1,30 +1,29 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class DischargeShieldBonus : BonusManager
 {
-    public DifficultyManager Manager;
-    public GameplayManager satelSupport;
-    public int bonusDuration;
+    [SerializeField] DifficultyManager DifficultyManager;
+    [SerializeField] GameplayManager satelSupport;
+    [SerializeField] List<GameplayManager> energyComponents;
+    [SerializeField] int bonusDuration;
+    [SerializeField] int maxTimeBeingInCriticalZone = 10;
+    [SerializeField] int decrementBuff;
     public int criticalEnergyLevel;
-    public int maxTimeBeingInCriticalZone = 10;
-    public int decrementBuff;
-
-    private List<GameplayManager> _energyComponents;
+    
     private List<int> _defaultEnergyDecrements;
     private readonly int _invokeDelay = 1;
     private int _secondsInCriticalZone;
     private bool _enteredCriticalEnergyZone = false;
-    private bool _isDebuffed = false;
+    private bool _isEnergyDecrementBuffed = false;
 
     private void Awake()
     {
         _defaultEnergyDecrements = new List<int>();
-        _energyComponents = new List<GameplayManager>();
         SetChanceToInstantiate();
-        foreach (var satel in Manager.satellites)
+        foreach (var satel in DifficultyManager.satellites)
         {
-            _defaultEnergyDecrements.Add(satel.GetComponent<GameplayManager>().energyDecrement);
-            _energyComponents.Add(satel.GetComponent<GameplayManager>());
+            _defaultEnergyDecrements.Add(satel.energyDecrement);
         }
     }
     private void Start()
@@ -35,7 +34,7 @@ public class DischargeShieldBonus : BonusManager
     private void Update()
     {
         // Looking for critical energy level on any of satellites:
-        foreach (var satel in _energyComponents)
+        foreach (var satel in energyComponents)
         {
             if (satel.currentEnergyLevel <= criticalEnergyLevel)
                 _enteredCriticalEnergyZone = true;
@@ -43,18 +42,18 @@ public class DischargeShieldBonus : BonusManager
                 _enteredCriticalEnergyZone = false;
         }
 
-        if (satelSupport.isDicharged && !_isDebuffed)
+        if (satelSupport.isDicharged && !_isEnergyDecrementBuffed)
         {
-            _isDebuffed = true;
+            _isEnergyDecrementBuffed = true;
             BuffEnergyDecrement();
             return;
         }
     }
     private void BuffEnergyDecrement()
     {
-        foreach (var satel in Manager.satellites)
+        foreach (var satel in DifficultyManager.satellites)
         {
-            satel.GetComponent<GameplayManager>().energyDecrement += decrementBuff;
+            satel.energyDecrement += decrementBuff;
         }
     }
     public override void ActivateBonus()
@@ -73,7 +72,7 @@ public class DischargeShieldBonus : BonusManager
     private void SetNewEnergyDecrementValue(int[] newValues)
     {
         int i = 0;
-        foreach (var satel in _energyComponents)
+        foreach (var satel in energyComponents)
         {
             satel.energyDecrement = newValues[i];
             i++;

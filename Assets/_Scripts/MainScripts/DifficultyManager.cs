@@ -3,44 +3,54 @@ using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
 {
-    public float diffIncreaseDelay;
-    public float firstDiffIncreaseDelay;
+    [SerializeField] float diffIncreaseDelay;
+    [SerializeField] float firstDiffIncreaseDelay;
+    #region "Satellites"
     [Header("Satellites")]
-    public int energyUsageIncrement;
-    public float dischargeDelay;
-    public float dischargeDelayLimit;
+    [SerializeField] int energyUsageIncrement;
+    [SerializeField] float dischargeDelay;
+    [SerializeField] float dischargeDelayLimit;
+    public GameplayManager[] satellites;
     [HideInInspector]
-    public LinkedList<GameObject> satellites;
+    public List<GameObject> activeSatellites;
+    #endregion
+    #region "UFO"
     [Header("UFO")]
-    public GameObject UFOPrefab;
-    public float attackDelayDecrease;
-    public float delayLimit;
+    [SerializeField] GameObject UFOPrefab;
+    [SerializeField] float attackDelayDecrease;
+    [SerializeField] float delayLimit;
+    #endregion
+    #region "Meteor"
     [Header("Meteor")]
-    public GameObject MeteorPrefab;
-    public int damageIncrease;
-    public int damageLimit;
-    [Header("Spawner")]
-    public float ufoSpawnDelayDecrease;
-    public float ufoSpawnDelayLimit;
-    public float meteorSpawnDelayDecrease;
-    public float meteorSpawnDelayLimit;
-    public int spawnChanceIncrease;
+    [SerializeField] GameObject MeteorPrefab;
+    [SerializeField] int damageIncrease;
+    [SerializeField] int damageLimit;
+    #endregion
+    #region "Spawners"
+    [Header("Spawners")]
+    [SerializeField] float ufoSpawnDelayDecrease;
+    [SerializeField] float ufoSpawnDelayLimit;
+    [SerializeField] float meteorSpawnDelayDecrease;
+    [SerializeField] float meteorSpawnDelayLimit;
+    [SerializeField] int spawnChanceIncrease;
+    [SerializeField] EnemySpawnManager[] ufoSpawners;
+    [SerializeField] EnemySpawnManager[] meteorSpawners;
+    #endregion
+    #region "Bonuses"
     [Header("Bonuses")]
-    public GameObject ShieldBonus;
-    public int shieldChanceDecrease;
-    public GameObject DestroyUfoBonus;
-    public int ufoChanceDecrease;
-    public GameObject ChargeBonus;
-    public int chargeChanceDecrease;
+    [SerializeField] GameObject ShieldBonus;
+    [SerializeField] int shieldChanceDecrease;
+    [SerializeField] GameObject DestroyUfoBonus;
+    [SerializeField] int ufoChanceDecrease;
+    [SerializeField] GameObject ChargeBonus;
+    [SerializeField] int chargeChanceDecrease;
+    #endregion
 
     private UFOBehavior _UFO;
     private MeteorBehavior _Meteor;
     private DischargeShieldBonus _Shield;
     private ChargeSatellitesBonus _Charge;
     private DestroyUfosBonus _DestroyUfo;
-    private GameObject _Spawner;
-    private readonly int _ufoSpawnerIndex = 0;
-    private readonly int _meteorSpawnerIndex = 1;
 
     private void Awake()
     {
@@ -50,11 +60,10 @@ public class DifficultyManager : MonoBehaviour
         _DestroyUfo = DestroyUfoBonus.GetComponent<DestroyUfosBonus>();
         _Charge = ChargeBonus.GetComponent<ChargeSatellitesBonus>();
 
-        satellites = new LinkedList<GameObject>();
-        GameObject[] satellitesArray = GameObject.FindGameObjectsWithTag("Satellite");
-        foreach (var satellite in satellitesArray)
+        activeSatellites = new List<GameObject>();
+        for (int i=0; i<satellites.Length; i++)
         {
-            satellites.AddLast(satellite);
+            activeSatellites.Add(satellites[i].gameObject);
         }
     }
     private void Start()
@@ -63,28 +72,29 @@ public class DifficultyManager : MonoBehaviour
     }
     public void IncreaseDifficulty()
     {
+        DecreaseDischargeDelay();
         IncreaseEnergyDecrement();
         IncreaseUFOAttackFrequency();
         IncreaseMeteorDamage();
-        DecreaseEnemiesSpawnDelay();
+        DecreaseUfoSpawnDelay();
+        DecreaseMeteorSpawnDelay();
         DecreaseBonusesInstantiateChance();
-        DecreaseDischargeDelay();
     }
     private void DecreaseDischargeDelay()
     {
-        foreach (var satellite in satellites)
+        foreach (var satel in satellites)
         {
-            if (satellite.GetComponent<GameplayManager>().decrementDelay >= dischargeDelayLimit)
+            if (satel.decrementDelay >= dischargeDelayLimit)
             {
-                satellite.GetComponent<GameplayManager>().decrementDelay -= dischargeDelay;
+                satel.decrementDelay -= dischargeDelay;
             }
         }
     }
     private void IncreaseEnergyDecrement()
     {
-        foreach (var satellite in satellites)
+        foreach (var satel in satellites)
         {
-            satellite.GetComponent<GameplayManager>().energyDecrement += energyUsageIncrement;
+            satel.energyDecrement += energyUsageIncrement;
         }
     }
     private void IncreaseUFOAttackFrequency()
@@ -101,42 +111,70 @@ public class DifficultyManager : MonoBehaviour
             _Meteor.damageToSatellite += damageIncrease;
         }
     }
-    private void DecreaseEnemiesSpawnDelay()
+    private void DecreaseUfoSpawnDelay()
     {
-        foreach (var satel in satellites)
+        foreach (var spawner in ufoSpawners)
         {
-            _Spawner = satel.transform.GetChild(_ufoSpawnerIndex).gameObject;
-            if (_Spawner.GetComponent<EnemySpawnManager>().spawnDelay >= ufoSpawnDelayLimit)
+            if (spawner.spawnDelay >= ufoSpawnDelayLimit)
             {
-                _Spawner.GetComponent<EnemySpawnManager>().spawnDelay -= ufoSpawnDelayDecrease;
-                IncreaseEnemySpawnChance();
-            }
-            _Spawner = satel.transform.GetChild(_meteorSpawnerIndex).gameObject;
-            if (_Spawner.GetComponent<EnemySpawnManager>().spawnDelay >= ufoSpawnDelayLimit)
-            {
-                _Spawner.GetComponent<EnemySpawnManager>().spawnDelay -= meteorSpawnDelayDecrease;
-                IncreaseEnemySpawnChance();
+                spawner.spawnDelay -= ufoSpawnDelayDecrease;
+                IncreaseUfoSpawnChance();
             }
         }
     }
-    private void IncreaseEnemySpawnChance()
+    private void DecreaseMeteorSpawnDelay()
     {
-        EnemySpawnManager manager = _Spawner.GetComponent<EnemySpawnManager>();
-        for (int i = 0; i < manager.spawnChance.Length; i++)
+        foreach (var spawner in meteorSpawners)
         {
-            // Skip "to-instantiate" percents:
-            if (manager.spawnChance[i] == true)
+            if (spawner.spawnDelay >= meteorSpawnDelayLimit)
             {
-                continue;
+                spawner.spawnDelay -= meteorSpawnDelayDecrease;
+                IncreaseMeteorSpawnChance();
             }
-            int chanceIncrement = 0;
-            for (int j = 1; j <= spawnChanceIncrease; j++)
+        }
+    }
+    private void IncreaseUfoSpawnChance()
+    {
+        foreach (var ufoSpawner in ufoSpawners)
+        {
+            for (int i=0; i<ufoSpawner.spawnChance.Length; i++)
             {
-                manager.spawnChance[i + j] = true;
-                chanceIncrement = j;
+                // Skip "to-instantiate" percents:
+                if (ufoSpawner.spawnChance[i] == true)
+                {
+                    continue;
+                }
+                int chanceIncrement = 0;
+                for (int j = 1; j <= spawnChanceIncrease; j++)
+                {
+                    ufoSpawner.spawnChance[i + j] = true;
+                    chanceIncrement = j;
+                }
+                ufoSpawner.chanceToInstantiate += chanceIncrement;
+                break;
             }
-            manager.chanceToInstantiate += chanceIncrement;
-            break;
+        }
+    }
+    private void IncreaseMeteorSpawnChance()
+    {
+        foreach (var meteorSpawner in ufoSpawners)
+        {
+            for (int i = 0; i < meteorSpawner.spawnChance.Length; i++)
+            {
+                // Skip "to-instantiate" percents:
+                if (meteorSpawner.spawnChance[i] == true)
+                {
+                    continue;
+                }
+                int chanceIncrement = 0;
+                for (int j = 1; j <= spawnChanceIncrease; j++)
+                {
+                    meteorSpawner.spawnChance[i + j] = true;
+                    chanceIncrement = j;
+                }
+                meteorSpawner.chanceToInstantiate += chanceIncrement;
+                break;
+            }
         }
     }
     private void DecreaseBonusesInstantiateChance()
