@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0129222125, g: 0.0030572102, b: 0.04271534, a: 1}
+  m_IndirectSpecularColor: {r: 0.012862004, g: 0.0030397084, b: 0.042434197, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &683346159
 Transform:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,7 @@ Transform:
   m_GameObject: {fileID: 683346157}
   m_LocalRotation: {x: -0.17244148, y: -0.47243255, z: -0.09482644, w: 0.85911554}
   m_LocalPosition: {x: 69.24561, y: 1.8664999, z: -40.160957}
-  m_LocalScale: {x: 1.1550001, y: 1.1550001, z: 1.1550004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -2616,11 +2616,11 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 8
+  spawnDelay: 2
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &1029514175
 Transform:
   m_ObjectHideFlags: 0
@@ -2629,8 +2629,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029514173}
   m_LocalRotation: {x: -0.61237174, y: 0.35355458, z: 0.35355458, w: 0.61237174}
-  m_LocalPosition: {x: -32.710648, y: 17.051746, z: -28.203878}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalPosition: {x: -31.1, y: 17.051746, z: -31.2}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &1067193170
 Transform:
   m_ObjectHideFlags: 0
@@ -2903,7 +2903,7 @@ Transform:
   m_GameObject: {fileID: 1067193168}
   m_LocalRotation: {x: -0.03350894, y: 0.9634906, z: 0.22250709, w: 0.14509894}
   m_LocalPosition: {x: 2.2255006, y: 1.755001, z: 80.233505}
-  m_LocalScale: {x: 1.1550009, y: 1.1550003, z: 1.1550007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -3815,7 +3815,7 @@ MonoBehaviour:
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &1293622495
 Transform:
   m_ObjectHideFlags: 0
@@ -3825,7 +3825,7 @@ Transform:
   m_GameObject: {fileID: 1293622493}
   m_LocalRotation: {x: -0.6085969, y: -0.36001363, z: -0.36001363, w: 0.6085969}
   m_LocalPosition: {x: 42.595093, y: 17.56762, z: -15.344631}
-  m_LocalScale: {x: 0.55, y: 0.55000013, z: 0.55}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -3866,7 +3866,7 @@ MonoBehaviour:
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &1330330229
 Transform:
   m_ObjectHideFlags: 0
@@ -3875,8 +3875,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330330227}
   m_LocalRotation: {x: -0.1805997, y: 0.28961214, z: 0.055743422, w: 0.938297}
-  m_LocalPosition: {x: -68.41413, y: 1.7067361, z: -38.439842}
-  m_LocalScale: {x: 1.155, y: 1.1550001, z: 1.155}
+  m_LocalPosition: {x: -67.92, y: 1.7067361, z: -37.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -3929,7 +3929,7 @@ MonoBehaviour:
   chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
-  needToSpawn: 
+  spawnChance: 
 --- !u!4 &1486742181
 Transform:
   m_ObjectHideFlags: 0
@@ -3938,8 +3938,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486742179}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -6.7780056, y: 17.101748, z: 44.521667}
-  m_LocalScale: {x: 0.5500005, y: 0.55000025, z: 0.55000025}
+  m_LocalPosition: {x: -11.6, y: 17.101748, z: 44.521667}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
