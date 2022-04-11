@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.012585861, g: 0.0029781556, b: 0.04160839, a: 1}
+  m_IndirectSpecularColor: {r: 0.013598157, g: 0.0032218772, b: 0.045053355, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1548,6 +1548,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3137816482265219395}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &490625524
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490625523}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e65b56c634edbf448bebd73f391f29a4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e65b56c634edbf448bebd73f391f29a4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &490625525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
@@ -1578,6 +1594,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5371d0540705da409da135f90de8470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &596667730
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596667726}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 019f8a962b4aeae46b495398ece03ef1, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 019f8a962b4aeae46b495398ece03ef1, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &683346157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1696,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5371d0540705da409da135f90de8470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &703204591
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703204587}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e517b5c9be80f5f44b13e0dbfda551df, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e517b5c9be80f5f44b13e0dbfda551df, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
