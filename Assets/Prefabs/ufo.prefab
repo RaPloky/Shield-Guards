@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1280538837592651865}
   - component: {fileID: 776201582003001731}
   - component: {fileID: 776201582003001730}
+  - component: {fileID: 8282123641451260472}
   m_Layer: 0
   m_Name: ufo
   m_TagString: UFO
@@ -114,3 +115,19 @@ MonoBehaviour:
   attackDelay: 0.9
   enemyHealth: 1000
   damageToEnemy: 150
+--- !u!111 &8282123641451260472
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776201582003001740}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 41e7006a8a1cd234aae0f7dd9e4126e6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 41e7006a8a1cd234aae0f7dd9e4126e6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

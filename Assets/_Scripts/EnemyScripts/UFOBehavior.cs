@@ -4,6 +4,7 @@ using UnityEngine;
 public class UFOBehavior : EnemyCommonValues
 {
     private DestroyUfosBonus _destroyUfosBonus;
+    private Animation _hitAnim;
 
     public float attackDelay = 1;
     public int enemyHealth;
@@ -12,6 +13,7 @@ public class UFOBehavior : EnemyCommonValues
     private void Awake()
     {
         _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
+        _hitAnim = GetComponent<Animation>();
         SetOnAwake();
         gameObject.transform.position = _spawnManagerTrans.position;
         _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
@@ -24,6 +26,7 @@ public class UFOBehavior : EnemyCommonValues
     {
         if (PauseMenu.isGamePaused) return;
         TakeDamage();
+        _hitAnim.Play();
         if (enemyHealth <= 0)
         {
             DestroyAndStartSpawn(_spawnManagerTrans);
