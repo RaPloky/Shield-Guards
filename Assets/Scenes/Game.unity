@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0133509375, g: 0.003160006, b: 0.044163465, a: 1}
+  m_IndirectSpecularColor: {r: 0.012585861, g: 0.0029781556, b: 0.04160839, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1588,6 +1588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683346159}
   - component: {fileID: 683346158}
+  - component: {fileID: 683346160}
   m_Layer: 0
   m_Name: UFOSpawnDestroyer
   m_TagString: Untagged
@@ -1611,7 +1612,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
   spawnDelay: 4
-  chanceToInstantiate: 50
+  chanceToInstantiate: 100
   enemyIsSpawned: 0
   spawnFreezed: 0
   spawnChance: 
@@ -1622,13 +1623,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683346157}
-  m_LocalRotation: {x: -0.17244148, y: -0.47243255, z: -0.09482644, w: 0.85911554}
+  m_LocalRotation: {x: -0.1442557, y: -0.64084625, z: -0.110707074, w: 0.745822}
   m_LocalPosition: {x: 69.24561, y: 1.8664999, z: -40.160957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 67.032005, y: 8.535001, z: 9.258}
+  m_LocalEulerAnglesHint: {x: -20.92, y: -81.565, z: 1.212}
+--- !u!111 &683346160
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683346157}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 255300672b1195840b9d7aa4db907d59, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 255300672b1195840b9d7aa4db907d59, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &703204587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2945086111247811557, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
@@ -2633,8 +2650,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 2
-  chanceToInstantiate: 100
+  spawnDelay: 10
+  chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
   spawnChance: 
@@ -3845,8 +3862,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 6
-  chanceToInstantiate: 100
+  spawnDelay: 10
+  chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
   spawnChance: 
@@ -3874,6 +3891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330330229}
   - component: {fileID: 1330330228}
+  - component: {fileID: 1330330230}
   m_Layer: 0
   m_Name: UFOSpawnSupport
   m_TagString: Untagged
@@ -3915,6 +3933,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 56.798004, y: -47.323, z: -52.349003}
+--- !u!111 &1330330230
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330330227}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: eccbbd228c07f04439f1a8ee15932a2f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: eccbbd228c07f04439f1a8ee15932a2f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &1416173359 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1525688509407347453, guid: 82f5573faf12d9a478e83fb304f38c6f,
@@ -3959,8 +3993,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 4
-  chanceToInstantiate: 0
+  spawnDelay: 10
+  chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
   spawnChance: 
