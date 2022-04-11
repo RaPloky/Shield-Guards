@@ -26,7 +26,7 @@ abstract public class EnemyCommonValues : MonoBehaviour
     public void SetOnAwake()
     {
         _scoreCounter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
-        _satelliteToDamage = _spawnManagerTrans.parent.gameObject;
+        _satelliteToDamage = _spawnManagerTrans.gameObject.GetComponent<EnemySpawnManager>().satelliteToDamage.gameObject;
         _satelliteEnergy = _satelliteToDamage.GetComponent<GameplayManager>();
     }
     public void AddScore()

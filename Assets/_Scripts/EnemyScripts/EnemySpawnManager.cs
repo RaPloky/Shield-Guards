@@ -3,68 +3,53 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    [SerializeField] GameplayManager satelliteToDamage;
-
+    public GameplayManager satelliteToDamage;
     public GameObject enemyPrefab;
     public float spawnDelay;
-    [Range(0, 100)] public float chanceToInstantiate;
+    [Range(0, 100)] 
+    public float chanceToInstantiate;
     [HideInInspector]
     public bool enemyIsSpawned = false;
     [HideInInspector]
     public bool spawnFreezed = false;
     [HideInInspector]
-    public bool[] needToSpawn;
+    public bool[] spawnChance;
 
-    private GameplayManager[] _satellitesEnergyComponents;
     private Transform _spawnerTrans;
 
     private void Awake()
     {
         _spawnerTrans = gameObject.transform;
         // 100% for all chances:
-        needToSpawn = new bool[100];
-
-        if (chanceToInstantiate < 0)
-        {
-            chanceToInstantiate = 0;
-        }
-        else if (chanceToInstantiate > 100)
-        {
-            chanceToInstantiate = 100;
-        }
+        spawnChance = new bool[100];
 
         for (byte i = 0; i < chanceToInstantiate; i++)
         {
-            needToSpawn[i] = true;
-        }
-        // Gets satellites energy components to look for game end and stop instant enemy spawn:
-        GameObject[] satellites = GameObject.FindGameObjectsWithTag("Satellite");
-        int _satellitesCount = satellites.Length;
-        _satellitesEnergyComponents = new GameplayManager[_satellitesCount];
-        for (byte i = 0; i < _satellitesCount; i++)
-        {
-            _satellitesEnergyComponents[i] = satellites[i].GetComponent<GameplayManager>();
+            spawnChance[i] = true;
         }
     }
     private void Start()
     {
         StartSpawn();
     }
-    private IEnumerator CheckIfDischarged()
+    private bool CheckIfDischarged()
     {
-        foreach (var satel in _satellitesEnergyComponents)
+        bool isDischarged = false;
+        if (satelliteToDamage.isDicharged)
         {
-            if (satel.isDicharged) yield break;
+            isDischarged = true;
         }
+        return isDischarged;
     }
     public IEnumerator TryToSpawn()
     {
         yield return new WaitForSeconds(spawnDelay);
-        CheckIfDischarged();
+
+        if (CheckIfDischarged()) yield break;
         
         // Sets a chance from 0% to 100%:
         int rnd = Random.Range(0, 100);
-        if (needToSpawn[rnd] && !enemyIsSpawned && !spawnFreezed)
+        if (spawnChance[rnd] && !enemyIsSpawned && !spawnFreezed)
         {
             enemyIsSpawned = true;
             Instantiate(enemyPrefab, _spawnerTrans);

@@ -122,17 +122,17 @@ public class DifficultyManager : MonoBehaviour
     private void IncreaseEnemySpawnChance()
     {
         EnemySpawnManager manager = _Spawner.GetComponent<EnemySpawnManager>();
-        for (int i = 0; i < manager.needToSpawn.Length; i++)
+        for (int i = 0; i < manager.spawnChance.Length; i++)
         {
             // Skip "to-instantiate" percents:
-            if (manager.needToSpawn[i] == true)
+            if (manager.spawnChance[i] == true)
             {
                 continue;
             }
             int chanceIncrement = 0;
             for (int j = 1; j <= spawnChanceIncrease; j++)
             {
-                manager.needToSpawn[i + j] = true;
+                manager.spawnChance[i + j] = true;
                 chanceIncrement = j;
             }
             manager.chanceToInstantiate += chanceIncrement;
