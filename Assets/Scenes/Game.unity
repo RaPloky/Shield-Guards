@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.013598157, g: 0.0032218772, b: 0.045053355, a: 1}
+  m_IndirectSpecularColor: {r: 0.013236731, g: 0.003132766, b: 0.043783538, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2698,7 +2698,7 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 10
+  spawnDelay: 7.5
   chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
@@ -2712,7 +2712,7 @@ Transform:
   m_GameObject: {fileID: 1029514173}
   m_LocalRotation: {x: -0.61237174, y: 0.35355458, z: 0.35355458, w: 0.61237174}
   m_LocalPosition: {x: -31.1, y: 17.051746, z: -31.2}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -3910,7 +3910,7 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 10
+  spawnDelay: 7.5
   chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
@@ -3923,8 +3923,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293622493}
   m_LocalRotation: {x: -0.6085969, y: -0.36001363, z: -0.36001363, w: 0.6085969}
-  m_LocalPosition: {x: 42.595093, y: 17.56762, z: -15.344631}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalPosition: {x: 42.91, y: 17.56762, z: -14.77}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -4041,7 +4041,7 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 10
+  spawnDelay: 7.5
   chanceToInstantiate: 25
   enemyIsSpawned: 0
   spawnFreezed: 0
@@ -4055,7 +4055,7 @@ Transform:
   m_GameObject: {fileID: 1486742179}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
   m_LocalPosition: {x: -11.6, y: 17.101748, z: 44.521667}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10

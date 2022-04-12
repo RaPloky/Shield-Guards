@@ -17,7 +17,6 @@ public class MeteorBehavior : EnemyCommonValues
     {
         _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         SetOnAwake();
-        gameObject.transform.position = _spawnManagerTrans.position;
         _meteorRb = gameObject.GetComponent<Rigidbody>();
     }
     private void OnMouseOver()

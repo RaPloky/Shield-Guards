@@ -15,7 +15,6 @@ public class UFOBehavior : EnemyCommonValues
         _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         _hitAnim = GetComponent<Animation>();
         SetOnAwake();
-        gameObject.transform.position = _spawnManagerTrans.position;
         _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
     }
     private void Start()
@@ -38,10 +37,6 @@ public class UFOBehavior : EnemyCommonValues
                 _destroyUfosBonus.InstantiateBonus();
             }
         }
-    }
-    private void FixedUpdate()
-    {
-        gameObject.transform.position = _spawnManagerTrans.position;
     }
     private IEnumerator DamagePlayer()
     {
