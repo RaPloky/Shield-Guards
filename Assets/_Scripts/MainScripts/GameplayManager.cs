@@ -56,8 +56,12 @@ public class GameplayManager : MonoBehaviour
         DifficultyManager.activeSatellites.Remove(gameObject);
         if (Mathf.Approximately(DifficultyManager.activeSatellites.Count, 0))
         {
-            Canvas.LoadLoseMenu();
+            EndGame();
         }
+    }
+    private void EndGame()
+    {
+        Canvas.LoadLoseMenu();
     }
     private IEnumerator ConstantEnergyDecrement()
     {
