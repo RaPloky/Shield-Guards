@@ -14,6 +14,6 @@ public class BonusCounter : MonoBehaviour
     }
     private void Update()
     {
-        _countOfBonuses.text = bonus.GetComponent<BonusManager>().bonusCounter.ToString();
+        _countOfBonuses.text = "x"+bonus.GetComponent<BonusManager>().bonusCounter.ToString();
     }
 }
