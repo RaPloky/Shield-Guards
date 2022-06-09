@@ -20,7 +20,6 @@ public class DischargeShieldBonus : BonusManager
     private void Awake()
     {
         _defaultEnergyDecrements = new List<int>();
-        SetChanceToInstantiate();
         foreach (var satel in DifficultyManager.satellites)
         {
             _defaultEnergyDecrements.Add(satel.energyDecrement);

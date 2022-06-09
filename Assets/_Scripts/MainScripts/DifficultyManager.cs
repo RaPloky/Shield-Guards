@@ -19,12 +19,14 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] GameObject UFOPrefab;
     [SerializeField] float attackDelayDecrease;
     [SerializeField] float delayLimit;
+    [SerializeField] float instChanceIncrementUFO;
     #endregion
     #region "Meteor"
     [Header("Meteor")]
     [SerializeField] GameObject MeteorPrefab;
     [SerializeField] int damageIncrease;
     [SerializeField] int damageLimit;
+    [SerializeField] float instChanceIncrementMeteor;
     #endregion
     #region "Spawners"
     [Header("Spawners")]
@@ -137,44 +139,14 @@ public class DifficultyManager : MonoBehaviour
     {
         foreach (var ufoSpawner in ufoSpawners)
         {
-            for (int i=0; i<ufoSpawner.spawnChance.Length; i++)
-            {
-                // Skip "to-instantiate" percents:
-                if (ufoSpawner.spawnChance[i] == true)
-                {
-                    continue;
-                }
-                int chanceIncrement = 0;
-                for (int j = 1; j <= spawnChanceIncrease; j++)
-                {
-                    ufoSpawner.spawnChance[i + j] = true;
-                    chanceIncrement = j;
-                }
-                ufoSpawner.chanceToInstantiate += chanceIncrement;
-                break;
-            }
+            ufoSpawner.chanceToInstantiate = Mathf.Clamp01(ufoSpawner.chanceToInstantiate + instChanceIncrementUFO);
         }
     }
     private void IncreaseMeteorSpawnChance()
     {
         foreach (var meteorSpawner in ufoSpawners)
         {
-            for (int i = 0; i < meteorSpawner.spawnChance.Length; i++)
-            {
-                // Skip "to-instantiate" percents:
-                if (meteorSpawner.spawnChance[i] == true)
-                {
-                    continue;
-                }
-                int chanceIncrement = 0;
-                for (int j = 1; j <= spawnChanceIncrease; j++)
-                {
-                    meteorSpawner.spawnChance[i + j] = true;
-                    chanceIncrement = j;
-                }
-                meteorSpawner.chanceToInstantiate += chanceIncrement;
-                break;
-            }
+            meteorSpawner.chanceToInstantiate = Mathf.Clamp01(meteorSpawner.chanceToInstantiate + instChanceIncrementMeteor);
         }
     }
     private void DecreaseBonusesInstantiateChance()
@@ -183,24 +155,8 @@ public class DifficultyManager : MonoBehaviour
         DecreaseChanceOfBonus(_Shield, shieldChanceDecrease);
         DecreaseChanceOfBonus(_DestroyUfo, ufoChanceDecrease);
     }
-    private void DecreaseChanceOfBonus(BonusManager bonus, int chanceDecrease)
+    private void DecreaseChanceOfBonus(BonusManager bonus, float chanceDecrease)
     {
-        // 99 is the last accessible index in chances array of lentgh 100:
-        for (int i = 99; i >= 0; i--)
-        {
-            // Skip "not-to-instantiate" chances:
-            if (bonus.needToInstantiate[i] == false)
-            {
-                continue;
-            }
-            int chanceDecrement = 0;
-            for (int j = 1; j <= chanceDecrease; j++)
-            {
-                bonus.needToInstantiate[i - j] = false;
-                chanceDecrement = j;
-            }
-            bonus.chanceToInstantiate -= chanceDecrement;
-            break;
-        }
+        bonus.chanceToInstantiate = Mathf.Clamp01(bonus.chanceToInstantiate + chanceDecrease);
     }
 }

@@ -11,10 +11,6 @@ public class ScoreMultiplierBonus : BonusManager
     private int _bonusScoreLimit = 5000;
     private readonly int _defaultMultiplier = 1;
 
-    private void Awake()
-    {
-        SetChanceToInstantiate();
-    }
     private void Start()
     {
         // "1" because method call is need literally right after the game starts:

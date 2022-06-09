@@ -8,10 +8,6 @@ public class ChargeSatellitesBonus : BonusManager
 
     private bool _isDebuffed = false;
 
-    private void Awake()
-    {
-        SetChanceToInstantiate();
-    }
     private void Update()
     {
         if (satelCharger.isDicharged && !_isDebuffed)

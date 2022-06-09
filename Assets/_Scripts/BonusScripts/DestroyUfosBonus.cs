@@ -13,10 +13,6 @@ public class DestroyUfosBonus : BonusManager
 
     private bool _isDebuffed = false;
 
-    private void Awake()
-    {
-        SetChanceToInstantiate();
-    }
     private void Update()
     {
         if (satelDestroyer.isDicharged && !_isDebuffed)

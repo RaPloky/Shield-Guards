@@ -6,27 +6,18 @@ public class EnemySpawnManager : MonoBehaviour
     public GameplayManager satelliteToDamage;
     public GameObject enemyPrefab;
     public float spawnDelay;
-    [Range(0, 100)] 
+    [Range(0, 1)] 
     public float chanceToInstantiate;
     [HideInInspector]
     public bool enemyIsSpawned = false;
     [HideInInspector]
     public bool spawnFreezed = false;
-    [HideInInspector]
-    public bool[] spawnChance;
 
     private Transform _spawnerTrans;
 
     private void Awake()
     {
         _spawnerTrans = gameObject.transform;
-        // 100% for all chances:
-        spawnChance = new bool[100];
-
-        for (byte i = 0; i < chanceToInstantiate; i++)
-        {
-            spawnChance[i] = true;
-        }
     }
     private void Start()
     {
@@ -46,10 +37,9 @@ public class EnemySpawnManager : MonoBehaviour
         yield return new WaitForSeconds(spawnDelay);
 
         if (CheckIfDischarged()) yield break;
-        
-        // Sets a chance from 0% to 100%:
-        int rnd = Random.Range(0, 100);
-        if (spawnChance[rnd] && !enemyIsSpawned && !spawnFreezed)
+
+        float rnd = Random.Range(0f, 1f);
+        if (rnd < chanceToInstantiate && !enemyIsSpawned && !spawnFreezed)
         {
             enemyIsSpawned = true;
             Instantiate(enemyPrefab, _spawnerTrans);
