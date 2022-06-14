@@ -42,10 +42,6 @@ public class GameplayManager : MonoBehaviour
         AddScore();
         ChargeSatellite();
 
-        if (animations.IsPlaying(animations.name))
-        {
-            animations.Stop();
-        }
         animations.Play();
     }
     private void AddScore()
