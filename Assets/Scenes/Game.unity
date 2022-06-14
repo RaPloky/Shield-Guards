@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0136209745, g: 0.0032274544, b: 0.045130983, a: 1}
+  m_IndirectSpecularColor: {r: 0.012500443, g: 0.002952284, b: 0.04119085, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3489,8 +3489,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 7.9
-  chanceToInstantiate: 0.3
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495

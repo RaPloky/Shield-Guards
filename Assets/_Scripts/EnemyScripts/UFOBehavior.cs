@@ -15,7 +15,8 @@ public class UFOBehavior : EnemyCommonValues
         _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         _hitAnim = GetComponent<Animation>();
         SetOnAwake();
-        _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
+        if (_destroyUfosBonus)
+            _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
     }
     private void Start()
     {
@@ -28,13 +29,14 @@ public class UFOBehavior : EnemyCommonValues
         _hitAnim.Play();
         if (enemyHealth <= 0)
         {
-            DestroyAndStartSpawn(_spawnManagerTrans);
-            _destroyUfosBonus.destroyedUfosCurrCount++;
             AddScore();
-            // Instantiate anti-UFO bonus:
-            if (_destroyUfosBonus.destroyedUfosCurrCount >= _destroyUfosBonus.destroyedUfosCountGoal)
+            DestroyAndStartSpawn(_spawnManagerTrans);
+            if (_destroyUfosBonus)
             {
-                _destroyUfosBonus.InstantiateBonus();
+                _destroyUfosBonus.destroyedUfosCurrCount++;
+                // Instantiate anti-UFO bonus:
+                if (_destroyUfosBonus.destroyedUfosCurrCount >= _destroyUfosBonus.destroyedUfosCountGoal)
+                    _destroyUfosBonus.InstantiateBonus();
             }
         }
     }
