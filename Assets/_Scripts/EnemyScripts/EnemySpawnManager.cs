@@ -5,6 +5,7 @@ public class EnemySpawnManager : MonoBehaviour
 {
     public GameplayManager satelliteToDamage;
     public GameObject enemyPrefab;
+    [Range(3f, 20f)]
     public float spawnDelay;
     [Range(0, 1)] 
     public float chanceToInstantiate;

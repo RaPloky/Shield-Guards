@@ -7,8 +7,8 @@ public class UFOBehavior : EnemyCommonValues
     private Animation _hitAnim;
 
     public float attackDelay = 1;
+    public float damageToEnemy;
     public int enemyHealth;
-    public int damageToEnemy;
 
     private void Awake()
     {
@@ -54,6 +54,6 @@ public class UFOBehavior : EnemyCommonValues
     }
     private void TakeDamage()
     {
-        enemyHealth -= Mathf.Abs(damageToEnemy);
+        enemyHealth -= (int)Mathf.Abs(damageToEnemy);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0064965817, g: 0.0015940454, b: 0.02236566, a: 1}
+  m_IndirectSpecularColor: {r: 0.01107425, g: 0.002600396, b: 0.036236797, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diffIncreaseDelay: 15
   firstDiffIncreaseDelay: 15
-  energyUsageIncrement: 1
+  energyUsageIncrement: 0.2
   dischargeDelay: 0.05
   dischargeDelayLimit: 0.35
   satellites:
@@ -1534,8 +1534,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 0.25
+  spawnDelay: 5.6
+  chanceToInstantiate: 0.48
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -2553,8 +2553,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 6
-  chanceToInstantiate: 0.15
+  spawnDelay: 7.9
+  chanceToInstantiate: 0.3
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -2751,8 +2751,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 0.25
+  spawnDelay: 5.6
+  chanceToInstantiate: 0.48
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1067193170
@@ -3612,8 +3612,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 6
-  chanceToInstantiate: 0.15
+  spawnDelay: 7.9
+  chanceToInstantiate: 0.3
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495
@@ -3663,8 +3663,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 0.25
+  spawnDelay: 5.6
+  chanceToInstantiate: 0.48
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -3741,8 +3741,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 6
-  chanceToInstantiate: 0.15
+  spawnDelay: 7.9
+  chanceToInstantiate: 0.3
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181
@@ -5097,7 +5097,7 @@ PrefabInstance:
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: decrementDelay
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
@@ -5107,7 +5107,7 @@ PrefabInstance:
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: energyDecrement
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
@@ -5127,7 +5127,7 @@ PrefabInstance:
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: currentEnergyLevel
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
@@ -5236,7 +5236,7 @@ PrefabInstance:
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: decrementDelay
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
@@ -5246,7 +5246,7 @@ PrefabInstance:
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: energyDecrement
-      value: 3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
@@ -5266,7 +5266,7 @@ PrefabInstance:
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: currentEnergyLevel
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
@@ -5430,7 +5430,7 @@ PrefabInstance:
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: decrementDelay
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
@@ -5440,7 +5440,7 @@ PrefabInstance:
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: energyDecrement
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
@@ -5460,7 +5460,7 @@ PrefabInstance:
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: currentEnergyLevel
-      value: 60
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}

@@ -7,7 +7,8 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] float firstDiffIncreaseDelay;
     #region "Satellites"
     [Header("Satellites")]
-    [SerializeField] int energyUsageIncrement;
+    [Range(0f, 1.5f)]
+    [SerializeField] float energyUsageIncrement;
     [SerializeField] float dischargeDelay;
     [SerializeField] float dischargeDelayLimit;
     public GameplayManager[] satellites;

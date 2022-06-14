@@ -30,19 +30,11 @@ public class ChargeSatellitesBonus : BonusManager
 
         foreach (var satel in Manager.satellites)
         {
-            int currEnergy = satel.currentEnergyLevel;
-            int maxEnergy = satel.maxEnergyLevel;
-
             if (satel.isDicharged) {
                 continue;
             }
-            if (currEnergy + bonusEnergyIncrement < maxEnergy) {
-                satel.currentEnergyLevel += bonusEnergyIncrement;
-            }
-            // Case when currEnergy + bonusEnergyIncrement >= maxEnergy:
-            else {
-                satel.currentEnergyLevel = maxEnergy;
-            }
+            satel.currentEnergyLevel = Mathf.Clamp(satel.currentEnergyLevel + bonusEnergyIncrement, 
+                satel.minEnergyLevel, satel.maxEnergyLevel);            
         }
         bonusCounter--;
     }

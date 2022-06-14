@@ -5,8 +5,8 @@ public class GameplayManager : MonoBehaviour
 {
     [Header("Gameplay")]
     [SerializeField] DifficultyManager DifficultyManager;
-    public int energyIncrement, energyDecrement;
-    public int maxEnergyLevel, minEnergyLevel = 0, currentEnergyLevel;
+    public float energyIncrement, energyDecrement;
+    public float maxEnergyLevel, minEnergyLevel = 0, currentEnergyLevel;
     public float decrementDelay;
     [HideInInspector]
     public bool isDicharged = false;
@@ -20,6 +20,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] Animation animations;
 
     private readonly int _chargeBonusCooldown = 10;
+    private const int ROUND_DECIMALS = 2;
     private bool _enteredChargeBonusCooldown = false;
 
     private void Start()
@@ -49,7 +50,7 @@ public class GameplayManager : MonoBehaviour
     }
     private void AddScore()
     {
-        ScoreCounter.currentScore += energyIncrement * ScoreCounter.scoreMultiplier * DifficultyManager.satellites.Length;
+        ScoreCounter.currentScore += (int)energyIncrement * ScoreCounter.scoreMultiplier * DifficultyManager.satellites.Length;
     }
     private void PowerOffSatellite()
     {
@@ -66,6 +67,7 @@ public class GameplayManager : MonoBehaviour
     private IEnumerator ConstantEnergyDecrement()
     {
         yield return new WaitForSeconds(decrementDelay);
+        currentEnergyLevel = (float)System.Math.Round(currentEnergyLevel, ROUND_DECIMALS);
 
         if (currentEnergyLevel <= minEnergyLevel && isDicharged)
         {
@@ -81,9 +83,9 @@ public class GameplayManager : MonoBehaviour
         {
             currentEnergyLevel = Mathf.Clamp(currentEnergyLevel + energyIncrement, minEnergyLevel, maxEnergyLevel);
         }
-        TryToInstantiateChargeSatellitesBonus();
+        TryToInstantiateChargeBonus();
     }
-    private void TryToInstantiateChargeSatellitesBonus()
+    private void TryToInstantiateChargeBonus()
     {
         if (_enteredChargeBonusCooldown) return;
 

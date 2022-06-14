@@ -11,7 +11,7 @@ public class DischargeShieldBonus : BonusManager
     [SerializeField] int decrementBuff;
     public int criticalEnergyLevel;
     
-    private List<int> _defaultEnergyDecrements;
+    private List<float> _defaultEnergyDecrements;
     private readonly int _invokeDelay = 1;
     private int _secondsInCriticalZone;
     private bool _enteredCriticalEnergyZone = false;
@@ -19,7 +19,7 @@ public class DischargeShieldBonus : BonusManager
 
     private void Awake()
     {
-        _defaultEnergyDecrements = new List<int>();
+        _defaultEnergyDecrements = new List<float>();
         foreach (var satel in DifficultyManager.satellites)
         {
             _defaultEnergyDecrements.Add(satel.energyDecrement);
@@ -60,7 +60,7 @@ public class DischargeShieldBonus : BonusManager
         if (bonusCounter == 0 || PauseMenu.isGamePaused || satelSupport.isDicharged) return;
 
         // "0" bcz number -= 0 is equal to number - energy stay unchanged:
-        SetNewEnergyDecrementValue(new int[] { 0, 0, 0 });
+        SetNewEnergyDecrementValue(new float[] { 0f, 0f, 0f });
         Invoke(nameof(RestoreEnergyDecrement), bonusDuration);
         bonusCounter--;
     }
@@ -68,7 +68,7 @@ public class DischargeShieldBonus : BonusManager
     {
         SetNewEnergyDecrementValue(_defaultEnergyDecrements.ToArray());
     }
-    private void SetNewEnergyDecrementValue(int[] newValues)
+    private void SetNewEnergyDecrementValue(float[] newValues)
     {
         int i = 0;
         foreach (var satel in energyComponents)

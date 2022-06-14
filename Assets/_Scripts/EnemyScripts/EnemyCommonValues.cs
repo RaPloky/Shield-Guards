@@ -2,7 +2,7 @@
 
 abstract public class EnemyCommonValues : MonoBehaviour
 {
-    public int damageToSatellite;
+    public float damageToSatellite;
     public int destroyReward;
 
     protected GameplayManager _satelliteEnergy;
