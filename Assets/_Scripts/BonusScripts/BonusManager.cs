@@ -6,7 +6,6 @@ abstract public class BonusManager : MonoBehaviour
     [Range(0, 1)] 
     public float chanceToInstantiate;
 
-    // Every bonus must have it's own implemention of this:
     abstract public void ActivateBonus();
     public void InstantiateBonus()
     {

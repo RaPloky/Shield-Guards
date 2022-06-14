@@ -67,7 +67,6 @@ public class GameplayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(decrementDelay);
 
-        // Stops coroutine after lose:
         if (currentEnergyLevel <= minEnergyLevel && isDicharged)
         {
             yield break;

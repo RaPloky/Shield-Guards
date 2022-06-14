@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.011735795, g: 0.0027665559, b: 0.0385552, a: 1}
+  m_IndirectSpecularColor: {r: 0.0064965817, g: 0.0015940454, b: 0.02236566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diffIncreaseDelay: 15
   firstDiffIncreaseDelay: 15
-  energyUsageIncrement: 10
+  energyUsageIncrement: 1
   dischargeDelay: 0.05
   dischargeDelayLimit: 0.35
   satellites:
@@ -496,12 +496,12 @@ MonoBehaviour:
     type: 3}
   attackDelayDecrease: 0.05
   delayLimit: 0.35
-  instChanceIncrementUFO: 0
+  instChanceIncrementUFO: 0.1
   MeteorPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   damageIncrease: 50
   damageLimit: 3000
-  instChanceIncrementMeteor: 0
+  instChanceIncrementMeteor: 0.05
   ufoSpawnDelayDecrease: 0.1
   ufoSpawnDelayLimit: 5
   meteorSpawnDelayDecrease: 0.1
@@ -1119,8 +1119,8 @@ MonoBehaviour:
   chanceToInstantiate: 0.32
   Manager: {fileID: 195060218}
   satelCharger: {fileID: 703204588}
-  bonusEnergyIncrement: 1500
-  incrementDebuff: 25
+  bonusEnergyIncrement: 30
+  incrementDebuff: 1
 --- !u!1 &383026179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,8 +1534,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 15
-  chanceToInstantiate: 0.08
+  spawnDelay: 3
+  chanceToInstantiate: 0.25
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -2117,8 +2117,8 @@ MonoBehaviour:
   - {fileID: 490625525}
   bonusDuration: 5
   maxTimeBeingInCriticalZone: 5
-  decrementBuff: 25
-  criticalEnergyLevel: 600
+  decrementBuff: 1
+  criticalEnergyLevel: 25
 --- !u!1 &825672967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,8 +2553,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 15
-  chanceToInstantiate: 0.08
+  spawnDelay: 6
+  chanceToInstantiate: 0.15
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -2751,8 +2751,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 2
-  chanceToInstantiate: 0.35
+  spawnDelay: 3
+  chanceToInstantiate: 0.25
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1067193170
@@ -3612,8 +3612,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 15
-  chanceToInstantiate: 0.08
+  spawnDelay: 6
+  chanceToInstantiate: 0.15
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495
@@ -3663,8 +3663,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 490625525}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 15
-  chanceToInstantiate: 0.08
+  spawnDelay: 3
+  chanceToInstantiate: 0.25
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -3741,8 +3741,8 @@ MonoBehaviour:
   satelliteToDamage: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 15
-  chanceToInstantiate: 0.08
+  spawnDelay: 6
+  chanceToInstantiate: 0.15
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181
@@ -5096,8 +5096,23 @@ PrefabInstance:
       objectReference: {fileID: 780041487}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
+      propertyPath: decrementDelay
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: maxEnergyLevel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
       propertyPath: energyDecrement
-      value: 150
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: energyIncrement
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
@@ -5109,6 +5124,11 @@ PrefabInstance:
       propertyPath: DifficultyManager
       value: 
       objectReference: {fileID: 195060218}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: currentEnergyLevel
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: DischargeShieldBonus
@@ -5215,6 +5235,26 @@ PrefabInstance:
       objectReference: {fileID: 780041487}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
+      propertyPath: decrementDelay
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: maxEnergyLevel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: energyDecrement
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: energyIncrement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
       propertyPath: HighScoreCounter
       value: 
       objectReference: {fileID: 1095149462}
@@ -5223,6 +5263,11 @@ PrefabInstance:
       propertyPath: DifficultyManager
       value: 
       objectReference: {fileID: 195060218}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
+      propertyPath: currentEnergyLevel
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: DischargeShieldBonus
@@ -5384,6 +5429,26 @@ PrefabInstance:
       objectReference: {fileID: 780041487}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
+      propertyPath: decrementDelay
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: maxEnergyLevel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: energyDecrement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: energyIncrement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
       propertyPath: HighScoreCounter
       value: 
       objectReference: {fileID: 1095149462}
@@ -5392,6 +5457,11 @@ PrefabInstance:
       propertyPath: DifficultyManager
       value: 
       objectReference: {fileID: 195060218}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: currentEnergyLevel
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: DischargeShieldBonus

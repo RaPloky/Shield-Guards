@@ -21,7 +21,6 @@ public class ShowEnergyLevel : MonoBehaviour
     {
         _energyLevelToShow.text = _satelliteEnergyComponent.currentEnergyLevel.ToString();
 
-        // Color change indicates about critical energy level:
         if (_satelliteEnergyComponent.currentEnergyLevel <= _criticalEnergyLevel)
             _energyLevelToShow.color = Color.red;
         else

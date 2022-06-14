@@ -54,6 +54,6 @@ public class UFOBehavior : EnemyCommonValues
     }
     private void TakeDamage()
     {
-        enemyHealth -= damageToEnemy;
+        enemyHealth -= Mathf.Abs(damageToEnemy);
     }
 }
