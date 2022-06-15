@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    public GameplayManager satelliteToDamage;
+    public GameplayManager target;
     public GameObject enemyPrefab;
     [Range(3f, 20f)]
     public float spawnDelay;
@@ -27,7 +27,7 @@ public class EnemySpawnManager : MonoBehaviour
     private bool CheckIfDischarged()
     {
         bool isDischarged = false;
-        if (satelliteToDamage.isDicharged)
+        if (target.isDicharged)
         {
             isDischarged = true;
         }

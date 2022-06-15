@@ -78,7 +78,6 @@ public class DifficultyManager : MonoBehaviour
         DecreaseDischargeDelay();
         IncreaseEnergyDecrement();
         IncreaseUFOAttackFrequency();
-        IncreaseMeteorDamage();
         DecreaseUfoSpawnDelay();
         DecreaseMeteorSpawnDelay();
         DecreaseBonusesInstantiateChance();
@@ -105,13 +104,6 @@ public class DifficultyManager : MonoBehaviour
         if (_UFO.attackDelay > delayLimit)
         {
             _UFO.attackDelay -= attackDelayDecrease;
-        }
-    }
-    private void IncreaseMeteorDamage()
-    {
-        if (_Meteor.damageToSatellite < damageLimit)
-        {
-            _Meteor.damageToSatellite += damageIncrease;
         }
     }
     private void DecreaseUfoSpawnDelay()
