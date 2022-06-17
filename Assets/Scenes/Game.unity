@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.01307192, g: 0.0030912473, b: 0.04317371, a: 1}
+  m_IndirectSpecularColor: {r: 0.013344452, g: 0.0031580392, b: 0.044134557, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1399,8 +1399,8 @@ MonoBehaviour:
   target: {fileID: 596667727}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 5.6
-  chanceToInstantiate: 0.48
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -2432,8 +2432,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 7.9
-  chanceToInstantiate: 0.3
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -2642,7 +2642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067193168}
   m_LocalRotation: {x: -0.03350894, y: 0.9634906, z: 0.22250709, w: 0.14509894}
-  m_LocalPosition: {x: 2.2255006, y: 1.755001, z: 78.54}
+  m_LocalPosition: {x: 2.52, y: 1.755001, z: 79.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3543,8 +3543,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 5.6
-  chanceToInstantiate: 0.48
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -3633,7 +3633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486742179}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -11.6, y: 17.101748, z: 44.521667}
+  m_LocalPosition: {x: -8, y: 15.1, z: 44.521667}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
