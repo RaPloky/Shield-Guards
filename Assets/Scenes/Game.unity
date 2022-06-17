@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.013039054, g: 0.0030852288, b: 0.043111134, a: 1}
+  m_IndirectSpecularColor: {r: 0.01307192, g: 0.0030912473, b: 0.04317371, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1204,7 +1204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2.0200043, y: -186.9}
+  m_AnchoredPosition: {x: -2.019989, y: -186.9}
   m_SizeDelta: {x: -185.05174, y: 51.171997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482971760
@@ -2630,8 +2630,8 @@ MonoBehaviour:
   target: {fileID: 703204588}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 5.6
-  chanceToInstantiate: 0.48
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1067193170
@@ -2642,7 +2642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067193168}
   m_LocalRotation: {x: -0.03350894, y: 0.9634906, z: 0.22250709, w: 0.14509894}
-  m_LocalPosition: {x: 2.2255006, y: 1.755001, z: 80.233505}
+  m_LocalPosition: {x: 2.2255006, y: 1.755001, z: 78.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
