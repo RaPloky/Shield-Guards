@@ -46,7 +46,7 @@ public class GameplayManager : MonoBehaviour
     }
     private void AddScore()
     {
-        ScoreCounter.currentScore += (int)energyIncrement * ScoreCounter.scoreMultiplier * DifficultyManager.satellites.Length;
+        ScoreCounter.currentScore += (int)energyIncrement * DifficultyManager.satellites.Length;
     }
     private void PowerOffSatellite()
     {

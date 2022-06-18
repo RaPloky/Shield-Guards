@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.013252303, g: 0.0031355275, b: 0.043810897, a: 1}
+  m_IndirectSpecularColor: {r: 0.012701771, g: 0.0030050864, b: 0.04198485, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1545,8 +1545,8 @@ MonoBehaviour:
   target: {fileID: 596667727}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 5.3
+  chanceToInstantiate: 0.5
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -1853,7 +1853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
-  scoreMultiplier: 1
 --- !u!1 &782319077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,7 +2603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1725758830}
   lookAt: {fileID: 3155095433423450823}
-  smoothSpeed: 0.75
+  smoothSpeed: 0.7
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2653,8 +2652,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 8.4
+  chanceToInstantiate: 0.5
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -3787,8 +3786,8 @@ MonoBehaviour:
   target: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 10.7
+  chanceToInstantiate: 0.5
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495
@@ -3838,8 +3837,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 10.8
+  chanceToInstantiate: 0.5
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -3916,8 +3915,8 @@ MonoBehaviour:
   target: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 12.3
+  chanceToInstantiate: 0.5
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181

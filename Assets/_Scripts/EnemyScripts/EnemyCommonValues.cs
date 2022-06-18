@@ -31,6 +31,6 @@ abstract public class EnemyCommonValues : MonoBehaviour
     }
     public void AddScore()
     {
-        _scoreCounter.currentScore += destroyReward * _scoreCounter.scoreMultiplier;
+        _scoreCounter.currentScore += destroyReward;
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CameraSwipeControl : MonoBehaviour, IBeginDragHandler, IDragHandler

@@ -5,7 +5,7 @@ public class EnemySpawnManager : MonoBehaviour
 {
     public GameplayManager target;
     public GameObject enemyPrefab;
-    [Range(3f, 20f)]
+    [Range(3f, 15f)]
     public float spawnDelay;
     [Range(0, 1)] 
     public float chanceToInstantiate;
@@ -35,7 +35,8 @@ public class EnemySpawnManager : MonoBehaviour
     }
     public IEnumerator TryToSpawn()
     {
-        yield return new WaitForSeconds(spawnDelay);
+        float spawnRandDelay = Random.Range(0f, 1f);
+        yield return new WaitForSeconds(spawnDelay + spawnRandDelay);
 
         if (CheckIfDischarged()) yield break;
 
