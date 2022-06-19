@@ -928,7 +928,7 @@ Animator:
   m_GameObject: {fileID: 491634746}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8541b72bf938bc641a245b2b11a514bf, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2ef03491f58c434a87c8b0c098a54e8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2221,6 +2221,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1525688509407347453, guid: 82f5573faf12d9a478e83fb304f38c6f,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 491634749}
     - target: {fileID: 1525688509407347453, guid: 82f5573faf12d9a478e83fb304f38c6f,
         type: 3}
       propertyPath: transition
