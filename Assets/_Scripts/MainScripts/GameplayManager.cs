@@ -28,6 +28,11 @@ public class GameplayManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ConstantEnergyDecrement());
+        StartIdleAnimation();
+    }
+    private void StartIdleAnimation()
+    {
+        GetComponent<Animator>().Play(bodyAnimName);
     }
     private void Update()
     {
