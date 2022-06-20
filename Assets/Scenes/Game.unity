@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.013234707, g: 0.0031322758, b: 0.043776017, a: 1}
+  m_IndirectSpecularColor: {r: 0.013355223, g: 0.0031618467, b: 0.044194706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 329890398}
   - component: {fileID: 329890401}
   - component: {fileID: 329890402}
+  - component: {fileID: 329890403}
   m_Layer: 5
   m_Name: ChargeBonus
   m_TagString: ChargeBonus
@@ -1209,6 +1210,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satellite: {fileID: 703204588}
+--- !u!95 &329890403
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329890396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0fe946ae104ee94b949d76f6194d685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &383026179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,7 +1279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &465305865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1350,7 +1370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2.019989, y: -186.9}
+  m_AnchoredPosition: {x: -2.0200195, y: -186.9}
   m_SizeDelta: {x: -185.05174, y: 51.171997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482971760
@@ -2137,6 +2157,7 @@ GameObject:
   - component: {fileID: 825052908}
   - component: {fileID: 825052911}
   - component: {fileID: 825052912}
+  - component: {fileID: 825052913}
   m_Layer: 5
   m_Name: ShieldBonus
   m_TagString: ShieldBonus
@@ -2292,6 +2313,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satellite: {fileID: 490625525}
+--- !u!95 &825052913
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825052906}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0fe946ae104ee94b949d76f6194d685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &825672967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,7 +3729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.1, y: -11}
+  m_AnchoredPosition: {x: -14.099976, y: -11}
   m_SizeDelta: {x: 54.813263, y: 56}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1257892866
@@ -4383,6 +4423,7 @@ GameObject:
   - component: {fileID: 1593458057}
   - component: {fileID: 1593458060}
   - component: {fileID: 1593458061}
+  - component: {fileID: 1593458062}
   m_Layer: 5
   m_Name: DestroyUfosBonus
   m_TagString: DestroyUfosBonus
@@ -4535,6 +4576,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satellite: {fileID: 596667727}
+--- !u!95 &1593458062
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593458055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0fe946ae104ee94b949d76f6194d685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1637550479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1525688509407347452, guid: 82f5573faf12d9a478e83fb304f38c6f,
@@ -5423,6 +5483,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 329890403}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
       propertyPath: ChargeBonus
       value: 
       objectReference: {fileID: 329890401}
@@ -5562,6 +5627,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 825052913}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
       propertyPath: ChargeBonus
       value: 
       objectReference: {fileID: 329890401}
@@ -5613,7 +5683,7 @@ PrefabInstance:
     - target: {fileID: 3137816481915902135, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902135, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
@@ -5756,6 +5826,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1593458062}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
       propertyPath: ChargeBonus
       value: 
       objectReference: {fileID: 329890401}
@@ -5812,7 +5887,7 @@ PrefabInstance:
     - target: {fileID: 3697162973435418587, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418587, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
