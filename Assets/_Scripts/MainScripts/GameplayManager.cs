@@ -17,8 +17,9 @@ public class GameplayManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] PauseMenu Canvas;
     [Header("Animations")]
-    [SerializeField] Animation animations;
-    [SerializeField] Animator controller;
+    [SerializeField] Animator bonusButtContr;
+    [SerializeField] Animator bodyContr;
+    [SerializeField] string bodyAnimName;
 
     private readonly int _chargeBonusCooldown = 10;
     private const int ROUND_DECIMALS = 2;
@@ -43,8 +44,8 @@ public class GameplayManager : MonoBehaviour
         AddScore();
         ChargeSatellite();
 
-        animations.Play();
-        controller.Play("ChangeSize", -1, 0f);
+        bodyContr.Play(bodyAnimName, -1, 0f);
+        bonusButtContr.Play("ChangeSize", -1, 0f);
     }
     private void AddScore()
     {
