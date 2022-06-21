@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.012821354, g: 0.0030335854, b: 0.04238281, a: 1}
+  m_IndirectSpecularColor: {r: 0.013421541, g: 0.0031775262, b: 0.04441559, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1279,7 +1279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &465305865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4309,8 +4309,8 @@ MonoBehaviour:
   target: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 12.3
-  chanceToInstantiate: 0.5
+  spawnDelay: 3
+  chanceToInstantiate: 1
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181
