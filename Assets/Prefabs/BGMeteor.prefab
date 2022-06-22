@@ -110,12 +110,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5181030111862794142}
   - component: {fileID: 5181030111862794137}
-  - component: {fileID: 5181030111862794136}
   - component: {fileID: 5181030111862794139}
   - component: {fileID: 352878400929964997}
   - component: {fileID: 6156690065272668308}
+  - component: {fileID: 4824460181840668324}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: BGMeteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,25 +147,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.23
+  m_Radius: 0.84
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5181030111862794136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181030111862794138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb46828c0343f94e9a9966f227eaf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageToSatellite: 25
-  destroyReward: 750
-  addForceMultiplier: 120
-  inputPosAskedDifference: 150
-  speed: 15
 --- !u!54 &5181030111862794139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -304,3 +287,16 @@ TrailRenderer:
   m_MinVertexDistance: 0.63
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &4824460181840668324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181030111862794138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a0f27b96fa17543b1f92175f0d913c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 35
