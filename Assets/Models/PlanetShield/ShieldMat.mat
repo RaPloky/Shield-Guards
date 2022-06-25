@@ -159,7 +159,7 @@ Material:
     - _EnableHeightBlend: 0
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 0
-    - _FresnelPower: 3.75
+    - _FresnelPower: 6.47
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -192,6 +192,7 @@ Material:
     - _Surface: 0
     - _UVSec: 0
     - _UseUIAlphaClip: 0
+    - _VertexFrequency: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -199,9 +200,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 0, g: 2.0541432, b: 1.7207954, a: 1}
+    - _FresnelColor: {r: 0, g: 13.277023, b: 44.72706, a: 1}
     - _FrontColor: {r: 1.8069718, g: 0.54684675, b: 6.0628657, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _VertexAmount: {r: 0.00075, g: 0.00075, b: 0.00075, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9209299780416406287
 MonoBehaviour:
