@@ -159,6 +159,7 @@ Material:
     - _EnableHeightBlend: 0
     - _EnableInstancedPerPixelNormal: 1
     - _EnvironmentReflections: 0
+    - _FresnelPower: 3.75
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -194,10 +195,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BackColor: {r: 0.36037776, g: 0.26102805, b: 0.42897633, a: 1}
+    - _BackColor: {r: 0.12023429, g: 0.041711334, b: 0.17338832, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 0, g: 2.0541432, b: 1.7207954, a: 1}
     - _FrontColor: {r: 1.8069718, g: 0.54684675, b: 6.0628657, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
