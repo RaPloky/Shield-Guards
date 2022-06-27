@@ -117,8 +117,8 @@ GameObject:
   - component: {fileID: 5181030111862794137}
   - component: {fileID: 5181030111862794136}
   - component: {fileID: 5181030111862794139}
-  - component: {fileID: 352878400929964997}
   - component: {fileID: 6156690065272668308}
+  - component: {fileID: 9086023250048778008}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5181030111862794138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0, z: 0}
+  m_LocalPosition: {x: -0.16, y: 0, z: 0}
   m_LocalScale: {x: 0.86, y: 0.86, z: 0.86}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -188,22 +188,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!111 &352878400929964997
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5181030111862794138}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!96 &6156690065272668308
 TrailRenderer:
   serializedVersion: 2
@@ -254,17 +238,17 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.11538249
-        value: 0.8028164
-        inSlope: 0
-        outSlope: 0
+        time: 0
+        value: 0.6778164
+        inSlope: 0.3338434
+        outSlope: 0.3338434
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.4411494
       - serializedVersion: 3
-        time: 0.923096
-        value: 0.09992218
+        time: 0.9145053
+        value: 0.11458588
         inSlope: -0.47225317
         outSlope: -0.47225317
         tangentMode: 0
@@ -277,7 +261,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0.72533935, b: 0, a: 1}
+      key1: {r: 1, g: 0.72533935, b: 0, a: 0.5176471}
       key2: {r: 0.495283, g: 0.8733458, b: 1, a: 0}
       key3: {r: 1, g: 1, b: 1, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -293,7 +277,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 56861
+      atime1: 65150
       atime2: 0
       atime3: 0
       atime4: 0
@@ -309,6 +293,26 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.63
+  m_MinVertexDistance: 0.5
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!95 &9086023250048778008
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181030111862794138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c79a2de663bf7d4cb560372bcb0e183, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
