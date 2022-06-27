@@ -45,15 +45,9 @@ public class MeteorBehavior : EnemyCommonValues
     private void FixedUpdate()
     {
         if (!_isMeteorDraggedAway) 
-        {
-            _meteorRb.AddTorque(-transform.position.x * addForceMultiplier,
-                -transform.position.y * addForceMultiplier, 0, ForceMode.Impulse);
             FollowSatelliteToDamageIt();
-        }
         else
-        {
             DragMeteorAway();
-        }
     }
     private void OnCollisionEnter(Collision coll)
     {
