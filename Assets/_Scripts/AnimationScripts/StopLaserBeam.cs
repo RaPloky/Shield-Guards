@@ -1,31 +1,51 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StopLaserBeam : MonoBehaviour
 {
+    [SerializeField] LineRenderer laser;
+    [SerializeField] Vector3 laserEnd;
     [SerializeField] Animator beamBeginning;
+    [SerializeField] Animator particlesBeginning;
     [SerializeField] Animator beamEnding;
-    [SerializeField] float offEndBeamInSec;
+    [SerializeField] Animator particlesEnd;
+    [SerializeField] [Range(0f, 2f)] float offEndBeamInSec;
     private GameplayManager _satellite;
+    private bool _isLaserOff = false;
+    private float _descaleDelay;
 
     private void Awake()
     {
         _satellite = GetComponent<GameplayManager>();
+        _descaleDelay = Mathf.Abs(offEndBeamInSec / laser.GetPosition(0).z);
     }
 
     private void Update()
     {
-        if (_satellite.isDicharged)
+        if (_satellite.isDicharged && !_isLaserOff)
         {
-            beamBeginning.Play("BeamEnd");
+            _isLaserOff = true;
+            beamBeginning.Play("OffStartBeam");
+            particlesBeginning.Play("OffStartParticles");
+            StartCoroutine(IDescaleLaser(_descaleDelay));
             StartCoroutine(IOffBeamInSeconds(offEndBeamInSec));
-            beamEnding.Play("BeamEnd");
         }
     }
 
     private IEnumerator IOffBeamInSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        beamEnding.Play("OffEndBeam");
+        particlesEnd.Play("OffEndParticles");
     }
+
+    private IEnumerator IDescaleLaser(float descaleDelay)
+    {
+        yield return new WaitForSeconds(descaleDelay);
+        float laserLength = laser.GetPosition(1).z + 1;
+        if (laserLength == -1) yield break;
+
+        laser.SetPosition(1, new Vector3(0f, 0f, laserLength));
+        StartCoroutine(IDescaleLaser(descaleDelay));
+    } 
 }
