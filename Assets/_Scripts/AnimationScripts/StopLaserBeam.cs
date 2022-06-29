@@ -4,7 +4,7 @@ using UnityEngine;
 public class StopLaserBeam : MonoBehaviour
 {
     [SerializeField] LineRenderer laser;
-    [SerializeField] Vector3 laserEnd;
+    [SerializeField] [Range(0f, 50f)] float laserLimitZ;
     [SerializeField] Animator beamBeginning;
     [SerializeField] Animator particlesBeginning;
     [SerializeField] Animator beamEnding;
@@ -43,7 +43,7 @@ public class StopLaserBeam : MonoBehaviour
     {
         yield return new WaitForSeconds(descaleDelay);
         float laserLength = laser.GetPosition(1).z + 1;
-        if (laserLength == -1) yield break;
+        if (laserLength == laserLimitZ + 1) yield break;
 
         laser.SetPosition(1, new Vector3(0f, 0f, laserLength));
         StartCoroutine(IDescaleLaser(descaleDelay));

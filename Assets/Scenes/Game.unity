@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.011548448, g: 0.0027495846, b: 0.038437583, a: 1}
+  m_IndirectSpecularColor: {r: 0.01050571, g: 0.002542363, b: 0.03561699, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3646,7 +3646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1367851282}
-  laserEnd: {x: 0, y: 0, z: 0}
+  laserLimitZ: 30
   beamBeginning: {fileID: 1338361262}
   particlesBeginning: {fileID: 1507667476}
   beamEnding: {fileID: 1016355079}
@@ -5254,7 +5254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 109157072}
-  laserEnd: {x: 0, y: 0, z: 0}
+  laserLimitZ: 30
   beamBeginning: {fileID: 1316169804}
   particlesBeginning: {fileID: 1248027869}
   beamEnding: {fileID: 1257261389}
@@ -7373,7 +7373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 1772813917}
-  laserEnd: {x: 0, y: 0, z: 0}
+  laserLimitZ: 30
   beamBeginning: {fileID: 1612435632}
   particlesBeginning: {fileID: 2029965517}
   beamEnding: {fileID: 1391159936}
