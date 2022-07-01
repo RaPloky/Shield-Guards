@@ -15,6 +15,7 @@ public class UFOBehavior : EnemyCommonValues
         _spawnManagerTrans = gameObject.transform.parent.gameObject.GetComponent<Transform>();
         _hitAnim = GetComponent<Animation>();
         SetOnAwake();
+        // If bonus is active:
         if (_destroyUfosBonus)
             _destroyUfosBonus = GameObject.FindGameObjectWithTag("DestroyUfosBonus").GetComponent<DestroyUfosBonus>();
     }
@@ -24,7 +25,9 @@ public class UFOBehavior : EnemyCommonValues
     }
     private void OnMouseDown()
     {
-        if (PauseMenu.isGamePaused) return;
+        if (PauseMenu.isGamePaused) 
+            return;
+
         TakeDamage();
         _hitAnim.Play();
         if (enemyHealth <= 0)
@@ -42,16 +45,14 @@ public class UFOBehavior : EnemyCommonValues
     }
     private IEnumerator DamagePlayer()
     {
-        yield return new WaitForSeconds(attackDelay);
+        while (true)
+        {
+            yield return new WaitForSeconds(attackDelay);
 
-        if (_satelliteEnergy.isDicharged)
-        {
-            yield break;
-        }
-        else
-        {
-            DoDamage(_satelliteEnergy);
-            StartCoroutine(DamagePlayer());
+            if (_satelliteEnergy.isDicharged)
+                yield break;
+            else
+                DoDamage(_satelliteEnergy);
         }
     }
     private void TakeDamage()

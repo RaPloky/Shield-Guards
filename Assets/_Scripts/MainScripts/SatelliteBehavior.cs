@@ -1,38 +1,24 @@
 ﻿﻿using System.Collections;
 using UnityEngine;
 
-public class GameplayManager : MonoBehaviour
+public class SatelliteBehavior : MonoBehaviour
 {
-    [Header("Gameplay")]
     [SerializeField] DifficultyManager DifficultyManager;
     public float energyIncrement, energyDecrement;
     public float maxEnergyLevel, minEnergyLevel = 0, currentEnergyLevel;
     public float decrementDelay;
     [HideInInspector]
     public bool isDicharged = false;
-    [Header("Score")]
-    [SerializeField] ScoreCounter ScoreCounter;
-    [Header("Bonuses")]
     public ChargeSatellitesBonus ChargeBonus;
-    [Header("UI")]
-    [SerializeField] PauseMenu Canvas;
-    [Header("Animations")]
-    [SerializeField] Animator bonusButtContr;
-    [SerializeField] Animator bodyContr;
-    [SerializeField] string bodyAnimName;
+    [SerializeField] PauseMenu GameOverMenu;
 
-    private readonly int _chargeBonusCooldown = 10;
     private const int ROUND_DECIMALS = 2;
+    private int _chargeBonusCooldown = 10;
     private bool _enteredChargeBonusCooldown = false;
 
     private void Start()
     {
         StartCoroutine(ConstantEnergyDecrement());
-        StartIdleAnimation();
-    }
-    private void StartIdleAnimation()
-    {
-        GetComponent<Animator>().Play(bodyAnimName);
     }
     private void Update()
     {
@@ -45,16 +31,9 @@ public class GameplayManager : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (isDicharged || PauseMenu.isGamePaused) return;
-        AddScore();
+        if (isDicharged || PauseMenu.isGamePaused) 
+            return;
         ChargeSatellite();
-
-        bodyContr.Play(bodyAnimName, -1, 0f);
-        bonusButtContr.Play("ChangeSize", -1, 0f);
-    }
-    private void AddScore()
-    {
-        ScoreCounter.currentScore += (int)energyIncrement * DifficultyManager.satellites.Length;
     }
     private void PowerOffSatellite()
     {
@@ -66,19 +45,15 @@ public class GameplayManager : MonoBehaviour
     }
     private void EndGame()
     {
-        Canvas.LoadLoseMenu();
+        GameOverMenu.LoadLoseMenu();
     }
     private IEnumerator ConstantEnergyDecrement()
     {
-        while (true)
+        while (!(currentEnergyLevel <= minEnergyLevel && isDicharged))
         {
             yield return new WaitForSeconds(decrementDelay);
             currentEnergyLevel = (float)System.Math.Round(currentEnergyLevel, ROUND_DECIMALS);
 
-            if (currentEnergyLevel <= minEnergyLevel && isDicharged)
-            {
-                yield break;
-            }
             currentEnergyLevel = Mathf.Clamp(currentEnergyLevel - energyDecrement, minEnergyLevel, maxEnergyLevel);
         }
     }

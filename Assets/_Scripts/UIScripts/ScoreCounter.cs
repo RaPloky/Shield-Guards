@@ -3,16 +3,25 @@ using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
 {
-    private TextMeshProUGUI _scoreText;
-    public int currentScore;
+    static public int currentScore;
+    static public TextMeshProUGUI scoreText;
 
-    void Awake()
+    [SerializeField] TextMeshProUGUI scoreComponent;
+    [SerializeField] DifficultyManager manager;
+    private SatelliteBehavior _thatSatellite;
+
+    private void Awake()
     {
-        _scoreText = gameObject.GetComponent<TextMeshProUGUI>();
+        _thatSatellite = GetComponent<SatelliteBehavior>();
+        scoreText = scoreComponent;
     }
-
-    void Update()
+    private void OnMouseDown()
     {
-        _scoreText.text = currentScore.ToString();
+        AddScore();
+        scoreText.text = currentScore.ToString();
+    }
+    private void AddScore()
+    {
+        currentScore += (int)_thatSatellite.energyIncrement * manager.satellites.Length;
     }
 }

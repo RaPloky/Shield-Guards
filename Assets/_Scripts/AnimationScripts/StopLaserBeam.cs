@@ -10,13 +10,13 @@ public class StopLaserBeam : MonoBehaviour
     [SerializeField] Animator beamEnding;
     [SerializeField] Animator particlesEnd;
     [SerializeField] [Range(0f, 2f)] float offEndBeamInSec;
-    private GameplayManager _satellite;
+    private SatelliteBehavior _satellite;
     private bool _isLaserOff = false;
     private float _descaleDelay;
 
     private void Awake()
     {
-        _satellite = GetComponent<GameplayManager>();
+        _satellite = GetComponent<SatelliteBehavior>();
         _descaleDelay = Mathf.Abs(offEndBeamInSec / laser.GetPosition(0).z);
     }
 

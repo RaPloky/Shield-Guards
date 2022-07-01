@@ -2,7 +2,7 @@
 public class ChargeSatellitesBonus : BonusManager
 {
     [SerializeField] DifficultyManager Manager;
-    [SerializeField] GameplayManager satelCharger;
+    [SerializeField] SatelliteBehavior satelCharger;
     [SerializeField] int bonusEnergyIncrement;
     [SerializeField] int incrementDebuff;
 

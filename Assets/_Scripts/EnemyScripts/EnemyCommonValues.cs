@@ -5,17 +5,12 @@ abstract public class EnemyCommonValues : MonoBehaviour
     public float damageToSatellite;
     public int destroyReward;
 
-    protected GameplayManager _satelliteEnergy;
+    protected SatelliteBehavior _satelliteEnergy;
     protected GameObject _satelliteToDamage;
     protected Transform _spawnManagerTrans;
-    protected ScoreCounter _scoreCounter;
 
     private const int _childOrderInHierarchy = 0;
 
-    protected void DoDamage(GameplayManager satel)
-    {
-        satel.currentEnergyLevel = Mathf.Clamp(satel.currentEnergyLevel - damageToSatellite, satel.minEnergyLevel, satel.maxEnergyLevel);
-    }
     public void DestroyAndStartSpawn(Transform spawnerTrans)
     {
         Destroy(spawnerTrans.GetChild(_childOrderInHierarchy).gameObject);
@@ -23,14 +18,22 @@ abstract public class EnemyCommonValues : MonoBehaviour
         spawnerTrans.gameObject.GetComponent<EnemySpawnManager>().enemyIsSpawned = false;
         spawnerTrans.gameObject.GetComponent<EnemySpawnManager>().StartSpawn();
     }
+    protected void DoDamage(SatelliteBehavior satel)
+    {
+        satel.currentEnergyLevel = Mathf.Clamp(satel.currentEnergyLevel - damageToSatellite, satel.minEnergyLevel, satel.maxEnergyLevel);
+    }
     protected void SetOnAwake()
     {
-        _scoreCounter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
         _satelliteToDamage = _spawnManagerTrans.gameObject.GetComponent<EnemySpawnManager>().target.gameObject;
-        _satelliteEnergy = _satelliteToDamage.GetComponent<GameplayManager>();
+        _satelliteEnergy = _satelliteToDamage.GetComponent<SatelliteBehavior>();
     }
-    public void AddScore()
+    protected void AddScore()
     {
-        _scoreCounter.currentScore += destroyReward;
+        ScoreCounter.currentScore += destroyReward;
+        UpdateScore();
+    }
+    private void UpdateScore()
+    {
+        ScoreCounter.scoreText.text = ScoreCounter.currentScore.ToString();
     }
 }

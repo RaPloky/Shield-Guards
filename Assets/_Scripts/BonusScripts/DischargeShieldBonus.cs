@@ -4,8 +4,8 @@ using UnityEngine;
 public class DischargeShieldBonus : BonusManager
 {
     [SerializeField] DifficultyManager DifficultyManager;
-    [SerializeField] GameplayManager satelSupport;
-    [SerializeField] List<GameplayManager> energyComponents;
+    [SerializeField] SatelliteBehavior satelSupport;
+    [SerializeField] List<SatelliteBehavior> energyComponents;
     [SerializeField] int bonusDuration;
     [SerializeField] int maxTimeBeingInCriticalZone = 10;
     [SerializeField] int decrementBuff;

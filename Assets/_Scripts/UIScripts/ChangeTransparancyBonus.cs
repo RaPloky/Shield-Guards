@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ChangeTransparancyBonus : MonoBehaviour
 {
-    [SerializeField] private GameplayManager satellite;
+    [SerializeField] private SatelliteBehavior satellite;
     private Image _buttonImage;
 
     private void Awake()

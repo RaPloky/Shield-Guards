@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    public GameplayManager target;
+    public SatelliteBehavior target;
     public GameObject enemyPrefab;
     [Range(3f, 15f)]
     public float spawnDelay;

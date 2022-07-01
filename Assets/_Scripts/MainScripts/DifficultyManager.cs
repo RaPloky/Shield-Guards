@@ -11,7 +11,7 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] float energyUsageIncrement;
     [SerializeField] float dischargeDelay;
     [SerializeField] float dischargeDelayLimit;
-    public GameplayManager[] satellites;
+    public SatelliteBehavior[] satellites;
     [HideInInspector]
     public List<GameObject> activeSatellites;
     #endregion

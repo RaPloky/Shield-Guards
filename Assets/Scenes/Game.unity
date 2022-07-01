@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.009801492, g: 0.0022796178, b: 0.031803105, a: 1}
+  m_IndirectSpecularColor: {r: 0.006590261, g: 0.0016282252, b: 0.022904264, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -646,8 +646,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195060217}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.8852, y: -0.07340801, z: 300.99527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1996,8 +1996,8 @@ MonoBehaviour:
   target: {fileID: 596667727}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 5.3
-  chanceToInstantiate: 0
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -2236,10 +2236,9 @@ GameObject:
   - component: {fileID: 780041484}
   - component: {fileID: 780041486}
   - component: {fileID: 780041485}
-  - component: {fileID: 780041487}
   m_Layer: 5
   m_Name: CurrentScore
-  m_TagString: Score
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2363,19 +2362,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780041483}
   m_CullTransparentMesh: 0
---- !u!114 &780041487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780041483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be62667de88782e46acb62f414de2ef6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
 --- !u!1 &782319077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,8 +3519,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 8.2
-  chanceToInstantiate: 0
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -3652,6 +3638,35 @@ MonoBehaviour:
   beamEnding: {fileID: 1016355079}
   particlesEnd: {fileID: 683859162}
   offEndBeamInSec: 1
+--- !u!114 &1051192118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051192110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be62667de88782e46acb62f414de2ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreComponent: {fileID: 780041485}
+  manager: {fileID: 195060218}
+--- !u!114 &1051192119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051192110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263ba8c3a027f0842ada2a2d3b2cc1e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusButtContr: {fileID: 1593458062}
+  bodyContr: {fileID: 1953182684}
+  bodyAnimName: Destroyer
 --- !u!1 &1055768784
 GameObject:
   m_ObjectHideFlags: 0
@@ -3835,8 +3850,8 @@ MonoBehaviour:
   target: {fileID: 703204588}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 1
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1067193170
@@ -4920,8 +4935,8 @@ MonoBehaviour:
   target: {fileID: 596667727}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 4.9
-  chanceToInstantiate: 0
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495
@@ -5072,8 +5087,8 @@ MonoBehaviour:
   target: {fileID: 490625525}
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
-  spawnDelay: 10.8
-  chanceToInstantiate: 0
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -5260,6 +5275,35 @@ MonoBehaviour:
   beamEnding: {fileID: 1257261389}
   particlesEnd: {fileID: 1431319152}
   offEndBeamInSec: 1
+--- !u!114 &1351323424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351323416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be62667de88782e46acb62f414de2ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreComponent: {fileID: 780041485}
+  manager: {fileID: 195060218}
+--- !u!114 &1351323425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351323416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263ba8c3a027f0842ada2a2d3b2cc1e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusButtContr: {fileID: 825052913}
+  bodyContr: {fileID: 1232070778}
+  bodyAnimName: Support
 --- !u!120 &1367851282 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 7792776896122474365, guid: 3ef05b09a18604540903f02dc7964851,
@@ -5399,8 +5443,8 @@ MonoBehaviour:
   target: {fileID: 703204588}
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
-  spawnDelay: 3
-  chanceToInstantiate: 0
+  spawnDelay: 4.84
+  chanceToInstantiate: 0.591
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181
@@ -7189,11 +7233,16 @@ PrefabInstance:
     - target: {fileID: 1113555545198104987, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
+      propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 788322775}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
@@ -7213,9 +7262,14 @@ PrefabInstance:
       objectReference: {fileID: 329890401}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
+      propertyPath: GameOverMenu
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
+        type: 3}
       propertyPath: ScoreCounter
       value: 
-      objectReference: {fileID: 780041487}
+      objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: bodyAnimName
@@ -7379,6 +7433,35 @@ MonoBehaviour:
   beamEnding: {fileID: 1391159936}
   particlesEnd: {fileID: 157203399}
   offEndBeamInSec: 1
+--- !u!114 &2945086110817505043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703204587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be62667de88782e46acb62f414de2ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreComponent: {fileID: 780041485}
+  manager: {fileID: 195060218}
+--- !u!114 &2945086110817505044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703204587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263ba8c3a027f0842ada2a2d3b2cc1e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonusButtContr: {fileID: 329890403}
+  bodyContr: {fileID: 809181746}
+  bodyAnimName: Charger
 --- !u!1001 &3137816482265219395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7437,6 +7520,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
       propertyPath: bodyContr
       value: 
       objectReference: {fileID: 1232070778}
@@ -7452,9 +7540,14 @@ PrefabInstance:
       objectReference: {fileID: 329890401}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
+      propertyPath: GameOverMenu
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
+        type: 3}
       propertyPath: ScoreCounter
       value: 
-      objectReference: {fileID: 780041487}
+      objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: bodyAnimName
@@ -7696,6 +7789,11 @@ PrefabInstance:
       objectReference: {fileID: 788322775}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
       propertyPath: bodyContr
       value: 
       objectReference: {fileID: 1953182684}
@@ -7711,9 +7809,14 @@ PrefabInstance:
       objectReference: {fileID: 329890401}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
+      propertyPath: GameOverMenu
+      value: 
+      objectReference: {fileID: 788322775}
+    - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
       propertyPath: ScoreCounter
       value: 
-      objectReference: {fileID: 780041487}
+      objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: bodyAnimName

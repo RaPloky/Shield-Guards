@@ -53,7 +53,7 @@ public class MeteorBehavior : EnemyCommonValues
     {
         if (coll.gameObject.CompareTag("Satellite") && !_isCollisionDetected)
         {
-            if (coll.gameObject.GetComponent<GameplayManager>().currentEnergyLevel > 0)
+            if (coll.gameObject.GetComponent<SatelliteBehavior>().currentEnergyLevel > 0)
             {
                 DoDamage(_satelliteEnergy);
             }
