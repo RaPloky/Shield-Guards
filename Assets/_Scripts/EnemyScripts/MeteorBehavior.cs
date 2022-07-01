@@ -22,19 +22,22 @@ public class MeteorBehavior : EnemyCommonValues
     private void OnMouseOver()
     {
         // Reject to drag the same meteor again:
-        if (_isMeteorDraggedAway || PauseMenu.isGamePaused) return;
+        if (_isMeteorDraggedAway || PauseMenu.isGamePaused) 
+            return;
         _prevInputPos = Input.mousePosition;
     }
     private void OnMouseDrag()
     {
-        if (_isMeteorDraggedAway || PauseMenu.isGamePaused) return;
+        if (_isMeteorDraggedAway || PauseMenu.isGamePaused) 
+            return;
 
         _currInputPos = Input.mousePosition;
         DragMeteor();
     }
     private void DragMeteor()
     {
-        if (PauseMenu.isGamePaused) return;
+        if (PauseMenu.isGamePaused) 
+            return;
         if (Mathf.Abs(_currInputPos.y - _prevInputPos.y) >= inputPosAskedDifference)
         {
             _isMeteorDraggedAway = true;

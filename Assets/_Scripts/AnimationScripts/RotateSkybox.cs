@@ -9,9 +9,7 @@ public class RotateSkybox : MonoBehaviour
     private void Awake()
     {
         if (isRandomize)
-        {
             rotateSpeed = Random.Range(-randomizeRange, randomizeRange);
-        }
     }
     private void Update()
     {

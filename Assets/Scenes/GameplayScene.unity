@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.006590261, g: 0.0016282252, b: 0.022904264, a: 1}
+  m_IndirectSpecularColor: {r: 0.013334544, g: 0.0031567812, b: 0.044122797, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1249,8 +1249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79445e1c0c12a04786b4de57855b661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusCounter: 1
+  bonusCount: 1
   chanceToInstantiate: 0.32
+  bonusCountUI: {fileID: 1055768786}
   Manager: {fileID: 195060218}
   satelCharger: {fileID: 703204588}
   bonusEnergyIncrement: 30
@@ -2847,8 +2848,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad5247eef01d474281c4c545d7b94dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusCounter: 1
+  bonusCount: 1
   chanceToInstantiate: 0.32
+  bonusCountUI: {fileID: 1196009953}
   DifficultyManager: {fileID: 195060218}
   satelSupport: {fileID: 490625525}
   energyComponents:
@@ -3651,6 +3653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreComponent: {fileID: 780041485}
+  highScore: {fileID: 1095149463}
   manager: {fileID: 195060218}
 --- !u!114 &1051192119
 MonoBehaviour:
@@ -3678,7 +3681,6 @@ GameObject:
   - component: {fileID: 1055768785}
   - component: {fileID: 1055768787}
   - component: {fileID: 1055768786}
-  - component: {fileID: 1055768788}
   m_Layer: 5
   m_Name: ChargeCount
   m_TagString: Untagged
@@ -3804,19 +3806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055768784}
   m_CullTransparentMesh: 0
---- !u!114 &1055768788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055768784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: {fileID: 329890401}
 --- !u!1 &1067193168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,7 +4054,6 @@ GameObject:
   - component: {fileID: 1095149461}
   - component: {fileID: 1095149464}
   - component: {fileID: 1095149463}
-  - component: {fileID: 1095149462}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -4093,19 +4081,6 @@ RectTransform:
   m_AnchoredPosition: {x: 138.68, y: -16.6}
   m_SizeDelta: {x: 173.80176, y: -24.397858}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1095149462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095149460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce227d4163917d9408d17c61c2f8017d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 780041485}
 --- !u!114 &1095149463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4265,7 +4240,6 @@ GameObject:
   - component: {fileID: 1196009952}
   - component: {fileID: 1196009954}
   - component: {fileID: 1196009953}
-  - component: {fileID: 1196009955}
   m_Layer: 5
   m_Name: ShieldCount
   m_TagString: Untagged
@@ -4391,19 +4365,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196009951}
   m_CullTransparentMesh: 0
---- !u!114 &1196009955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196009951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: {fileID: 825052911}
 --- !u!1 &1214227927
 GameObject:
   m_ObjectHideFlags: 0
@@ -5288,6 +5249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreComponent: {fileID: 780041485}
+  highScore: {fileID: 1095149463}
   manager: {fileID: 195060218}
 --- !u!114 &1351323425
 MonoBehaviour:
@@ -5783,8 +5745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f3b6750980a6c4a8c95bd3452b866c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusCounter: 1
+  bonusCount: 1
   chanceToInstantiate: 0.23
+  bonusCountUI: {fileID: 1677800947}
   satelDestroyer: {fileID: 596667727}
   ufoPrefab: {fileID: 776201582003001730, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
@@ -5899,7 +5862,6 @@ GameObject:
   - component: {fileID: 1677800946}
   - component: {fileID: 1677800948}
   - component: {fileID: 1677800947}
-  - component: {fileID: 1677800949}
   m_Layer: 5
   m_Name: DestroyCount
   m_TagString: Untagged
@@ -6025,19 +5987,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677800945}
   m_CullTransparentMesh: 0
---- !u!114 &1677800949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677800945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d93267be22f054f9a017143e06e27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: {fileID: 1593458060}
 --- !u!1 &1725758829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7304,7 +7253,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HighScoreCounter
       value: 
-      objectReference: {fileID: 1095149462}
+      objectReference: {fileID: 0}
     - target: {fileID: 2945086111247811554, guid: ea2dd8fbbba6cfc47abb2261e25f090a,
         type: 3}
       propertyPath: DifficultyManager
@@ -7446,6 +7395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreComponent: {fileID: 780041485}
+  highScore: {fileID: 1095149463}
   manager: {fileID: 195060218}
 --- !u!114 &2945086110817505044
 MonoBehaviour:
@@ -7582,7 +7532,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HighScoreCounter
       value: 
-      objectReference: {fileID: 1095149462}
+      objectReference: {fileID: 0}
     - target: {fileID: 3137816481915902134, guid: fe32a09700204fe4497d752370e95994,
         type: 3}
       propertyPath: DifficultyManager
@@ -7851,7 +7801,7 @@ PrefabInstance:
         type: 3}
       propertyPath: HighScoreCounter
       value: 
-      objectReference: {fileID: 1095149462}
+      objectReference: {fileID: 0}
     - target: {fileID: 3697162973435418564, guid: f2f0d08d7c66f6444a647e135acf5e02,
         type: 3}
       propertyPath: DifficultyManager

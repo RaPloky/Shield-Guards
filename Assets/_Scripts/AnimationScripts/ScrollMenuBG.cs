@@ -20,8 +20,6 @@ public class ScrollMenuBG : MonoBehaviour
         BG.anchoredPosition = new Vector2(BG.anchoredPosition.x + scrollSpeedX, BG.anchoredPosition.y);
 
         if (BG.anchoredPosition.x <= scrollLimitX)
-        {
             BG.anchoredPosition = new Vector2(_scrollStartPosX, BG.anchoredPosition.y);
-        }
     }
 }

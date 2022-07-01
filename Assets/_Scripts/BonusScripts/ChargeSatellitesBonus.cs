@@ -8,6 +8,10 @@ public class ChargeSatellitesBonus : BonusManager
 
     private bool _isDebuffed = false;
 
+    private void Awake()
+    {
+        bonusCountUI.text = "x" + bonusCount.ToString();
+    }
     private void Update()
     {
         if (satelCharger.isDicharged && !_isDebuffed)
@@ -26,16 +30,17 @@ public class ChargeSatellitesBonus : BonusManager
     }
     public override void ActivateBonus()
     {
-        if (bonusCounter == 0 || PauseMenu.isGamePaused || satelCharger.isDicharged) return;
+        if (bonusCount == 0 || PauseMenu.isGamePaused || satelCharger.isDicharged) 
+            return;
 
         foreach (var satel in Manager.satellites)
         {
-            if (satel.isDicharged) {
+            if (satel.isDicharged) 
                 continue;
-            }
+
             satel.currentEnergyLevel = Mathf.Clamp(satel.currentEnergyLevel + bonusEnergyIncrement, 
                 satel.minEnergyLevel, satel.maxEnergyLevel);            
         }
-        bonusCounter--;
+        UpdateBonusCount();
     }
 }

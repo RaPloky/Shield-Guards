@@ -10,6 +10,7 @@ public class StopLaserBeam : MonoBehaviour
     [SerializeField] Animator beamEnding;
     [SerializeField] Animator particlesEnd;
     [SerializeField] [Range(0f, 2f)] float offEndBeamInSec;
+
     private SatelliteBehavior _satellite;
     private bool _isLaserOff = false;
     private float _descaleDelay;
@@ -19,7 +20,6 @@ public class StopLaserBeam : MonoBehaviour
         _satellite = GetComponent<SatelliteBehavior>();
         _descaleDelay = Mathf.Abs(offEndBeamInSec / laser.GetPosition(0).z);
     }
-
     private void Update()
     {
         if (_satellite.isDicharged && !_isLaserOff)
@@ -31,7 +31,6 @@ public class StopLaserBeam : MonoBehaviour
             StartCoroutine(IOffBeamInSeconds(offEndBeamInSec));
         }
     }
-
     private IEnumerator IOffBeamInSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
@@ -41,11 +40,13 @@ public class StopLaserBeam : MonoBehaviour
 
     private IEnumerator IDescaleLaser(float descaleDelay)
     {
-        yield return new WaitForSeconds(descaleDelay);
-        float laserLength = laser.GetPosition(1).z + 1;
-        if (laserLength == laserLimitZ + 1) yield break;
+        while (true)
+        {
+            yield return new WaitForSeconds(descaleDelay);
+            float laserLength = laser.GetPosition(1).z + 1;
+            if (laserLength == laserLimitZ + 1) yield break;
 
-        laser.SetPosition(1, new Vector3(0f, 0f, laserLength));
-        StartCoroutine(IDescaleLaser(descaleDelay));
+            laser.SetPosition(1, new Vector3(0f, 0f, laserLength));
+        }
     } 
 }

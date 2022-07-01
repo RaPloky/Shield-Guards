@@ -19,6 +19,7 @@ public class DischargeShieldBonus : BonusManager
 
     private void Awake()
     {
+        bonusCountUI.text = "x" + bonusCount.ToString();
         _defaultEnergyDecrements = new List<float>();
         foreach (var satel in DifficultyManager.satellites)
         {
@@ -57,12 +58,13 @@ public class DischargeShieldBonus : BonusManager
     }
     public override void ActivateBonus()
     {
-        if (bonusCounter == 0 || PauseMenu.isGamePaused || satelSupport.isDicharged) return;
+        if (bonusCount == 0 || PauseMenu.isGamePaused || satelSupport.isDicharged) 
+            return;
 
-        // "0" bcz number -= 0 is equal to number - energy stay unchanged:
+        // 0f bcz (int)number -= 0f returns unchanged value:
         SetNewEnergyDecrementValue(new float[] { 0f, 0f, 0f });
-        Invoke(nameof(RestoreEnergyDecrement), bonusDuration);
-        bonusCounter--;
+        Invoke(nameof(RestoreEnergyDecrement), bonusDuration); 
+        UpdateBonusCount();
     }
     private void RestoreEnergyDecrement()
     {
@@ -73,8 +75,7 @@ public class DischargeShieldBonus : BonusManager
         int i = 0;
         foreach (var satel in energyComponents)
         {
-            satel.energyDecrement = newValues[i];
-            i++;
+            satel.energyDecrement = newValues[i++];
         }
     }
     private void CountSecondsInCriticalZone()

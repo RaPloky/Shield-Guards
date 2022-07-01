@@ -13,6 +13,10 @@ public class DestroyUfosBonus : BonusManager
 
     private bool _isDebuffed = false;
 
+    private void Awake()
+    {
+        bonusCountUI.text = "x" + bonusCount.ToString();
+    }
     private void Update()
     {
         if (satelDestroyer.isDicharged && !_isDebuffed)
@@ -28,26 +32,28 @@ public class DestroyUfosBonus : BonusManager
     }
     public override void ActivateBonus()
     {
-        if (bonusCounter == 0 || PauseMenu.isGamePaused || satelDestroyer.isDicharged) return;
+        if (bonusCount == 0 || PauseMenu.isGamePaused || satelDestroyer.isDicharged) 
+            return;
 
         GameObject[] ufos = GameObject.FindGameObjectsWithTag("UFO");
 
         // If there's no UFOs, bonus can't be used:
-        if (ufos.Length == 0) return;
+        if (ufos.Length == 0) 
+            return;
 
         for (byte i = 0; i < ufos.Length; i++)
         {
             ufos[i].GetComponentInParent<EnemyCommonValues>().DestroyAndStartSpawn(ufos[i].transform.parent.transform);
             StartCoroutine(FreezeSpawnTime(spawnFreezeTime, ufos[i].transform.parent.transform.gameObject));
         }
-        bonusCounter--;
+        UpdateBonusCount();
     }
     private IEnumerator FreezeSpawnTime(float freezeTime, GameObject spawner)
     {
-        // Freezes UFO spawn:
+        // Rejects to spawn UFO:
         spawner.GetComponent<EnemySpawnManager>().spawnFreezed = true;
         yield return new WaitForSeconds(freezeTime);
-        // Unfreezes UFO spawn:
+        // Allows to spawn UFO:
         spawner.GetComponent<EnemySpawnManager>().spawnFreezed = false;
     }
 }

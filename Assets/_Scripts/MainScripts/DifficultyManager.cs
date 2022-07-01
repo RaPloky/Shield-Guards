@@ -87,24 +87,18 @@ public class DifficultyManager : MonoBehaviour
         foreach (var satel in satellites)
         {
             if (satel.decrementDelay >= dischargeDelayLimit)
-            {
                 satel.decrementDelay -= dischargeDelay;
-            }
         }
     }
     private void IncreaseEnergyDecrement()
     {
         foreach (var satel in satellites)
-        {
             satel.energyDecrement += energyUsageIncrement;
-        }
     }
     private void IncreaseUFOAttackFrequency()
     {
         if (_UFO.attackDelay > delayLimit)
-        {
             _UFO.attackDelay -= attackDelayDecrease;
-        }
     }
     private void DecreaseUfoSpawnDelay()
     {

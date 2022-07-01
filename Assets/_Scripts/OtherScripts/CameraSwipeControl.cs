@@ -14,17 +14,14 @@ public class CameraSwipeControl : MonoBehaviour, IBeginDragHandler, IDragHandler
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (PauseMenu.isGamePaused) return;
+        if (PauseMenu.isGamePaused) 
+            return;
         if ((Mathf.Abs(eventData.delta.x)) > (Mathf.Abs(eventData.delta.y)))
         {
             if (eventData.delta.x > 0)
-            {
                 CameraPos.transform.RotateAround(PivotPoint.transform.position, Vector3.up, _swipeAngle);
-            }
             else
-            {
                 CameraPos.transform.RotateAround(PivotPoint.transform.position, Vector3.down, _swipeAngle);
-            }
         }
     }
     public void OnDrag(PointerEventData eventData) { }

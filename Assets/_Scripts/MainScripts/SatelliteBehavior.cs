@@ -13,7 +13,7 @@ public class SatelliteBehavior : MonoBehaviour
     [SerializeField] PauseMenu GameOverMenu;
 
     private const int ROUND_DECIMALS = 2;
-    private int _chargeBonusCooldown = 10;
+    private readonly int _chargeBonusCooldown = 10;
     private bool _enteredChargeBonusCooldown = false;
 
     private void Start()
@@ -38,10 +38,9 @@ public class SatelliteBehavior : MonoBehaviour
     private void PowerOffSatellite()
     {
         DifficultyManager.activeSatellites.Remove(gameObject);
+
         if (Mathf.Approximately(DifficultyManager.activeSatellites.Count, 0))
-        {
             EndGame();
-        }
     }
     private void EndGame()
     {
@@ -61,9 +60,8 @@ public class SatelliteBehavior : MonoBehaviour
     {
         // Lets to charge energy until max energy level will be reached:
         if (currentEnergyLevel < maxEnergyLevel)
-        {
             currentEnergyLevel = Mathf.Clamp(currentEnergyLevel + energyIncrement, minEnergyLevel, maxEnergyLevel);
-        }
+
         TryToInstantiateChargeBonus();
     }
     private void TryToInstantiateChargeBonus()
