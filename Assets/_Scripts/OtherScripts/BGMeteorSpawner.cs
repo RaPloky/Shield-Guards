@@ -18,9 +18,11 @@ public class BGMeteorSpawner : MonoBehaviour
 
     private IEnumerator SpawnBGMeteor()
     {
-        float delayDispersion = Random.Range(0f, delayDispresion);
-        yield return new WaitForSeconds(spawnDelay + delayDispersion);
-        Instantiate(backgroundMeteor, gameObject.transform);
-        StartCoroutine(SpawnBGMeteor());
+        while (true)
+        {
+            float delayDispersion = Random.Range(0f, delayDispresion);
+            yield return new WaitForSeconds(spawnDelay + delayDispersion);
+            Instantiate(backgroundMeteor, gameObject.transform);
+        }
     }
 }

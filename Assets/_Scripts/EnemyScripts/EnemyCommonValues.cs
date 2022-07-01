@@ -10,9 +10,9 @@ abstract public class EnemyCommonValues : MonoBehaviour
     protected Transform _spawnManagerTrans;
     protected ScoreCounter _scoreCounter;
 
-    private readonly int _childOrderInHierarchy = 0;
+    private const int _childOrderInHierarchy = 0;
 
-    public void DoDamage(GameplayManager satel)
+    protected void DoDamage(GameplayManager satel)
     {
         satel.currentEnergyLevel = Mathf.Clamp(satel.currentEnergyLevel - damageToSatellite, satel.minEnergyLevel, satel.maxEnergyLevel);
     }
@@ -23,7 +23,7 @@ abstract public class EnemyCommonValues : MonoBehaviour
         spawnerTrans.gameObject.GetComponent<EnemySpawnManager>().enemyIsSpawned = false;
         spawnerTrans.gameObject.GetComponent<EnemySpawnManager>().StartSpawn();
     }
-    public void SetOnAwake()
+    protected void SetOnAwake()
     {
         _scoreCounter = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreCounter>();
         _satelliteToDamage = _spawnManagerTrans.gameObject.GetComponent<EnemySpawnManager>().target.gameObject;

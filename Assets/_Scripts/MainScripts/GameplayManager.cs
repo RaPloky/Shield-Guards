@@ -70,15 +70,17 @@ public class GameplayManager : MonoBehaviour
     }
     private IEnumerator ConstantEnergyDecrement()
     {
-        yield return new WaitForSeconds(decrementDelay);
-        currentEnergyLevel = (float)System.Math.Round(currentEnergyLevel, ROUND_DECIMALS);
-
-        if (currentEnergyLevel <= minEnergyLevel && isDicharged)
+        while (true)
         {
-            yield break;
+            yield return new WaitForSeconds(decrementDelay);
+            currentEnergyLevel = (float)System.Math.Round(currentEnergyLevel, ROUND_DECIMALS);
+
+            if (currentEnergyLevel <= minEnergyLevel && isDicharged)
+            {
+                yield break;
+            }
+            currentEnergyLevel = Mathf.Clamp(currentEnergyLevel - energyDecrement, minEnergyLevel, maxEnergyLevel);
         }
-        currentEnergyLevel = Mathf.Clamp(currentEnergyLevel - energyDecrement, minEnergyLevel, maxEnergyLevel);
-        StartCoroutine(ConstantEnergyDecrement());
     }
     private void ChargeSatellite()
     {
@@ -91,7 +93,8 @@ public class GameplayManager : MonoBehaviour
     }
     private void TryToInstantiateChargeBonus()
     {
-        if (_enteredChargeBonusCooldown) return;
+        if (_enteredChargeBonusCooldown) 
+            return;
 
         if (Mathf.Approximately(currentEnergyLevel, maxEnergyLevel))
         {

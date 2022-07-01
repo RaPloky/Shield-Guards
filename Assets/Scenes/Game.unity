@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0051964317, g: 0.0012936366, b: 0.018097237, a: 1}
+  m_IndirectSpecularColor: {r: 0.009801492, g: 0.0022796178, b: 0.031803105, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
   spawnDelay: 5.3
-  chanceToInstantiate: 0.5
+  chanceToInstantiate: 0
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &683346159
@@ -3534,7 +3534,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   spawnDelay: 8.2
-  chanceToInstantiate: 1
+  chanceToInstantiate: 0
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1029514175
@@ -4921,7 +4921,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   spawnDelay: 4.9
-  chanceToInstantiate: 1
+  chanceToInstantiate: 0
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1293622495
@@ -5073,7 +5073,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 776201582003001740, guid: 628a77b25fc640c44b54dfe8e491db9a,
     type: 3}
   spawnDelay: 10.8
-  chanceToInstantiate: 0.5
+  chanceToInstantiate: 0
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1330330229
@@ -5400,7 +5400,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5181030111862794138, guid: 93c2255331fff36408ce82fbd469bc46,
     type: 3}
   spawnDelay: 3
-  chanceToInstantiate: 1
+  chanceToInstantiate: 0
   enemyIsSpawned: 0
   spawnFreezed: 0
 --- !u!4 &1486742181
