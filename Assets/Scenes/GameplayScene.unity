@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.010380516, g: 0.0025137693, b: 0.035209723, a: 1}
+  m_IndirectSpecularColor: {r: 0.01234651, g: 0.002923588, b: 0.040843457, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3651,6 +3651,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.057
       objectReference: {fileID: 0}
+    - target: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_Name
+      value: FireLight
+      objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491273, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3658,8 +3663,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
-      value: 0.4
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -3719,7 +3729,7 @@ PrefabInstance:
     - target: {fileID: 7778273628079078884, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7778273628079078884, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -3904,6 +3914,8 @@ MonoBehaviour:
   bonusButtContr: {fileID: 1593458062}
   bodyContr: {fileID: 1953182684}
   bodyAnimName: Destroyer
+  fireController: {fileID: 1959556584}
+  fireAnimName: LightDestroyer
 --- !u!1 &1055768784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,6 +4475,32 @@ MonoBehaviour:
     type: 3}
   spawnDelay: 3
   delayDispresion: 1
+--- !u!1 &1193887929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1639464006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1193887933
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193887929}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d99c808530ff59418cc2494c9b438bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1196009951
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,6 +5538,8 @@ MonoBehaviour:
   bonusButtContr: {fileID: 825052913}
   bodyContr: {fileID: 1232070778}
   bodyAnimName: Support
+  fireController: {fileID: 1193887933}
+  fireAnimName: LightSupport
 --- !u!120 &1367851282 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 7792776896122474365, guid: 3ef05b09a18604540903f02dc7964851,
@@ -5673,7 +5713,12 @@ PrefabInstance:
     - target: {fileID: 1697834507059128819, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.113
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_Name
+      value: FireLight
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491273, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -5699,6 +5744,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -5808,12 +5863,17 @@ PrefabInstance:
     - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_Range
-      value: 0.21
+      value: 0.185
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_Intensity
-      value: 5
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -6235,6 +6295,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.219
       objectReference: {fileID: 0}
+    - target: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
+      propertyPath: m_Name
+      value: FireLight
+      objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491273, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6278,7 +6343,7 @@ PrefabInstance:
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -6418,7 +6483,7 @@ PrefabInstance:
     - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_Intensity
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8117456469515187223, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -7198,6 +7263,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef05b09a18604540903f02dc7964851, type: 3}
+--- !u!1 &1912732953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1036387035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1912732957
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912732953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d99c808530ff59418cc2494c9b438bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1953182683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4580055212501828252, guid: f2f0d08d7c66f6444a647e135acf5e02,
@@ -7215,6 +7306,32 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4f3d2416f2333894abff8cd2f03f60e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1959556580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3727691537177644193, guid: 344a0e5d5f2000f42863f1e6020435a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500830817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1959556584
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959556580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d99c808530ff59418cc2494c9b438bc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8024,6 +8141,8 @@ MonoBehaviour:
   bonusButtContr: {fileID: 329890403}
   bodyContr: {fileID: 809181746}
   bodyAnimName: Charger
+  fireController: {fileID: 1912732957}
+  fireAnimName: LightCharger
 --- !u!1001 &3137816482265219395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8499,6 +8618,11 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6905641275609848074, guid: f2f0d08d7c66f6444a647e135acf5e02,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 153187274, guid: f2f0d08d7c66f6444a647e135acf5e02, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f2f0d08d7c66f6444a647e135acf5e02, type: 3}
@@ -8585,7 +8709,7 @@ PrefabInstance:
     - target: {fileID: 7792776897303815296, guid: 3ef05b09a18604540903f02dc7964851,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7792776897303815296, guid: 3ef05b09a18604540903f02dc7964851,
         type: 3}

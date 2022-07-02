@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class SatelliteAnimations : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] Animator bonusButtContr;
+    [Header("Body")]
     [SerializeField] Animator bodyContr;
     [SerializeField] string bodyAnimName;
+    [Header("Fire")]
+    [SerializeField] Animator fireController;
+    [SerializeField] string fireAnimName;
 
     private SatelliteBehavior _thatSatellite;
 
@@ -24,5 +29,6 @@ public class SatelliteAnimations : MonoBehaviour
 
         bodyContr.Play(bodyAnimName, -1, 0f);
         bonusButtContr.Play("ChangeSize", -1, 0f);
+        fireController.Play(fireAnimName, -1, 0f);
     }
 }
