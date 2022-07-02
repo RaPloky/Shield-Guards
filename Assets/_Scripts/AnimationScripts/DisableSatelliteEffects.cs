@@ -1,15 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class StopLaserBeam : MonoBehaviour
+public class DisableSatelliteEffects : MonoBehaviour
 {
+    [Header("Laser")]
     [SerializeField] LineRenderer laser;
     [SerializeField] [Range(0f, 50f)] float laserLimitZ;
+    [Header("Beam")]
     [SerializeField] Animator beamBeginning;
     [SerializeField] Animator particlesBeginning;
     [SerializeField] Animator beamEnding;
     [SerializeField] Animator particlesEnd;
     [SerializeField] [Range(0f, 2f)] float offEndBeamInSec;
+    [Header("Engine effects")]
+    [SerializeField] Animator engineCotroller;
 
     private SatelliteBehavior _satellite;
     private bool _isLaserOff = false;
@@ -29,6 +33,7 @@ public class StopLaserBeam : MonoBehaviour
             particlesBeginning.Play("OffStartParticles");
             StartCoroutine(IDescaleLaser(_descaleDelay));
             StartCoroutine(IOffBeamInSeconds(offEndBeamInSec));
+            engineCotroller.Play("DisableEngineEffects");
         }
     }
     private IEnumerator IOffBeamInSeconds(float seconds)
