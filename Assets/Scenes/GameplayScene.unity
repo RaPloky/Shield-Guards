@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.012346648, g: 0.0029236062, b: 0.040843707, a: 1}
+  m_IndirectSpecularColor: {r: 0.013437637, g: 0.0031820182, b: 0.044484153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6422,13 +6422,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.x
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[0].m_Value.y
-      value: 0.75
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
@@ -6442,18 +6447,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
+        type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
-      value: 0
+      value: 0.33014932
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
-      value: 1.638285
+      value: 1.3205973
       objectReference: {fileID: 0}
     - target: {fileID: 7778273627846491279, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
-      value: 0.013932226
+      value: 0.3405204
       objectReference: {fileID: 0}
     - target: {fileID: 7778273628065148896, guid: 344a0e5d5f2000f42863f1e6020435a6,
         type: 3}
