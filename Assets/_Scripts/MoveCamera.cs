@@ -19,6 +19,7 @@ public class MoveCamera : MonoBehaviour
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.up, angleChange);
         transform.Rotate(angleChange * Vector3.up);
     }
+
     public void TurnRight()
     {
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.down, angleChange);
