@@ -10,6 +10,7 @@ public class ProjectileBehavior : MonoBehaviour
     private void Awake()
     {
         _target = GetTargetFromParent();
+        transform.SetParent(null);
     }
 
     private Transform GetTargetFromParent() => transform.parent.GetComponent<ProjectileSpawner>().Target;

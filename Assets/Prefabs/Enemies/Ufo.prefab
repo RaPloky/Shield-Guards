@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2944528516734929468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1973489732030320690, guid: 8a04a5f1c8c42f44aa64fab611279433,
     type: 3}
-  target: {fileID: 0}
   launchDelay: 0.8
 --- !u!1 &6797679723545711530
 GameObject:
@@ -346,9 +345,10 @@ GameObject:
   - component: {fileID: 7287256408150543636}
   - component: {fileID: 3368888084929033295}
   - component: {fileID: 5051946077519468959}
+  - component: {fileID: 2811700586919944700}
   m_Layer: 0
   m_Name: Ufo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 7956270353036138414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 788140591028139011}
@@ -401,3 +401,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43785c25f290ae499304bbb38de9950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2811700586919944700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7956270353036138414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.4897895, z: 2}
+  m_Center: {x: 0, y: 0.055105276, z: 0}
