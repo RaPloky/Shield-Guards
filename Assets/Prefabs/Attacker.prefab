@@ -394,6 +394,7 @@ GameObject:
   - component: {fileID: 973710091}
   - component: {fileID: -3719798139304218033}
   - component: {fileID: 4174997978384310471}
+  - component: {fileID: 2415842348167856307}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Untagged
@@ -462,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475da8b5b47d6bf46814b70aee8e1442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyAddAmount: 50
 --- !u!54 &4174997978384310471
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -478,6 +480,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &2415842348167856307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883656390963916616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956215ab78a10074db0a76e7fb6a02f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 5000
+  consumption: 100
+  consumptionDelay: 1
 --- !u!1 &8813681622065262702
 GameObject:
   m_ObjectHideFlags: 0
