@@ -4,15 +4,50 @@ using UnityEngine;
 
 public class Ufo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int health;
+
+    private Transform _target;
+
+    public Transform Target => _target;
+    public int Health
     {
-        
+        get => health;
+        set
+        {
+            health = value;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        FindClosestTarget();
+    }
+
+    private void FindClosestTarget()
+    {
+        int closestTargetIndex = 0;
+        float distanceToClosestTarget = float.MaxValue;
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Satellite");
+
+        if (targets == null)
+            return;
+
+        for (int i = 0; i < targets.Length; i++)
+        {
+            Transform targetTrans = targets[i].transform;
+            float distanceBetweenSpawnerAndTarget = Vector3.Distance(transform.position, targetTrans.position);
+
+            if (distanceBetweenSpawnerAndTarget < distanceToClosestTarget)
+            {
+                distanceToClosestTarget = distanceBetweenSpawnerAndTarget;
+                closestTargetIndex = i;
+            }
+        }
+        _target = targets[closestTargetIndex].transform;
+    }
+
+    private void Update()
+    {
+        transform.LookAt(_target);
     }
 }
