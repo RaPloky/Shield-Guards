@@ -46,7 +46,7 @@ public class Ufo : MonoBehaviour
         _target = targets[closestTargetIndex].transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.LookAt(_target);
     }
