@@ -3,8 +3,9 @@ using System.Collections;
 
 public class ProjectileSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject projectilePrefab;
-    [SerializeField, Range(0.1f, 10f)] float launchDelay;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField, Range(0.1f, 10f)] private float launchDelay;
+    [SerializeField, Range(0f, 1f)] private float launchChance;
 
     private Transform _target;
 
@@ -21,8 +22,16 @@ public class ProjectileSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(launchDelay);
-            Instantiate(projectilePrefab, gameObject.transform);
+
+            if (IsLaunchAllowed())
+                Instantiate(projectilePrefab, gameObject.transform);
         }
+    }
+
+    private bool IsLaunchAllowed()
+    {
+        float randomChance = Random.Range(0f, 1f);
+        return randomChance < launchChance;
     }
 
     private void FindClosestTarget()
