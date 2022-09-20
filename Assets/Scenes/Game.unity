@@ -130,6 +130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4718991851664175035, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718991851664175035, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8234698635948591264, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
       propertyPath: m_Name
@@ -1380,6 +1390,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charger
       objectReference: {fileID: 0}
+    - target: {fileID: 7822225014295571356, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822225014295571356, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f5b032eecf67fe41ad677a794bd1f39, type: 3}
 --- !u!1001 &1307129078
@@ -1502,6 +1522,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4174997978384310471, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174997978384310471, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4883656390963916616, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}
       propertyPath: m_Name

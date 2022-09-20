@@ -6,10 +6,12 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] int energyDamage;
 
     private Transform _target;
+    private Rigidbody _thatRB;
 
     private void Awake()
     {
         _target = GetTargetFromParent();
+        _thatRB = GetComponent<Rigidbody>();
         transform.SetParent(null);
     }
 
@@ -17,11 +19,11 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float posX = Mathf.Lerp(transform.position.x, _target.position.x, speedFactor);
-        float posY = Mathf.Lerp(transform.position.y, _target.position.y, speedFactor);
-        float posZ = Mathf.Lerp(transform.position.z, _target.position.z, speedFactor);
+        float targetX = _target.position.x - transform.position.x;
+        float targetY = _target.position.y - transform.position.y;
+        float targetZ = _target.position.z - transform.position.z;
 
-        transform.position = new Vector3(posX, posY, posZ);
+        _thatRB.AddForce(targetX, targetY, targetZ, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
