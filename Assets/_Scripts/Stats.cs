@@ -41,7 +41,6 @@ public class Stats : MonoBehaviour
 
     private void TurnOffSatellite()
     {
-        GetComponent<Collider>().enabled = false;
         GetComponent<Animator>().enabled = false;
         StopAllCoroutines();
     }
