@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 8722441596654342682, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8722441596654342682, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
@@ -505,6 +505,12 @@ Transform:
   m_Father: {fileID: 208899721}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &133061078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8722441596654342682, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+    type: 3}
+  m_PrefabInstance: {fileID: 5058842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &208899720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1105,12 @@ MonoBehaviour:
   targetToFollow: {fileID: 497984196}
   rotateAroundJoint: {fileID: 841183865}
   angleChange: 120
+--- !u!4 &344575809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6259818203083546521, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1092149831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362384736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1251,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 363495371}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &364058484 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5228093335965021682, guid: 09550427e3348d2499f8f6f1a7e27891,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725993482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &449575911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449575912}
   - component: {fileID: 449575913}
+  - component: {fileID: 449575914}
   m_Layer: 5
   m_Name: Bonuses
   m_TagString: Untagged
@@ -1305,6 +1324,27 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &449575914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449575911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19dc8f388b6a802449bb4a2f45f82a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTrans: {fileID: 325206138}
+  guards:
+  - {fileID: 344575809}
+  - {fileID: 364058484}
+  - {fileID: 133061078}
+  bonusButtons:
+  - {fileID: 1887678560}
+  - {fileID: 808196567}
+  - {fileID: 210383282}
 --- !u!1 &451069264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2730,7 @@ PrefabInstance:
     - target: {fileID: 6259818203083546521, guid: 8f5b032eecf67fe41ad677a794bd1f39,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6259818203083546521, guid: 8f5b032eecf67fe41ad677a794bd1f39,
         type: 3}
@@ -3336,7 +3376,7 @@ PrefabInstance:
     - target: {fileID: 5228093335965021682, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5228093335965021682, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}
