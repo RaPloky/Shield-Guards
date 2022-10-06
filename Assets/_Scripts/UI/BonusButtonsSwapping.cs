@@ -15,7 +15,7 @@ public class BonusButtonsSwapping : MonoBehaviour
         ArrangeBonusButtons();
     }
 
-    private void ArrangeBonusButtons()
+    public void ArrangeBonusButtons()
     {
         int closestTargetIndex = 0;
         float distanceToClosestGuard = float.MaxValue;
