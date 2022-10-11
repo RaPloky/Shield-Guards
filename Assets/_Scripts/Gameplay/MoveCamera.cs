@@ -26,7 +26,7 @@ public class MoveCamera : MonoBehaviour
 
     private void Update()
     {
-        Swipe();
+        SwipeHorizontal();
     }
 
     public void TurnLeft()
@@ -41,7 +41,7 @@ public class MoveCamera : MonoBehaviour
         transform.Rotate(angleChange * Vector3.down);
     }
 
-    private void Swipe()
+    private void SwipeHorizontal()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -65,16 +65,6 @@ public class MoveCamera : MonoBehaviour
                     TurnRight();
                     stopTouch = true;
                 }
-                //else if (distance.y > swipeRange)
-                //{
-                //    print("Up");
-                //    stopTouch = true;
-                //}
-                //else if (distance.y < -swipeRange)
-                //{
-                //    print("Down");
-                //    stopTouch = true;
-                //}
             }
 
         }
@@ -83,12 +73,6 @@ public class MoveCamera : MonoBehaviour
         {
             stopTouch = false;
             endTouchPosition = Input.GetTouch(0).position;
-            Vector2 distance = endTouchPosition - startTouchPosition;
-
-            if (Mathf.Abs(distance.x) < tapRange && Mathf.Abs(distance.y) < tapRange)
-            {
-                print("Tap");
-            }
         }
     }
 }
