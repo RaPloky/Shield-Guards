@@ -10,13 +10,18 @@ public class Spawner : MonoBehaviour
 
     public Transform Target => target;
 
+    private Transform _thatTrans;
+
+    public GameObject SpawnedPrefab { get; set; }
+
     private void Start()
     {
+        _thatTrans = transform;
+
         if (target == null)
             target = GetTargetFromSpawner();
 
         StartCoroutine(SpawnPrefab());
-
     }
 
     private IEnumerator SpawnPrefab()
@@ -25,8 +30,10 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnDelay);
 
-            if (IsSpawnAllowed())  
-                Instantiate(prefabToSpawn, gameObject.transform);
+            if (IsSpawnAllowed() && SpawnedPrefab == null)
+            {
+                SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
+            }
         }
     }
 
@@ -37,5 +44,5 @@ public class Spawner : MonoBehaviour
     }
 
     // Spanwer is parent of UFO which is parent of WholeBody which is parent of gameObject:
-    private Transform GetTargetFromSpawner() => transform.parent.transform.parent.transform.parent.GetComponent<Spawner>().Target;
+    private Transform GetTargetFromSpawner() => _thatTrans.parent.transform.parent.transform.parent.GetComponent<Spawner>().Target;
 }

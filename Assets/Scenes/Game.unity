@@ -145,6 +145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Support
       objectReference: {fileID: 0}
+    - target: {fileID: 8234698635948591264, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8722441596654342682, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
       propertyPath: m_RootOrder
@@ -1301,7 +1306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &550777994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2472,6 +2477,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Charger
       objectReference: {fileID: 0}
+    - target: {fileID: 6743163878024267043, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7822225014295571356, guid: 8f5b032eecf67fe41ad677a794bd1f39,
         type: 3}
       propertyPath: m_Constraints
@@ -3111,6 +3121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Attacker
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883656390963916616, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5228093335965021682, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}

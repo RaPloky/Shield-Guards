@@ -5,8 +5,9 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField, Range(0f, 0.05f)] float speedFactor;
     [SerializeField] int energyDamage;
 
-    private Transform _targetRb;
-    private Rigidbody _thatRB;
+    private Transform _targetTrans;
+    private Rigidbody _thatRb;
+    private Transform _thatTrans;
 
     private float _targetX;
     private float _targetY;
@@ -16,20 +17,21 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void Awake()
     {
-        _targetRb = GetTargetFromParent();
-        _thatRB = GetComponent<Rigidbody>();
-        transform.SetParent(null);
+        _thatTrans = transform;
+        _targetTrans = GetTargetFromParent();
+        _thatRb = GetComponent<Rigidbody>();
+        _thatTrans.SetParent(null);
     }
 
-    private Transform GetTargetFromParent() => transform.parent.GetComponent<Spawner>().Target;
+    private Transform GetTargetFromParent() => _thatTrans.parent.GetComponent<Spawner>().Target;
 
     private void FixedUpdate()
     {
-        _targetX = _targetRb.position.x - transform.position.x;
-        _targetY = _targetRb.position.y - transform.position.y;
-        _targetZ = _targetRb.position.z - transform.position.z;
+        _targetX = _targetTrans.position.x - _thatTrans.position.x;
+        _targetY = _targetTrans.position.y - _thatTrans.position.y;
+        _targetZ = _targetTrans.position.z - _thatTrans.position.z;
 
-        _thatRB.AddForce(_targetX, _targetY, _targetZ, ForceMode.Acceleration);
+        _thatRb.AddForce(_targetX, _targetY, _targetZ, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -1,14 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ufo : MonoBehaviour
 {
     [SerializeField] private int health;
 
-    private Transform _target;
-
     public Transform Target => _target;
+
+    private Transform _target;
+    private Transform _thatTrans;
+
+    private void Start()
+    {
+        _thatTrans = transform;
+        _target = GetTargetFromSpawner();
+    }
+
     public int Health
     {
         get => health;
@@ -18,36 +24,10 @@ public class Ufo : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        FindClosestTarget();
-    }
-
-    private void FindClosestTarget()
-    {
-        int closestTargetIndex = 0;
-        float distanceToClosestTarget = float.MaxValue;
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Guard");
-
-        if (targets == null)
-            return;
-
-        for (int i = 0; i < targets.Length; i++)
-        {
-            Transform targetTrans = targets[i].transform;
-            float distanceBetweenSpawnerAndTarget = Vector3.Distance(transform.position, targetTrans.position);
-
-            if (distanceBetweenSpawnerAndTarget < distanceToClosestTarget)
-            {
-                distanceToClosestTarget = distanceBetweenSpawnerAndTarget;
-                closestTargetIndex = i;
-            }
-        }
-        _target = targets[closestTargetIndex].transform;
-    }
-
     private void FixedUpdate()
     {
-        transform.LookAt(_target);
+        _thatTrans.LookAt(_target);
     }
+
+    private Transform GetTargetFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().Target;
 }
