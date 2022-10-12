@@ -31,9 +31,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
 
             if (IsSpawnAllowed() && SpawnedPrefab == null)
-            {
                 SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
-            }
         }
     }
 
