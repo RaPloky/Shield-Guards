@@ -4,13 +4,13 @@ public class GainEnergyOnTouch : MonoBehaviour
 {
     [SerializeField] int energyAddAmount;
 
-    private Stats _thatStats;
+    private Guard _thatStats;
     private Animator _animator;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _thatStats = GetComponent<Stats>();
+        _thatStats = GetComponent<Guard>();
     }
 
     private void OnMouseDown()

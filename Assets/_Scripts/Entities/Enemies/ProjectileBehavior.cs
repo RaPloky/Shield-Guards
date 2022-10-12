@@ -13,7 +13,7 @@ public class ProjectileBehavior : MonoBehaviour
     private float _targetY;
     private float _targetZ;
 
-    private Stats _targetComponent;
+    private Guard _targetComponent;
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        _targetComponent = collision.gameObject.GetComponent<Stats>();
+        _targetComponent = collision.gameObject.GetComponent<Guard>();
 
         if (_targetComponent == null)
         {

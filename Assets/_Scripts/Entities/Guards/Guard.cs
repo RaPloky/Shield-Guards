@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+public class Guard : MonoBehaviour
 {
     [SerializeField] int energy;
     [SerializeField] int consumption;
@@ -10,25 +9,25 @@ public class Stats : MonoBehaviour
 
     private int _maxEnergy;
 
-    private void Start()
-    {
-        _maxEnergy = energy;
-        StartCoroutine(ConsumptEnergy());
-    }
-
+    public int MaxEnergy => _maxEnergy;
     public int Energy
     {
         get => energy;
         set
         {
             energy = Mathf.Clamp(value, 0, _maxEnergy);
+            EventManager.SendOnEnergyValueChanged();
+
             if (Mathf.Approximately(energy, 0))
-                TurnOffSatellite();
+                TurnOffGuard();
         }
     }
 
-    public void AddEnergy(int energyAmount) => Energy += energyAmount;
-    public void ConsumptEnergy(int energyConsumption) => Energy -= energyConsumption;
+    private void Awake()
+    {
+        _maxEnergy = energy;
+        StartCoroutine(ConsumptEnergy());
+    }
 
     private IEnumerator ConsumptEnergy()
     {
@@ -39,9 +38,13 @@ public class Stats : MonoBehaviour
         }
     }
 
-    private void TurnOffSatellite()
+    private void TurnOffGuard()
     {
+        // Other cool destroy stuff
         GetComponent<Animator>().enabled = false;
         StopAllCoroutines();
     }
+
+    public void AddEnergy(int energyAmount) => Energy += energyAmount;
+    public void ConsumptEnergy(int energyConsumption) => Energy -= energyConsumption;
 }
