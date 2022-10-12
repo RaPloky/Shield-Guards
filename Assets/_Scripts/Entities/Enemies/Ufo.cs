@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections;
 
-public class Ufo : MonoBehaviour
+public class Ufo : Enemy
 {
     [SerializeField] private int health;
     [SerializeField] private int damageToUfo;
@@ -14,7 +15,7 @@ public class Ufo : MonoBehaviour
             health = (int)(Mathf.Clamp(value, 0, float.MaxValue));
 
             if (health <= 0)
-                DestroyThatUfo();
+                DestroyThatEnemy();
         }
     }
 
@@ -27,8 +28,9 @@ public class Ufo : MonoBehaviour
         _target = GetTargetFromSpawner();
     }
 
-    private void DestroyThatUfo()
+    public override IEnumerator DestroyThatEnemy()
     {
+        yield return new WaitForSeconds(0);
         // Other cool code
         Destroy(gameObject);
     }

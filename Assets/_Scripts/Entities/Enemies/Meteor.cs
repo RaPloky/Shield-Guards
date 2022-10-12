@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Meteor : MonoBehaviour
+public class Meteor : Enemy
 {
     [Header("Swipe control")]
     [SerializeField] private float swipeRange;
@@ -60,10 +60,10 @@ public class Meteor : MonoBehaviour
     {
         _meteorRb.AddForce(dragTo.position, ForceMode.Impulse);
 
-        StartCoroutine(DestroyMeteor());
+        StartCoroutine(DestroyThatEnemy());
     }
 
-    private IEnumerator DestroyMeteor()
+    public override IEnumerator DestroyThatEnemy()
     {
         yield return new WaitForSeconds(destroyDelay);
         Destroy(gameObject);

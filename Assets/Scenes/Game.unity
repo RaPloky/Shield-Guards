@@ -1643,8 +1643,9 @@ GameObject:
   - component: {fileID: 808196571}
   - component: {fileID: 808196570}
   - component: {fileID: 808196572}
+  - component: {fileID: 808196573}
   m_Layer: 5
-  m_Name: ExplodeButton
+  m_Name: DestroyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1754,7 +1755,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 808196570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808196573}
+        m_TargetAssemblyTypeName: DestroyAllEnemies, Assembly-CSharp
+        m_MethodName: DestroyEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &808196573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808196567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d41a9f22ffc46844aab77431afc0080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBonusEnabled: 1
 --- !u!1 &829433176
 GameObject:
   m_ObjectHideFlags: 0

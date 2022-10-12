@@ -8,15 +8,20 @@ public class ChargeAllGuards : MonoBehaviour
     [SerializeField] private int chargeAmount;
     [SerializeField] private bool isBonusEnabled;
 
+    public bool IsBonusEnabled
+    {
+        get => isBonusEnabled;
+        set => isBonusEnabled = value;
+    }
+
     public void ActivateInstantCharging()
     {
         if (!isBonusEnabled)
             return;
 
         foreach (Guard guard in guards)
-        {
             guard.AddEnergy(chargeAmount);
-        }
+
         isBonusEnabled = false;
     }
 }
