@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1973489732030320690, guid: 8a04a5f1c8c42f44aa64fab611279433,
-    type: 3}
-  launchDelay: 0.8
+  spawnDelay: 1.5
   launchChance: 1
+  prefabToSpawn: {fileID: 1973489732030320690, guid: 8a04a5f1c8c42f44aa64fab611279433,
+    type: 3}
+  target: {fileID: 0}
 --- !u!1 &6797679723545711530
 GameObject:
   m_ObjectHideFlags: 0

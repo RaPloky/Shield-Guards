@@ -27,7 +27,7 @@ public class Ufo : MonoBehaviour
     {
         int closestTargetIndex = 0;
         float distanceToClosestTarget = float.MaxValue;
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Satellite");
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Guard");
 
         if (targets == null)
             return;

@@ -17,16 +17,20 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] Transform rotateAroundJoint;
     [SerializeField] float angleChange;
 
+    private float _posX;
+    private float _posZ;
+
     private void FixedUpdate()
     {
-        float posX = Mathf.Lerp(transform.position.x, targetToFollow.position.x, smoothFactor);
-        float posZ = Mathf.Lerp(transform.position.z, targetToFollow.position.z, smoothFactor);
-        transform.position = new Vector3(posX, transform.position.y, posZ);
+        SwipeHorizontal();
+        UpdatePosition();
     }
 
-    private void Update()
+    private void UpdatePosition()
     {
-        SwipeHorizontal();
+        _posX = Mathf.Lerp(transform.position.x, targetToFollow.position.x, smoothFactor);
+        _posZ = Mathf.Lerp(transform.position.z, targetToFollow.position.z, smoothFactor);
+        transform.position = new Vector3(_posX, transform.position.y, _posZ);
     }
 
     public void TurnLeft()

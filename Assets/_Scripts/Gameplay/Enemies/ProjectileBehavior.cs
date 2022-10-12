@@ -5,38 +5,44 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField, Range(0f, 0.05f)] float speedFactor;
     [SerializeField] int energyDamage;
 
-    private Transform _target;
+    private Transform _targetRb;
     private Rigidbody _thatRB;
+
+    private float _targetX;
+    private float _targetY;
+    private float _targetZ;
+
+    private Stats _targetComponent;
 
     private void Awake()
     {
-        _target = GetTargetFromParent();
+        _targetRb = GetTargetFromParent();
         _thatRB = GetComponent<Rigidbody>();
         transform.SetParent(null);
     }
 
-    private Transform GetTargetFromParent() => transform.parent.GetComponent<ProjectileSpawner>().Target;
+    private Transform GetTargetFromParent() => transform.parent.GetComponent<Spawner>().Target;
 
     private void FixedUpdate()
     {
-        float targetX = _target.position.x - transform.position.x;
-        float targetY = _target.position.y - transform.position.y;
-        float targetZ = _target.position.z - transform.position.z;
+        _targetX = _targetRb.position.x - transform.position.x;
+        _targetY = _targetRb.position.y - transform.position.y;
+        _targetZ = _targetRb.position.z - transform.position.z;
 
-        _thatRB.AddForce(targetX, targetY, targetZ, ForceMode.Acceleration);
+        _thatRB.AddForce(_targetX, _targetY, _targetZ, ForceMode.Acceleration);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Stats target = collision.gameObject.GetComponent<Stats>();
+        _targetComponent = collision.gameObject.GetComponent<Stats>();
 
-        if (target == null)
+        if (_targetComponent == null)
         {
             Destroy(gameObject);
             return;
         }
 
-        target.ConsumptEnergy(energyDamage);
+        _targetComponent.ConsumptEnergy(energyDamage);
         Destroy(gameObject);
     }
 }
