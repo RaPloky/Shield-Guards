@@ -15,6 +15,9 @@ public class Guard : MonoBehaviour
         get => energy;
         set
         {
+            if (IsProtectBonusActivated)
+                return;
+
             energy = Mathf.Clamp(value, 0, _maxEnergy);
             EventManager.SendOnEnergyValueChanged();
 
@@ -23,8 +26,11 @@ public class Guard : MonoBehaviour
         }
     }
 
+    public bool IsProtectBonusActivated { get; set; }
+
     private void Awake()
     {
+        IsProtectBonusActivated = false;
         _maxEnergy = energy;
         StartCoroutine(ConsumptEnergy());
     }
