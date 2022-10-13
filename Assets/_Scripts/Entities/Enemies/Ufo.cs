@@ -15,7 +15,7 @@ public class Ufo : Enemy
             health = (int)(Mathf.Clamp(value, 0, float.MaxValue));
 
             if (health <= 0)
-                DestroyThatEnemy();
+                StartCoroutine(DestroyThatEnemy());
         }
     }
 

@@ -54,6 +54,7 @@ public class ProtectAllGuards : MonoBehaviour
     private IEnumerator ActivateTimeWarp()
     {
         Time.timeScale = timeWarpValue;
+        Time.fixedDeltaTime = Time.timeScale * .02f;
 
         yield return new WaitForSecondsRealtime(timeWarpDuration);
 
