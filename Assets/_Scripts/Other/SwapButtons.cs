@@ -13,7 +13,10 @@ public class SwapButtons : MonoBehaviour
     private Guard _tempCenter;
     private Guard _tempRight;
 
-    private void Start() => SetTempGuards();
+    private void Start()
+    {
+        SetTempGuards();
+    }
 
     public void OnLeftSwap()
     {
@@ -22,6 +25,8 @@ public class SwapButtons : MonoBehaviour
         leftGuard = _tempRight;
         centerGuard = _tempLeft;
         rightGuard = _tempCenter;
+
+        ArrangeButtons();
     }
 
     public void OnRightSwap()
@@ -31,6 +36,8 @@ public class SwapButtons : MonoBehaviour
         leftGuard = _tempCenter;
         centerGuard = _tempRight;
         rightGuard = _tempLeft;
+
+        ArrangeButtons();
     }
 
     private void SetTempGuards()
@@ -39,4 +46,12 @@ public class SwapButtons : MonoBehaviour
         _tempCenter = centerGuard;
         _tempRight = rightGuard;
     }
+
+    private void ArrangeButtons()
+    {
+        leftGuard.RelatedBonus.SetAsFirstSibling();
+        centerGuard.RelatedBonus.SetSiblingIndex(1);
+        rightGuard.RelatedBonus.SetAsLastSibling();
+    }
+
 }

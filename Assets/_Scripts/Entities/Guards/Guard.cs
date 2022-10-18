@@ -28,8 +28,8 @@ public class Guard : MonoBehaviour
         }
     }
     public bool IsHaveEnergy => _isHaveEnergy;
-
     public bool IsProtectBonusActivated { get; set; }
+    public Transform RelatedBonus => relatedBonus.transform;
 
     private void Awake()
     {

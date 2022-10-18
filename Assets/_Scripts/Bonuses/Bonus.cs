@@ -19,7 +19,7 @@ abstract public class Bonus : MonoBehaviour
         _thatButton = GetComponent<Button>();
     }
 
-    public virtual void DisableBonusButton()
+    public void DisableBonusButton()
     {
         _thatButton.interactable = false;
         // Play disable animation
