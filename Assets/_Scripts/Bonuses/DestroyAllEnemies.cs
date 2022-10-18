@@ -17,5 +17,6 @@ public class DestroyAllEnemies : Bonus
             StartCoroutine(enemy.GetComponent<Enemy>().DestroyThatEnemy());
 
         isBonusEnabled = false;
+        UnfillStatusIndicator();
     }
 }

@@ -20,6 +20,7 @@ public class ProtectAllGuards : Bonus
         StartCoroutine(ProtectGuards());
 
         isBonusEnabled = false;
+        UnfillStatusIndicator();
     }
 
     public void ActivateTimeWarpBonus()
@@ -30,6 +31,7 @@ public class ProtectAllGuards : Bonus
         StartCoroutine(ActivateTimeWarp());
 
         isBonusEnabled = false;
+        UnfillStatusIndicator();
     }
 
     private IEnumerator ProtectGuards()

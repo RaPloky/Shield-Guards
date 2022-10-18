@@ -4,6 +4,7 @@ using UnityEngine.UI;
 abstract public class Bonus : MonoBehaviour
 {
     [SerializeField] protected bool isBonusEnabled;
+    [SerializeField] protected Image bonusStatusIndicator;
 
     protected Button _thatButton;
 
@@ -23,5 +24,15 @@ abstract public class Bonus : MonoBehaviour
         _thatButton.interactable = false;
         // Play disable animation
         gameObject.SetActive(false);
+    }
+
+    protected void FillStatusIndicator()
+    {
+        bonusStatusIndicator.fillAmount = 1;
+    }
+
+    protected void UnfillStatusIndicator()
+    {
+        bonusStatusIndicator.fillAmount = 0;
     }
 }

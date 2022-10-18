@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBonusEnabled: 1
+  bonusStatusIndicator: {fileID: 210383285}
   guards:
   - {fileID: 2008696906}
   - {fileID: 1906650023}
@@ -1836,6 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBonusEnabled: 1
+  bonusStatusIndicator: {fileID: 808196570}
 --- !u!1 &829433176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,6 +3481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBonusEnabled: 1
+  bonusStatusIndicator: {fileID: 1887678563}
   guards:
   - {fileID: 2008696906}
   - {fileID: 1906650023}
