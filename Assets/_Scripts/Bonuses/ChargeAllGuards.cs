@@ -16,6 +16,6 @@ public class ChargeAllGuards : Bonus
             guard.AddEnergy(chargeAmount);
 
         isBonusEnabled = false;
-        UnfillStatusIndicator();
+        ResetStatusIndicator();
     }
 }

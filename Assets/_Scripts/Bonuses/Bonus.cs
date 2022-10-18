@@ -26,12 +26,7 @@ abstract public class Bonus : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void FillStatusIndicator()
-    {
-        bonusStatusIndicator.fillAmount = 1;
-    }
-
-    public void UnfillStatusIndicator()
+    public void ResetStatusIndicator()
     {
         bonusStatusIndicator.fillAmount = 0;
     }
