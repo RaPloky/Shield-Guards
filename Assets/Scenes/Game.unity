@@ -2580,6 +2580,26 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8850946044686759311, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: goal
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850946044686759311, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: bonus
+      value: 
+      objectReference: {fileID: 1887678565}
+    - target: {fileID: 8850946044686759311, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: statusImage
+      value: 
+      objectReference: {fileID: 1887678563}
+    - target: {fileID: 8850946044686759311, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: updateProgressAmount
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f5b032eecf67fe41ad677a794bd1f39, type: 3}
 --- !u!1 &1276873256
@@ -3140,6 +3160,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8195940182668972319, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: goal
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195940182668972319, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: bonus
+      value: 
+      objectReference: {fileID: 808196573}
     - target: {fileID: 8195940182668972319, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}
       propertyPath: destroyGoal

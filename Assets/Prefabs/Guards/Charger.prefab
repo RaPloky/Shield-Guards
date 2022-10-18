@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 1062915015}
   - component: {fileID: 7822225014295571356}
   - component: {fileID: 3804809972220547753}
+  - component: {fileID: 8850946044686759311}
   m_Layer: 0
   m_Name: Charger
   m_TagString: Guard
@@ -883,6 +884,19 @@ MonoBehaviour:
   energy: 5000
   consumption: 100
   consumptionDelay: 1
+  relatedBonus: {fileID: 0}
+--- !u!114 &8850946044686759311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743163878024267043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9699147b8d66ba3409d82ca9e8cefcf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6914048148969943757
 GameObject:
   m_ObjectHideFlags: 0
