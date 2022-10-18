@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProtectAllGuards : MonoBehaviour
+public class ProtectAllGuards : Bonus
 {
-    [SerializeField] private bool isBonusEnabled;
-
     [Header("Resist bonus")]
     [SerializeField] private List<Guard> guards;
     [SerializeField, Range(4f, 8f)] private float shieldDuration;
@@ -13,12 +11,6 @@ public class ProtectAllGuards : MonoBehaviour
     [Header("Time warp bonus")]
     [SerializeField] private float timeWarpDuration;
     [SerializeField, Range(0.1f, 0.5f)] private float timeWarpValue;
-
-    public bool IsBonusEnabled
-    {
-        get => isBonusEnabled;
-        set => isBonusEnabled = value;
-    }
 
     public void ActivateShieldBonus()
     {

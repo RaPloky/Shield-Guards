@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Guard : MonoBehaviour
 {
-    [SerializeField] int energy;
-    [SerializeField] int consumption;
-    [SerializeField, Range(0.5f, 1f)] float consumptionDelay; 
+    [SerializeField] private int energy;
+    [SerializeField] private int consumption;
+    [SerializeField, Range(0.5f, 1f)] private float consumptionDelay; 
 
     private int _maxEnergy;
     private bool _isHaveEnergy;

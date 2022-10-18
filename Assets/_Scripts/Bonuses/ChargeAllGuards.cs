@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChargeAllGuards : MonoBehaviour
+public class ChargeAllGuards : Bonus
 {
     [SerializeField] private List<Guard> guards;
     [SerializeField] private int chargeAmount;
-    [SerializeField] private bool isBonusEnabled;
-
-    public bool IsBonusEnabled
-    {
-        get => isBonusEnabled;
-        set => isBonusEnabled = value;
-    }
 
     public void ActivateInstantCharging()
     {

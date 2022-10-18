@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwapButtons : MonoBehaviour
@@ -7,10 +5,6 @@ public class SwapButtons : MonoBehaviour
     [SerializeField] private Guard leftGuard;
     [SerializeField] private Guard centerGuard;
     [SerializeField] private Guard rightGuard;
-
-    public Guard LeftGuard => leftGuard;
-    public Guard CenterGuard => centerGuard;
-    public Guard RightGuard => rightGuard;
 
     public bool IsLeftGuardHaveEnergy => leftGuard.IsHaveEnergy;
     public bool IsRightGuardHaveEnergy => rightGuard.IsHaveEnergy;

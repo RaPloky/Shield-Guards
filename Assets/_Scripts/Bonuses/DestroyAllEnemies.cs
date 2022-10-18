@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyAllEnemies : MonoBehaviour
+public class DestroyAllEnemies : Bonus
 {
-    [SerializeField] private bool isBonusEnabled;
-
     private GameObject[] _enemies;
-
-    public bool IsBonusEnabled
-    {
-        get => isBonusEnabled;
-        set => isBonusEnabled = value;
-    }
 
     public void DestroyEnemies()
     {
