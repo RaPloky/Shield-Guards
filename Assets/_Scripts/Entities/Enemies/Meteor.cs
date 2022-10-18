@@ -26,6 +26,12 @@ public class Meteor : Enemy
         SwipeVertical();
     }
 
+    // Temporary method for testing on PC
+    private void OnMouseDown()
+    {
+        StartCoroutine(DestroyThatEnemy());
+    }
+
     private void SwipeVertical()
     {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
@@ -67,5 +73,6 @@ public class Meteor : Enemy
     {
         yield return new WaitForSeconds(destroyDelay);
         Destroy(gameObject);
+        EventManager.SendOnEnemyDestroyed();
     }
 }

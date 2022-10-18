@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: -3719798139304218033}
   - component: {fileID: 4174997978384310471}
   - component: {fileID: 2415842348167856307}
+  - component: {fileID: 8195940182668972319}
   m_Layer: 0
   m_Name: Attacker
   m_TagString: Guard
@@ -495,6 +496,21 @@ MonoBehaviour:
   energy: 5000
   consumption: 100
   consumptionDelay: 1
+  relatedBonus: {fileID: 0}
+--- !u!114 &8195940182668972319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883656390963916616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9514456aeef69ef498987e5ec81a3ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyGoal: 20
+  destroyAllBonus: {fileID: 0}
 --- !u!1 &8813681622065262702
 GameObject:
   m_ObjectHideFlags: 0

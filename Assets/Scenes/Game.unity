@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01dcdedfa634014a8d68774ddcdd2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBonusEnabled: 1
+  isBonusEnabled: 0
   bonusStatusIndicator: {fileID: 210383285}
   guards:
   - {fileID: 2008696906}
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d41a9f22ffc46844aab77431afc0080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBonusEnabled: 1
+  isBonusEnabled: 0
   bonusStatusIndicator: {fileID: 808196570}
 --- !u!1 &829433176
 GameObject:
@@ -3140,6 +3140,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8195940182668972319, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: destroyAllBonus
+      value: 
+      objectReference: {fileID: 808196573}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09550427e3348d2499f8f6f1a7e27891, type: 3}
 --- !u!1 &1745201869
@@ -3480,7 +3485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbbe384c222c44449a4c823f37ccfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBonusEnabled: 1
+  isBonusEnabled: 0
   bonusStatusIndicator: {fileID: 1887678563}
   guards:
   - {fileID: 2008696906}
@@ -3663,8 +3668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 6.79
-  launchChance: 0.25
+  spawnDelay: 1.51
+  launchChance: 1
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 946494438}

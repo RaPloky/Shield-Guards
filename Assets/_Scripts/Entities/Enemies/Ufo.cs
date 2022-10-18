@@ -33,6 +33,7 @@ public class Ufo : Enemy
         yield return new WaitForSeconds(0);
         // Other cool code
         Destroy(gameObject);
+        EventManager.SendOnEnemyDestroyed();
     }
     
     private void FixedUpdate() => _thatTrans.LookAt(_target);
