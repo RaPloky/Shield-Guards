@@ -927,6 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeRange: 210
   tapRange: 30
+  swapButtonsManager: {fileID: 449575914}
   smoothFactor: 0.5
   targetToFollow: {fileID: 497984196}
   rotateAroundJoint: {fileID: 841183865}
@@ -1139,6 +1140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449575912}
   - component: {fileID: 449575913}
+  - component: {fileID: 449575914}
   m_Layer: 5
   m_Name: Bonuses
   m_TagString: Untagged
@@ -1195,6 +1197,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &449575914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449575911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344bd51e72c36224c9d318700d427118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftGuard: {fileID: 2077805599}
+  centerGuard: {fileID: 1906650023}
+  rightGuard: {fileID: 2008696906}
 --- !u!1 &490217640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,7 +3645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 6.79
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
@@ -3843,7 +3860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 7.08
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -3993,7 +4010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 7.08
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -4010,7 +4027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 7.08
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -4059,7 +4076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 6.79
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
@@ -4108,7 +4125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 6.79
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}

@@ -8,6 +8,7 @@ public class Guard : MonoBehaviour
     [SerializeField, Range(0.5f, 1f)] float consumptionDelay; 
 
     private int _maxEnergy;
+    private bool _isHaveEnergy;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
@@ -25,6 +26,7 @@ public class Guard : MonoBehaviour
                 TurnOffGuard();
         }
     }
+    public bool IsHaveEnergy => _isHaveEnergy;
 
     public bool IsProtectBonusActivated { get; set; }
 
@@ -32,6 +34,7 @@ public class Guard : MonoBehaviour
     {
         IsProtectBonusActivated = false;
         _maxEnergy = energy;
+        _isHaveEnergy = true;
         StartCoroutine(ConsumptEnergy());
     }
 
@@ -49,6 +52,7 @@ public class Guard : MonoBehaviour
         // Other cool destroy stuff
         GetComponent<Animator>().enabled = false;
         StopAllCoroutines();
+        _isHaveEnergy = false;
     }
 
     public void AddEnergy(int energyAmount) => Energy += energyAmount;

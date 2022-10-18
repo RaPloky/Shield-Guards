@@ -9,6 +9,7 @@ public class MoveCamera : MonoBehaviour
 
     [SerializeField] private float swipeRange;
     [SerializeField] private float tapRange;
+    [SerializeField] private SwapButtons swapButtonsManager;
 
     [Header("Camera")]
     [SerializeField, Range(0f, 1f)] float smoothFactor;
@@ -40,14 +41,29 @@ public class MoveCamera : MonoBehaviour
 
     public void TurnLeft()
     {
+        if (!IsLeftGuardActive())
+        {
+            // Message about discharged guard
+            return;
+        }
+            
+
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.up, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.up);
+        swapButtonsManager.OnLeftSwap();
     }
 
     public void TurnRight()
     {
+        if (!IsRightGuardActive())
+        {
+            // Message about discharged guard
+            return;
+        }
+
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.down, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.down);
+        swapButtonsManager.OnRightSwap();
     }
 
     private void SwipeHorizontal()
@@ -79,4 +95,7 @@ public class MoveCamera : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             stopTouch = false;
     }
+
+    private bool IsLeftGuardActive() => swapButtonsManager.IsLeftGuardHaveEnergy;
+    private bool IsRightGuardActive() => swapButtonsManager.IsRightGuardHaveEnergy;
 }
