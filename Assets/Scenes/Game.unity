@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1804911859837007503, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: goal
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804911859837007503, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: bonus
+      value: 
+      objectReference: {fileID: 210383288}
+    - target: {fileID: 1804911859837007503, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: statusImage
+      value: 
+      objectReference: {fileID: 210383285}
+    - target: {fileID: 1804911859837007503, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: surviveTimeUpdateAmount
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4718991851664175035, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
       propertyPath: m_Constraints
