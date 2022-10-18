@@ -140,6 +140,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6422535498236616172, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
+        type: 3}
+      propertyPath: relatedBonus
+      value: 
+      objectReference: {fileID: 210383288}
     - target: {fileID: 8234698635948591264, guid: bbebcfa56c0590040bd6c51e4b5dfafc,
         type: 3}
       propertyPath: m_Name
@@ -424,7 +429,7 @@ GameObject:
   - component: {fileID: 210383287}
   - component: {fileID: 210383288}
   m_Layer: 5
-  m_Name: ProtectButton
+  m_Name: ProtectBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +483,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.3
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -1695,7 +1700,7 @@ GameObject:
   - component: {fileID: 808196572}
   - component: {fileID: 808196573}
   m_Layer: 5
-  m_Name: DestroyButton
+  m_Name: DestroyBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1749,7 +1754,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.5
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -2493,6 +2498,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3804809972220547753, guid: 8f5b032eecf67fe41ad677a794bd1f39,
+        type: 3}
+      propertyPath: relatedBonus
+      value: 
+      objectReference: {fileID: 1887678565}
     - target: {fileID: 6259818203083546521, guid: 8f5b032eecf67fe41ad677a794bd1f39,
         type: 3}
       propertyPath: m_RootOrder
@@ -3048,6 +3058,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2415842348167856307, guid: 09550427e3348d2499f8f6f1a7e27891,
+        type: 3}
+      propertyPath: relatedBonus
+      value: 
+      objectReference: {fileID: 808196573}
     - target: {fileID: 4174997978384310471, guid: 09550427e3348d2499f8f6f1a7e27891,
         type: 3}
       propertyPath: m_Constraints
@@ -3384,7 +3399,7 @@ GameObject:
   - component: {fileID: 1887678565}
   - component: {fileID: 1887678566}
   m_Layer: 5
-  m_Name: ChargeButton
+  m_Name: ChargeBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3438,7 +3453,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.7
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -3463,12 +3478,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dbbe384c222c44449a4c823f37ccfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBonusEnabled: 1
   guards:
   - {fileID: 2008696906}
   - {fileID: 1906650023}
   - {fileID: 2077805599}
-  chargeAmount: 2500
-  isBonusEnabled: 1
+  chargeAmount: 2000
 --- !u!114 &1887678566
 MonoBehaviour:
   m_ObjectHideFlags: 0

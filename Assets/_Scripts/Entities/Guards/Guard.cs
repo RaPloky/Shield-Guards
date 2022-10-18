@@ -5,7 +5,8 @@ public class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
     [SerializeField] private int consumption;
-    [SerializeField, Range(0.5f, 1f)] private float consumptionDelay; 
+    [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
+    [SerializeField] private Bonus relatedBonus;
 
     private int _maxEnergy;
     private bool _isHaveEnergy;
@@ -53,6 +54,7 @@ public class Guard : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         StopAllCoroutines();
         _isHaveEnergy = false;
+        relatedBonus.DisableBonusButton();
     }
 
     public void AddEnergy(int energyAmount) => Energy += energyAmount;
