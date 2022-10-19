@@ -5,6 +5,7 @@ abstract public class Bonus : MonoBehaviour
 {
     [SerializeField] protected bool isBonusEnabled;
     [SerializeField] protected Image bonusStatusIndicator;
+    [SerializeField] protected int usageReward;
 
     protected Button _thatButton;
 
@@ -26,8 +27,7 @@ abstract public class Bonus : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ResetStatusIndicator()
-    {
-        bonusStatusIndicator.fillAmount = 0;
-    }
+    public void ResetStatusIndicator() => bonusStatusIndicator.fillAmount = 0;
+
+    protected void AddUsageReward() => EventManager.SendOnScoreUpdated(usageReward);
 }

@@ -6,6 +6,7 @@ abstract public class EarnBonus : MonoBehaviour
     [SerializeField] protected int goal;
     [SerializeField] protected Bonus bonus;
     [SerializeField] protected Image statusImage;
+    [SerializeField] protected int enablingReward;
 
     public float Progress { get; set; }
 
@@ -15,5 +16,6 @@ abstract public class EarnBonus : MonoBehaviour
     {
         bonus.IsBonusEnabled = true;
         Progress = 0;
+        EventManager.SendOnScoreUpdated(enablingReward);
     }
 }

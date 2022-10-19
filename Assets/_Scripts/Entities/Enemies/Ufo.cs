@@ -34,6 +34,7 @@ public class Ufo : Enemy
         // Other cool code
         Destroy(gameObject);
         EventManager.SendOnEnemyDestroyed();
+        EventManager.SendOnScoreUpdated(destructionReward);
     }
     
     private void FixedUpdate() => _thatTrans.LookAt(_target);

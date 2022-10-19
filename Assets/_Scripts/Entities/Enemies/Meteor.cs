@@ -74,5 +74,6 @@ public class Meteor : Enemy
         yield return new WaitForSeconds(destroyDelay);
         Destroy(gameObject);
         EventManager.SendOnEnemyDestroyed();
+        EventManager.SendOnScoreUpdated(destructionReward);
     }
 }
