@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 325206139}
   - component: {fileID: 325206140}
   - component: {fileID: 325206141}
+  - component: {fileID: 325206142}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -978,6 +979,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1745201871}
+--- !u!114 &325206142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325206135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03434110d196ca499bf42bc997dfd37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyIncreaseDelay: 10
+  ufoSpawners:
+  - {fileID: 1961237560}
+  - {fileID: 8292024737097164860}
+  - {fileID: 8292024736179729048}
+  meteorSpawners:
+  - {fileID: 941199416064537875}
+  - {fileID: 6133235092075932373}
+  - {fileID: 6133235092192609689}
+  spawnChanceIncrease: 0.015
+  spawnDelayDecrease: 0.12
 --- !u!1 &362384736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 6.72
+  spawnDelay: 7
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
@@ -3975,7 +3999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 7.08
+  spawnDelay: 9
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -4125,7 +4149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 7.08
+  spawnDelay: 9
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -4142,7 +4166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 7.08
+  spawnDelay: 9
   launchChance: 0.25
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
@@ -4191,7 +4215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 6.79
+  spawnDelay: 7
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
@@ -4240,7 +4264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 6.79
+  spawnDelay: 7
   launchChance: 0.25
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}

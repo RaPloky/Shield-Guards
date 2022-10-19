@@ -8,11 +8,23 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private Transform target;
 
-    public Transform Target => target;
-
     private Transform _thatTrans;
 
     public GameObject SpawnedPrefab { get; set; }
+    public Transform Target => target;
+
+    public float SpawnDelay
+    {
+        get => spawnDelay;
+        set => spawnDelay = Mathf.Clamp(value, 0.1f, 10f);
+    }
+
+    public float LaunchChance
+    {
+        get => launchChance;
+        set => launchChance = Mathf.Clamp01(value);
+    }
+
 
     private void Start()
     {
