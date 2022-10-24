@@ -15,12 +15,16 @@ public class ProjectileBehavior : MonoBehaviour
     private float _targetZ;
 
     private Guard _targetComponent;
+    private Meteor _thatMeteorReference;
 
     private void Awake()
     {
         _thatTrans = transform;
         _targetTrans = GetTargetFromParent();
         _thatRb = GetComponent<Rigidbody>();
+
+        if (isMeteor)
+            _thatMeteorReference = GetComponent<Meteor>();
     }
 
     private Transform GetTargetFromParent() => _thatTrans.parent.GetComponent<Spawner>().Target;
@@ -40,14 +44,17 @@ public class ProjectileBehavior : MonoBehaviour
 
         if (_targetComponent == null)
         {
-            Destroy(gameObject);
+            DestoyThatProjectile();
             return;
         }
-
         _targetComponent.ConsumptEnergy(energyDamage);
+        DestoyThatProjectile();
+    }
 
+    private void DestoyThatProjectile()
+    {
         if (isMeteor)
-            StartCoroutine(gameObject.GetComponent<Meteor>().DestroyThatEnemy());
+            StartCoroutine(_thatMeteorReference.DestroyThatEnemy());
         else
             Destroy(gameObject);
     }

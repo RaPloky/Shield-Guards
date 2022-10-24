@@ -49,6 +49,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1973489732030320690, guid: 8a04a5f1c8c42f44aa64fab611279433,
     type: 3}
   target: {fileID: 0}
+  enemyAppearAlarm: {fileID: 0}
 --- !u!1 &6797679723545711530
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +404,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 0.4897895, z: 2}
-  m_Center: {x: 0, y: 0.055105276, z: 0}
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!114 &5428319344738045445
 MonoBehaviour:
   m_ObjectHideFlags: 0
