@@ -23,7 +23,7 @@ public class Guard : MonoBehaviour
             energy = Mathf.Clamp(value, 0, _maxEnergy);
             EventManager.SendOnEnergyValueChanged();
 
-            if (Mathf.Approximately(energy, 0))
+            if (Mathf.Approximately(energy, 0) && _isHaveEnergy)
                 TurnOffGuard();
         }
     }
