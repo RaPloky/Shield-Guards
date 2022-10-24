@@ -55,6 +55,7 @@ public class Guard : MonoBehaviour
         StopAllCoroutines();
         _isHaveEnergy = false;
         relatedBonus.DisableBonusButton();
+        EventManager.SendOnGuardDischarged();
     }
 
     public void AddEnergy(int energyAmount) => Energy += energyAmount;
