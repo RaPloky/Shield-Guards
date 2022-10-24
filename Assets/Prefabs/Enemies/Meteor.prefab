@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedFactor: 0.05
   energyDamage: 500
+  isMeteor: 1
 --- !u!114 &4035032480939784337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,5 +167,5 @@ MonoBehaviour:
   destructionReward: 1500
   swipeRange: 70
   tapRange: 20
-  destroyDelay: 1
+  destroyDelay: 0.2
   dragTo: {fileID: 7589313872233267216, guid: 522046004bdbd8041ac1cd9b5893814c, type: 3}

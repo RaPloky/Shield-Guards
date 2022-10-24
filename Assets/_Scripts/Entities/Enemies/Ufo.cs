@@ -26,13 +26,16 @@ public class Ufo : Enemy
     {
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
+        appearAlarm = GetAlarmGOFromSpawner();
+        ActivateAlarm();
     }
 
     public override IEnumerator DestroyThatEnemy()
     {
         yield return new WaitForSeconds(0);
-        // Other cool code
+        DeactivateAlarm();
         Destroy(gameObject);
+        
         EventManager.SendOnEnemyDestroyed();
         EventManager.SendOnScoreUpdated(destructionReward);
     }
@@ -41,4 +44,5 @@ public class Ufo : Enemy
     private void OnMouseDown() => DamageUfo();
     private void DamageUfo() => Health -= damageToUfo;
     private Transform GetTargetFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().Target;
+    private GameObject GetAlarmGOFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().AppearAlarm;
 }

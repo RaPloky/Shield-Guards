@@ -264,6 +264,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -10.189545
       objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: UfoAlarmSupport
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6531652400905135517, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -377,6 +387,26 @@ PrefabInstance:
     - target: {fileID: 6531652400905135522, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorAlarmSupport
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9190922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531652401111618831, guid: c75aa0a063905164daf1052296e387c2,
@@ -404,6 +434,12 @@ PrefabInstance:
 --- !u!224 &18141567 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6531652400905135517, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 18141566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &18141568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
     type: 3}
   m_PrefabInstance: {fileID: 18141566}
   m_PrefabAsset: {fileID: 0}
@@ -1737,6 +1773,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &530946310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 18141566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &550777993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,8 +2023,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1961237559}
   - {fileID: 8292024737097164858}
+  - {fileID: 1961237559}
   - {fileID: 8292024736179729047}
   m_Father: {fileID: 1556885950}
   m_RootOrder: 0
@@ -2500,8 +2542,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 825036969389573924}
   - {fileID: 6008208668216416482}
+  - {fileID: 825036969389573924}
   - {fileID: 6008208668331014062}
   m_Father: {fileID: 1556885950}
   m_RootOrder: 1
@@ -3496,6 +3538,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -10.189545
       objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: UfoAlarmCharger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6531652400905135517, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3609,6 +3661,26 @@ PrefabInstance:
     - target: {fileID: 6531652400905135522, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorAlarmCharger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9190922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531652401111618831, guid: c75aa0a063905164daf1052296e387c2,
@@ -3638,6 +3710,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6531652400905135517, guid: c75aa0a063905164daf1052296e387c2,
     type: 3}
   m_PrefabInstance: {fileID: 1526019435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1526019437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1526019435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1526019438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1526019435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1538276721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6531652402362574973}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1544385792
 GameObject:
@@ -3858,7 +3948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1556885950}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: EnemySpawners
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3882,6 +3972,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1710332078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6531652402362574973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1725993482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4511,7 +4607,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 750053434}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1961237560
 MonoBehaviour:
@@ -4530,6 +4626,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 946494438}
+  enemyAppearAlarm: {fileID: 1710332078}
 --- !u!4 &2008696905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6259818203083546521, guid: 8f5b032eecf67fe41ad677a794bd1f39,
@@ -4726,7 +4823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 868677463}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &941199416064537875
 MonoBehaviour:
@@ -4745,6 +4842,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 946494438}
+  enemyAppearAlarm: {fileID: 1538276721}
 --- !u!1 &2459771779404358760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,7 +4959,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 868677463}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6008208668331014062
 Transform:
@@ -4895,6 +4993,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 2008696905}
+  enemyAppearAlarm: {fileID: 1526019438}
 --- !u!114 &6133235092192609689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4912,6 +5011,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 1814231569}
+  enemyAppearAlarm: {fileID: 530946310}
 --- !u!1001 &6531652402362574973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4938,6 +5038,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -10.189545
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: UfoAlarmAttacker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652400679514323, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531652400905135517, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
@@ -5052,6 +5162,26 @@ PrefabInstance:
     - target: {fileID: 6531652400905135522, guid: c75aa0a063905164daf1052296e387c2,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Name
+      value: MeteorAlarmAttacker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618828, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9190922
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531652401111618830, guid: c75aa0a063905164daf1052296e387c2,
+        type: 3}
+      propertyPath: m_Color.g
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531652401111618831, guid: c75aa0a063905164daf1052296e387c2,
@@ -5125,6 +5255,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 1814231569}
+  enemyAppearAlarm: {fileID: 18141568}
 --- !u!4 &8292024737097164858
 Transform:
   m_ObjectHideFlags: 0
@@ -5138,7 +5269,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 750053434}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8292024737097164859
 GameObject:
@@ -5174,6 +5305,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 7956270353036138414, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 2008696905}
+  enemyAppearAlarm: {fileID: 1526019437}
 --- !u!1 &8804733351020526510
 GameObject:
   m_ObjectHideFlags: 0

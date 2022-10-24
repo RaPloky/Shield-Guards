@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    [SerializeField, Range(0f, 0.05f)] float speedFactor;
-    [SerializeField] int energyDamage;
+    [SerializeField, Range(0f, 0.05f)] private float speedFactor;
+    [SerializeField] private int energyDamage;
+    [SerializeField] private bool isMeteor;
 
     private Transform _targetTrans;
     private Rigidbody _thatRb;
@@ -20,7 +21,6 @@ public class ProjectileBehavior : MonoBehaviour
         _thatTrans = transform;
         _targetTrans = GetTargetFromParent();
         _thatRb = GetComponent<Rigidbody>();
-        _thatTrans.SetParent(null);
     }
 
     private Transform GetTargetFromParent() => _thatTrans.parent.GetComponent<Spawner>().Target;
@@ -45,6 +45,10 @@ public class ProjectileBehavior : MonoBehaviour
         }
 
         _targetComponent.ConsumptEnergy(energyDamage);
-        Destroy(gameObject);
+
+        if (isMeteor)
+            StartCoroutine(gameObject.GetComponent<Meteor>().DestroyThatEnemy());
+        else
+            Destroy(gameObject);
     }
 }

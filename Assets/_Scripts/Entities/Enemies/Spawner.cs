@@ -7,11 +7,13 @@ public class Spawner : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float launchChance;
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private Transform target;
+    [SerializeField] private GameObject enemyAppearAlarm;
 
     private Transform _thatTrans;
 
     public GameObject SpawnedPrefab { get; set; }
     public Transform Target => target;
+    public GameObject AppearAlarm => enemyAppearAlarm;
 
     public float SpawnDelay
     {

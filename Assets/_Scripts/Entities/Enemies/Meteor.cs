@@ -8,7 +8,6 @@ public class Meteor : Enemy
     [SerializeField] private float tapRange;
 
     [Header("Other")]
-    [SerializeField, Range(0.2f, 1f)] private float destroyDelay;
     [SerializeField] private Transform dragTo;
 
     private Rigidbody _meteorRb;
@@ -19,6 +18,8 @@ public class Meteor : Enemy
     private void Awake()
     {
         _meteorRb = GetComponent<Rigidbody>();
+        appearAlarm = GetAlarmGOFromSpawner();
+        ActivateAlarm();
     }
 
     private void OnMouseDrag()
@@ -71,9 +72,13 @@ public class Meteor : Enemy
 
     public override IEnumerator DestroyThatEnemy()
     {
-        yield return new WaitForSeconds(destroyDelay);
+        yield return new WaitForSeconds(0);
+        DeactivateAlarm();
         Destroy(gameObject);
+
         EventManager.SendOnEnemyDestroyed();
         EventManager.SendOnScoreUpdated(destructionReward);
     }
+
+    private GameObject GetAlarmGOFromSpawner() => transform.parent.GetComponent<Spawner>().AppearAlarm;
 }
