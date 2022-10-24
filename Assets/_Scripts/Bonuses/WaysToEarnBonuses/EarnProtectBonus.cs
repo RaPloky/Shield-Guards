@@ -19,7 +19,7 @@ public class EarnProtectBonus : EarnBonus
             if (!bonus.isActiveAndEnabled)
                 yield break;
 
-            yield return new WaitForSecondsRealtime(surviveTimeUpdateAmount);
+            yield return new WaitForSeconds(surviveTimeUpdateAmount);
 
             if (!bonus.IsBonusEnabled)
             {
