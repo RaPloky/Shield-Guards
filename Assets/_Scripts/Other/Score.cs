@@ -5,7 +5,7 @@ public class Score : MonoBehaviour
 {
     private TextMeshProUGUI _score;
 
-    public string ScorePref => "BestScore";
+    public static string ScorePref => "BestScore";
 
     public int ScoreAmount => int.Parse(_score.text);
 

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Score score;
+    [SerializeField] private TextMeshProUGUI bestScore;
 
     private int _activeGuardsCount;
 
@@ -21,6 +23,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ActiveGuardsCount = GameObject.FindGameObjectsWithTag("Guard").Length;
+
+        if (bestScore != null)
+            bestScore.text = "Best score\n" + PlayerPrefs.GetInt(Score.ScorePref);
     }
 
     private void OnEnable()
@@ -59,12 +64,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void StartGame()
+    {
+        // loading animation
+        SceneManager.LoadScene("Game");
+    }
+
     private void LoseGame()
     {
         // lose animation
         losePanel.SetActive(true);
 
-        if (score.ScoreAmount > PlayerPrefs.GetInt(score.ScorePref))
+        if (score.ScoreAmount > PlayerPrefs.GetInt(Score.ScorePref))
             score.UpdateBestScore();
     }
 
