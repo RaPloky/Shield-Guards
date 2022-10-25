@@ -15,6 +15,9 @@ public class GainEnergyOnTouch : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.IsGamePaused)
+            return;
+
         _thatGuard.AddEnergy(energyAddAmount);
         _animator.Play("Touch", -1, 0f);
         EventManager.SendOnNonBonusEnergyAdded();

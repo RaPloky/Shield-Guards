@@ -24,12 +24,18 @@ public class Meteor : Enemy
 
     private void OnMouseDrag()
     {
+        if (GameManager.IsGamePaused)
+            return;
+
         SwipeVertical();
     }
 
     // Temporary method for testing on PC
     private void OnMouseDown()
     {
+        if (GameManager.IsGamePaused)
+            return;
+
         StartCoroutine(DestroyThatEnemy());
     }
 

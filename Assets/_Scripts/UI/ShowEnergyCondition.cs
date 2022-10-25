@@ -10,9 +10,13 @@ public class ShowEnergyCondition : MonoBehaviour
 
     private void Start()
     {
-        Subscribe();
         // Update on game start:
         UpdateFillImage();
+    }
+
+    private void OnEnable()
+    {
+        Subscribe();
     }
 
     private void OnDisable()

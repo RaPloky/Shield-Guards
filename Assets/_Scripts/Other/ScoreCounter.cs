@@ -7,10 +7,19 @@ public class ScoreCounter : MonoBehaviour
 
     public int Score { get; set; }
 
-    public void Start()
+    private void Start()
     {
         UpdateScoreText(0);
+    }
+
+    private void OnEnable()
+    {
         EventManager.OnScoreUpdated += UpdateScoreText;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnScoreUpdated -= UpdateScoreText;
     }
 
     private void UpdateScoreText(int addedPoints)

@@ -8,7 +8,16 @@ public class EarnChargeBonus : EarnBonus
     {
         Progress = 0;
         UpdateBonusStatus();
+    }
+
+    private void OnEnable()
+    {
         EventManager.OnNonBonusEnergyAdded += UpdateAddedEnergyAmount;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnNonBonusEnergyAdded -= UpdateAddedEnergyAmount;
     }
 
     private void UpdateAddedEnergyAmount()

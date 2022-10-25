@@ -3,9 +3,18 @@ public class EarnDestroyBonus : EarnBonus
     private void Start()
     {
         Progress = 0;
-        EventManager.OnEnemyDestroyed += UpdateTakenDownEnemiesCount;
 
         UpdateBonusStatus();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.OnEnemyDestroyed += UpdateTakenDownEnemiesCount;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnEnemyDestroyed -= UpdateTakenDownEnemiesCount;
     }
 
     private void UpdateTakenDownEnemiesCount()
