@@ -27,10 +27,13 @@ public class Spawner : MonoBehaviour
         set => launchChance = Mathf.Clamp01(value);
     }
 
+    public bool IsSpawnFreezed { get; set; }
+
 
     private void Start()
     {
         _thatTrans = transform;
+        IsSpawnFreezed = false;
 
         if (target == null)
             target = GetTargetFromSpawner();
@@ -44,7 +47,7 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnDelay);
 
-            if (IsSpawnAllowed() && SpawnedPrefab == null)
+            if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed)
                 SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
         }
     }

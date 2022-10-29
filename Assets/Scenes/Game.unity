@@ -2700,9 +2700,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d41a9f22ffc46844aab77431afc0080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBonusEnabled: 0
+  isBonusEnabled: 1
   bonusStatusIndicator: {fileID: 808196570}
   usageReward: 300
+  spawnFreezeTime: 5
+  spawners:
+  - {fileID: 8292024737097164860}
+  - {fileID: 1961237560}
+  - {fileID: 8292024736179729048}
+  - {fileID: 6133235092075932373}
+  - {fileID: 941199416064537875}
+  - {fileID: 6133235092192609689}
 --- !u!1 &829433176
 GameObject:
   m_ObjectHideFlags: 0
