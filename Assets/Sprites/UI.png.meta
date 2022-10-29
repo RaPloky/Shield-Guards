@@ -119,8 +119,8 @@ TextureImporter:
       name: Attacker_Effect
       rect:
         serializedVersion: 2
-        x: 806
-        y: 413
+        x: 805
+        y: 482
         width: 221
         height: 211
       alignment: 0
@@ -140,8 +140,8 @@ TextureImporter:
       name: Attacker_Bonus
       rect:
         serializedVersion: 2
-        x: 493
-        y: 406
+        x: 489
+        y: 474
         width: 257
         height: 236
       alignment: 0
@@ -162,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 275
-        y: 426
+        y: 496
         width: 165
         height: 171
       alignment: 0
@@ -182,8 +182,8 @@ TextureImporter:
       name: Button_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 416
+        x: 22
+        y: 486
         width: 220
         height: 189
       alignment: 0
@@ -204,7 +204,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 18
-        y: 673
+        y: 743
         width: 208
         height: 199
       alignment: 0
@@ -224,8 +224,8 @@ TextureImporter:
       name: Play
       rect:
         serializedVersion: 2
-        x: 259
-        y: 664
+        x: 252
+        y: 733
         width: 199
         height: 199
       alignment: 0
@@ -245,8 +245,8 @@ TextureImporter:
       name: Music_On
       rect:
         serializedVersion: 2
-        x: 513
-        y: 719
+        x: 512
+        y: 789
         width: 177
         height: 147
       alignment: 0
@@ -266,8 +266,8 @@ TextureImporter:
       name: Music_Off
       rect:
         serializedVersion: 2
-        x: 809
-        y: 704
+        x: 806
+        y: 775
         width: 178
         height: 148
       alignment: 0
@@ -288,7 +288,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 155
+        y: 229
         width: 223
         height: 242
       alignment: 0
@@ -308,8 +308,8 @@ TextureImporter:
       name: Support_Effect
       rect:
         serializedVersion: 2
-        x: 274
-        y: 188
+        x: 275
+        y: 258
         width: 145
         height: 168
       alignment: 0
@@ -329,8 +329,8 @@ TextureImporter:
       name: Charger_Bonus
       rect:
         serializedVersion: 2
-        x: 463
-        y: 138
+        x: 461
+        y: 211
         width: 222
         height: 245
       alignment: 0
@@ -351,7 +351,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 725
-        y: 169
+        y: 237
         width: 115
         height: 193
       alignment: 0
@@ -371,8 +371,8 @@ TextureImporter:
       name: Gradient_1
       rect:
         serializedVersion: 2
-        x: 968
-        y: 180
+        x: 967
+        y: 249
         width: 168
         height: 168
       alignment: 0
@@ -393,7 +393,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 71
         width: 550
         height: 96
       alignment: 0
@@ -405,6 +405,27 @@ TextureImporter:
       bones: []
       spriteID: db8064efde58cd04ca921848b6057596
       internalID: 1510364483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Freeze_timer
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 0
+        width: 170
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fecea4abc95bc64a8459eb6b61a5385
+      internalID: 932157071
       vertices: []
       indices: 
       edges: []
@@ -423,6 +444,7 @@ TextureImporter:
       Button_1: 1867587389
       Play: 1994514598
       Attacker_Effect: 222352210
+      Freeze_timer: 932157071
       Menu: 1077149117
       Gradient_2: 1510364483
       Button_2: -121808223
