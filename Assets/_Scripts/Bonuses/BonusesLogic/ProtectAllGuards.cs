@@ -39,6 +39,7 @@ public class ProtectAllGuards : Bonus
         foreach (Guard guard in guards)
             guard.IsProtectBonusActivated = true;
 
+        StartEffectTimer(shieldDuration);
         yield return new WaitForSeconds(shieldDuration);
 
         foreach (Guard guard in guards)

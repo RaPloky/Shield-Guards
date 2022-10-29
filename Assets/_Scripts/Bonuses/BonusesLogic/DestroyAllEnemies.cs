@@ -21,6 +21,7 @@ public class DestroyAllEnemies : Bonus
 
         StartCoroutine(FreezeSpawn());
 
+        StartEffectTimer(spawnFreezeTime);
         isBonusEnabled = false;
         ResetStatusIndicator();
     }
