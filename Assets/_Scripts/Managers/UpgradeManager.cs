@@ -12,17 +12,22 @@ public class UpgradeManager : MonoBehaviour
     public IDictionary<int, float> DemolitionValues;
     public IDictionary<int, float> ProtectionValues;
 
+    public int CurrentChargeValue => ChargingValues[PlayerPrefs.GetInt(ChargingBonusLvl)];
+    public float CurrentDemolitionValue => DemolitionValues[PlayerPrefs.GetInt(DemolitionBonusLvl)];
+    public float CurrentProtectionValue => ProtectionValues[PlayerPrefs.GetInt(ProtectionBonusLvl)];
+
     private readonly int _levelsLimit = 7;
     private float _minBonusEffectValue;
     private float _effectIncrement;
 
     private void OnEnable()
     {
+        DontDestroyOnLoad(gameObject);
         ChargingValues = AssignChargingValues();
         DemolitionValues = AssignDemolitionValues();
         ProtectionValues = AssignProtectionValues();
     }
-
+    #region "Assign values of bonuses"
     private Dictionary<int, int> AssignChargingValues()
     {
         var valuesDict = new Dictionary<int, int>();
@@ -58,4 +63,5 @@ public class UpgradeManager : MonoBehaviour
 
         return valuesDict;
     }
+    #endregion
 }
