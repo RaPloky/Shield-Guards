@@ -6,11 +6,16 @@ public class ProtectAllGuards : Bonus
 {
     [Header("Resist bonus")]
     [SerializeField] private List<Guard> guards;
-    [SerializeField, Range(4f, 8f)] private float shieldDuration;
+    private float shieldDuration;
 
     [Header("Time warp bonus")]
     [SerializeField] private float timeWarpDuration;
     [SerializeField, Range(0.1f, 0.5f)] private float timeWarpValue;
+
+    private void Start()
+    {
+        shieldDuration = UpgradeManager.instance.CurrentProtectionValue;
+    }
 
     public void ActivateShieldBonus()
     {

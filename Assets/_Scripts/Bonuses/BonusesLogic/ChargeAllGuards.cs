@@ -4,7 +4,12 @@ using UnityEngine;
 public class ChargeAllGuards : Bonus
 {
     [SerializeField] private List<Guard> guards;
-    [SerializeField] private int chargeAmount;
+    private int chargeAmount;
+
+    private void Start()
+    {
+        chargeAmount = UpgradeManager.instance.CurrentChargeValue;
+    }
 
     public void ActivateInstantCharging()
     {

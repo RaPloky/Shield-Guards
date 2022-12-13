@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class DestroyAllEnemies : Bonus
 {
-    [SerializeField] private float spawnFreezeTime;
     [SerializeField] private List<Spawner> spawners;
+    private float spawnFreezeTime;
 
     private GameObject[] _enemies;
+
+    private void Start()
+    {
+        spawnFreezeTime = UpgradeManager.instance.CurrentDemolitionValue;
+    }
 
     public void DestroyEnemies()
     {
