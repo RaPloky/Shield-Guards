@@ -1129,13 +1129,11 @@ MonoBehaviour:
   bonusStatusIndicator: {fileID: 210383285}
   usageReward: 400
   effectDurationText: {fileID: 626543075}
+  _thatButton: {fileID: 210383287}
   guards:
   - {fileID: 2008696906}
   - {fileID: 1906650023}
   - {fileID: 2077805599}
-  shieldDuration: 4
-  timeWarpDuration: 4
-  timeWarpValue: 0.213
 --- !u!1 &257751512
 GameObject:
   m_ObjectHideFlags: 0
@@ -3059,7 +3057,7 @@ MonoBehaviour:
   bonusStatusIndicator: {fileID: 808196570}
   usageReward: 300
   effectDurationText: {fileID: 1528388228}
-  spawnFreezeTime: 5
+  _thatButton: {fileID: 808196572}
   spawners:
   - {fileID: 8292024737097164860}
   - {fileID: 1961237560}
@@ -6056,11 +6054,11 @@ MonoBehaviour:
   bonusStatusIndicator: {fileID: 1887678563}
   usageReward: 500
   effectDurationText: {fileID: 0}
+  _thatButton: {fileID: 1887678566}
   guards:
   - {fileID: 2008696906}
   - {fileID: 1906650023}
   - {fileID: 2077805599}
-  chargeAmount: 2000
 --- !u!114 &1887678566
 MonoBehaviour:
   m_ObjectHideFlags: 0

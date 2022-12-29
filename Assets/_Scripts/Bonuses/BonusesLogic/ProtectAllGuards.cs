@@ -8,10 +8,6 @@ public class ProtectAllGuards : Bonus
     [SerializeField] private List<Guard> guards;
     private float shieldDuration;
 
-    [Header("Time warp bonus")]
-    [SerializeField] private float timeWarpDuration;
-    [SerializeField, Range(0.1f, 0.5f)] private float timeWarpValue;
-
     private void Start()
     {
         shieldDuration = UpgradeManager.instance.CurrentProtectionValue;
@@ -28,17 +24,6 @@ public class ProtectAllGuards : Bonus
         ResetStatusIndicator();
     }
 
-    public void ActivateTimeWarpBonus()
-    {
-        if (!isBonusEnabled)
-            return;
-
-        StartCoroutine(ActivateTimeWarp());
-
-        isBonusEnabled = false;
-        ResetStatusIndicator();
-    }
-
     private IEnumerator ProtectGuards()
     {
         foreach (Guard guard in guards)
@@ -49,15 +34,5 @@ public class ProtectAllGuards : Bonus
 
         foreach (Guard guard in guards)
             guard.IsProtectBonusActivated = false;
-    }
-
-    private IEnumerator ActivateTimeWarp()
-    {
-        Time.timeScale = timeWarpValue;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
-
-        yield return new WaitForSecondsRealtime(timeWarpDuration);
-
-        Time.timeScale = 1f;
     }
 }

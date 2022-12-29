@@ -77,7 +77,9 @@ public class GameManager : MonoBehaviour
 
         if (score.ScoreAmount > PlayerPrefs.GetInt(Score.ScorePref))
             score.UpdateBestScore();
-    }
+
+        PlayerPrefs.SetInt(UpgradeManager.CurrencyPref, score.ScoreAmount);
+;    }
 
     private void ReduceActiveGuardsCount()
     {

@@ -1,18 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager instance;
 
+    [SerializeField] private TextMeshProUGUI energyDepletedCount;
+
     public static string ChargingBonusLvlPref => "ChargingLvl";
     public static string DemolitionBonusLvlPref => "DemolitionLvl";
     public static string ProtectionBonusLvlPref => "ProtectionLvl";
 
+    public static string CurrencyPref = "CurrencyCount";
+
     public int ChargingBonusLvl => PlayerPrefs.GetInt(ChargingBonusLvlPref, 1);
     public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 1);
     public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 1);
-
 
     public IDictionary<int, int> ChargingValues;
     public IDictionary<int, float> DemolitionValues;
@@ -21,18 +25,22 @@ public class UpgradeManager : MonoBehaviour
     public int CurrentChargeValue => ChargingValues[ChargingBonusLvl];
     public float CurrentDemolitionValue => DemolitionValues[DemolitionBonusLvl];
     public float CurrentProtectionValue => ProtectionValues[ProtectionBonusLvl];
+    public int CurrencyValue => PlayerPrefs.GetInt(CurrencyPref, 0);
 
     public readonly int levelsLimit = 7;
     private float _minBonusEffectValue;
     private float _effectIncrement;
 
-    private void OnEnable()
+    private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
         ChargingValues = AssignChargingValues();
         DemolitionValues = AssignDemolitionValues();
         ProtectionValues = AssignProtectionValues();
+
+        if (energyDepletedCount != null)
+            energyDepletedCount.text = PlayerPrefs.GetInt(CurrencyPref, 0).ToString();
     }
     #region "Assign values of bonuses"
     private Dictionary<int, int> AssignChargingValues()
@@ -71,4 +79,9 @@ public class UpgradeManager : MonoBehaviour
         return valuesDict;
     }
     #endregion
+
+    public void UpgradeChargeBonus()
+    {
+
+    }
 }

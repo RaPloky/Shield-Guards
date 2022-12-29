@@ -10,18 +10,12 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected Image bonusStatusIndicator;
     [SerializeField] protected int usageReward;
     [SerializeField] protected TextMeshProUGUI effectDurationText;
-
-    protected Button _thatButton;
+    [SerializeField] protected Button _thatButton;
 
     public bool IsBonusEnabled
     {
         get => isBonusEnabled;
         set => isBonusEnabled = value;
-    }
-
-    private void Start()
-    {
-        _thatButton = GetComponent<Button>();
     }
 
     public void DisableBonusButton()
