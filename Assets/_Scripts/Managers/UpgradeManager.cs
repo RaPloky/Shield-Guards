@@ -12,76 +12,58 @@ public class UpgradeManager : MonoBehaviour
     public static string DemolitionBonusLvlPref => "DemolitionLvl";
     public static string ProtectionBonusLvlPref => "ProtectionLvl";
 
-    public static string CurrencyPref = "CurrencyCount";
+    public static string EnergyPref = "EnergyDepletedCount";
 
     public int ChargingBonusLvl => PlayerPrefs.GetInt(ChargingBonusLvlPref, 1);
     public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 1);
     public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 1);
 
-    public IDictionary<int, int> ChargingValues;
-    public IDictionary<int, float> DemolitionValues;
-    public IDictionary<int, float> ProtectionValues;
+    public IDictionary<int, float> ChargingValues { get; private set; }
+    public IDictionary<int, float> DemolitionValues { get; private set; }
+    public IDictionary<int, float> ProtectionValues { get; private set; }
 
-    public int CurrentChargeValue => ChargingValues[ChargingBonusLvl];
+    public int[] UpgradesPrices { get; private set; }
+
+    public float CurrentChargeValue => ChargingValues[ChargingBonusLvl];
     public float CurrentDemolitionValue => DemolitionValues[DemolitionBonusLvl];
     public float CurrentProtectionValue => ProtectionValues[ProtectionBonusLvl];
-    public int CurrencyValue => PlayerPrefs.GetInt(CurrencyPref, 0);
+    public int EnergyValue => PlayerPrefs.GetInt(EnergyPref, 0);
 
     public readonly int levelsLimit = 7;
-    private float _minBonusEffectValue;
-    private float _effectIncrement;
 
     private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
-        ChargingValues = AssignChargingValues();
-        DemolitionValues = AssignDemolitionValues();
-        ProtectionValues = AssignProtectionValues();
+
+        ChargingValues = AssignBonusValues(1000, 250);
+        DemolitionValues = AssignBonusValues(3, 1);
+        ProtectionValues = AssignBonusValues(5, 0.5f);
 
         if (energyDepletedCount != null)
-            energyDepletedCount.text = PlayerPrefs.GetInt(CurrencyPref, 0).ToString();
-    }
-    #region "Assign values of bonuses"
-    private Dictionary<int, int> AssignChargingValues()
-    {
-        var valuesDict = new Dictionary<int, int>();
-        _minBonusEffectValue = 1000;
-        _effectIncrement = 250;
-
-        for (int i = 1; i <= levelsLimit; i++)
-            valuesDict.Add(i, (int)(_minBonusEffectValue += _effectIncrement));
-
-        return valuesDict;
+            energyDepletedCount.text = PlayerPrefs.GetInt(EnergyPref, 0).ToString();
     }
 
-    private Dictionary<int, float> AssignDemolitionValues()
+    private Dictionary<int, float> AssignBonusValues(float minBonusEffectValue, float effectIncrement)
     {
         var valuesDict = new Dictionary<int, float>();
-        _minBonusEffectValue = 3;
-        _effectIncrement = 1;
 
         for (int i = 1; i <= levelsLimit; i++)
-            valuesDict.Add(i, _minBonusEffectValue += _effectIncrement);
+            valuesDict.Add(i, (int)(minBonusEffectValue += effectIncrement));
 
         return valuesDict;
     }
 
-    private Dictionary<int, float> AssignProtectionValues()
+    public void UpgradeChargeBonus(int bonuslvl)
     {
-        var valuesDict = new Dictionary<int, float>();
-        _minBonusEffectValue = 5;
-        _effectIncrement = 0.5f;
+        int nextLvl = bonuslvl + 1;
+        if (nextLvl >= UpgradesPrices.Length)
+            return;
 
-        for (int i = 1; i <= levelsLimit; i++)
-            valuesDict.Add(i, _minBonusEffectValue += _effectIncrement);
-
-        return valuesDict;
+        int nextUpgradeCost = UpgradesPrices[nextLvl];
+        if (!IsEnoughEnergyToUpgrade(nextUpgradeCost))
+            return;
     }
-    #endregion
 
-    public void UpgradeChargeBonus()
-    {
-
-    }
+    private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
 }
