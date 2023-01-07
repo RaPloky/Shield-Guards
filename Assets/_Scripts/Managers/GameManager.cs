@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -67,6 +65,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         // loading animation
+        UnpauseGame();
         SceneManager.LoadScene("Game");
     }
 
@@ -74,12 +73,13 @@ public class GameManager : MonoBehaviour
     {
         // lose animation
         losePanel.SetActive(true);
+        PauseGame();
 
         if (score.ScoreAmount > PlayerPrefs.GetInt(Score.ScorePref))
             score.UpdateBestScore();
 
-        PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount);
-;    }
+        UpdateEnergyCount();
+    }
 
     private void ReduceActiveGuardsCount()
     {
@@ -87,5 +87,11 @@ public class GameManager : MonoBehaviour
 
         if (Mathf.Approximately(ActiveGuardsCount, 0))
             LoseGame();
+    }
+
+    private void UpdateEnergyCount()
+    {
+        int storedEnergy = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
+        PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount + storedEnergy);
     }
 }

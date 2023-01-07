@@ -16,27 +16,37 @@ public class UpdateBonusesStats : MonoBehaviour
 
     private void Start()
     {
-        _upgradeManager = UpgradeManager.instance;
-        UpdateChargeStatus();
-        UpdateDemolitionStatus();
-        UpdateProtectionStatus();
+        _upgradeManager = UpgradeManager.Instance;
+
+        EventManager.OnBonusUpgraded += UpdateChargeStatus;
+        EventManager.OnBonusUpgraded += UpdateDemolitionStatus;
+        EventManager.OnBonusUpgraded += UpdateProtectionStatus;
+
+        EventManager.SendOnBonusUpgraded();
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnBonusUpgraded -= UpdateChargeStatus;
+        EventManager.OnBonusUpgraded -= UpdateDemolitionStatus;
+        EventManager.OnBonusUpgraded -= UpdateProtectionStatus;
     }
 
     public void UpdateChargeStatus()
     {
-        chargeStatus.fillAmount = _upgradeManager.ChargingBonusLvl / _upgradeManager.levelsLimit;
+        chargeStatus.fillAmount = (float)_upgradeManager.ChargingBonusLvl / _upgradeManager.LevelsLimit;
         chargeInfo.text = $"+{_upgradeManager.CurrentChargeValue} per charging";
     }
 
     public void UpdateDemolitionStatus()
     {
-        demolitionStatus.fillAmount = _upgradeManager.DemolitionBonusLvl / _upgradeManager.levelsLimit;
+        demolitionStatus.fillAmount = (float)_upgradeManager.DemolitionBonusLvl / _upgradeManager.LevelsLimit;
         demolitionInfo.text = $"{_upgradeManager.CurrentDemolitionValue}s enemies spawn freeze after using";
     }
 
     public void UpdateProtectionStatus()
     {
-        protectionStatus.fillAmount = _upgradeManager.ProtectionBonusLvl / _upgradeManager.levelsLimit;
+        protectionStatus.fillAmount = (float)_upgradeManager.ProtectionBonusLvl / _upgradeManager.LevelsLimit;
         protectionInfo.text = $"{_upgradeManager.CurrentProtectionValue}s of invulnerability";
     }
 }

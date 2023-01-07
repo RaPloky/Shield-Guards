@@ -10,7 +10,7 @@ public class ProtectAllGuards : Bonus
 
     private void Start()
     {
-        shieldDuration = UpgradeManager.instance.CurrentProtectionValue;
+        shieldDuration = UpgradeManager.Instance.CurrentProtectionValue;
     }
 
     public void ActivateShieldBonus()

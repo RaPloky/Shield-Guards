@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     public static Action<int> OnScoreUpdated;
     public static Action OnGameLose;
     public static Action OnGuardDischarged;
+    public static Action OnBonusUpgraded;
 
     public static void SendOnEnergyValueChanged() => OnEnergyValueChanged?.Invoke();
     public static void SendOnEnemyDestroyed() => OnEnemyDestroyed?.Invoke();
@@ -16,4 +17,5 @@ public class EventManager : MonoBehaviour
     public static void SendOnScoreUpdated(int addedPoints) => OnScoreUpdated?.Invoke(addedPoints);
     public static void SendOnGameLose() => OnGameLose?.Invoke();
     public static void SendOnGuardDischarged() => OnGuardDischarged?.Invoke();
+    public static void SendOnBonusUpgraded() => OnBonusUpgraded?.Invoke();
 }

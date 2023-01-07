@@ -11,7 +11,7 @@ public class DestroyAllEnemies : Bonus
 
     private void Start()
     {
-        spawnFreezeTime = UpgradeManager.instance.CurrentDemolitionValue;
+        spawnFreezeTime = UpgradeManager.Instance.CurrentDemolitionValue;
     }
 
     public void DestroyEnemies()
