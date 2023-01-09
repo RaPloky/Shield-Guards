@@ -10,6 +10,7 @@ public class Guard : MonoBehaviour
 
     private int _maxEnergy;
     private bool _isHaveEnergy;
+    private Guard _thatGuard;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
@@ -30,6 +31,11 @@ public class Guard : MonoBehaviour
     public bool IsHaveEnergy => _isHaveEnergy;
     public bool IsProtectBonusActivated { get; set; }
     public Transform RelatedBonus => relatedBonus.transform;
+    public float ConsumptionDelay
+    {
+        get => consumptionDelay;
+        set => consumptionDelay = value;
+    }
 
     private void Awake()
     {
@@ -37,6 +43,7 @@ public class Guard : MonoBehaviour
         _maxEnergy = energy;
         _isHaveEnergy = true;
         StartCoroutine(ConsumptEnergy());
+        _thatGuard = this;
     }
 
     private IEnumerator ConsumptEnergy()
@@ -55,6 +62,7 @@ public class Guard : MonoBehaviour
         StopAllCoroutines();
         _isHaveEnergy = false;
         relatedBonus.DisableBonusButton();
+        DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
         EventManager.SendOnGuardDischarged();
     }
 

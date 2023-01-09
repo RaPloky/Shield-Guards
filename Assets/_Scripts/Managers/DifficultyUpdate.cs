@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DifficultyUpdate : MonoBehaviour
 {
+    public static DifficultyUpdate Instance;
+
     [SerializeField, Range(10f, 40f)] private float difficultyIncreaseDelay;
 
     [SerializeField] private List<Spawner> ufoSpawners;
@@ -11,11 +13,18 @@ public class DifficultyUpdate : MonoBehaviour
 
     [SerializeField, Range(0.01f, 0.05f)] private float spawnChanceIncrease;
     [SerializeField, Range(0.01f, 0.25f)] private float spawnDelayDecrease;
+    [SerializeField, Range(0, 0.25f)] private float consumptionDelayDecrease;
+
+    [SerializeField] private List<Guard> activeGuards;
 
     private void Start()
     {
+        Instance = this;
         StartCoroutine(IncreaseDifficulty());
     }
+
+    private void OnEnable() => EventManager.OnGuardDischarged += IncreaseEnergyConsumption;
+    private void OnDisable() => EventManager.OnGuardDischarged -= IncreaseEnergyConsumption;
 
     private IEnumerator IncreaseDifficulty()
     {
@@ -37,5 +46,13 @@ public class DifficultyUpdate : MonoBehaviour
             spawner.LaunchChance += spawnChanceIncrease;
             spawner.SpawnDelay -= spawnDelayDecrease;
         }
+    }
+
+    public void RemoveGuardFromList(ref Guard guard) => activeGuards.Remove(guard);
+
+    private void IncreaseEnergyConsumption()
+    {
+        foreach (Guard guard in activeGuards)
+            guard.ConsumptionDelay -= consumptionDelayDecrease;
     }
 }

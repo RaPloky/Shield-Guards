@@ -52,12 +52,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        UnpauseGame();
         // loading animation
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ExitToMenu()
     {
+        UnpauseGame();
         // loading animation
         SceneManager.LoadScene("Menu");
     }
