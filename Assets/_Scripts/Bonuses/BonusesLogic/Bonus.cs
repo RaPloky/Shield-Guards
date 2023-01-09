@@ -11,6 +11,7 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected int usageReward;
     [SerializeField] protected TextMeshProUGUI effectDurationText;
     [SerializeField] protected Button _thatButton;
+    [SerializeField] protected GameObject effectDurationGO;
 
     public bool IsBonusEnabled
     {
@@ -35,14 +36,12 @@ abstract public class Bonus : MonoBehaviour
     {
         float effectTimeLeft = effectDuration;
 
-        while (true)
+        while (effectTimeLeft > 0)
         {
-            if (effectTimeLeft <= 0)
-                yield break;
-
             yield return new WaitForFixedUpdate();
             effectTimeLeft = Mathf.Clamp(effectTimeLeft -= Time.fixedDeltaTime, 0, effectDuration);
             effectDurationText.text = effectTimeLeft.ToString("0.0");
         }
+        effectDurationGO.SetActive(false);
     }
 }
