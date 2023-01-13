@@ -33,4 +33,26 @@ public class TransitBonusInfo : MonoBehaviour
         bonusDecription.ValueInfo.text = _upgradeManager.ProtectionDescription;
         bonusDecription.ConditionInfo.text = _upgradeManager.ProtectionWayToGain;
     }
+
+
+    public void SetChargingUpgradeDescription(Image icon)
+    {
+        bonusUpgrade.Icon.sprite = icon.sprite;
+        bonusUpgrade.ValueInfo.text = _upgradeManager.ChargingNextLvlDesc;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ChargingBonusLvl + 1).ToString();
+    }
+
+    public void SetDemolitionUpgradeDescription(Image icon)
+    {
+        bonusUpgrade.Icon.sprite = icon.sprite;
+        bonusUpgrade.ValueInfo.text = _upgradeManager.DemolitionNextLvlDesc;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.DemolitionBonusLvl + 1).ToString();
+    }
+
+    public void SetProtectionUpgradeDescription(Image icon)
+    {
+        bonusUpgrade.Icon.sprite = icon.sprite;
+        bonusUpgrade.ValueInfo.text = _upgradeManager.ProtectionNextLvlDesc;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ProtectionBonusLvl + 1).ToString();
+    }
 }

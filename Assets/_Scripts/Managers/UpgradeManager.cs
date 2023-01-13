@@ -107,5 +107,6 @@ public class UpgradeManager : MonoBehaviour
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
     private void UpdatedEnergyDepletedCount() => energyDepletedCount.text = EnergyValue.ToString();
+    public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl + 1];
 
 }
