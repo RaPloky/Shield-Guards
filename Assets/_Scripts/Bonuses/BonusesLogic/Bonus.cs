@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using System;
 
 abstract public class Bonus : MonoBehaviour
 {
