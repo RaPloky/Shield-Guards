@@ -36,9 +36,14 @@ public class UpgradeManager : MonoBehaviour
 
     public int LevelsLimit => 7;
 
-    public string ChargingDescription => $"Instantly charges all guards by {CurrentChargeValue}\nGains by charging up guards for XXX on summary";
-    public string DemolitionDescription => $"Destroys all enemies nearby and freeze their appearance by {CurrentDemolitionValue}s\nGains by destroying XXX enemies";
-    public string ProtectionDescription => $"Won't let use or lose any energy for {CurrentProtectionValue}s\nGains by surviving XXX seconds";
+    public string ChargingDescription => $"Instantly charges all guards by {CurrentChargeValue}";
+    public string ChargingWayToGain => $"Gains by charging up guards for XXX on summary";
+
+    public string DemolitionDescription => $"Destroys all enemies nearby and freeze their appearance by {CurrentDemolitionValue}s";
+    public string DemolitionWayToGain => $"Gains by destroying XXX enemies";
+
+    public string ProtectionDescription => $"Won't let use or lose any energy for {CurrentProtectionValue}s";
+    public string ProtectionWayToGain => $"Gains by surviving XXX seconds";
 
     public string ChargingNextLvlDesc => $"+{ChargingValues[ChargingBonusLvl + 1] - CurrentChargeValue} to instant charging\n-XXX to gain bonus";
     public string DemolitionNextLvlDesc => $"+{DemolitionValues[DemolitionBonusLvl + 1] - CurrentDemolitionValue} to enemies appear freeze\n XXX less enemy to gain bonus";
