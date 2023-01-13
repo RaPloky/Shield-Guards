@@ -8,6 +8,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
 
+    private static int _defaultChargingGoal = 18000;
+    private static int _defaultDemolitionGoal = 20;
+    private static int _defaultProtectionGoal = 60;
+
+    public static string ChargingGainBonusGoalPref => "ChargingGoal";
+    public static string DemolitionGainBonusGoalPref => "DemolitionGoal";
+    public static string ProtectionGainBonusGoalPref => "ProtectionGoal";
+
+    public static int ChargingGoal => PlayerPrefs.GetInt(ChargingGainBonusGoalPref, _defaultChargingGoal);
+    public static int DemolitionGoal => PlayerPrefs.GetInt(DemolitionGainBonusGoalPref, _defaultDemolitionGoal);
+    public static int ProtectionGoal => PlayerPrefs.GetInt(ProtectionGainBonusGoalPref, _defaultProtectionGoal);
+
     private int _activeGuardsCount;
 
     public static bool IsGamePaused;

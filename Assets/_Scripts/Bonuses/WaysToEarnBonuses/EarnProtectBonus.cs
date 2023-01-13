@@ -7,6 +7,7 @@ public class EarnProtectBonus : EarnBonus
 
     private void Start()
     {
+        _goal = GameManager.ProtectionGoal;
         Progress = 0;
         StartCoroutine(UpdateSecondsSurvived());
         UpdateBonusStatus();
@@ -27,7 +28,7 @@ public class EarnProtectBonus : EarnBonus
                 UpdateBonusStatus();
             }
 
-            if (Progress >= goal)
+            if (Progress >= _goal)
                 EnableBonus();
         }
     }

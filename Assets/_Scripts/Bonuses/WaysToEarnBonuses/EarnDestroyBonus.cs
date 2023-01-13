@@ -2,8 +2,8 @@ public class EarnDestroyBonus : EarnBonus
 {
     private void Start()
     {
+        _goal = GameManager.DemolitionGoal;
         Progress = 0;
-
         UpdateBonusStatus();
     }
 
@@ -25,7 +25,7 @@ public class EarnDestroyBonus : EarnBonus
             UpdateBonusStatus();
         }
 
-        if (Progress >= goal)
+        if (Progress >= _goal)
             EnableBonus();
     }
 

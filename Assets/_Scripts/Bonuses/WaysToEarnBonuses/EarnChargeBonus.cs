@@ -6,6 +6,7 @@ public class EarnChargeBonus : EarnBonus
 
     private void Start()
     {
+        _goal = GameManager.ChargingGoal;
         Progress = 0;
         UpdateBonusStatus();
     }
@@ -28,7 +29,7 @@ public class EarnChargeBonus : EarnBonus
             UpdateBonusStatus();
         }
 
-        if (Progress >= goal)
+        if (Progress >= _goal)
             EnableBonus();
     }
 }
