@@ -2,7 +2,8 @@ public class EarnDestroyBonus : EarnBonus
 {
     private void Start()
     {
-        _goal = GameManager.DemolitionGoal;
+        _upgradeManager = UpgradeManager.Instance;
+        _goal = _upgradeManager.CurrDemolitionGoalValue;
         Progress = 0;
         UpdateBonusStatus();
     }

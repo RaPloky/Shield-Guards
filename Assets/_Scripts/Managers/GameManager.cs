@@ -2,23 +2,23 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum BonusGoal
+{
+    None,
+    Charging,
+    Demolition,
+    Protection
+}
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
 
-    private static int _defaultChargingGoal = 18000;
-    private static int _defaultDemolitionGoal = 20;
-    private static int _defaultProtectionGoal = 60;
-
-    public static string ChargingGainBonusGoalPref => "ChargingGoal";
-    public static string DemolitionGainBonusGoalPref => "DemolitionGoal";
-    public static string ProtectionGainBonusGoalPref => "ProtectionGoal";
-
-    public static int ChargingGoal => PlayerPrefs.GetInt(ChargingGainBonusGoalPref, _defaultChargingGoal);
-    public static int DemolitionGoal => PlayerPrefs.GetInt(DemolitionGainBonusGoalPref, _defaultDemolitionGoal);
-    public static int ProtectionGoal => PlayerPrefs.GetInt(ProtectionGainBonusGoalPref, _defaultProtectionGoal);
+    public static int DefaultChargingGoal => 18000;
+    public static int DefaultDemolitionGoal => 20;
+    public static int DefaultProtectionGoal => 60;
 
     private int _activeGuardsCount;
 
@@ -35,7 +35,10 @@ public class GameManager : MonoBehaviour
         ActiveGuardsCount = GameObject.FindGameObjectsWithTag("Guard").Length;
 
         if (bestScore != null)
-            bestScore.text = "Best score\n" + PlayerPrefs.GetInt(Score.ScorePref);
+        {
+            int score = PlayerPrefs.GetInt(Score.ScorePref);
+            bestScore.text = score > 0 ? "Best score\n" + score : string.Empty;
+        }
     }
 
     private void OnEnable()

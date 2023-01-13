@@ -7,8 +7,10 @@ public class EarnProtectBonus : EarnBonus
 
     private void Start()
     {
-        _goal = GameManager.ProtectionGoal;
+        _upgradeManager = UpgradeManager.Instance;
+        _goal = _upgradeManager.CurrProtectionGoalValue;
         Progress = 0;
+
         StartCoroutine(UpdateSecondsSurvived());
         UpdateBonusStatus();
     }

@@ -8,7 +8,7 @@ public class ChargeAllGuards : Bonus
 
     private void Start()
     {
-        chargeAmount = (int)UpgradeManager.Instance.CurrentChargeValue;
+        chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
     }
 
     public void ActivateInstantCharging()

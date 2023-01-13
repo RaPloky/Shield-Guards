@@ -19,15 +19,24 @@ public class UpgradeManager : MonoBehaviour
     public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 1);
     public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 1);
 
-    public IDictionary<int, float> ChargingValues { get; private set; }
-    public IDictionary<int, float> DemolitionValues { get; private set; }
-    public IDictionary<int, float> ProtectionValues { get; private set; }
+    public IDictionary<int, float> ChargingEffectValues { get; private set; }
+    public IDictionary<int, float> DemolitionEffectValues { get; private set; }
+    public IDictionary<int, float> ProtectionEffectValues { get; private set; }
+
+    public IDictionary<int, int> ChargingGainValues { get; private set; }
+    public IDictionary<int, int> DemolitionGainValues { get; private set; }
+    public IDictionary<int, int> ProtectionGainValues { get; private set; }
 
     public int[] UpgradesPrices { get; private set; }
 
-    public float CurrentChargeValue => ChargingValues[ChargingBonusLvl];
-    public float CurrentDemolitionValue => DemolitionValues[DemolitionBonusLvl];
-    public float CurrentProtectionValue => ProtectionValues[ProtectionBonusLvl];
+    public float CurrChargeEffectValue => ChargingEffectValues[ChargingBonusLvl];
+    public float CurrDemolitionEffectValue => DemolitionEffectValues[DemolitionBonusLvl];
+    public float CurrProtectionEffectValue => ProtectionEffectValues[ProtectionBonusLvl];
+
+    public int CurrChargeGoalValue => ChargingGainValues[ChargingBonusLvl];
+    public int CurrDemolitionGoalValue => DemolitionGainValues[DemolitionBonusLvl];
+    public int CurrProtectionGoalValue => ProtectionGainValues[ProtectionBonusLvl];
+
     public int EnergyValue
     {
         get => PlayerPrefs.GetInt(EnergyPref, 0);
@@ -36,42 +45,49 @@ public class UpgradeManager : MonoBehaviour
 
     public int LevelsLimit => 7;
 
-    public string ChargingDescription => $"Instantly charges all guards by {CurrentChargeValue}";
-    public string ChargingWayToGain => $"Gains by charging up guards for {GameManager.ChargingGoal} on summary";
-
-    public string DemolitionDescription => $"Destroys all enemies nearby and freeze their appearance by {CurrentDemolitionValue}s";
-    public string DemolitionWayToGain => $"Gains by destroying {GameManager.DemolitionGoal} enemies";
-
-    public string ProtectionDescription => $"Won't let use or lose any energy for {CurrentProtectionValue}s";
-    public string ProtectionWayToGain => $"Gains by surviving {GameManager.ProtectionGoal} seconds";
-
-    public string ChargingNextLvlDesc => $"+{ChargingValues[ChargingBonusLvl + 1] - CurrentChargeValue} to instant charging";
-    public string ChargingNextLvlCondition => $"-XXX to gain bonus";
-    public string DemolitionNextLvlDesc => $"+{DemolitionValues[DemolitionBonusLvl + 1] - CurrentDemolitionValue} to enemies appear freeze";
-    public string DemolitionNextLvlCondition => $"XXX less enemy to gain bonus";
-    public string ProtectionNextLvlDesc => $"+{ProtectionValues[ProtectionBonusLvl + 1] - CurrentProtectionValue} to shield life-time";
-    public string ProtectionNextLvlCondition => $"XXX seconds less to survive to gain bonus";
-
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
         UpgradesPrices = GetUpgradePrices(startUpgradePrice, nextUpgradeMultiplier);
-        ChargingValues = AssignBonusValues(1000, 250);
-        DemolitionValues = AssignBonusValues(3, 1);
-        ProtectionValues = AssignBonusValues(5, 0.5f);
+        AssignEffectValues();
+        AssignGainValues();        
 
         if (energyDepletedCount != null)
             UpdatedEnergyDepletedCount();
     }
 
-    private Dictionary<int, float> AssignBonusValues(float minBonusEffectValue, float effectIncrement)
+    private Dictionary<int, float> AssignBonusEffectValues(float minBonusEffectValue, float effectIncrement)
     {
         var valuesDict = new Dictionary<int, float>();
 
         for (int i = 1; i <= LevelsLimit; i++)
             valuesDict.Add(i, (int)(minBonusEffectValue += effectIncrement));
+
+        return valuesDict;
+    }
+
+    private Dictionary<int, int> AssignBonusGainValues(int gainDecrement, BonusGoal bonusType)
+    {
+        var valuesDict = new Dictionary<int, int>();
+        int startGoalValue = 0;
+        
+        switch (bonusType)
+        {
+            case BonusGoal.Charging:
+                startGoalValue = GameManager.DefaultChargingGoal;
+                break;
+            case BonusGoal.Demolition:
+                startGoalValue = GameManager.DefaultDemolitionGoal;
+                break;
+            case BonusGoal.Protection:
+                startGoalValue = GameManager.DefaultProtectionGoal;
+                break;
+        }
+
+        for (int i = 1; i <= LevelsLimit; i++)
+            valuesDict.Add(i, startGoalValue -= gainDecrement);
 
         return valuesDict;
     }
@@ -112,4 +128,38 @@ public class UpgradeManager : MonoBehaviour
     private void UpdatedEnergyDepletedCount() => energyDepletedCount.text = EnergyValue.ToString();
     public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl];
 
+    private void AssignEffectValues()
+    {
+        ChargingEffectValues = AssignBonusEffectValues(1000, 250);
+        DemolitionEffectValues = AssignBonusEffectValues(3, 1);
+        ProtectionEffectValues = AssignBonusEffectValues(5, 0.5f);
+    }
+
+    private void AssignGainValues()
+    {
+        ChargingGainValues = AssignBonusGainValues(1000, BonusGoal.Charging);
+        DemolitionGainValues = AssignBonusGainValues(2, BonusGoal.Demolition);
+        ProtectionGainValues = AssignBonusGainValues(3, BonusGoal.Protection);
+    }
+
+    #region "Bonus Descriptions"
+    public string ChargingDescription => $"Instantly charges all guards by {CurrChargeEffectValue}";
+    public string ChargingWayToGain => $"Gains by charging up guards for {CurrChargeGoalValue} on summary";
+
+    public string DemolitionDescription => $"Destroys all enemies nearby and freeze their appearance by {CurrDemolitionEffectValue}s";
+    public string DemolitionWayToGain => $"Gains by destroying {CurrDemolitionGoalValue} enemies";
+
+    public string ProtectionDescription => $"Won't let use or lose any energy for {CurrProtectionEffectValue}s";
+    public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue} seconds";
+
+
+    public string ChargingNextLvlDesc => $"+{ChargingEffectValues[ChargingBonusLvl + 1] - CurrChargeEffectValue} to instant charging";
+    public string ChargingNextLvlCondition => $"-{ChargingGainValues[ChargingBonusLvl + 1]} to gain bonus";
+
+    public string DemolitionNextLvlDesc => $"+{DemolitionEffectValues[DemolitionBonusLvl + 1] - CurrDemolitionEffectValue} to enemies appear freeze";
+    public string DemolitionNextLvlCondition => $"{DemolitionGainValues[DemolitionBonusLvl + 1]} less enemy to gain bonus";
+
+    public string ProtectionNextLvlDesc => $"+{ProtectionEffectValues[ProtectionBonusLvl + 1] - CurrProtectionEffectValue} to shield life-time";
+    public string ProtectionNextLvlCondition => $"{ProtectionGainValues[ProtectionBonusLvl + 1]} seconds less to survive to gain bonus";
+    #endregion
 }

@@ -6,7 +6,8 @@ public class EarnChargeBonus : EarnBonus
 
     private void Start()
     {
-        _goal = GameManager.ChargingGoal;
+        _upgradeManager = UpgradeManager.Instance;
+        _goal = _upgradeManager.CurrChargeGoalValue;
         Progress = 0;
         UpdateBonusStatus();
     }

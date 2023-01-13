@@ -8,6 +8,7 @@ abstract public class EarnBonus : MonoBehaviour
     [SerializeField] protected int enablingReward;
 
     protected int _goal;
+    protected UpgradeManager _upgradeManager;
 
     public float Progress { get; set; }
 
