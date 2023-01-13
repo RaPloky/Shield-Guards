@@ -39,20 +39,23 @@ public class TransitBonusInfo : MonoBehaviour
     {
         bonusUpgrade.Icon.sprite = icon.sprite;
         bonusUpgrade.ValueInfo.text = _upgradeManager.ChargingNextLvlDesc;
-        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ChargingBonusLvl + 1).ToString();
+        bonusUpgrade.ConditionInfo.text = _upgradeManager.ChargingNextLvlCondition;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ChargingBonusLvl).ToString();
     }
 
     public void SetDemolitionUpgradeDescription(Image icon)
     {
         bonusUpgrade.Icon.sprite = icon.sprite;
         bonusUpgrade.ValueInfo.text = _upgradeManager.DemolitionNextLvlDesc;
-        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.DemolitionBonusLvl + 1).ToString();
+        bonusUpgrade.ConditionInfo.text = _upgradeManager.DemolitionNextLvlCondition;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.DemolitionBonusLvl).ToString();
     }
 
     public void SetProtectionUpgradeDescription(Image icon)
     {
         bonusUpgrade.Icon.sprite = icon.sprite;
         bonusUpgrade.ValueInfo.text = _upgradeManager.ProtectionNextLvlDesc;
-        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ProtectionBonusLvl + 1).ToString();
+        bonusUpgrade.ConditionInfo.text = _upgradeManager.DemolitionNextLvlCondition;
+        bonusUpgrade.OtherInfo.text = _upgradeManager.GetNextLvlPrice(_upgradeManager.ProtectionBonusLvl).ToString();
     }
 }

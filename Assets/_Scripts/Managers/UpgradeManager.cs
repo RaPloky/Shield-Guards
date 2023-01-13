@@ -45,9 +45,12 @@ public class UpgradeManager : MonoBehaviour
     public string ProtectionDescription => $"Won't let use or lose any energy for {CurrentProtectionValue}s";
     public string ProtectionWayToGain => $"Gains by surviving XXX seconds";
 
-    public string ChargingNextLvlDesc => $"+{ChargingValues[ChargingBonusLvl + 1] - CurrentChargeValue} to instant charging\n-XXX to gain bonus";
-    public string DemolitionNextLvlDesc => $"+{DemolitionValues[DemolitionBonusLvl + 1] - CurrentDemolitionValue} to enemies appear freeze\n XXX less enemy to gain bonus";
-    public string ProtectionNextLvlDesc => $"+{ProtectionValues[ProtectionBonusLvl + 1] - CurrentProtectionValue} to shield life-time\n XXX seconds less to survive to gain bonus";
+    public string ChargingNextLvlDesc => $"+{ChargingValues[ChargingBonusLvl + 1] - CurrentChargeValue} to instant charging";
+    public string ChargingNextLvlCondition => $"-XXX to gain bonus";
+    public string DemolitionNextLvlDesc => $"+{DemolitionValues[DemolitionBonusLvl + 1] - CurrentDemolitionValue} to enemies appear freeze";
+    public string DemolitionNextLvlCondition => $"XXX less enemy to gain bonus";
+    public string ProtectionNextLvlDesc => $"+{ProtectionValues[ProtectionBonusLvl + 1] - CurrentProtectionValue} to shield life-time";
+    public string ProtectionNextLvlCondition => $"XXX seconds less to survive to gain bonus";
 
     private void Awake()
     {
@@ -107,6 +110,6 @@ public class UpgradeManager : MonoBehaviour
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
     private void UpdatedEnergyDepletedCount() => energyDepletedCount.text = EnergyValue.ToString();
-    public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl + 1];
+    public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl];
 
 }
