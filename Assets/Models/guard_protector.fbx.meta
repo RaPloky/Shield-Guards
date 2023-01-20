@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c759465afabaae419eecb9b4ffbe65c
+guid: 04c8b2104f7bbf14895ea2fcebd0420c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Body
-    second: {fileID: 2100000, guid: c4a595ae822ebb54e8cde72028cb8b65, type: 2}
+    second: {fileID: 2100000, guid: 960276b0b911ee4428d678be84bcc5ae, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BodySecondary
-    second: {fileID: 2100000, guid: 6ae21ad8077b11949bea49a0850e858b, type: 2}
+    second: {fileID: 2100000, guid: 1b936528fad288f46b71f24daf8f5d63, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light
-    second: {fileID: 2100000, guid: 71ec12ecd4b45a246a1fb3c9d0f57554, type: 2}
+      name: BonusLight
+    second: {fileID: 2100000, guid: 26ecdc16eaa7dfc4897f314e89844d4f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Window
-    second: {fileID: 2100000, guid: d48de0759932c6942a26b12d34b82d6e, type: 2}
+      name: EngineLight
+    second: {fileID: 2100000, guid: 8e4ebc794d8ca5b4c84c8e318d461da9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -111,7 +111,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
