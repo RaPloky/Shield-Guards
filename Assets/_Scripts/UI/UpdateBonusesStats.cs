@@ -6,10 +6,6 @@ public class UpdateBonusesStats : MonoBehaviour
 {
     private UpgradeManager _upgradeManager;
 
-    [SerializeField] private Image chargeStatus;
-    [SerializeField] private Image demolitionStatus;
-    [SerializeField] private Image protectionStatus;
-
     [SerializeField] private TextMeshProUGUI chargeInfo;
     [SerializeField] private TextMeshProUGUI demolitionInfo;
     [SerializeField] private TextMeshProUGUI protectionInfo;
@@ -34,19 +30,16 @@ public class UpdateBonusesStats : MonoBehaviour
 
     public void UpdateChargeStatus()
     {
-        chargeStatus.fillAmount = (float)_upgradeManager.ChargingBonusLvl / _upgradeManager.LevelsLimit;
-        //chargeInfo.text = $"+{_upgradeManager.CurrentChargeValue} per charging";
+        chargeInfo.text = _upgradeManager.ChargingDescription;
     }
 
     public void UpdateDemolitionStatus()
     {
-        demolitionStatus.fillAmount = (float)_upgradeManager.DemolitionBonusLvl / _upgradeManager.LevelsLimit;
-        //demolitionInfo.text = $"{_upgradeManager.CurrentDemolitionValue}s enemies spawn freeze after using";
+        demolitionInfo.text = _upgradeManager.DemolitionDescription;
     }
 
     public void UpdateProtectionStatus()
     {
-        protectionStatus.fillAmount = (float)_upgradeManager.ProtectionBonusLvl / _upgradeManager.LevelsLimit;
-        //protectionInfo.text = $"{_upgradeManager.CurrentProtectionValue}s of invulnerability";
+        protectionInfo.text = _upgradeManager.ProtectionDescription;
     }
 }
