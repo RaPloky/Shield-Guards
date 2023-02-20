@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TransitBonusInfo : MonoBehaviour
+public class BonusInfoPreloader : MonoBehaviour
 {
     [SerializeField] private UpgradeInfo bonusDecription;
     [SerializeField] private UpgradeInfo bonusUpgrade;
