@@ -16,6 +16,14 @@ public class UpdateBonusesStats : MonoBehaviour
     [SerializeField] private TextMeshProUGUI demolitionUpgradeInfo;
     [SerializeField] private TextMeshProUGUI protectionUpgradeInfo;
 
+    [Header("Levels")]
+    [SerializeField] private TextMeshProUGUI chargeCurrLvl;
+    [SerializeField] private TextMeshProUGUI chargeNextLvl;
+    [SerializeField] private TextMeshProUGUI demolitionCurrLvl;
+    [SerializeField] private TextMeshProUGUI demolitionNextLvl;
+    [SerializeField] private TextMeshProUGUI protectionCurrLvl;
+    [SerializeField] private TextMeshProUGUI protectionNextLvl;
+
     private void Start()
     {
         _upgradeManager = UpgradeManager.Instance;
@@ -36,19 +44,25 @@ public class UpdateBonusesStats : MonoBehaviour
 
     public void UpdateChargeStatus()
     {
-        chargeInfo.text = _upgradeManager.ChargingDescription + $";\n{_upgradeManager.ChargingWayToGain}";
-        chargeUpgradeInfo.text = _upgradeManager.ChargingNextLvlDesc + $";\n{_upgradeManager.ChargingNextLvlCondition}";
+        chargeCurrLvl.text = _upgradeManager.ChargingBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.ChargingBonusLvl + 1}" : "lvl max";
+        chargeNextLvl.text = _upgradeManager.ChargingBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.ChargingBonusLvl + 2}" : "lvl max";
+        chargeInfo.text = _upgradeManager.ChargingDescription + $"\n{_upgradeManager.ChargingWayToGain}";
+        chargeUpgradeInfo.text = _upgradeManager.ChargingNextLvlDesc + $"\n{_upgradeManager.ChargingNextLvlCondition}";
     }
 
     public void UpdateDemolitionStatus()
     {
-        demolitionInfo.text = _upgradeManager.DemolitionDescription + $";\n{_upgradeManager.DemolitionWayToGain}";
-        demolitionUpgradeInfo.text = _upgradeManager.DemolitionNextLvlDesc + $";\n{_upgradeManager.DemolitionNextLvlCondition}";
+        demolitionCurrLvl.text = _upgradeManager.DemolitionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DemolitionBonusLvl + 1}" : "lvl max";
+        demolitionNextLvl.text = _upgradeManager.DemolitionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DemolitionBonusLvl + 2}" : "lvl max";
+        demolitionInfo.text = _upgradeManager.DemolitionDescription + $"\n{_upgradeManager.DemolitionWayToGain}";
+        demolitionUpgradeInfo.text = _upgradeManager.DemolitionNextLvlDesc + $"\n{_upgradeManager.DemolitionNextLvlCondition}";
     }
 
     public void UpdateProtectionStatus()
     {
-        protectionInfo.text = _upgradeManager.ProtectionDescription + $";\n{_upgradeManager.ProtectionWayToGain}";
-        protectionUpgradeInfo.text = _upgradeManager.ProtectionNextLvlDesc + $";\n{_upgradeManager.ProtectionNextLvlCondition}";
+        protectionCurrLvl.text = _upgradeManager.ProtectionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.ProtectionBonusLvl + 1}" : "lvl max";
+        protectionNextLvl.text = _upgradeManager.ProtectionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.ProtectionBonusLvl + 2}" : "lvl max";
+        protectionInfo.text = _upgradeManager.ProtectionDescription + $"\n{_upgradeManager.ProtectionWayToGain}";
+        protectionUpgradeInfo.text = _upgradeManager.ProtectionNextLvlDesc + $"\n{_upgradeManager.ProtectionNextLvlCondition}";
     }
 }

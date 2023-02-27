@@ -7,7 +7,7 @@ public class UpgradeManager : MonoBehaviour
     public static UpgradeManager Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI[] creditsCount;
-    [SerializeField, Range(50000, 100000)] private float startUpgradePrice;
+    [SerializeField, Range(0, 100000)] private float startUpgradePrice;
     [SerializeField, Range(1, 5)] private float nextUpgradeMultiplier;
 
     public static string ChargingBonusLvlPref => "ChargingLvl";
@@ -162,13 +162,63 @@ public class UpgradeManager : MonoBehaviour
     public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue}s";
 
 
-    public string ChargingNextLvlDesc => $"New charging amount is {ChargingEffectValues[ChargingBonusLvl + 1]}";
-    public string ChargingNextLvlCondition => $"Energy amount to gain bonus: {ChargingGainValues[ChargingBonusLvl + 1]}";
+    public string ChargingNextLvlDesc
+    { 
+        get
+        {
+            if (ChargingBonusLvl + 1 >= LevelsLimit)
+                return "Bonus maxed";
+            else
+                return $"New charging amount is {ChargingEffectValues[ChargingBonusLvl + 1]}";
+        }
+    }
+    public string ChargingNextLvlCondition
+    {
+        get
+        {
+            if (ChargingBonusLvl + 1 >= LevelsLimit)
+                return string.Empty;
+            else
+                return $"Energy amount to gain bonus: {ChargingGainValues[ChargingBonusLvl + 1]}";
+        }
+    }
 
-    public string DemolitionNextLvlDesc => $"New enemies appear freeze is {DemolitionEffectValues[DemolitionBonusLvl + 1]}s";
-    public string DemolitionNextLvlCondition => $"Enemies destroyed to gain bonus: {DemolitionGainValues[DemolitionBonusLvl + 1]}";
+    public string DemolitionNextLvlDesc { 
+        get {
+            if (DemolitionBonusLvl + 1 >= LevelsLimit)
+                return "Bonus maxed";
+            else
+                return $"New enemies appear freeze is {DemolitionEffectValues[DemolitionBonusLvl + 1]}s";
+        } 
+    } 
+    public string DemolitionNextLvlCondition 
+    {
+        get
+        {
+            if (DemolitionBonusLvl + 1 >= LevelsLimit)
+                return string.Empty;
+            else
+                return $"Enemies destroyed to gain bonus: {DemolitionGainValues[DemolitionBonusLvl + 1]}";
+        }
+    } 
 
-    public string ProtectionNextLvlDesc => $"New immune time is {ProtectionEffectValues[ProtectionBonusLvl + 1]}s";
-    public string ProtectionNextLvlCondition => $"Seconds to survive to gain bonus: {ProtectionGainValues[ProtectionBonusLvl + 1]}";
+    public string ProtectionNextLvlDesc {
+        get
+        {
+            if (ProtectionBonusLvl + 1 >= LevelsLimit)
+                return "Bonus maxed";
+            else
+                return $"New immune time is {ProtectionEffectValues[ProtectionBonusLvl + 1]}s";
+        }
+    }
+    public string ProtectionNextLvlCondition {
+        get
+        {
+            if (ProtectionBonusLvl + 1 >= LevelsLimit)
+                return string.Empty;
+            else
+                return $"Seconds to survive to gain bonus: {ProtectionGainValues[ProtectionBonusLvl + 1]}";
+        }
+    }
     #endregion
 }
