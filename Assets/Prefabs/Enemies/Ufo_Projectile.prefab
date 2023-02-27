@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2848303895526180141}
   - component: {fileID: 28079348269707751}
   - component: {fileID: 8904361286672853032}
-  - component: {fileID: 2596298296099137321}
   - component: {fileID: 6500188941694578593}
   - component: {fileID: 3563566772918269029}
   m_Layer: 0
@@ -44,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973489732030320690}
-  m_Mesh: {fileID: 289301614986012343, guid: 60fe98645c84129459500df4a625689c, type: 3}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &28079348269707751
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103,26 +102,6 @@ MonoBehaviour:
   speedFactor: 0.03
   energyDamage: 50
   isMeteor: 0
---- !u!95 &2596298296099137321
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973489732030320690}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 17c8d04e69e0a3744985018a45a84edf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!135 &6500188941694578593
 SphereCollider:
   m_ObjectHideFlags: 0

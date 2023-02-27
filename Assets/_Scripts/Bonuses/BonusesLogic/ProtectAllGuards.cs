@@ -22,7 +22,6 @@ public class ProtectAllGuards : Bonus
         StartCoroutine(ProtectGuards());
 
         isBonusEnabled = false;
-        ResetStatusIndicator();
     }
 
     private IEnumerator ProtectGuards()

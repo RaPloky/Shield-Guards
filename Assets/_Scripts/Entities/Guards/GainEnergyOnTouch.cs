@@ -19,7 +19,6 @@ public class GainEnergyOnTouch : MonoBehaviour
             return;
 
         _thatGuard.AddEnergy(energyAddAmount);
-        _animator.Play("Touch", -1, 0f);
         EventManager.SendOnNonBonusEnergyAdded();
         EventManager.SendOnScoreUpdated(energyAddAmount);
     }

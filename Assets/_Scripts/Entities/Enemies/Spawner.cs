@@ -7,13 +7,11 @@ public class Spawner : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float launchChance;
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private Transform target;
-    [SerializeField] private GameObject enemyAppearAlarm;
 
     private Transform _thatTrans;
 
     public GameObject SpawnedPrefab { get; set; }
     public Transform Target => target;
-    public GameObject AppearAlarm => enemyAppearAlarm;
 
     public float SpawnDelay
     {
@@ -59,5 +57,5 @@ public class Spawner : MonoBehaviour
     }
 
     // Spanwer is parent of UFO which is parent of WholeBody which is parent of gameObject:
-    private Transform GetTargetFromSpawner() => _thatTrans.parent.transform.parent.transform.parent.GetComponent<Spawner>().Target;
+    private Transform GetTargetFromSpawner() => _thatTrans.parent.transform.parent.transform.GetComponent<Spawner>().Target;
 }

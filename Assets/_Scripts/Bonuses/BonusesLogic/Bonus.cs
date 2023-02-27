@@ -6,10 +6,8 @@ using System.Collections;
 abstract public class Bonus : MonoBehaviour
 {
     [SerializeField] protected bool isBonusEnabled;
-    [SerializeField] protected Image bonusStatusIndicator;
     [SerializeField] protected int usageReward;
     [SerializeField] protected TextMeshProUGUI effectDurationText;
-    [SerializeField] protected Button _thatButton;
     [SerializeField] protected GameObject effectDurationGO;
 
     public bool IsBonusEnabled
@@ -18,14 +16,10 @@ abstract public class Bonus : MonoBehaviour
         set => isBonusEnabled = value;
     }
 
-    public void DisableBonusButton()
+    public void DisableBonus()
     {
-        _thatButton.interactable = false;
-        // Play disable animation
-        gameObject.SetActive(false);
+        print("disabled");
     }
-
-    public void ResetStatusIndicator() => bonusStatusIndicator.fillAmount = 0;
 
     protected void AddUsageReward() => EventManager.SendOnScoreUpdated(usageReward);
 

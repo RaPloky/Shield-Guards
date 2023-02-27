@@ -18,7 +18,6 @@ public class Meteor : Enemy
     private void Awake()
     {
         _meteorRb = GetComponent<Rigidbody>();
-        appearAlarm = GetAlarmGOFromSpawner();
         ActivateAlarm();
     }
 
@@ -85,6 +84,4 @@ public class Meteor : Enemy
         EventManager.SendOnEnemyDestroyed();
         EventManager.SendOnScoreUpdated(destructionReward);
     }
-
-    private GameObject GetAlarmGOFromSpawner() => transform.parent.GetComponent<Spawner>().AppearAlarm;
 }

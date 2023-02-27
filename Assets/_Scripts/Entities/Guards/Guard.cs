@@ -61,7 +61,7 @@ public class Guard : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         StopAllCoroutines();
         _isHaveEnergy = false;
-        relatedBonus.DisableBonusButton();
+        relatedBonus.DisableBonus();
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
         EventManager.SendOnGuardDischarged();
     }

@@ -26,7 +26,6 @@ public class Ufo : Enemy
     {
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
-        appearAlarm = GetAlarmGOFromSpawner();
         ActivateAlarm();
     }
 
@@ -51,5 +50,4 @@ public class Ufo : Enemy
     private void FixedUpdate() => _thatTrans.LookAt(_target);
     private void DamageUfo() => Health -= damageToUfo;
     private Transform GetTargetFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().Target;
-    private GameObject GetAlarmGOFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().AppearAlarm;
 }
