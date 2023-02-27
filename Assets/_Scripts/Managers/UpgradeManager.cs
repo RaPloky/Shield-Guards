@@ -6,7 +6,7 @@ public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI energyDepletedCount;
+    [SerializeField] private TextMeshProUGUI[] creditsCount;
     [SerializeField, Range(50000, 100000)] private float startUpgradePrice;
     [SerializeField, Range(1, 5)] private float nextUpgradeMultiplier;
 
@@ -54,8 +54,8 @@ public class UpgradeManager : MonoBehaviour
         AssignEffectValues();
         AssignGainValues();        
 
-        if (energyDepletedCount != null)
-            UpdatedEnergyDepletedCount();
+        if (creditsCount != null)
+            UpdateEnergyDepletedCount();
     }
 
     private Dictionary<int, float> AssignBonusEffectValues(float minBonusEffectValue, float effectIncrement)
@@ -116,7 +116,7 @@ public class UpgradeManager : MonoBehaviour
 
         PlayerPrefs.SetInt(bonusPref, nextLvl);
         PlayerPrefs.SetInt(EnergyPref, EnergyValue -= nextUpgradeCost);
-        UpdatedEnergyDepletedCount();
+        UpdateEnergyDepletedCount();
         EventManager.SendOnBonusUpgraded();
     }
 
@@ -125,7 +125,13 @@ public class UpgradeManager : MonoBehaviour
     public void UpgradeProtection() => UpgradeBonus(ProtectionBonusLvl, ProtectionBonusLvlPref);
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
-    private void UpdatedEnergyDepletedCount() => energyDepletedCount.text = EnergyValue.ToString();
+
+    private void UpdateEnergyDepletedCount()
+    {
+        foreach (var count in creditsCount)
+            count.text = EnergyValue.ToString();
+    }
+
     public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl];
 
     private void AssignEffectValues()
@@ -150,16 +156,16 @@ public class UpgradeManager : MonoBehaviour
     public string DemolitionWayToGain => $"Gains by destroying {CurrDemolitionGoalValue} enemies";
 
     public string ProtectionDescription => $"Won't let use or lose any energy for {CurrProtectionEffectValue}s";
-    public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue} seconds";
+    public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue}s";
 
 
     public string ChargingNextLvlDesc => $"+{ChargingEffectValues[ChargingBonusLvl + 1] - CurrChargeEffectValue} to instant charging";
-    public string ChargingNextLvlCondition => $"-{ChargingGainValues[ChargingBonusLvl + 1]} to gain bonus";
+    public string ChargingNextLvlCondition => $"Energy amount to gain bonus: {ChargingGainValues[ChargingBonusLvl + 1]}";
 
-    public string DemolitionNextLvlDesc => $"+{DemolitionEffectValues[DemolitionBonusLvl + 1] - CurrDemolitionEffectValue} to enemies appear freeze";
-    public string DemolitionNextLvlCondition => $"{DemolitionGainValues[DemolitionBonusLvl + 1]} less enemy to gain bonus";
+    public string DemolitionNextLvlDesc => $"+{DemolitionEffectValues[DemolitionBonusLvl + 1] - CurrDemolitionEffectValue}s to enemies appear freeze";
+    public string DemolitionNextLvlCondition => $"Enemies destroyed to gain bonus: {DemolitionGainValues[DemolitionBonusLvl + 1]}";
 
-    public string ProtectionNextLvlDesc => $"+{ProtectionEffectValues[ProtectionBonusLvl + 1] - CurrProtectionEffectValue} to shield life-time";
-    public string ProtectionNextLvlCondition => $"{ProtectionGainValues[ProtectionBonusLvl + 1]} seconds less to survive to gain bonus";
+    public string ProtectionNextLvlDesc => $"+{ProtectionEffectValues[ProtectionBonusLvl + 1] - CurrProtectionEffectValue}s to shield life-time";
+    public string ProtectionNextLvlCondition => $"Seconds to survive to gain bonus: {ProtectionGainValues[ProtectionBonusLvl + 1]}";
     #endregion
 }
