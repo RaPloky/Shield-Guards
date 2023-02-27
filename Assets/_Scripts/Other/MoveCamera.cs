@@ -9,7 +9,6 @@ public class MoveCamera : MonoBehaviour
 
     [SerializeField] private float swipeRange;
     [SerializeField] private float tapRange;
-    [SerializeField] private SwapButtons swapButtonsManager;
 
     [Header("Camera")]
     [SerializeField, Range(0f, 1f)] float smoothFactor;
@@ -50,7 +49,6 @@ public class MoveCamera : MonoBehaviour
 
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.up, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.up);
-        swapButtonsManager.OnLeftSwap();
     }
 
     public void TurnRight()
@@ -63,7 +61,6 @@ public class MoveCamera : MonoBehaviour
 
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.down, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.down);
-        swapButtonsManager.OnRightSwap();
     }
 
     private void SwipeHorizontal()
@@ -96,6 +93,6 @@ public class MoveCamera : MonoBehaviour
             stopTouch = false;
     }
 
-    private bool IsLeftGuardActive() => swapButtonsManager.IsLeftGuardHaveEnergy;
-    private bool IsRightGuardActive() => swapButtonsManager.IsRightGuardHaveEnergy;
+    private bool IsLeftGuardActive() => true;
+    private bool IsRightGuardActive() => true;
 }

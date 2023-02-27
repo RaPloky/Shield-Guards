@@ -4,7 +4,6 @@ using UnityEngine.UI;
 abstract public class EarnBonus : MonoBehaviour
 {
     [SerializeField] protected Bonus bonus;
-    [SerializeField] protected Image statusImage;
     [SerializeField] protected int enablingReward;
 
     protected int _goal;
@@ -12,7 +11,10 @@ abstract public class EarnBonus : MonoBehaviour
 
     public float Progress { get; set; }
 
-    protected void UpdateBonusStatus() => statusImage.fillAmount = Progress / (float)_goal;
+    protected void UpdateBonusStatus()
+    {
+        // create later
+    }
 
     protected void EnableBonus()
     {
