@@ -15,9 +15,9 @@ public class UpgradeManager : MonoBehaviour
     public static string ProtectionBonusLvlPref => "ProtectionLvl";
     public static string EnergyPref => "EnergyDepletedCount";
 
-    public int ChargingBonusLvl => PlayerPrefs.GetInt(ChargingBonusLvlPref, 1);
-    public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 1);
-    public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 1);
+    public int ChargingBonusLvl => PlayerPrefs.GetInt(ChargingBonusLvlPref, 0);
+    public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 0);
+    public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 0);
 
     public IDictionary<int, float> ChargingEffectValues { get; private set; }
     public IDictionary<int, float> DemolitionEffectValues { get; private set; }
@@ -61,6 +61,7 @@ public class UpgradeManager : MonoBehaviour
     private Dictionary<int, float> AssignBonusEffectValues(float minBonusEffectValue, float effectIncrement)
     {
         var valuesDict = new Dictionary<int, float>();
+        valuesDict.Add(0, (int)minBonusEffectValue);
 
         for (int i = 1; i <= LevelsLimit; i++)
             valuesDict.Add(i, (int)(minBonusEffectValue += effectIncrement));
@@ -85,6 +86,8 @@ public class UpgradeManager : MonoBehaviour
                 startGoalValue = GameManager.DefaultProtectionGoal;
                 break;
         }
+        // Add default value as first:
+        valuesDict.Add(0, startGoalValue);
 
         for (int i = 1; i <= LevelsLimit; i++)
             valuesDict.Add(i, startGoalValue -= gainDecrement);
