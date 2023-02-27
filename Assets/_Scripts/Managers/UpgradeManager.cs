@@ -64,7 +64,7 @@ public class UpgradeManager : MonoBehaviour
         valuesDict.Add(0, (int)minBonusEffectValue);
 
         for (int i = 1; i <= LevelsLimit; i++)
-            valuesDict.Add(i, (int)(minBonusEffectValue += effectIncrement));
+            valuesDict.Add(i, minBonusEffectValue += effectIncrement);
 
         return valuesDict;
     }
@@ -152,23 +152,23 @@ public class UpgradeManager : MonoBehaviour
     }
 
     #region "Bonus Descriptions"
-    public string ChargingDescription => $"Instantly charges all guards by {CurrChargeEffectValue}";
-    public string ChargingWayToGain => $"Gains by charging up guards for {CurrChargeGoalValue} on summary";
+    public string ChargingDescription => $"Charges all guards by {CurrChargeEffectValue}";
+    public string ChargingWayToGain => $"Gains by charging guards for {CurrChargeGoalValue}";
 
-    public string DemolitionDescription => $"Destroys all enemies nearby and freeze their appearance by {CurrDemolitionEffectValue}s";
+    public string DemolitionDescription => $"Destroys enemies and freeze their appearance for {CurrDemolitionEffectValue}s";
     public string DemolitionWayToGain => $"Gains by destroying {CurrDemolitionGoalValue} enemies";
 
-    public string ProtectionDescription => $"Won't let use or lose any energy for {CurrProtectionEffectValue}s";
+    public string ProtectionDescription => $"Immune to energy lose by {CurrProtectionEffectValue}s";
     public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue}s";
 
 
-    public string ChargingNextLvlDesc => $"+{ChargingEffectValues[ChargingBonusLvl + 1] - CurrChargeEffectValue} to instant charging";
+    public string ChargingNextLvlDesc => $"New charging amount is {ChargingEffectValues[ChargingBonusLvl + 1]}";
     public string ChargingNextLvlCondition => $"Energy amount to gain bonus: {ChargingGainValues[ChargingBonusLvl + 1]}";
 
-    public string DemolitionNextLvlDesc => $"+{DemolitionEffectValues[DemolitionBonusLvl + 1] - CurrDemolitionEffectValue}s to enemies appear freeze";
+    public string DemolitionNextLvlDesc => $"New enemies appear freeze is {DemolitionEffectValues[DemolitionBonusLvl + 1]}s";
     public string DemolitionNextLvlCondition => $"Enemies destroyed to gain bonus: {DemolitionGainValues[DemolitionBonusLvl + 1]}";
 
-    public string ProtectionNextLvlDesc => $"+{ProtectionEffectValues[ProtectionBonusLvl + 1] - CurrProtectionEffectValue}s to shield life-time";
+    public string ProtectionNextLvlDesc => $"New immune time is {ProtectionEffectValues[ProtectionBonusLvl + 1]}s";
     public string ProtectionNextLvlCondition => $"Seconds to survive to gain bonus: {ProtectionGainValues[ProtectionBonusLvl + 1]}";
     #endregion
 }
