@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ShowEnergyCondition : MonoBehaviour
 {
-    [SerializeField] private Image filledImage;
+    [SerializeField] private Image[] energyImages;
     [SerializeField] private Guard trackedGuard;
 
     private float _newFillAmount;
@@ -11,7 +11,7 @@ public class ShowEnergyCondition : MonoBehaviour
     private void Start()
     {
         // Update on game start:
-        UpdateFillImage();
+        UpdateEnergyCondition();
     }
 
     private void OnEnable()
@@ -24,12 +24,14 @@ public class ShowEnergyCondition : MonoBehaviour
         Unsubscribe();
     }
 
-    private void Subscribe() => EventManager.OnEnergyValueChanged += UpdateFillImage;
-    private void Unsubscribe() => EventManager.OnEnergyValueChanged -= UpdateFillImage;
+    private void Subscribe() => EventManager.OnEnergyValueChanged += UpdateEnergyCondition;
+    private void Unsubscribe() => EventManager.OnEnergyValueChanged -= UpdateEnergyCondition;
 
-    private void UpdateFillImage()
+    private void UpdateEnergyCondition()
     {
         _newFillAmount = (float)trackedGuard.Energy / (float)trackedGuard.MaxEnergy;
-        filledImage.fillAmount = _newFillAmount;
+
+        foreach (var image in energyImages)
+            image.fillAmount = _newFillAmount;
     }
 }
