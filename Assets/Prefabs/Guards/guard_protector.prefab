@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 1056842409593145694}
   m_Layer: 0
   m_Name: guard_protector
-  m_TagString: Untagged
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,8 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus: {fileID: 0}
-  statusImage: {fileID: 0}
   enablingReward: 150
+  progressImages: []
   surviveTimeUpdateAmount: 0.5
 --- !u!1 &6617571687083838816
 GameObject:

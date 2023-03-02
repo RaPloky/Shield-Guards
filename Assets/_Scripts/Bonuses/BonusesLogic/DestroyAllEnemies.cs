@@ -14,7 +14,7 @@ public class DestroyAllEnemies : Bonus
         spawnFreezeTime = UpgradeManager.Instance.CurrDemolitionEffectValue;
     }
 
-    public void DestroyEnemies()
+    public void ActivateBonus()
     {
         if (!isBonusEnabled)
             return;
@@ -28,6 +28,7 @@ public class DestroyAllEnemies : Bonus
 
         effectDurationGO.SetActive(true);
         StartEffectTimer(spawnFreezeTime);
+        ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
     }
 

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
 
-    public static int DefaultChargingGoal => 18000;
+    public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
     public static int DefaultProtectionGoal => 60;
 

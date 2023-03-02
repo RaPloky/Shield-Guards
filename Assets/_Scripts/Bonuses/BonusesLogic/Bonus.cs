@@ -9,6 +9,7 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected int usageReward;
     [SerializeField] protected TextMeshProUGUI effectDurationText;
     [SerializeField] protected GameObject effectDurationGO;
+    [SerializeField] protected GameObject activationButton;
 
     public bool IsBonusEnabled
     {
@@ -18,7 +19,7 @@ abstract public class Bonus : MonoBehaviour
 
     public void DisableBonus()
     {
-        print("disabled");
+        IsBonusEnabled = false;
     }
 
     protected void AddUsageReward() => EventManager.SendOnScoreUpdated(usageReward);
@@ -37,4 +38,6 @@ abstract public class Bonus : MonoBehaviour
         }
         effectDurationGO.SetActive(false);
     }
+
+    public void ChangeActivationButtonStatus(bool status) => activationButton.SetActive(status);
 }

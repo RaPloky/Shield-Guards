@@ -24,6 +24,7 @@ abstract public class EarnBonus : MonoBehaviour
     protected void EnableBonus()
     {
         bonus.IsBonusEnabled = true;
+        bonus.ChangeActivationButtonStatus(true);
         Progress = 0;
         EventManager.SendOnScoreUpdated(enablingReward);
     }

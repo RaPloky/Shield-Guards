@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 9124580661493419441}
   m_Layer: 0
   m_Name: guard_charger
-  m_TagString: Untagged
+  m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,8 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonus: {fileID: 0}
-  statusImage: {fileID: 0}
   enablingReward: 100
+  progressImages: []
   updateProgressAmount: 50
 --- !u!1 &8739032123481764415
 GameObject:

@@ -11,7 +11,7 @@ public class ChargeAllGuards : Bonus
         chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
     }
 
-    public void ActivateInstantCharging()
+    public void ActivateBonus()
     {
         if (!isBonusEnabled)
             return;
@@ -19,6 +19,7 @@ public class ChargeAllGuards : Bonus
         foreach (Guard guard in guards)
             guard.AddEnergy(chargeAmount);
 
+        ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
     }
 }
