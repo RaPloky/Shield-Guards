@@ -558,6 +558,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1043391616}
     m_Modifications:
+    - target: {fileID: 541815716422019106, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1043391615}
     - target: {fileID: 567119869258552896, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_IsActive
@@ -788,6 +793,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670259766640724442, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1120892249}
+    - target: {fileID: 2720044194951871141, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1033974453}
     - target: {fileID: 2763193962916147866, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -833,6 +848,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.0015001297
       objectReference: {fileID: 0}
+    - target: {fileID: 3389216643217328950, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1043391615}
     - target: {fileID: 3450399614810443028, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_Color.b
@@ -1288,6 +1308,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &117319438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7883710723481733783, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 117319435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &166880503
@@ -2643,6 +2675,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1120892250}
     m_Modifications:
+    - target: {fileID: 541815716422019106, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1120892249}
     - target: {fileID: 567119869258552896, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_IsActive
@@ -2873,6 +2910,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670259766640724442, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1033974453}
+    - target: {fileID: 2720044194951871141, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1043391615}
     - target: {fileID: 2763193962916147866, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2918,6 +2965,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.0015001297
       objectReference: {fileID: 0}
+    - target: {fileID: 3389216643217328950, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1120892249}
     - target: {fileID: 3450399614810443028, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_Color.a
@@ -3343,6 +3395,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &737786302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7883710723481733783, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 737786299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &750053433
@@ -3971,6 +4035,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033974454}
     m_Modifications:
+    - target: {fileID: 541815716422019106, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1033974453}
     - target: {fileID: 567119869258552896, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_IsActive
@@ -4206,6 +4275,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2670259766640724442, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1043391615}
+    - target: {fileID: 2720044194951871141, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1120892249}
     - target: {fileID: 2763193962916147866, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4251,6 +4330,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.0015001297
       objectReference: {fileID: 0}
+    - target: {fileID: 3389216643217328950, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+        type: 3}
+      propertyPath: _trackedGuard
+      value: 
+      objectReference: {fileID: 1033974453}
     - target: {fileID: 3450399614810443028, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
         type: 3}
       propertyPath: m_Color.b
@@ -4688,6 +4772,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &978831531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7883710723481733783, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 978831528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1033974452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4700,6 +4796,11 @@ PrefabInstance:
       propertyPath: bonus
       value: 
       objectReference: {fileID: 1211483885}
+    - target: {fileID: 1056842409593145694, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: bonusAmount
+      value: 
+      objectReference: {fileID: 978831531}
     - target: {fileID: 1056842409593145694, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: progressImages.Array.size
@@ -4717,9 +4818,19 @@ PrefabInstance:
       objectReference: {fileID: 2038461348}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
+      propertyPath: consumption
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
       propertyPath: relatedBonus
       value: 
       objectReference: {fileID: 1211483885}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: consumptionDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2881882214339187627, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: m_RootOrder
@@ -4824,9 +4935,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
+      propertyPath: consumption
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
       propertyPath: relatedBonus
       value: 
       objectReference: {fileID: 67726541}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: consumptionDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5094806493321532126, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: m_Name
@@ -4897,6 +5018,11 @@ PrefabInstance:
       propertyPath: bonus
       value: 
       objectReference: {fileID: 67726541}
+    - target: {fileID: 9124580661493419441, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: bonusAmount
+      value: 
+      objectReference: {fileID: 117319438}
     - target: {fileID: 9124580661493419441, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: progressImages.Array.size
@@ -5092,14 +5218,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: consumption
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: relatedBonus
       value: 
       objectReference: {fileID: 1461461878}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: consumptionDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6644471143824231808, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: bonus
       value: 
       objectReference: {fileID: 1461461878}
+    - target: {fileID: 6644471143824231808, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: bonusAmount
+      value: 
+      objectReference: {fileID: 737786302}
     - target: {fileID: 6644471143824231808, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: progressImages.Array.size
