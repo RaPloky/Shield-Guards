@@ -17,7 +17,7 @@ public class UI_Parallax : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _thatPart.position = new Vector3(_thatPart.position.x + _speed * Time.deltaTime, _thatPart.position.y, _thatPart.position.z);
+        _thatPart.Translate(_speed * Time.deltaTime, 0, 0);
 
         if (_thatPart.position.x >= _endPoint.position.x)
             ResetPosition();
