@@ -443,7 +443,7 @@ TextureImporter:
         width: 357
         height: 357
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,7 +464,7 @@ TextureImporter:
         width: 357
         height: 357
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,6 +472,27 @@ TextureImporter:
       bones: []
       spriteID: ebf7ba138e3d498498c4981f0c743bd4
       internalID: -606993101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 36
+        width: 357
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671f1f45bbea95b4ba17128d3644e5fd
+      internalID: -899507007
       vertices: []
       indices: 
       edges: []
@@ -498,6 +519,7 @@ TextureImporter:
       protection_bonus_nobg: 1373968988
       music_on: -1461419012
       bg: -1994749970
+      back: -899507007
       charging_bonus: 1602498803
       upgrade: -606993101
       settings: -461243198
