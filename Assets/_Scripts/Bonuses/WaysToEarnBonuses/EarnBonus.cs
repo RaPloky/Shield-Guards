@@ -15,7 +15,7 @@ abstract public class EarnBonus : MonoBehaviour
 
     public float Progress { get; set; }
 
-    protected void UpdateBonusStatus()
+    public void UpdateBonusStatus()
     {
         _progress = (float)Progress / (float)_goal;
         bonusAmount.text = $"{Mathf.RoundToInt(_progress * 100)}%";

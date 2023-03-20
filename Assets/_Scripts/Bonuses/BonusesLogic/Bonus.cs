@@ -10,6 +10,8 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI effectDurationText;
     [SerializeField] protected GameObject effectDurationGO;
     [SerializeField] protected GameObject activationButton;
+    [SerializeField] protected GameObject bonusChart;
+    [SerializeField] protected EarnBonus bonusAmount;
 
     public bool IsBonusEnabled
     {
@@ -39,5 +41,10 @@ abstract public class Bonus : MonoBehaviour
         effectDurationGO.SetActive(false);
     }
 
-    public void ChangeActivationButtonStatus(bool status) => activationButton.SetActive(status);
+    public void ChangeActivationButtonStatus(bool status)
+    {
+        bonusChart.SetActive(!status);
+        bonusAmount.UpdateBonusStatus();
+        activationButton.SetActive(status);
+    }
 }

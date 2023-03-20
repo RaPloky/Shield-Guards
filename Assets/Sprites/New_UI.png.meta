@@ -497,6 +497,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: pause
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1227
+        width: 358
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6365e5c9f62252e4386ec27de26b57c7
+      internalID: -1741219800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: continue
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 806
+        width: 356
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b88448f427c5104093d1042b35d648f
+      internalID: 1374391265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: danger_notification
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 11
+        width: 115
+        height: 1098
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6cdd6a6d404064793a4b6601a6017c
+      internalID: 693854069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -511,8 +574,11 @@ TextureImporter:
       arrow: 1800151793
       menu: -1717798755
       destroy_bonus_nobg: -294088403
+      danger_notification: 693854069
       destroy_bonus: 68421289
+      continue: 1374391265
       quit: -644791574
+      pause: -1741219800
       music_off: 260258148
       info: -1041034896
       protection_bonus_nobg_filled: -955634596
