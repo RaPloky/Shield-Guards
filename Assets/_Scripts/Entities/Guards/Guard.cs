@@ -11,6 +11,7 @@ public class Guard : MonoBehaviour
     private int _maxEnergy;
     private bool _isHaveEnergy;
     private Guard _thatGuard;
+    private float _startConsumptionDelay;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
@@ -36,6 +37,10 @@ public class Guard : MonoBehaviour
         get => consumptionDelay;
         set => consumptionDelay = value;
     }
+    public float StartConsumptionDelay
+    {
+        get => _startConsumptionDelay;
+    }
 
     private void Awake()
     {
@@ -44,6 +49,7 @@ public class Guard : MonoBehaviour
         _isHaveEnergy = true;
         StartCoroutine(ConsumptEnergy());
         _thatGuard = this;
+        _startConsumptionDelay = ConsumptionDelay;
     }
 
     private IEnumerator ConsumptEnergy()
