@@ -31,6 +31,7 @@ public class UpdateBonusesStats : MonoBehaviour
         EventManager.OnBonusUpgraded += UpdateChargeStatus;
         EventManager.OnBonusUpgraded += UpdateDemolitionStatus;
         EventManager.OnBonusUpgraded += UpdateProtectionStatus;
+        EventManager.OnBonusUpgraded += _upgradeManager.UpdateUpgradePrices;
 
         EventManager.SendOnBonusUpgraded();
     }
@@ -40,6 +41,7 @@ public class UpdateBonusesStats : MonoBehaviour
         EventManager.OnBonusUpgraded -= UpdateChargeStatus;
         EventManager.OnBonusUpgraded -= UpdateDemolitionStatus;
         EventManager.OnBonusUpgraded -= UpdateProtectionStatus;
+        EventManager.OnBonusUpgraded -= _upgradeManager.UpdateUpgradePrices;
     }
 
     public void UpdateChargeStatus()

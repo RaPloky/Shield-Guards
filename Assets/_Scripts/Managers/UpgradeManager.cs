@@ -6,7 +6,11 @@ public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
 
-    [SerializeField] private TextMeshProUGUI[] creditsCount;
+    [SerializeField] private TextMeshProUGUI creditsCount;
+    [SerializeField] private TextMeshProUGUI chargingPrice;
+    [SerializeField] private TextMeshProUGUI destroyingPrice;
+    [SerializeField] private TextMeshProUGUI protectionPrice;
+
     [SerializeField, Range(0, 100000)] private float startUpgradePrice;
     [SerializeField, Range(1, 5)] private float nextUpgradeMultiplier;
 
@@ -54,8 +58,8 @@ public class UpgradeManager : MonoBehaviour
         AssignEffectValues();
         AssignGainValues();        
 
-        if (creditsCount != null)
-            UpdateEnergyDepletedCount();
+        UpdateCreditsCount();
+        UpdateUpgradePrices();
     }
 
     private Dictionary<int, float> AssignBonusEffectValues(float minBonusEffectValue, float effectIncrement)
@@ -119,7 +123,7 @@ public class UpgradeManager : MonoBehaviour
 
         PlayerPrefs.SetInt(bonusPref, nextLvl);
         PlayerPrefs.SetInt(EnergyPref, EnergyValue -= nextUpgradeCost);
-        UpdateEnergyDepletedCount();
+        UpdateCreditsCount();
         EventManager.SendOnBonusUpgraded();
     }
 
@@ -128,11 +132,14 @@ public class UpgradeManager : MonoBehaviour
     public void UpgradeProtection() => UpgradeBonus(ProtectionBonusLvl, ProtectionBonusLvlPref);
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
+    private void UpdateCreditsCount() => creditsCount.text = "$" + EnergyValue;
+    private string GetPrice(float price) => "$" + price;
 
-    private void UpdateEnergyDepletedCount()
+    public void UpdateUpgradePrices()
     {
-        foreach (var count in creditsCount)
-            count.text = EnergyValue.ToString();
+        chargingPrice.text = GetPrice(UpgradesPrices[ChargingBonusLvl]);
+        destroyingPrice.text = GetPrice(UpgradesPrices[DemolitionBonusLvl]);
+        protectionPrice.text = GetPrice(UpgradesPrices[ProtectionBonusLvl]);
     }
 
     public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl];

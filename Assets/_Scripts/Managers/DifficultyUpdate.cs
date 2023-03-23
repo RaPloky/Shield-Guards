@@ -18,7 +18,9 @@ public class DifficultyUpdate : MonoBehaviour
 
     [SerializeField] private List<Guard> activeGuards;
 
-    private void Start()
+    public List<Guard> ActiveGuards => activeGuards;
+
+    private void Awake()
     {
         Instance = this;
         StartCoroutine(IncreaseDifficulty());

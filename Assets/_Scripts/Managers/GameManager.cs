@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         if (bestScore != null)
         {
             int score = PlayerPrefs.GetInt(Score.ScorePref);
-            bestScore.text = score > 0 ? "Best score\n" + score : string.Empty;
+            bestScore.text = score > 0 ? "Best score: " + score : string.Empty;
         }
     }
 

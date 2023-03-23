@@ -6,8 +6,11 @@ public class ChargeAllGuards : Bonus
     [SerializeField] private List<Guard> guards;
     private int chargeAmount;
 
+    private DifficultyUpdate _difficultyManager;
+
     private void Start()
     {
+        _difficultyManager = DifficultyUpdate.Instance;
         chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
     }
 
@@ -16,8 +19,8 @@ public class ChargeAllGuards : Bonus
         if (!isBonusEnabled)
             return;
 
-        foreach (Guard guard in guards)
-            guard.AddEnergy(chargeAmount);
+        foreach (Guard activeGuard in _difficultyManager.ActiveGuards)
+            activeGuard.AddEnergy(chargeAmount);
 
         ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
