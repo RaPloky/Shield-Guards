@@ -506,7 +506,7 @@ TextureImporter:
         width: 358
         height: 357
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -527,7 +527,7 @@ TextureImporter:
         width: 356
         height: 356
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -540,22 +540,85 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: danger_notification
+      name: ufo_notif_R
       rect:
         serializedVersion: 2
-        x: 2499
-        y: 11
-        width: 115
-        height: 1098
+        x: 2532
+        y: 906
+        width: 66
+        height: 626
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f6cdd6a6d404064793a4b6601a6017c
-      internalID: 693854069
+      spriteID: e4a4c56664b22d24ca024e0b294ebe56
+      internalID: -1925442754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ufo_notif_L
+      rect:
+        serializedVersion: 2
+        x: 2532
+        y: 261
+        width: 66
+        height: 626
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd8bb96d8c41eb438235a6813203b9d
+      internalID: -247592541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: restart
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 35
+        width: 358
+        height: 357
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892f9f04a1f904e4e9417495448397c6
+      internalID: -1176876272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meteor_notif
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 421
+        width: 393
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20571fb357fe3be4dac834bff422ffc6
+      internalID: 1045697913
       vertices: []
       indices: 
       edges: []
@@ -574,9 +637,12 @@ TextureImporter:
       arrow: 1800151793
       menu: -1717798755
       destroy_bonus_nobg: -294088403
+      ufo_notif_L: -247592541
       danger_notification: 693854069
+      meteor_notif: 1045697913
       destroy_bonus: 68421289
       continue: 1374391265
+      restart: -1176876272
       quit: -644791574
       pause: -1741219800
       music_off: 260258148
@@ -584,6 +650,7 @@ TextureImporter:
       protection_bonus_nobg_filled: -955634596
       protection_bonus_nobg: 1373968988
       music_on: -1461419012
+      ufo_notif_R: -1925442754
       bg: -1994749970
       back: -899507007
       charging_bonus: 1602498803
