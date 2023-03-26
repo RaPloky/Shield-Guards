@@ -7,6 +7,7 @@ public class Guard : MonoBehaviour
     [SerializeField] private int consumption;
     [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
     [SerializeField] private Bonus relatedBonus;
+    [SerializeField] private CanvasGroup relatedDangerNotifications;
 
     private int _maxEnergy;
     private bool _isHaveEnergy;
@@ -37,10 +38,8 @@ public class Guard : MonoBehaviour
         get => consumptionDelay;
         set => consumptionDelay = value;
     }
-    public float StartConsumptionDelay
-    {
-        get => _startConsumptionDelay;
-    }
+    public float StartConsumptionDelay => _startConsumptionDelay;
+    public CanvasGroup RelatedDangerNotifications => relatedDangerNotifications;
 
     private void Awake()
     {

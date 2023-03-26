@@ -26,13 +26,12 @@ public class Ufo : Enemy
     {
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
-        ActivateAlarm();
     }
 
     public override IEnumerator DestroyThatEnemy()
     {
         yield return new WaitForSeconds(0);
-        DeactivateAlarm();
+        DisableDangerNotifications();
         Destroy(gameObject);
         
         EventManager.SendOnEnemyDestroyed();

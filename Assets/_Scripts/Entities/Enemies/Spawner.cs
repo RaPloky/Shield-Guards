@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
@@ -8,10 +9,15 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private Transform target;
 
+    [Header("Danger notifications")]
+    [SerializeField] private bool isProjectileSpawner;
+    [SerializeField] private List<Animator> dangerNotificators;
+
     private Transform _thatTrans;
 
     public GameObject SpawnedPrefab { get; set; }
     public Transform Target => target;
+    public bool IsSpawnFreezed { get; set; }
 
     public float SpawnDelay
     {
@@ -24,9 +30,6 @@ public class Spawner : MonoBehaviour
         get => launchChance;
         set => launchChance = Mathf.Clamp01(value);
     }
-
-    public bool IsSpawnFreezed { get; set; }
-
 
     private void Start()
     {
@@ -46,8 +49,33 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay);
 
             if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed)
+            {
                 SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
+
+                if (!isProjectileSpawner)
+                    SpawnedPrefab.GetComponent<Enemy>().ParentSpawner = this;
+
+                NotifyAboutDanger();
+            }
         }
+    }
+
+    private void NotifyAboutDanger()
+    {
+        if (isProjectileSpawner)
+            return;
+
+        foreach (var animator in dangerNotificators)
+            animator.SetTrigger("DangerBegin");
+    }
+
+    public void DisableDanger()
+    {
+        if (isProjectileSpawner)
+            return;
+
+        foreach (var animator in dangerNotificators)
+            animator.SetTrigger("DangerOver");
     }
 
     private bool IsSpawnAllowed()

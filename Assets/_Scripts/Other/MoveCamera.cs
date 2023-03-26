@@ -16,9 +16,15 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] Transform rotateAroundJoint;
     [SerializeField] float angleChange;
 
+    [Header("Guards relative positions")]
+    [SerializeField] private Guard leftGuard;
+    [SerializeField] private Guard currentGuard;
+    [SerializeField] private Guard rightGuard;
+
     private float _posX;
     private float _posZ;
     private Transform _thatTrans;
+    private Guard _tempLeft, _tempCurrent, _tempRight;
 
     private void Awake()
     {
@@ -40,27 +46,65 @@ public class MoveCamera : MonoBehaviour
 
     public void TurnLeft()
     {
-        if (!IsLeftGuardActive())
+        if (!IsGuardActive(leftGuard))
         {
-            // Message about discharged guard
+            Debug.Log("Discharged on left!");
             return;
         }
-            
 
+        SwapGuardsOnSwapLeft();   
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.up, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.up);
     }
 
     public void TurnRight()
     {
-        if (!IsRightGuardActive())
+        if (!IsGuardActive(rightGuard))
         {
-            // Message about discharged guard
+            Debug.Log("Discharged on right!");
             return;
         }
 
+        SwapGuardsOnSwapRight();
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.down, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.down);
+    }
+
+    private void SwapGuardsOnSwapLeft()
+    {
+        AssignTempGuards();
+
+        leftGuard = _tempRight;
+        currentGuard = _tempLeft;
+        rightGuard = _tempCurrent;
+
+        ReactivateNotifications();
+    }
+
+    private void SwapGuardsOnSwapRight()
+    {
+        AssignTempGuards();
+
+        leftGuard = _tempCurrent;
+        currentGuard = _tempRight;
+        rightGuard = _tempLeft;
+
+        ReactivateNotifications();
+    }
+
+    private void AssignTempGuards()
+    {
+        _tempLeft = leftGuard;
+        _tempCurrent = currentGuard;
+        _tempRight = rightGuard;
+    }
+
+    public void ReactivateNotifications()
+    {
+        leftGuard.RelatedDangerNotifications.alpha = 0;
+        rightGuard.RelatedDangerNotifications.alpha = 0;
+
+        currentGuard.RelatedDangerNotifications.alpha = 1;
     }
 
     private void SwipeHorizontal()
@@ -93,6 +137,5 @@ public class MoveCamera : MonoBehaviour
             stopTouch = false;
     }
 
-    private bool IsLeftGuardActive() => true;
-    private bool IsRightGuardActive() => true;
+    private bool IsGuardActive(Guard guard) => guard.IsHaveEnergy;
 }

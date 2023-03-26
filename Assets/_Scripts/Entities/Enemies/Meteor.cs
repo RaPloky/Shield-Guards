@@ -18,7 +18,6 @@ public class Meteor : Enemy
     private void Awake()
     {
         _meteorRb = GetComponent<Rigidbody>();
-        ActivateAlarm();
     }
 
     private void OnMouseDrag()
@@ -55,11 +54,6 @@ public class Meteor : Enemy
                     DragMeteor();
                     _stopTouch = true;
                 }
-                //else if (distance.y < -swipeRange)
-                //{
-                //    DragMeteorDown();
-                //    stopTouch = true;
-                //}
             }
 
         }
@@ -78,7 +72,7 @@ public class Meteor : Enemy
     public override IEnumerator DestroyThatEnemy()
     {
         yield return new WaitForSeconds(0);
-        DeactivateAlarm();
+        DisableDangerNotifications();
         Destroy(gameObject);
 
         EventManager.SendOnEnemyDestroyed();

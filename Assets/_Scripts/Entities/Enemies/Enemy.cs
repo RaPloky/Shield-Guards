@@ -7,13 +7,16 @@ abstract public class Enemy : MonoBehaviour
 
     [SerializeField] protected int destructionReward;
 
-    protected void ActivateAlarm()
-    {
+    protected Spawner _parentSpawner;
 
+    public Spawner ParentSpawner
+    {
+        get => _parentSpawner;
+        set => _parentSpawner = value;
     }
 
-    protected void DeactivateAlarm()
+    protected void DisableDangerNotifications()
     {
-
+        _parentSpawner.DisableDanger();
     }
 }
