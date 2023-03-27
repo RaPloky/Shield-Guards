@@ -63,7 +63,6 @@ public class Guard : MonoBehaviour
     private void TurnOffGuard()
     {
         StopAllCoroutines();
-        GetComponent<BoxCollider>().enabled = false;
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);

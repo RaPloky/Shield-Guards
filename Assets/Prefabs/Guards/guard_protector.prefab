@@ -220,7 +220,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Size: {x: 2.5, y: 1.6531954, z: 4.432873}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5503444987256869267
 Rigidbody:
@@ -267,6 +267,7 @@ MonoBehaviour:
   consumption: 100
   consumptionDelay: 1
   relatedBonus: {fileID: 0}
+  relatedDangerNotifications: {fileID: 0}
 --- !u!114 &1056842409593145694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +283,7 @@ MonoBehaviour:
   bonus: {fileID: 0}
   enablingReward: 150
   progressImages: []
+  bonusAmount: {fileID: 0}
   surviveTimeUpdateAmount: 0.5
 --- !u!1 &6617571687083838816
 GameObject:

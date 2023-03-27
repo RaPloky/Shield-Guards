@@ -19,6 +19,8 @@ public class Spawner : MonoBehaviour
     public Transform Target => target;
     public bool IsSpawnFreezed { get; set; }
 
+    private Guard _targetGuard;
+
     public float SpawnDelay
     {
         get => spawnDelay;
@@ -36,6 +38,7 @@ public class Spawner : MonoBehaviour
         _thatTrans = transform;
         IsSpawnFreezed = false;
 
+        _targetGuard = Target.GetComponent<Guard>();
         if (target == null)
             target = GetTargetFromSpawner();
 
@@ -48,7 +51,7 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnDelay);
 
-            if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed)
+            if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed && _targetGuard.IsHaveEnergy)
             {
                 SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
 
