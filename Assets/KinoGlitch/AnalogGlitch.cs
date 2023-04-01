@@ -22,7 +22,7 @@
 //
 using UnityEngine;
 
-namespace KinoAnalog
+namespace Kino
 {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]
@@ -36,8 +36,7 @@ namespace KinoAnalog
         [SerializeField, Range(0, 1)]
         float _scanLineJitter = 0;
 
-        public float scanLineJitter
-        {
+        public float scanLineJitter {
             get { return _scanLineJitter; }
             set { _scanLineJitter = value; }
         }
@@ -47,8 +46,7 @@ namespace KinoAnalog
         [SerializeField, Range(0, 1)]
         float _verticalJump = 0;
 
-        public float verticalJump
-        {
+        public float verticalJump {
             get { return _verticalJump; }
             set { _verticalJump = value; }
         }
@@ -58,8 +56,7 @@ namespace KinoAnalog
         [SerializeField, Range(0, 1)]
         float _horizontalShake = 0;
 
-        public float horizontalShake
-        {
+        public float horizontalShake {
             get { return _horizontalShake; }
             set { _horizontalShake = value; }
         }
@@ -69,8 +66,7 @@ namespace KinoAnalog
         [SerializeField, Range(0, 1)]
         float _colorDrift = 0;
 
-        public float colorDrift
-        {
+        public float colorDrift {
             get { return _colorDrift; }
             set { _colorDrift = value; }
         }
