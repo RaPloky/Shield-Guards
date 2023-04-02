@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -141,7 +142,7 @@ public class UpgradeManager : MonoBehaviour
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
     private void UpdateCreditsCount() => creditsCount.text = "$" + EnergyValue;
-    private string GetPrice(float price) => "$" + price;
+    private string GetPrice(float price) => price.Equals(UpgradesPrices[^1]) ? "maxed, enjoy!" : "$" + price;
 
     public void UpdateUpgradePrices()
     {
