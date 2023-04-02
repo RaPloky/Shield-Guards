@@ -11,8 +11,9 @@ public class GlitchAnimationController : MonoBehaviour
     [SerializeField] private DigitalGlitch digitalGlitch;
     [SerializeField] private AnalogGlitch analogGlitch;
 
-    [SerializeField, Range(0.01f, 0.1f)] private float delay;
-    [SerializeField, Range(0.01f, 0.1f)] private float intensityChange;
+    [SerializeField, Range(0.01f, 0.1f)] private float shortDelay;
+    [SerializeField, Range(0.01f, 0.25f)] private float intensityDelta;
+    [SerializeField, Range(1f, 3f)] private float longDelay;
 
     private float _tempColorDrift, _tempHorizontalShake, _tempDigitalIntensity, _tempScanJitter, _tempVerticalJump;
 
@@ -23,32 +24,62 @@ public class GlitchAnimationController : MonoBehaviour
 
     private void Start()
     {
-        EnableNoise();
+        EnableJitterJump();
     }
 
-    public void FadeIn()
+    public void SingleDriftAndDigital(float digitalStartIntensity, float colorDriftStartIntensity)
     {
-        StartCoroutine(DegradeDigitalIntensity());
-        StartCoroutine(DegradeAnalogColorDrift(0.5f));
+        StartCoroutine(DigitalFadeOut(digitalStartIntensity));
+        StartCoroutine(ColorDriftFadeOut(colorDriftStartIntensity));
     }
 
-    private IEnumerator DegradeDigitalIntensity()
+    public void SingleDriftAndDigital()
     {
-        digitalGlitch.intensity = 0.6f;
+        StartCoroutine(DigitalFadeOut(0.7f));
+        StartCoroutine(ColorDriftFadeOut(0.7f));
+    }
+
+    public void SingleDriftAndDigitalOut()
+    {
+        StartCoroutine(DigitalFadeIn());
+        StartCoroutine(ColorDriftFadeIn());
+    }
+
+    private IEnumerator DigitalFadeOut(float digitalStartIntensity)
+    {
+        digitalGlitch.intensity = digitalStartIntensity;
         while (digitalGlitch.intensity > 0)
         {
-            yield return new WaitForSeconds(delay);
-            digitalGlitch.intensity = Mathf.Clamp(digitalGlitch.intensity - intensityChange, 0, 1);
+            yield return new WaitForSeconds(shortDelay);
+            digitalGlitch.intensity = Mathf.Clamp(digitalGlitch.intensity - intensityDelta, 0, 1);
         }
     }
 
-    private IEnumerator DegradeAnalogColorDrift(float driftStrength)
+    private IEnumerator DigitalFadeIn()
+    {
+        while (digitalGlitch.intensity <= 0.8f)
+        {
+            yield return new WaitForSeconds(longDelay);
+            digitalGlitch.intensity = Mathf.Clamp(digitalGlitch.intensity + intensityDelta, 0, 1);
+        }
+    }
+
+    private IEnumerator ColorDriftFadeIn()
+    {
+        while (analogGlitch.colorDrift <= 0.8f)
+        {
+            yield return new WaitForSeconds(longDelay);
+            analogGlitch.colorDrift = Mathf.Clamp(analogGlitch.colorDrift + intensityDelta, 0, 1);
+        }
+    }
+
+    private IEnumerator ColorDriftFadeOut(float driftStrength)
     {
         analogGlitch.colorDrift = driftStrength;
         while (analogGlitch.colorDrift > 0)
         {
-            yield return new WaitForSeconds(delay);
-            analogGlitch.colorDrift = Mathf.Clamp(analogGlitch.colorDrift - intensityChange, 0, 1);
+            yield return new WaitForSeconds(shortDelay);
+            analogGlitch.colorDrift = Mathf.Clamp(analogGlitch.colorDrift - intensityDelta, 0, 1);
         }
     }
 
@@ -57,13 +88,13 @@ public class GlitchAnimationController : MonoBehaviour
         analogGlitch.scanLineJitter = scanStrength;
         while (analogGlitch.scanLineJitter > 0)
         {
-            yield return new WaitForSeconds(delay);
-            analogGlitch.scanLineJitter = Mathf.Clamp(analogGlitch.scanLineJitter - intensityChange, 0, 1);
+            yield return new WaitForSeconds(shortDelay);
+            analogGlitch.scanLineJitter = Mathf.Clamp(analogGlitch.scanLineJitter - intensityDelta, 0, 1);
         }
         analogGlitch.scanLineJitter = _tempScanJitter;
     }
 
-    public void EnableHorizontalShake()
+    public void ConstantColorShake()
     {
         AssignTempColorDrift();
         AssignTempHorizontalShake();
@@ -72,13 +103,13 @@ public class GlitchAnimationController : MonoBehaviour
         analogGlitch.horizontalShake = 0.035f;
     }
 
-    public void DisableHorizontalShake()
+    public void DisableConstantHorizontalShake()
     {
         analogGlitch.colorDrift = _tempColorDrift;
         analogGlitch.horizontalShake = _tempHorizontalShake;
     }
 
-    public void EnableNoise()
+    public void EnableJitterJump()
     {
         AssignTempScanJitter();
         AssignTempVerticalJump();
@@ -87,7 +118,7 @@ public class GlitchAnimationController : MonoBehaviour
         analogGlitch.verticalJump = 0.01f;
     }
 
-    public void DisableNoise()
+    public void DisableJitterJump()
     {
         analogGlitch.scanLineJitter = _tempScanJitter;
         analogGlitch.verticalJump = _tempVerticalJump;
@@ -96,7 +127,7 @@ public class GlitchAnimationController : MonoBehaviour
     public void PlayStrongScan() => StartCoroutine(Scan(0.85f));
     public void PlayWeakScan()
     {
-        StartCoroutine(DegradeAnalogColorDrift(0.3f));
+        StartCoroutine(ColorDriftFadeOut(0.3f));
         StartCoroutine(Scan(0.4f));
     }
 

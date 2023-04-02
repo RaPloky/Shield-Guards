@@ -2179,6 +2179,9 @@ GameObject:
   - component: {fileID: 325206140}
   - component: {fileID: 325206141}
   - component: {fileID: 325206142}
+  - component: {fileID: 325206145}
+  - component: {fileID: 325206144}
+  - component: {fileID: 325206143}
   m_Layer: 0
   m_Name: Player_Camera
   m_TagString: MainCamera
@@ -2360,6 +2363,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 0.5
   skyboxMaterial: {fileID: 2100000, guid: 69e10e886d52d20478f9ed5424126be8, type: 2}
+--- !u!114 &325206143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325206135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5870a823d293cef42be7f3bc51821d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  digitalGlitch: {fileID: 325206144}
+  analogGlitch: {fileID: 325206145}
+  shortDelay: 0
+  intensityDelta: 0
+  longDelay: 0
+--- !u!114 &325206144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325206135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4452f0f45fe55a542a8d07fc91c32509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _intensity: 0
+  _shader: {fileID: 4800000, guid: ab3ecb45d5d04b04b99cbc3052a2644b, type: 3}
+--- !u!114 &325206145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325206135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9572b95b024b15d4cbfe9e8bcb57ddbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scanLineJitter: 0
+  _verticalJump: 0
+  _horizontalShake: 0
+  _colorDrift: 0
+  _shader: {fileID: 4800000, guid: 86c4380736fa12d4385fb969a9a58c79, type: 3}
 --- !u!1 &362384736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7780,7 +7831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -43.387833}
+  m_AnchoredPosition: {x: 100, y: -43.387817}
   m_SizeDelta: {x: 200, y: 123.9}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1758989351

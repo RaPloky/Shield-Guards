@@ -12,6 +12,8 @@ public enum BonusGoal
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         get => _activeGuardsCount;
         set => _activeGuardsCount = value;
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     private void Start()

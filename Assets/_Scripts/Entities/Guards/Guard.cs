@@ -20,7 +20,7 @@ public class Guard : MonoBehaviour
         get => energy;
         set
         {
-            if (IsProtectBonusActivated)
+            if (IsProtectBonusActivated && value < energy)
                 return;
 
             energy = Mathf.Clamp(value, 0, _maxEnergy);
