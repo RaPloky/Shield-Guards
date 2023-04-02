@@ -22,7 +22,7 @@
 //
 using UnityEngine;
 
-namespace Kino
+namespace KinoDigital
 {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Camera))]

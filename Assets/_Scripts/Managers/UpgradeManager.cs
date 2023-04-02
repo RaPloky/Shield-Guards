@@ -14,6 +14,8 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField, Range(0, 100000)] private float startUpgradePrice;
     [SerializeField, Range(1, 5)] private float nextUpgradeMultiplier;
 
+    private GlitchAnimationController _glitchController;
+
     public static string ChargingBonusLvlPref => "ChargingLvl";
     public static string DemolitionBonusLvlPref => "DemolitionLvl";
     public static string ProtectionBonusLvlPref => "ProtectionLvl";
@@ -60,6 +62,11 @@ public class UpgradeManager : MonoBehaviour
 
         UpdateCreditsCount();
         UpdateUpgradePrices();
+    }
+
+    private void Start()
+    {
+        _glitchController = GlitchAnimationController.Instance;
     }
 
     private Dictionary<int, float> AssignBonusEffectValues(float minBonusEffectValue, float effectIncrement)
@@ -121,6 +128,7 @@ public class UpgradeManager : MonoBehaviour
         if (!IsEnoughEnergyToUpgrade(nextUpgradeCost))
             return;
 
+        _glitchController.PlayStrongScan();
         PlayerPrefs.SetInt(bonusPref, nextLvl);
         PlayerPrefs.SetInt(EnergyPref, EnergyValue -= nextUpgradeCost);
         UpdateCreditsCount();
