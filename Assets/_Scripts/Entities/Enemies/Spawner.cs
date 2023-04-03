@@ -38,9 +38,14 @@ public class Spawner : MonoBehaviour
         _thatTrans = transform;
         IsSpawnFreezed = false;
 
-        _targetGuard = Target.GetComponent<Guard>();
-        if (target == null)
+        if (!isProjectileSpawner)
+            _targetGuard = Target.GetComponent<Guard>();
+
+        if (Target == null)
+        {
             target = GetTargetFromSpawner();
+            _targetGuard = Target.GetComponent<Guard>();
+        }
 
         StartCoroutine(SpawnPrefab());
     }

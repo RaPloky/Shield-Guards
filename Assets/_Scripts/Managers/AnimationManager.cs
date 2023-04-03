@@ -22,10 +22,13 @@ public class AnimationManager : MonoBehaviour
 
     public void MenuOut()
     {
-        _glitchController.SingleDriftAndDigitalOut();
+        StartCoroutine(_glitchController.DigitalFadeInAndOut(0.8f, 0.2f));
         globalAnimator.SetTrigger("MenuOut");
-        Invoke(nameof(StartGame), globalAnimator.GetCurrentAnimatorClipInfo(0).Length);
+        Invoke(nameof(StartGame), globalAnimator.GetCurrentAnimatorClipInfo(0).Length * 2.5f);
     }
 
-    private void StartGame() => GameManager.Instance.StartGame();
+    private void StartGame()
+    {
+        GameManager.Instance.StartGame();
+    }
 }

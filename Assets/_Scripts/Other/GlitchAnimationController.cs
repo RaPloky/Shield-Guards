@@ -11,9 +11,9 @@ public class GlitchAnimationController : MonoBehaviour
     [SerializeField] private DigitalGlitch digitalGlitch;
     [SerializeField] private AnalogGlitch analogGlitch;
 
-    [SerializeField, Range(0.01f, 0.1f)] private float shortDelay;
+    [Range(0.01f, 0.1f)] public float shortDelay;
     [SerializeField, Range(0.01f, 0.25f)] private float intensityDelta;
-    [SerializeField, Range(1f, 3f)] private float longDelay;
+    [Range(1f, 3f)] public float longDelay;
 
     private float _tempColorDrift, _tempHorizontalShake, _tempDigitalIntensity, _tempScanJitter, _tempVerticalJump;
 
@@ -45,7 +45,7 @@ public class GlitchAnimationController : MonoBehaviour
         StartCoroutine(ColorDriftFadeIn());
     }
 
-    private IEnumerator DigitalFadeOut(float digitalStartIntensity)
+    public IEnumerator DigitalFadeOut(float digitalStartIntensity)
     {
         digitalGlitch.intensity = digitalStartIntensity;
         while (digitalGlitch.intensity > 0)
@@ -70,6 +70,21 @@ public class GlitchAnimationController : MonoBehaviour
         {
             yield return new WaitForSeconds(longDelay);
             analogGlitch.colorDrift = Mathf.Clamp(analogGlitch.colorDrift + intensityDelta, 0, 1);
+        }
+    }
+
+    public IEnumerator DigitalFadeInAndOut(float intensityLimit, float updateDelay)
+    {
+        while (digitalGlitch.intensity <= intensityLimit)
+        {
+            yield return new WaitForSeconds(updateDelay);
+            digitalGlitch.intensity = Mathf.Clamp(digitalGlitch.intensity + intensityDelta, 0, 1);
+        }
+
+        while (digitalGlitch.intensity > 0)
+        {
+            yield return new WaitForSeconds(updateDelay);
+            digitalGlitch.intensity = Mathf.Clamp(digitalGlitch.intensity - intensityDelta, 0, 1);
         }
     }
 
