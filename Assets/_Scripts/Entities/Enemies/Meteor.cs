@@ -18,6 +18,7 @@ public class Meteor : Enemy
     private void Awake()
     {
         _meteorRb = GetComponent<Rigidbody>();
+        SetGlitchController();
     }
 
     private void OnMouseDrag()

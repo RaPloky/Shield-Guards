@@ -5,6 +5,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField, Range(0f, 0.05f)] private float speedFactor;
     [SerializeField] private int energyDamage;
     [SerializeField] private bool isMeteor;
+    [SerializeField, Range(0f, 1f)] private float glitchStrength;
 
     private Transform _targetTrans;
     private Rigidbody _thatRb;
@@ -49,6 +50,7 @@ public class ProjectileBehavior : MonoBehaviour
         }
         _targetComponent.ConsumptEnergy(energyDamage);
         DestoyThatProjectile();
+        PlayHitGlitchAnim();
     }
 
     private void DestoyThatProjectile()
@@ -57,5 +59,14 @@ public class ProjectileBehavior : MonoBehaviour
             StartCoroutine(_thatMeteorReference.DestroyThatEnemy());
         else
             Destroy(gameObject);
+    }
+
+    private void PlayHitGlitchAnim()
+    {
+        GlitchAnimationController controller = GlitchAnimationController.Instance;
+        if (isMeteor)
+            controller.SingleDriftAndDigital(0.6f, 0.4f);
+        else
+            controller.PlayWeakScan();
     }
 }

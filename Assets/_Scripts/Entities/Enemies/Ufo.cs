@@ -26,6 +26,7 @@ public class Ufo : Enemy
     {
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
+        SetGlitchController();
     }
 
     public override IEnumerator DestroyThatEnemy()

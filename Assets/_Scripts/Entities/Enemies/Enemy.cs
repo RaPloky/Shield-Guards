@@ -8,6 +8,7 @@ abstract public class Enemy : MonoBehaviour
     [SerializeField] protected int destructionReward;
 
     protected Spawner _parentSpawner;
+    protected GlitchAnimationController _glitchController;
 
     public Spawner ParentSpawner
     {
@@ -19,4 +20,6 @@ abstract public class Enemy : MonoBehaviour
     {
         _parentSpawner.DisableDanger();
     }
+
+    protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;
 }
