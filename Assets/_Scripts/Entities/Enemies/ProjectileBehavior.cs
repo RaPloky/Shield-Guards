@@ -6,6 +6,7 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] private int energyDamage;
     [SerializeField] private bool isMeteor;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
+    [SerializeField] private ParticleSystem onDestroyParticles;
 
     private Transform _targetTrans;
     private Rigidbody _thatRb;
@@ -55,10 +56,19 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void DestoyThatProjectile()
     {
+        PlayParticlesOnDestroy();
+
         if (isMeteor)
             StartCoroutine(_thatMeteorReference.DestroyThatEnemy());
         else
             Destroy(gameObject);
+    }
+
+    private void PlayParticlesOnDestroy()
+    {
+        GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        onDestroyParticles.Play();
+        Destroy(particles, onDestroyParticles.duration);
     }
 
     private void PlayHitGlitchAnim()
