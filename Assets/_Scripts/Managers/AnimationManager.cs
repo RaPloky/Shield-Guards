@@ -24,7 +24,7 @@ public class AnimationManager : MonoBehaviour
     {
         StartCoroutine(_glitchController.DigitalFadeInAndOut(0.8f, 0.2f));
         globalAnimator.SetTrigger("MenuOut");
-        Invoke(nameof(StartGame), globalAnimator.GetCurrentAnimatorClipInfo(0).Length * 2.5f);
+        Invoke(nameof(StartGame), globalAnimator.GetCurrentAnimatorClipInfo(0).Length * 2.5f + 1f);
     }
 
     private void StartGame()
