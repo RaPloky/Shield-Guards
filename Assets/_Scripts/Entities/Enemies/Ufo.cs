@@ -7,6 +7,7 @@ public class Ufo : Enemy
 {
     [SerializeField] private int health;
     [SerializeField] private int damageToUfo;
+    [SerializeField] private Spawner relatedSpawner;
     [SerializeField] private List<Image> healthBarBg;
     [SerializeField] private ParticleSystem onDamageParticles;
     [SerializeField] private ParticleSystem onDestroyParticles;
@@ -44,6 +45,7 @@ public class Ufo : Enemy
         DisableDangerNotifications();
         Destroy(gameObject);
         PlayParticlesOnDestroy();
+        PlayParticlesOnProjectileDestroy();
         
         EventManager.SendOnEnemyDestroyed();
         EventManager.SendOnScoreUpdated(destructionReward);
@@ -72,5 +74,10 @@ public class Ufo : Enemy
         GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
         onDestroyParticles.Play();
         Destroy(particles, onDestroyParticles.duration);
+    }
+
+    private void PlayParticlesOnProjectileDestroy()
+    {
+        relatedSpawner.SpawnedPrefab.GetComponent<ProjectileBehavior>().PlayParticlesOnDestroy();
     }
 }
