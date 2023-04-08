@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Ufo : Enemy
 {
     [SerializeField] private int health;
     [SerializeField] private int damageToUfo;
+    [SerializeField] private List<Image> healthBarBg;
+    [SerializeField] private ParticleSystem onDamageParticles;
 
     public Transform Target => _target;
     public int Health
@@ -13,6 +17,8 @@ public class Ufo : Enemy
         set
         {
             health = (int)(Mathf.Clamp(value, 0, float.MaxValue));
+            UpdateHealthBar();
+            onDamageParticles.Play();
 
             if (health <= 0)
                 StartCoroutine(DestroyThatEnemy());
@@ -21,9 +27,11 @@ public class Ufo : Enemy
 
     private Transform _target;
     private Transform _thatTrans;
+    private int _startHealth;
 
     private void Start()
     {
+        _startHealth = Health;
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
         SetGlitchController();
@@ -45,6 +53,12 @@ public class Ufo : Enemy
             return;
 
         DamageUfo();
+    }
+
+    private void UpdateHealthBar()
+    {
+        foreach (var bar in healthBarBg)
+            bar.fillAmount = (float)Health / _startHealth;
     }
 
     private void FixedUpdate() => _thatTrans.LookAt(_target);
