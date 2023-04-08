@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7220272334328847885}
   - component: {fileID: 236059852655039265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: projectile_spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228637849885115076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.98, z: 0}
+  m_LocalPosition: {x: 0, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,7 +61,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4052115618670877558}
   - component: {fileID: 6557048668491923075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,12 +127,12 @@ GameObject:
   - component: {fileID: 4678196454412417907}
   - component: {fileID: 7315835331061601950}
   - component: {fileID: 6716028997081017852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Filling_R_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &4678196454412417907
 RectTransform:
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 8943855999770277523}
   - component: {fileID: 1782985926159067375}
   - component: {fileID: 7343073287971898526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ufo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -368,12 +368,12 @@ GameObject:
   - component: {fileID: 6606852669104018411}
   - component: {fileID: 4149553775918246564}
   - component: {fileID: 6638016532888370878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Filling_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &6606852669104018411
 RectTransform:
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 9035029064133842465}
   - component: {fileID: 5144399293403569740}
   - component: {fileID: 2187667278216234041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleSystem_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5264,7 +5264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6623300078401359812}
   - component: {fileID: 733092817801069938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5324,12 +5324,12 @@ GameObject:
   - component: {fileID: 6487472283662339923}
   - component: {fileID: 8864909608717620443}
   - component: {fileID: 4184385257587487870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Filling_L_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &6487472283662339923
 RectTransform:
@@ -5401,12 +5401,12 @@ GameObject:
   - component: {fileID: 1631618797139905061}
   - component: {fileID: 3471068554691546109}
   - component: {fileID: 8257718161656626302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Filling_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1631618797139905061
 RectTransform:
@@ -5477,7 +5477,7 @@ GameObject:
   - component: {fileID: 4206499167679221822}
   - component: {fileID: 7463679270994809317}
   - component: {fileID: 624837819962020196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleSystem_OnDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
