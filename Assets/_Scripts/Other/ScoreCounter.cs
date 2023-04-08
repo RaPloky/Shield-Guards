@@ -5,7 +5,6 @@ public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Animator animator;
-    [SerializeField] private ParticleSystem particles;
 
     public int Score { get; set; }
 
@@ -29,6 +28,5 @@ public class ScoreCounter : MonoBehaviour
         Score += addedPoints;
         scoreText.text = Score.ToString();
         animator.SetTrigger("Update");
-        particles.Play();
     }
 }

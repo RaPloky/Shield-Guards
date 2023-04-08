@@ -9,6 +9,7 @@ public class Ufo : Enemy
     [SerializeField] private int damageToUfo;
     [SerializeField] private List<Image> healthBarBg;
     [SerializeField] private ParticleSystem onDamageParticles;
+    [SerializeField] private ParticleSystem onDestroyParticles;
 
     public Transform Target => _target;
     public int Health
@@ -42,6 +43,7 @@ public class Ufo : Enemy
         yield return new WaitForSeconds(0);
         DisableDangerNotifications();
         Destroy(gameObject);
+        PlayParticlesOnDestroy();
         
         EventManager.SendOnEnemyDestroyed();
         EventManager.SendOnScoreUpdated(destructionReward);
@@ -64,4 +66,11 @@ public class Ufo : Enemy
     private void FixedUpdate() => _thatTrans.LookAt(_target);
     private void DamageUfo() => Health -= damageToUfo;
     private Transform GetTargetFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().Target;
+
+    private void PlayParticlesOnDestroy()
+    {
+        GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        onDestroyParticles.Play();
+        Destroy(particles, onDestroyParticles.duration);
+    }
 }
