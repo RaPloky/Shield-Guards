@@ -12,6 +12,9 @@ public class Guard : MonoBehaviour
     [SerializeField] private List<ParticleSystem> onDisablePS;
     [SerializeField] private Animator animator;
 
+    [SerializeField] private Material bonusLight;
+    [SerializeField] private Material engineLight;
+
     private int _maxEnergy;
     private bool _isHaveEnergy;
     private Guard _thatGuard;
@@ -46,6 +49,8 @@ public class Guard : MonoBehaviour
 
     private void Awake()
     {
+        EnableEnergyMaterials();
+
         IsProtectBonusActivated = false;
         _maxEnergy = energy;
         _isHaveEnergy = true;
@@ -71,7 +76,7 @@ public class Guard : MonoBehaviour
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
 
         DisableParticles();
-        animator.SetTrigger("Off");
+        DisableEnergyMaterials();
         EventManager.SendOnGuardDischarged();
     }
 
@@ -82,5 +87,17 @@ public class Guard : MonoBehaviour
     {
         foreach (var particle in onDisablePS)
             particle.Stop();
+    }
+
+    private void DisableEnergyMaterials()
+    {
+        bonusLight.DisableKeyword("_EMISSION");
+        engineLight.DisableKeyword("_EMISSION");
+    }
+
+    private void EnableEnergyMaterials()
+    {
+        bonusLight.EnableKeyword("_EMISSION");
+        engineLight.EnableKeyword("_EMISSION");
     }
 }

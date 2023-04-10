@@ -6817,9 +6817,19 @@ PrefabInstance:
       objectReference: {fileID: 1033974457}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
+      propertyPath: bonusLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 26ecdc16eaa7dfc4897f314e89844d4f, type: 2}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
       propertyPath: consumption
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: engineLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e4ebc794d8ca5b4c84c8e318d461da9, type: 2}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: relatedBonus
@@ -7027,9 +7037,19 @@ PrefabInstance:
       objectReference: {fileID: 1043391619}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
+      propertyPath: bonusLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b4d0292388048547b81f99efd9ec96a, type: 2}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
       propertyPath: consumption
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: engineLight
+      value: 
+      objectReference: {fileID: 2100000, guid: b12446227fe905c4baf727eac1d644d3, type: 2}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: relatedBonus
@@ -7473,9 +7493,19 @@ PrefabInstance:
       objectReference: {fileID: 1120892253}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: bonusLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 08ccbd2f05e5d20418d5ff3d0375a8b3, type: 2}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: consumption
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: engineLight
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bedef5aab65cec488a997f451293887, type: 2}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: relatedBonus
