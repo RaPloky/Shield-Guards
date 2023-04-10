@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Guard : MonoBehaviour
@@ -8,6 +9,8 @@ public class Guard : MonoBehaviour
     [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
     [SerializeField] private Bonus relatedBonus;
     [SerializeField] private CanvasGroup relatedDangerNotifications;
+    [SerializeField] private List<ParticleSystem> onDisablePS;
+    [SerializeField] private Animator animator;
 
     private int _maxEnergy;
     private bool _isHaveEnergy;
@@ -66,9 +69,18 @@ public class Guard : MonoBehaviour
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
+
+        DisableParticles();
+        animator.SetTrigger("Off");
         EventManager.SendOnGuardDischarged();
     }
 
     public void AddEnergy(int energyAmount) => Energy += energyAmount;
     public void ConsumptEnergy(int energyConsumption) => Energy -= energyConsumption;
+
+    private void DisableParticles()
+    {
+        foreach (var particle in onDisablePS)
+            particle.Stop();
+    }
 }
