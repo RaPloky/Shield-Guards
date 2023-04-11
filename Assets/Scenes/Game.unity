@@ -1782,6 +1782,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &117319440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9061290855626703745, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 117319435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &117319441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2215423086906720504, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 117319435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123075682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7126560487868097396, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
@@ -4819,6 +4843,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &737786304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9061290855626703745, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 737786299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &737786305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2215423086906720504, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 737786299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &750053433
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,6 +6826,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &978831533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9061290855626703745, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 978831528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &978831534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2215423086906720504, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 978831528}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1033974452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6804,12 +6876,12 @@ PrefabInstance:
         type: 3}
       propertyPath: progressImages.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 978831534}
     - target: {fileID: 1056842409593145694, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: progressImages.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 978831533}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: animator
@@ -7204,12 +7276,12 @@ PrefabInstance:
         type: 3}
       propertyPath: progressImages.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 117319441}
     - target: {fileID: 9124580661493419441, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: progressImages.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 117319440}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63536a5c1791b864ab010a2bfaaf760f, type: 3}
 --- !u!114 &1043391615 stripped
@@ -7590,12 +7662,12 @@ PrefabInstance:
         type: 3}
       propertyPath: progressImages.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 737786305}
     - target: {fileID: 6644471143824231808, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: progressImages.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 737786304}
     - target: {fileID: 7705922250366931586, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -10003,6 +10075,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1414335199568772390, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 1120892250}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 4125372479817960800}
@@ -10289,6 +10362,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 1120892250}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 4125372479817960798}
@@ -10811,6 +10885,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 1043391616}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 1196667264}
@@ -10832,6 +10907,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 2711106806615436550, guid: b5ecea957b5cd044e853677c0447af60,
     type: 3}
   target: {fileID: 1033974454}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 4125372479817960797}
@@ -10891,6 +10967,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1414335199568772390, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 1033974454}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 1196667265}
@@ -10944,6 +11021,7 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1414335199568772390, guid: b3e644597ba59844b9badf6fdece44f9,
     type: 3}
   target: {fileID: 1043391616}
+  parent: {fileID: 0}
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 1196667263}

@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float launchChance;
     [SerializeField] private GameObject prefabToSpawn;
     [SerializeField] private Transform target;
+    [SerializeField] private Transform parent;
 
     [Header("Danger notifications")]
     [SerializeField] private bool isProjectileSpawner;
@@ -55,6 +56,28 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnDelay);
+
+            if (!_targetGuard.IsHaveEnergy)
+            {
+                Ufo ufo = null;
+                if (parent != null)
+                    ufo = parent.gameObject.GetComponent<Ufo>();
+
+                if (ufo == null)
+                {
+                    DisableDanger();
+                    yield break;
+                }
+                else
+                {
+                    DisableDanger();
+                    ufo.PlayDissaperAnim();
+
+                    yield return new WaitForSeconds(ufo.AnimLength);
+                    ufo.ParentSpawner.enabled = false;
+                    yield break;
+                }
+            }
 
             if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed && _targetGuard.IsHaveEnergy)
             {

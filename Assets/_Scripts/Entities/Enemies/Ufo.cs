@@ -30,6 +30,7 @@ public class Ufo : Enemy
     private Transform _target;
     private Transform _thatTrans;
     private int _startHealth;
+    private Animator _animator;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class Ufo : Enemy
         _thatTrans = transform;
         _target = GetTargetFromSpawner();
         SetGlitchController();
+        _animator = GetComponent<Animator>();
     }
 
     public override IEnumerator DestroyThatEnemy()
@@ -80,4 +82,7 @@ public class Ufo : Enemy
     {
         relatedSpawner.SpawnedPrefab.GetComponent<ProjectileBehavior>().PlayParticlesOnDestroy();
     }
+
+    public void PlayDissaperAnim() => _animator.SetTrigger("Dissapear");
+    public float AnimLength => _animator.GetCurrentAnimatorClipInfo(0).Length;
 }
