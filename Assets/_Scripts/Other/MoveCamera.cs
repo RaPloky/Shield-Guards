@@ -48,7 +48,6 @@ public class MoveCamera : MonoBehaviour
     {
         if (!IsGuardActive(leftGuard))
         {
-            Debug.Log("Discharged on left!");
             return;
         }
 
@@ -61,7 +60,6 @@ public class MoveCamera : MonoBehaviour
     {
         if (!IsGuardActive(rightGuard))
         {
-            Debug.Log("Discharged on right!");
             return;
         }
 
