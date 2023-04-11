@@ -4824,11 +4824,11 @@ GameObject:
   - component: {fileID: 3374350515076118460}
   - component: {fileID: 1836275124082030617}
   - component: {fileID: 4512383861901708499}
-  - component: {fileID: 573277985418869594}
   - component: {fileID: 8783306783931995079}
   - component: {fileID: 3140151549562389335}
   - component: {fileID: 2823839034702809011}
   - component: {fileID: 4035032480939784337}
+  - component: {fileID: 2390369044789317746}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Enemy
@@ -4902,26 +4902,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &573277985418869594
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2711106806615436550}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: a33ed2b8ddaaf2748b54ed93d69182aa, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!54 &8783306783931995079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4985,3 +4965,23 @@ MonoBehaviour:
   swipeRange: 70
   tapRange: 20
   dragTo: {fileID: 7589313872233267216, guid: 522046004bdbd8041ac1cd9b5893814c, type: 3}
+--- !u!95 &2390369044789317746
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711106806615436550}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 021c55c6070758b4ab73656db453f58b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

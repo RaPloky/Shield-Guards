@@ -74,6 +74,7 @@ public class Meteor : Enemy
     {
         yield return new WaitForSeconds(0);
         DisableDangerNotifications();
+        GetComponent<ProjectileBehavior>().PlayParticlesOnDestroy();
         Destroy(gameObject);
 
         EventManager.SendOnEnemyDestroyed();
