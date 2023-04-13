@@ -7545,8 +7545,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.51
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 799523648140418902, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
@@ -7690,8 +7705,23 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4bedef5aab65cec488a997f451293887, type: 2}
     - target: {fileID: 6346931327720286705, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346931327720286705, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346931327720286705, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.51
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346931327720286705, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6644471143824231808, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
