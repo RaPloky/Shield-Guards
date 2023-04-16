@@ -276,7 +276,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.64
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -285,7 +285,7 @@ Light:
     m_Type: 2
     m_Resolution: 1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.654
     m_Bias: 0.05
     m_NormalBias: 0.25
     m_NearPlane: 0.2
@@ -3139,12 +3139,6 @@ MonoBehaviour:
   - {fileID: 1043391615}
   - {fileID: 1120892249}
   - {fileID: 1033974453}
---- !u!198 &439229782 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3313371765280458768, guid: 1feaee64acede0c44b29354e964b8366,
-    type: 3}
-  m_PrefabInstance: {fileID: 1033974452}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &439229783 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5039311265842273754, guid: 1feaee64acede0c44b29354e964b8366,
@@ -3393,11 +3387,12 @@ Transform:
   m_GameObject: {fileID: 490217640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2652, y: 1.2652, z: 1.2652}
+  m_LocalScale: {x: 1211.7722, y: 1211.7722, z: 1211.7722}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 841183865}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 841183865}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!225 &491331870 stripped
 CanvasGroup:
@@ -5194,6 +5189,7 @@ GameObject:
   - component: {fileID: 841183864}
   - component: {fileID: 841183863}
   - component: {fileID: 841183862}
+  - component: {fileID: 841183866}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -5271,15 +5267,34 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841183861}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 957.77124, y: 957.77124, z: 957.77124}
+  m_LocalScale: {x: 0.7903888, y: 0.7903888, z: 0.7903888}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 490217644}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Children: []
+  m_Father: {fileID: 490217644}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &841183866
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841183861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8430cb90d22517d42990d173b51f90bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &868677462
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,7 +6946,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onDisablePS.Array.data[2]
       value: 
-      objectReference: {fileID: 439229782}
+      objectReference: {fileID: 0}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: relatedDangerNotifications
@@ -7667,7 +7682,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onDisablePS.Array.data[1]
       value: 
-      objectReference: {fileID: 1163158486}
+      objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: onDisablePS.Array.data[2]
@@ -7677,7 +7692,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onDisablePS.Array.data[3]
       value: 
-      objectReference: {fileID: 1163158484}
+      objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: onDisablePS.Array.data[4]
@@ -7851,21 +7866,9 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!198 &1163158484 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7705922250366931586, guid: 95a6d56db49136942a4d273e8ab65569,
-    type: 3}
-  m_PrefabInstance: {fileID: 1120892248}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &1163158485 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
-    type: 3}
-  m_PrefabInstance: {fileID: 1120892248}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1163158486 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3458932322989915195, guid: 95a6d56db49136942a4d273e8ab65569,
     type: 3}
   m_PrefabInstance: {fileID: 1120892248}
   m_PrefabAsset: {fileID: 0}

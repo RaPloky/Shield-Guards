@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Planet
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e2204c6c62f801848ba806cf82fe630e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -29,11 +29,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudMap:
-        m_Texture: {fileID: 2800000, guid: 6490290deeede214889c0d4f67a48934, type: 3}
+        m_Texture: {fileID: 2800000, guid: cfac3a964349164478ac033d8fa22ca0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CloudNormalMap:
-        m_Texture: {fileID: 2800000, guid: e74516839343da64f9ca2ee0acb4ee6c, type: 3}
+        m_Texture: {fileID: 2800000, guid: a4e61ef7c7ecbdb4c8f8f2dd07a4161a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -53,11 +53,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GroundMap:
-        m_Texture: {fileID: 2800000, guid: 97c448b3ebe45754682b7b17280e1ab2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4e6fbad74474cba40b6809365acb13d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IllumMap:
-        m_Texture: {fileID: 2800000, guid: 50adeb876b88093408137fb539fbbf2d, type: 3}
+        m_Texture: {fileID: 2800000, guid: fe7aff1327d4ed74a90576377a16f270, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -69,7 +69,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 9c5a0efd4b9fd2447aceb19ad05760b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c2f87563dce773469446e313071498e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
