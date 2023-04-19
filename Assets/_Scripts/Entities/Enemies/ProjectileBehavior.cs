@@ -67,6 +67,7 @@ public class ProjectileBehavior : MonoBehaviour
     public void PlayParticlesOnDestroy()
     {
         GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        particles.isStatic = true;
         onDestroyParticles.Play();
         Destroy(particles, onDestroyParticles.duration);
     }

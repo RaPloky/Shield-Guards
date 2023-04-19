@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
+    [SerializeField] private DifficultyUpdate difficultyManager;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ActiveGuardsCount = GameObject.FindGameObjectsWithTag("Guard").Length;
+        ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
 
         if (bestScore != null)
         {

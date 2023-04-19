@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using KinoDigital;
 using KinoAnalog;
@@ -15,7 +14,7 @@ public class GlitchAnimationController : MonoBehaviour
     [SerializeField, Range(0.01f, 0.25f)] private float intensityDelta;
     [Range(1f, 3f)] public float longDelay;
 
-    private float _tempColorDrift, _tempHorizontalShake, _tempDigitalIntensity, _tempScanJitter, _tempVerticalJump;
+    private float _tempColorDrift, _tempHorizontalShake, _tempScanJitter;
 
     private void Awake()
     {
@@ -127,16 +126,13 @@ public class GlitchAnimationController : MonoBehaviour
     public void EnableJitterJump()
     {
         AssignTempScanJitter();
-        AssignTempVerticalJump();
 
         analogGlitch.scanLineJitter = 0.1f;
-        analogGlitch.verticalJump = 0.01f;
     }
 
     public void DisableJitterJump()
     {
         analogGlitch.scanLineJitter = _tempScanJitter;
-        analogGlitch.verticalJump = _tempVerticalJump;
     }
 
     public void PlayStrongScan() => StartCoroutine(Scan(0.85f));
@@ -149,6 +145,4 @@ public class GlitchAnimationController : MonoBehaviour
     private void AssignTempHorizontalShake() => _tempHorizontalShake = analogGlitch.horizontalShake;
     private void AssignTempColorDrift() => _tempColorDrift = analogGlitch.colorDrift;
     private void AssignTempScanJitter() => _tempScanJitter = analogGlitch.scanLineJitter;
-    private void AssignTempVerticalJump() => _tempVerticalJump = analogGlitch.verticalJump;
-    private void AssignTempDigitalIntesity() => _tempDigitalIntensity = digitalGlitch.intensity;
 }
