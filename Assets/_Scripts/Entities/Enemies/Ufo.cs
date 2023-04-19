@@ -63,8 +63,8 @@ public class Ufo : Enemy
 
     private void UpdateHealthBar()
     {
-        foreach (var bar in healthBarBg)
-            bar.fillAmount = (float)Health / _startHealth;
+        for (int i = 0; i < healthBarBg.Count; i++)
+            healthBarBg[i].fillAmount = (float)Health / _startHealth;
     }
 
     private void FixedUpdate() => _thatTrans.LookAt(_target);

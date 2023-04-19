@@ -96,8 +96,8 @@ public class Spawner : MonoBehaviour
         if (isProjectileSpawner)
             return;
 
-        foreach (var animator in dangerNotificators)
-            animator.SetTrigger("DangerBegin");
+        for (int i = 0; i < dangerNotificators.Count; i++)
+            dangerNotificators[i].SetTrigger("DangerBegin");
     }
 
     public void DisableDanger()
@@ -105,8 +105,8 @@ public class Spawner : MonoBehaviour
         if (isProjectileSpawner)
             return;
 
-        foreach (var animator in dangerNotificators)
-            animator.SetTrigger("DangerOver");
+        for (int i = 0; i < dangerNotificators.Count; i++)
+            dangerNotificators[i].SetTrigger("DangerOver");
     }
 
     private bool IsSpawnAllowed()

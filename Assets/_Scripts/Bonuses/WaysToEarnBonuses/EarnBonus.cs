@@ -20,8 +20,8 @@ abstract public class EarnBonus : MonoBehaviour
         _progress = (float)Progress / (float)_goal;
         bonusAmount.text = $"{Mathf.RoundToInt(_progress * 100)}%";
 
-        foreach (var progressImage in progressImages)
-            progressImage.fillAmount = _progress;
+        for (int i = 0; i < progressImages.Length; i++)
+            progressImages[i].fillAmount = _progress;
     }
 
     protected void EnableBonus()

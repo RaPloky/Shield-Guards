@@ -21,8 +21,8 @@ public class DestroyAllEnemies : Bonus
 
         _enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach (GameObject enemy in _enemies)
-            StartCoroutine(enemy.GetComponent<Enemy>().DestroyThatEnemy());
+        for (int i = 0; i < _enemies.Length; i++)
+            StartCoroutine(_enemies[i].GetComponent<Enemy>().DestroyThatEnemy());
 
         StartCoroutine(FreezeSpawn());
 
@@ -34,12 +34,12 @@ public class DestroyAllEnemies : Bonus
 
     private IEnumerator FreezeSpawn()
     {
-        foreach (Spawner spawner in spawners)
-            spawner.IsSpawnFreezed = true;
+        for (int i = 0; i < spawners.Count; i++)
+            spawners[i].IsSpawnFreezed = true;
 
         yield return new WaitForSeconds(spawnFreezeTime);
 
-        foreach (Spawner spawner in spawners)
-            spawner.IsSpawnFreezed = false;
+        for (int i = 0; i < spawners.Count; i++)
+            spawners[i].IsSpawnFreezed = false;
     }
 }

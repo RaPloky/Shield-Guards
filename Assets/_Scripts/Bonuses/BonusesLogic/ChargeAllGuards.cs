@@ -19,8 +19,8 @@ public class ChargeAllGuards : Bonus
         if (!isBonusEnabled)
             return;
 
-        foreach (Guard activeGuard in _difficultyManager.ActiveGuards)
-            activeGuard.AddEnergy(chargeAmount);
+        for (int i = 0; i < _difficultyManager.ActiveGuards.Count; i++)
+            _difficultyManager.ActiveGuards[i].AddEnergy(chargeAmount);
 
         ChangeActivationButtonStatus(false);
         isBonusEnabled = false;

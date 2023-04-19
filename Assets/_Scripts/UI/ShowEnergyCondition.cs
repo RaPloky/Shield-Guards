@@ -31,7 +31,7 @@ public class ShowEnergyCondition : MonoBehaviour
     {
         _newFillAmount = (float)trackedGuard.Energy / (float)trackedGuard.MaxEnergy;
 
-        foreach (var image in energyImages)
-            image.fillAmount = _newFillAmount;
+        for (int i = 0; i < energyImages.Length; i++)
+            energyImages[i].fillAmount = _newFillAmount;
     }
 }

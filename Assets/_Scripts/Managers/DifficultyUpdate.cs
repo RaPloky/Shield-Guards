@@ -44,10 +44,10 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void UpdateSpawnersStats(List<Spawner> spawners)
     {
-        foreach (Spawner spawner in spawners)
+        for (int i = 0; i < spawners.Count; i++)
         {
-            spawner.LaunchChance += spawnChanceIncrease;
-            spawner.SpawnDelay -= spawnDelayDecrease;
+            spawners[i].LaunchChance += spawnChanceIncrease;
+            spawners[i].SpawnDelay -= spawnDelayDecrease;
         }
     }
 
@@ -55,7 +55,10 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void IncreaseEnergyConsumption()
     {
-        foreach (Guard guard in activeGuards)
-            guard.ConsumptionDelay = Mathf.Clamp(guard.ConsumptionDelay - consumptionDelayDecrease, consumptionDelayLimit, guard.StartConsumptionDelay);
+        for (int i = 0; i < activeGuards.Count; i++)
+        {
+            activeGuards[i].ConsumptionDelay = Mathf.Clamp(activeGuards[i].ConsumptionDelay - consumptionDelayDecrease, 
+                consumptionDelayLimit, activeGuards[i].StartConsumptionDelay);
+        }
     }
 }

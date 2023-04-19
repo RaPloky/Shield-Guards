@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private DifficultyUpdate difficultyManager;
+    [SerializeField] private bool isMenu;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
+        if (!isMenu)
+            ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
 
         if (bestScore != null)
         {

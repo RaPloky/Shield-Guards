@@ -85,8 +85,8 @@ public class Guard : MonoBehaviour
 
     private void DisableParticles()
     {
-        foreach (var particle in onDisablePS)
-            particle.Stop();
+        for (int i = 0; i < onDisablePS.Count; i++)
+            onDisablePS[i].Stop();
     }
 
     private void DisableEnergyMaterials()

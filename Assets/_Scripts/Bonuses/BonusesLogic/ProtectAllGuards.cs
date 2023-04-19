@@ -27,13 +27,13 @@ public class ProtectAllGuards : Bonus
 
     private IEnumerator ProtectGuards()
     {
-        foreach (Guard guard in guards)
-            guard.IsProtectBonusActivated = true;
+        for (int i = 0; i < guards.Count; i++)
+            guards[i].IsProtectBonusActivated = true;
 
         StartEffectTimer(shieldDuration);
         yield return new WaitForSeconds(shieldDuration);
 
-        foreach (Guard guard in guards)
-            guard.IsProtectBonusActivated = false;
+        for (int i = 0; i < guards.Count; i++)
+            guards[i].IsProtectBonusActivated = false;
     }
 }
