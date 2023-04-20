@@ -72,6 +72,7 @@ public class Guard : MonoBehaviour
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
 
         DisableParticles();
+        _animator.SetTrigger("Death");
         EventManager.SendOnGuardDischarged();
     }
 
