@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public enum BonusGoal
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private DifficultyUpdate difficultyManager;
     [SerializeField] private bool isMenu;
+    [SerializeField, Range(2f, 10f)] private float loseDelay;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -78,29 +80,30 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         UnpauseGame();
-        // loading animation
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ExitToMenu()
     {
         UnpauseGame();
-        // loading animation
         SceneManager.LoadScene("Menu");
     }
 
     public void StartGame()
     {
-        // loading animation
         UnpauseGame();
         SceneManager.LoadScene("Game");
     }
 
     private void LoseGame()
     {
-        // lose animation
+        StartCoroutine(Lose());
+    }
+
+    private IEnumerator Lose()
+    {
+        yield return new WaitForSeconds(loseDelay);
         losePanel.SetActive(true);
-        PauseGame();
 
         if (score.ScoreAmount > PlayerPrefs.GetInt(Score.ScorePref))
             score.UpdateBestScore();
