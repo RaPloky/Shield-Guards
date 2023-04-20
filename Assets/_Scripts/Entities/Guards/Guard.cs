@@ -10,11 +10,8 @@ public class Guard : MonoBehaviour
     [SerializeField] private Bonus relatedBonus;
     [SerializeField] private CanvasGroup relatedDangerNotifications;
     [SerializeField] private List<ParticleSystem> onDisablePS;
-    [SerializeField] private Animator animator;
-
-    [SerializeField] private Material bonusLight;
-    [SerializeField] private Material engineLight;
-
+    
+    private Animator _animator;
     private int _maxEnergy;
     private bool _isHaveEnergy;
     private Guard _thatGuard;
@@ -49,14 +46,13 @@ public class Guard : MonoBehaviour
 
     private void Awake()
     {
-        EnableEnergyMaterials();
-
         IsProtectBonusActivated = false;
         _maxEnergy = energy;
         _isHaveEnergy = true;
         StartCoroutine(ConsumptEnergy());
         _thatGuard = this;
         _startConsumptionDelay = ConsumptionDelay;
+        _animator = GetComponent<Animator>();
     }
 
     private IEnumerator ConsumptEnergy()
@@ -76,7 +72,6 @@ public class Guard : MonoBehaviour
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
 
         DisableParticles();
-        DisableEnergyMaterials();
         EventManager.SendOnGuardDischarged();
     }
 
@@ -87,17 +82,5 @@ public class Guard : MonoBehaviour
     {
         for (int i = 0; i < onDisablePS.Count; i++)
             onDisablePS[i].Stop();
-    }
-
-    private void DisableEnergyMaterials()
-    {
-        bonusLight.DisableKeyword("_EMISSION");
-        engineLight.DisableKeyword("_EMISSION");
-    }
-
-    private void EnableEnergyMaterials()
-    {
-        bonusLight.EnableKeyword("_EMISSION");
-        engineLight.EnableKeyword("_EMISSION");
     }
 }
