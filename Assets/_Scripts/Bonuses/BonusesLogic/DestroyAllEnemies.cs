@@ -22,7 +22,7 @@ public class DestroyAllEnemies : Bonus
         _enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         for (int i = 0; i < _enemies.Length; i++)
-            StartCoroutine(_enemies[i].GetComponent<Enemy>().DestroyThatEnemy());
+            StartCoroutine(_enemies[i].GetComponent<Enemy>().DisableThatEnemy());
 
         StartCoroutine(FreezeSpawn());
 

@@ -3,22 +3,16 @@ using UnityEngine;
 
 abstract public class Enemy : MonoBehaviour
 {
-    abstract public IEnumerator DestroyThatEnemy();
+    abstract public IEnumerator DisableThatEnemy();
 
     [SerializeField] protected int destructionReward;
 
-    protected Spawner _parentSpawner;
     protected GlitchAnimationController _glitchController;
-
-    public Spawner ParentSpawner
-    {
-        get => _parentSpawner;
-        set => _parentSpawner = value;
-    }
+    public Spawner relatedSpawner;
 
     protected void DisableDangerNotifications()
     {
-        _parentSpawner.DisableDanger();
+        relatedSpawner.DisableDanger();
     }
 
     protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;

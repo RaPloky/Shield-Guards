@@ -7,12 +7,13 @@ public class Ufo : Enemy
 {
     [SerializeField] private int health;
     [SerializeField] private int damageToUfo;
-    [SerializeField] private Spawner relatedSpawner;
     [SerializeField] private List<Image> healthBarBg;
     [SerializeField] private ParticleSystem onDamageParticles;
     [SerializeField] private ParticleSystem onDestroyParticles;
+    [SerializeField] private Transform target;
 
-    public Transform Target => _target;
+    private Vector3 _startPosition;
+
     public int Health
     {
         get => health;
@@ -23,11 +24,10 @@ public class Ufo : Enemy
             onDamageParticles.Play();
 
             if (health <= 0)
-                StartCoroutine(DestroyThatEnemy());
+                StartCoroutine(DisableThatEnemy());
         }
     }
 
-    private Transform _target;
     private Transform _thatTrans;
     private int _startHealth;
     private Animator _animator;
@@ -35,22 +35,31 @@ public class Ufo : Enemy
     private void Start()
     {
         _startHealth = Health;
+
         _thatTrans = transform;
-        _target = GetTargetFromSpawner();
+        _startPosition = relatedSpawner.transform.position;
+
         SetGlitchController();
         _animator = GetComponent<Animator>();
     }
 
-    public override IEnumerator DestroyThatEnemy()
+    public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0);
+
         DisableDangerNotifications();
-        Destroy(gameObject);
-        PlayParticlesOnDestroy();
-        PlayParticlesOnProjectileDestroy();
-        
-        EventManager.SendOnEnemyDestroyed();
+        PlayParticlesOnDisable();
+        PlayParticlesOnProjectileDisable();
+        DisableUfo();
+
+        EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
+    }
+
+    private void DisableUfo()
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.position = _startPosition;
     }
 
     private void OnMouseDown()
@@ -67,20 +76,20 @@ public class Ufo : Enemy
             healthBarBg[i].fillAmount = (float)Health / _startHealth;
     }
 
-    private void FixedUpdate() => _thatTrans.LookAt(_target);
+    private void FixedUpdate() => _thatTrans.LookAt(target);
     private void DamageUfo() => Health -= damageToUfo;
-    private Transform GetTargetFromSpawner() => _thatTrans.parent.GetComponent<Spawner>().Target;
 
-    private void PlayParticlesOnDestroy()
+    private void PlayParticlesOnDisable()
     {
         GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        particles.isStatic = true;
         onDestroyParticles.Play();
         Destroy(particles, onDestroyParticles.duration);
     }
 
-    private void PlayParticlesOnProjectileDestroy()
+    private void PlayParticlesOnProjectileDisable()
     {
-        relatedSpawner.SpawnedPrefab.GetComponent<ProjectileBehavior>().PlayParticlesOnDestroy();
+        relatedSpawner.ActiveEnemy.GetComponent<ProjectileBehavior>().PlayParticlesOnDisable();
     }
 
     public void PlayDissaperAnim() => _animator.SetTrigger("Dissapear");

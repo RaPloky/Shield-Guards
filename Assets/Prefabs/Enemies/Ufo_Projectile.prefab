@@ -49,12 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66a80851308b4b42988171aae934f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.03
+  speedFactor: 15
   energyDamage: 50
   isMeteor: 0
   glitchStrength: 0.283
-  onDestroyParticles: {fileID: 3634079491701534458, guid: ea1ddbebb489e13458c6f0e03ab40325,
-    type: 3}
+  onDisableParticles: {fileID: 0}
+  targetTrans: {fileID: 0}
+  parentSpawner: {fileID: 0}
 --- !u!135 &6500188941694578593
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -14,10 +14,15 @@ public class Meteor : Enemy
     private Vector2 _startTouchPosition;
     private Vector2 _currentPosition;
     private bool _stopTouch = false;
+    private Vector3 _startPosition;
+    private ProjectileBehavior _projBehaviour;
 
     private void Awake()
     {
         _meteorRb = GetComponent<Rigidbody>();
+        _startPosition = relatedSpawner.transform.position;
+        _projBehaviour = GetComponent<ProjectileBehavior>();
+
         SetGlitchController();
     }
 
@@ -35,7 +40,7 @@ public class Meteor : Enemy
         if (GameManager.IsGamePaused)
             return;
 
-        StartCoroutine(DestroyThatEnemy());
+        StartCoroutine(DisableThatEnemy());
     }
 
     private void SwipeVertical()
@@ -58,7 +63,6 @@ public class Meteor : Enemy
             }
 
         }
-
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             _stopTouch = false;
     }
@@ -67,17 +71,25 @@ public class Meteor : Enemy
     {
         _meteorRb.AddForce(dragTo.position, ForceMode.Impulse);
 
-        StartCoroutine(DestroyThatEnemy());
+        StartCoroutine(DisableThatEnemy());
     }
 
-    public override IEnumerator DestroyThatEnemy()
+    public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0);
-        DisableDangerNotifications();
-        GetComponent<ProjectileBehavior>().PlayParticlesOnDestroy();
-        Destroy(gameObject);
 
-        EventManager.SendOnEnemyDestroyed();
+        DisableMeteor();
+        DisableDangerNotifications();
+
+        EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
+
+        _projBehaviour.PlayParticlesOnDisable();
+    }
+
+    private void DisableMeteor()
+    {
+        gameObject.SetActive(false);
+        gameObject.transform.position = _startPosition;
     }
 }

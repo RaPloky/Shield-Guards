@@ -2,42 +2,42 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    [SerializeField, Range(0f, 0.05f)] private float speedFactor;
+    [SerializeField] private float speedFactor;
     [SerializeField] private int energyDamage;
     [SerializeField] private bool isMeteor;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
-    [SerializeField] private ParticleSystem onDestroyParticles;
+    [SerializeField] private ParticleSystem onDisableParticles;
+    [SerializeField] private Transform targetTrans;
+    [SerializeField] private Transform parentSpawner;
 
-    private Transform _targetTrans;
-    private Rigidbody _thatRb;
     private Transform _thatTrans;
-
-    private float _targetX;
-    private float _targetY;
-    private float _targetZ;
+    private Vector3 _startPos;
 
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
+    private float _x, _y, _z;
 
     private void Awake()
     {
         _thatTrans = transform;
-        _targetTrans = GetTargetFromParent();
-        _thatRb = GetComponent<Rigidbody>();
+        _startPos = parentSpawner.position;
 
         if (isMeteor)
             _thatMeteorReference = GetComponent<Meteor>();
     }
 
-    private Transform GetTargetFromParent() => _thatTrans.parent.GetComponent<Spawner>().Target;
-
     private void FixedUpdate()
     {
-        _targetX = _targetTrans.position.x - _thatTrans.position.x;
-        _targetY = _targetTrans.position.y - _thatTrans.position.y;
-        _targetZ = _targetTrans.position.z - _thatTrans.position.z;
+        MoveToTarget();
+    }
 
-        _thatRb.AddForce(_targetX, _targetY, _targetZ, ForceMode.Acceleration);
+    private void MoveToTarget()
+    {
+        _x = targetTrans.position.x - _thatTrans.position.x;
+        _y = targetTrans.position.y - _thatTrans.position.y;
+        _z = targetTrans.position.z - _thatTrans.position.z;
+
+        _thatTrans.position = Vector3.MoveTowards(_thatTrans.position, targetTrans.position, speedFactor * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,30 +46,35 @@ public class ProjectileBehavior : MonoBehaviour
 
         if (_targetComponent == null)
         {
-            DestoyThatProjectile();
+            DisableThatProjectile();
             return;
         }
         _targetComponent.ConsumptEnergy(energyDamage);
-        DestoyThatProjectile();
+        DisableThatProjectile();
         PlayHitGlitchAnim();
     }
 
-    private void DestoyThatProjectile()
+    private void DisableThatProjectile()
     {
-        PlayParticlesOnDestroy();
+        PlayParticlesOnDisable();
 
         if (isMeteor)
-            StartCoroutine(_thatMeteorReference.DestroyThatEnemy());
+            StartCoroutine(_thatMeteorReference.DisableThatEnemy());
         else
-            Destroy(gameObject);
+        {
+            PlayParticlesOnDisable();
+
+            gameObject.SetActive(false);
+            gameObject.transform.position = _startPos;
+        }
     }
 
-    public void PlayParticlesOnDestroy()
+    public void PlayParticlesOnDisable()
     {
-        GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        GameObject particles = Instantiate(onDisableParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
         particles.isStatic = true;
-        onDestroyParticles.Play();
-        Destroy(particles, onDestroyParticles.duration);
+        onDisableParticles.Play();
+        Destroy(particles, onDisableParticles.duration);
     }
 
     private void PlayHitGlitchAnim()

@@ -6,21 +6,16 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField, Range(0.1f, 10f)] private float spawnDelay;
     [SerializeField, Range(0f, 1f)] private float launchChance;
-    [SerializeField] private GameObject prefabToSpawn;
-    [SerializeField] private Transform target;
+    [SerializeField] private GameObject prefabToOperate;
     [SerializeField] private Transform parent;
+    [SerializeField] private Guard targetGuard;
 
     [Header("Danger notifications")]
     [SerializeField] private bool isProjectileSpawner;
     [SerializeField] private List<Animator> dangerNotificators;
 
-    private Transform _thatTrans;
-
-    public GameObject SpawnedPrefab { get; set; }
-    public Transform Target => target;
+    public GameObject ActiveEnemy { get; set; }
     public bool IsSpawnFreezed { get; set; }
-
-    private Guard _targetGuard;
 
     public float SpawnDelay
     {
@@ -36,28 +31,18 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        _thatTrans = transform;
         IsSpawnFreezed = false;
-
-        if (!isProjectileSpawner)
-            _targetGuard = Target.GetComponent<Guard>();
-
-        if (Target == null)
-        {
-            target = GetTargetFromSpawner();
-            _targetGuard = Target.GetComponent<Guard>();
-        }
-
-        StartCoroutine(SpawnPrefab());
+        StartCoroutine(ActivateEnemy());
+        ActiveEnemy = prefabToOperate;
     }
 
-    private IEnumerator SpawnPrefab()
+    private IEnumerator ActivateEnemy()
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnDelay);
 
-            if (!_targetGuard.IsHaveEnergy)
+            if (!targetGuard.IsHaveEnergy)
             {
                 Ufo ufo = null;
                 if (parent != null)
@@ -74,18 +59,14 @@ public class Spawner : MonoBehaviour
                     ufo.PlayDissaperAnim();
 
                     yield return new WaitForSeconds(ufo.AnimLength);
-                    ufo.ParentSpawner.enabled = false;
+                    ufo.relatedSpawner.enabled = false;
                     yield break;
                 }
             }
 
-            if (IsSpawnAllowed() && SpawnedPrefab == null && !IsSpawnFreezed && _targetGuard.IsHaveEnergy)
+            if (IsSpawnAllowed() && !ActiveEnemy.activeSelf && !IsSpawnFreezed && targetGuard.IsHaveEnergy)
             {
-                SpawnedPrefab = Instantiate(prefabToSpawn, _thatTrans);
-
-                if (!isProjectileSpawner)
-                    SpawnedPrefab.GetComponent<Enemy>().ParentSpawner = this;
-
+                prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
             }
         }
@@ -93,18 +74,12 @@ public class Spawner : MonoBehaviour
 
     private void NotifyAboutDanger()
     {
-        if (isProjectileSpawner)
-            return;
-
         for (int i = 0; i < dangerNotificators.Count; i++)
             dangerNotificators[i].SetTrigger("DangerBegin");
     }
 
     public void DisableDanger()
     {
-        if (isProjectileSpawner)
-            return;
-
         for (int i = 0; i < dangerNotificators.Count; i++)
             dangerNotificators[i].SetTrigger("DangerOver");
     }
@@ -114,7 +89,4 @@ public class Spawner : MonoBehaviour
         float randomChance = Random.Range(0f, 1f);
         return randomChance < launchChance;
     }
-
-    // Spanwer is parent of UFO which is parent of WholeBody which is parent of gameObject:
-    private Transform GetTargetFromSpawner() => _thatTrans.parent.transform.parent.transform.GetComponent<Spawner>().Target;
 }
