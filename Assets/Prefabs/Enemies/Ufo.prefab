@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7220272334328847885}
   - component: {fileID: 236059852655039265}
   m_Layer: 6
-  m_Name: projectile_spawner
+  m_Name: PlasmaLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 1.51
   launchChance: 1
-  prefabToSpawn: {fileID: 1973489732030320690, guid: 8a04a5f1c8c42f44aa64fab611279433,
-    type: 3}
-  target: {fileID: 0}
+  prefabToOperate: {fileID: 0}
   parent: {fileID: 1795646465143531420}
+  targetGuard: {fileID: 0}
   isProjectileSpawner: 1
   dangerNotificators: []
 --- !u!1 &1377434073254238793
@@ -301,15 +300,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionReward: 800
+  relatedSpawner: {fileID: 0}
   health: 1000
   damageToUfo: 100
-  relatedSpawner: {fileID: 236059852655039265}
   healthBarBg:
   - {fileID: 6638016532888370878}
   - {fileID: 8257718161656626302}
   onDamageParticles: {fileID: 7463679270994809317}
   onDestroyParticles: {fileID: 3174793837732041633, guid: 4e2d3d87fa81a74498dba219f0bd62a4,
     type: 3}
+  target: {fileID: 0}
+  weapon: {fileID: 236059852655039265}
 --- !u!65 &8943855999770277523
 BoxCollider:
   m_ObjectHideFlags: 0

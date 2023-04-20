@@ -5,9 +5,8 @@ using UnityEngine;
 public class DestroyAllEnemies : Bonus
 {
     [SerializeField] private List<Spawner> spawners;
+    [SerializeField] private Enemy[] _enemies;
     private float spawnFreezeTime;
-
-    private GameObject[] _enemies;
 
     private void Start()
     {
@@ -19,10 +18,8 @@ public class DestroyAllEnemies : Bonus
         if (!isBonusEnabled)
             return;
 
-        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
         for (int i = 0; i < _enemies.Length; i++)
-            StartCoroutine(_enemies[i].GetComponent<Enemy>().DisableThatEnemy());
+            StartCoroutine(_enemies[i].DisableThatEnemy());
 
         StartCoroutine(FreezeSpawn());
 

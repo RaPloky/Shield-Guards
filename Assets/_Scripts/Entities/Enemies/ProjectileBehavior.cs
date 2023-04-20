@@ -15,7 +15,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
-    private float _x, _y, _z;
 
     private void Awake()
     {
@@ -33,10 +32,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void MoveToTarget()
     {
-        _x = targetTrans.position.x - _thatTrans.position.x;
-        _y = targetTrans.position.y - _thatTrans.position.y;
-        _z = targetTrans.position.z - _thatTrans.position.z;
-
         _thatTrans.position = Vector3.MoveTowards(_thatTrans.position, targetTrans.position, speedFactor * Time.deltaTime);
     }
 

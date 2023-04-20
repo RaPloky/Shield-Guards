@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Ufo : Enemy
@@ -11,6 +11,7 @@ public class Ufo : Enemy
     [SerializeField] private ParticleSystem onDamageParticles;
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private Transform target;
+    [SerializeField] private Spawner weapon;
 
     private Vector3 _startPosition;
 
@@ -21,7 +22,6 @@ public class Ufo : Enemy
         {
             health = (int)(Mathf.Clamp(value, 0, float.MaxValue));
             UpdateHealthBar();
-            onDamageParticles.Play();
 
             if (health <= 0)
                 StartCoroutine(DisableThatEnemy());
@@ -45,21 +45,23 @@ public class Ufo : Enemy
 
     public override IEnumerator DisableThatEnemy()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(0f);
 
-        DisableDangerNotifications();
-        PlayParticlesOnDisable();
-        PlayParticlesOnProjectileDisable();
         DisableUfo();
+        DisableDangerNotifications();
 
         EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
+
+        PlayParticlesOnDisable();
+        PlayParticlesOnLaunchedProjectileDisable();
     }
 
     private void DisableUfo()
     {
         gameObject.SetActive(false);
         gameObject.transform.position = _startPosition;
+        Health = _startHealth;
     }
 
     private void OnMouseDown()
@@ -77,7 +79,12 @@ public class Ufo : Enemy
     }
 
     private void FixedUpdate() => _thatTrans.LookAt(target);
-    private void DamageUfo() => Health -= damageToUfo;
+
+    private void DamageUfo()
+    {
+        Health -= damageToUfo;
+        onDamageParticles.Play();
+    }
 
     private void PlayParticlesOnDisable()
     {
@@ -87,9 +94,9 @@ public class Ufo : Enemy
         Destroy(particles, onDestroyParticles.duration);
     }
 
-    private void PlayParticlesOnProjectileDisable()
+    private void PlayParticlesOnLaunchedProjectileDisable()
     {
-        relatedSpawner.ActiveEnemy.GetComponent<ProjectileBehavior>().PlayParticlesOnDisable();
+        weapon.ActiveEnemy.GetComponent<ProjectileBehavior>().PlayParticlesOnDisable();
     }
 
     public void PlayDissaperAnim() => _animator.SetTrigger("Dissapear");

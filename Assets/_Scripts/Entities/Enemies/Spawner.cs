@@ -75,13 +75,19 @@ public class Spawner : MonoBehaviour
     private void NotifyAboutDanger()
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
-            dangerNotificators[i].SetTrigger("DangerBegin");
+        {
+            dangerNotificators[i].SetBool("DangerOver", false);
+            dangerNotificators[i].SetBool("DangerBegin", true);
+        }
     }
 
     public void DisableDanger()
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
-            dangerNotificators[i].SetTrigger("DangerOver");
+        {
+            dangerNotificators[i].SetBool("DangerBegin", false);
+            dangerNotificators[i].SetBool("DangerOver", true);
+        }
     }
 
     private bool IsSpawnAllowed()
