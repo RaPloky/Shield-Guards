@@ -78,13 +78,13 @@ public class Meteor : Enemy
     {
         yield return new WaitForSeconds(0);
 
+        _projBehaviour.PlayParticlesOnDisable();
+
         DisableMeteor();
         DisableDangerNotifications();
 
         EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
-
-        _projBehaviour.PlayParticlesOnDisable();
     }
 
     private void DisableMeteor()

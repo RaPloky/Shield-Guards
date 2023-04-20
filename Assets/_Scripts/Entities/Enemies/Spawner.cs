@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
         set => launchChance = Mathf.Clamp01(value);
     }
 
-    private void Start()
+    private void OnEnable()
     {
         IsSpawnFreezed = false;
         StartCoroutine(ActivateEnemy());
