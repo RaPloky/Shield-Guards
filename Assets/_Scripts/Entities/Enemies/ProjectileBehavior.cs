@@ -61,6 +61,7 @@ public class ProjectileBehavior : MonoBehaviour
 
             gameObject.SetActive(false);
             gameObject.transform.position = _startPos;
+            gameObject.transform.rotation = Quaternion.identity;
         }
     }
 

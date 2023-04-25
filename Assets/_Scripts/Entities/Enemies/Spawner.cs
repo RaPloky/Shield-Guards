@@ -9,10 +9,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject prefabToOperate;
     [SerializeField] private Transform parent;
     [SerializeField] private Guard targetGuard;
+    [SerializeField] private bool isDecoySpawner;
 
     [Header("Danger notifications")]
     [SerializeField] private bool isProjectileSpawner;
     [SerializeField] private List<Animator> dangerNotificators;
+
+    private float _spawnDelayRandomizedRange;
 
     public GameObject ActiveEnemy { get; set; }
     public bool IsSpawnFreezed { get; set; }
@@ -32,15 +35,20 @@ public class Spawner : MonoBehaviour
     private void OnEnable()
     {
         IsSpawnFreezed = false;
-        StartCoroutine(ActivateEnemy());
         ActiveEnemy = prefabToOperate;
+
+        if (isDecoySpawner)
+            StartCoroutine(ActivateDecoyEnemy());
+        else
+            StartCoroutine(ActivateEnemy());
     }
 
     private IEnumerator ActivateEnemy()
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnDelay);
+            SetRandomizedSpawnDelay();
+            yield return new WaitForSeconds(spawnDelay + _spawnDelayRandomizedRange);
 
             if (!targetGuard.IsHaveEnergy)
             {
@@ -72,6 +80,20 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    private IEnumerator ActivateDecoyEnemy()
+    {
+        while (true)
+        {
+            SetRandomizedSpawnDelay();
+            yield return new WaitForSeconds(spawnDelay + _spawnDelayRandomizedRange);
+
+            if (IsSpawnAllowed())
+            {
+                prefabToOperate.SetActive(true);
+            }
+        }
+    }
+
     private void NotifyAboutDanger()
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
@@ -95,4 +117,6 @@ public class Spawner : MonoBehaviour
         float randomChance = Random.Range(0f, 1f);
         return randomChance < launchChance;
     }
+
+    private void SetRandomizedSpawnDelay() => _spawnDelayRandomizedRange = Random.Range(-2f, 2f);
 }
