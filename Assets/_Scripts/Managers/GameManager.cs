@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DifficultyUpdate difficultyManager;
     [SerializeField] private bool isMenu;
     [SerializeField, Range(2f, 10f)] private float loseDelay;
+    [SerializeField] private Animator shieldAnimator;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -102,6 +103,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Lose()
     {
+        shieldAnimator.SetTrigger("GameLosed");
+
         yield return new WaitForSeconds(loseDelay);
         losePanel.SetActive(true);
 
