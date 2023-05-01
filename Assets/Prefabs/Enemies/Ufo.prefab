@@ -49,6 +49,7 @@ MonoBehaviour:
   prefabToOperate: {fileID: 0}
   parent: {fileID: 1795646465143531420}
   targetGuard: {fileID: 0}
+  isDecoySpawner: 0
   isProjectileSpawner: 1
   dangerNotificators: []
 --- !u!1 &1377434073254238793
@@ -208,6 +209,7 @@ GameObject:
   - component: {fileID: 8943855999770277523}
   - component: {fileID: 1782985926159067375}
   - component: {fileID: 7343073287971898526}
+  - component: {fileID: 1300992998867728021}
   m_Layer: 6
   m_Name: Ufo
   m_TagString: Enemy
@@ -360,6 +362,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1300992998867728021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414335199568772390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d4a2f0b67bde4282eed5d2bd06b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
 --- !u!1 &1975794357691180604
 GameObject:
   m_ObjectHideFlags: 0

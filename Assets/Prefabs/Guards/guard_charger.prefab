@@ -4823,7 +4823,6 @@ GameObject:
   - component: {fileID: 7382755436799790668}
   - component: {fileID: 4179509929970064242}
   - component: {fileID: 2475163485607613344}
-  - component: {fileID: 6026414666299343291}
   m_Layer: 0
   m_Name: RightWing
   m_TagString: Untagged
@@ -4900,19 +4899,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6026414666299343291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058768959748819453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.55
 --- !u!1 &2198178143664992992
 GameObject:
   m_ObjectHideFlags: 0
@@ -14548,7 +14534,6 @@ GameObject:
   - component: {fileID: 3248636956311845677}
   - component: {fileID: 5097777183376734907}
   - component: {fileID: 1721821696743692123}
-  - component: {fileID: 3371420168388552479}
   m_Layer: 0
   m_Name: LeftWing
   m_TagString: Untagged
@@ -14625,19 +14610,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3371420168388552479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3591451197801518767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.55
 --- !u!1 &4350967437543031970
 GameObject:
   m_ObjectHideFlags: 0
@@ -19461,7 +19433,6 @@ GameObject:
   - component: {fileID: 8331709420028962229}
   - component: {fileID: 1912303881840967789}
   - component: {fileID: 7627355276516153513}
-  - component: {fileID: 6181632540119122770}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -19538,19 +19509,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6181632540119122770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4802210941100805095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.861
 --- !u!1 &5094806493321532126
 GameObject:
   m_ObjectHideFlags: 0
@@ -29303,7 +29261,6 @@ GameObject:
   - component: {fileID: 3706197421909992855}
   - component: {fileID: 4767249415289741925}
   - component: {fileID: 274418067432494459}
-  - component: {fileID: 3392682062028285415}
   m_Layer: 0
   m_Name: Engines
   m_TagString: Untagged
@@ -29381,19 +29338,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3392682062028285415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8739032123481764415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.6
 --- !u!1001 &524514218487387819
 PrefabInstance:
   m_ObjectHideFlags: 0

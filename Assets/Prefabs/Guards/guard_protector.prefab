@@ -4823,7 +4823,6 @@ GameObject:
   - component: {fileID: 8278492650426758833}
   - component: {fileID: 69026492061003401}
   - component: {fileID: 8945755116443020594}
-  - component: {fileID: 583532767240031607}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -4897,19 +4896,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &583532767240031607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769491341852258594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.9
 --- !u!1 &2928978980335915048
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,7 +4907,6 @@ GameObject:
   - component: {fileID: 1846790472330575482}
   - component: {fileID: 8108992310185270178}
   - component: {fileID: 277249017547490150}
-  - component: {fileID: 5348862954863132922}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -5000,19 +4985,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5348862954863132922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2928978980335915048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.9
 --- !u!1 &3221569303400958225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,7 +5113,6 @@ GameObject:
   - component: {fileID: 5121799682873401570}
   - component: {fileID: 3224510140884328820}
   - component: {fileID: 9071393144666000532}
-  - component: {fileID: 6329704194114433213}
   m_Layer: 0
   m_Name: LeftWing
   m_TagString: Untagged
@@ -5218,19 +5189,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6329704194114433213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6617571687083838816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.95
 --- !u!1 &8544178155045327410
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,7 +5200,6 @@ GameObject:
   - component: {fileID: 897873569433113987}
   - component: {fileID: 5765075461773820093}
   - component: {fileID: 5213127292089534575}
-  - component: {fileID: 7483844655033521065}
   m_Layer: 0
   m_Name: RightWing
   m_TagString: Untagged
@@ -5319,19 +5276,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7483844655033521065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8544178155045327410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.95
 --- !u!1001 &1658319876388442457
 PrefabInstance:
   m_ObjectHideFlags: 0

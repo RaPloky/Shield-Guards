@@ -10,7 +10,6 @@ public class Ufo : Enemy
     [SerializeField] private List<Image> healthBarBg;
     [SerializeField] private ParticleSystem onDamageParticles;
     [SerializeField] private ParticleSystem onDestroyParticles;
-    [SerializeField] private Transform target;
     [SerializeField] private Spawner weapon;
 
     private Vector3 _startPosition;
@@ -77,8 +76,6 @@ public class Ufo : Enemy
         for (int i = 0; i < healthBarBg.Count; i++)
             healthBarBg[i].fillAmount = (float)Health / _startHealth;
     }
-
-    private void FixedUpdate() => _thatTrans.LookAt(target);
 
     private void DamageUfo()
     {

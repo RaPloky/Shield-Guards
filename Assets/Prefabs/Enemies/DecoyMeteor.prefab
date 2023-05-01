@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1521801851031680185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3374350515076118460}
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8.91
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -601,7 +601,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2000
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4827,7 +4827,6 @@ GameObject:
   - component: {fileID: 8783306783931995079}
   - component: {fileID: 3140151549562389335}
   - component: {fileID: 2823839034702809011}
-  - component: {fileID: 1137452598674136477}
   m_Layer: 0
   m_Name: DecoyMeteor
   m_TagString: Enemy
@@ -4843,8 +4842,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2711106806615436550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0090274, y: -0.013988, z: 0.0043975}
+  m_LocalScale: {x: 0.46083, y: 0.46083, z: 0.46083}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7137456724649691698}
@@ -4942,7 +4941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66a80851308b4b42988171aae934f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 200
+  speedFactor: 70
   energyDamage: 0
   isMeteor: 0
   glitchStrength: 0.025
@@ -4950,16 +4949,3 @@ MonoBehaviour:
     type: 3}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
---- !u!114 &1137452598674136477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2711106806615436550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fff89cdfbbcaa24cbae8518c257b75a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _quality: 0.307
