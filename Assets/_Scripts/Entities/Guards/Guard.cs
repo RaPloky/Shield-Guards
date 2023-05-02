@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
     [SerializeField] private int consumption;
     [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
+    [SerializeField] private int criticalEnergy;
     [SerializeField] private Bonus relatedBonus;
     [SerializeField] private CanvasGroup relatedDangerNotifications;
     [SerializeField] private List<ParticleSystem> onDisablePS;
+    [SerializeField] private List<Animator> onDisableCanvasGroupAnimators;
+    [SerializeField] private List<Animator> criticalEnergyAlerts;
     
     private Animator _animator;
     private int _maxEnergy;
     private bool _isHaveEnergy;
     private Guard _thatGuard;
     private float _startConsumptionDelay;
+    private bool _criticalEnergyActivated;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
@@ -28,6 +33,17 @@ public class Guard : MonoBehaviour
 
             energy = Mathf.Clamp(value, 0, _maxEnergy);
             EventManager.SendOnEnergyValueChanged();
+
+            if (energy <= criticalEnergy && !_criticalEnergyActivated)
+            {
+                ActivateCriticalEnergyDanger("CriticalEnergyReached");
+                _criticalEnergyActivated = true;
+            }
+            else if (energy > criticalEnergy && _criticalEnergyActivated)
+            {
+                ActivateCriticalEnergyDanger("CriticalEnergyLeaved");
+                _criticalEnergyActivated = false;
+            }
 
             if (Mathf.Approximately(energy, 0) && _isHaveEnergy)
                 TurnOffGuard();
@@ -47,6 +63,7 @@ public class Guard : MonoBehaviour
     private void Awake()
     {
         IsProtectBonusActivated = false;
+        _criticalEnergyActivated = false;
         _maxEnergy = energy;
         _isHaveEnergy = true;
         StartCoroutine(ConsumptEnergy());
@@ -72,6 +89,7 @@ public class Guard : MonoBehaviour
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
 
         DisableParticles();
+        DisableCanvasGroups();
         _animator.SetTrigger("Death");
         EventManager.SendOnGuardDischarged();
     }
@@ -83,5 +101,19 @@ public class Guard : MonoBehaviour
     {
         for (int i = 0; i < onDisablePS.Count; i++)
             onDisablePS[i].Stop();
+    }
+
+    private void DisableCanvasGroups()
+    {
+        for (int i = 0; i < onDisableCanvasGroupAnimators.Count; i++)
+        {
+            onDisableCanvasGroupAnimators[i].SetTrigger("Disable");
+        }
+    }
+
+    private void ActivateCriticalEnergyDanger(string triggerName)
+    {
+        for (int i = 0; i < criticalEnergyAlerts.Count; i++)
+            criticalEnergyAlerts[i].SetTrigger(triggerName);
     }
 }
