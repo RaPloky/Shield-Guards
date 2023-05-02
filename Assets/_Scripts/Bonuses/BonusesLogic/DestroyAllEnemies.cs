@@ -19,7 +19,10 @@ public class DestroyAllEnemies : Bonus
             return;
 
         for (int i = 0; i < _enemies.Length; i++)
-            StartCoroutine(_enemies[i].DisableThatEnemy());
+        {
+            if (_enemies[i].isActiveAndEnabled)
+                StartCoroutine(_enemies[i].DisableThatEnemy());
+        }
 
         StartCoroutine(FreezeSpawn());
 
