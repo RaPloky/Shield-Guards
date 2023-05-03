@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 abstract public class Bonus : MonoBehaviour
 {
@@ -12,7 +12,7 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected GameObject activationButton;
     [SerializeField] protected GameObject bonusChart;
     [SerializeField] protected EarnBonus bonusAmount;
-    [SerializeField] protected ParticleSystem activationParticleSystem;
+    [SerializeField] protected List<ParticleSystem> activationParticleSystems;
 
     public bool IsBonusEnabled
     {
@@ -23,6 +23,7 @@ abstract public class Bonus : MonoBehaviour
     public void DisableBonus()
     {
         IsBonusEnabled = false;
+        effectDurationGO.SetActive(false);
     }
 
     protected void AddUsageReward() => EventManager.SendOnScoreUpdated(usageReward);
@@ -49,5 +50,9 @@ abstract public class Bonus : MonoBehaviour
         activationButton.SetActive(status);
     }
 
-    protected void PlayActivationParticleSystem() => activationParticleSystem.Play();
+    protected void PlayActivationParticleSystem()
+    {
+        for (int i = 0; i < activationParticleSystems.Count; i++)
+            activationParticleSystems[i].Play();
+    }
 }
