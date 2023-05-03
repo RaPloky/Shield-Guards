@@ -13162,6 +13162,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &631033878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6300749391813813304, guid: 63536a5c1791b864ab010a2bfaaf760f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1043391614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &632055978
 GameObject:
   m_ObjectHideFlags: 0
@@ -16941,6 +16947,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &855924345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 734810017022139928, guid: 95a6d56db49136942a4d273e8ab65569,
+    type: 3}
+  m_PrefabInstance: {fileID: 1120892248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &868677462
 GameObject:
   m_ObjectHideFlags: 0
@@ -20958,6 +20970,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2429071404830360309, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2881882214339187627, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: m_RootOrder
@@ -21728,6 +21745,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374163427434318376, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645926140624141954, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7382755436799790668, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
@@ -27099,6 +27126,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 106188074042557602, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 208471253463893832, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: ShapeModule.radius.value
@@ -28359,6 +28391,10 @@ MonoBehaviour:
   - {fileID: 1043391615}
   - {fileID: 1120892249}
   - {fileID: 1033974453}
+  guardShields:
+  - {fileID: 2067481373}
+  - {fileID: 631033878}
+  - {fileID: 855924345}
 --- !u!114 &1211483887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33735,6 +33771,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &2067481373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3097943547589515343, guid: 1feaee64acede0c44b29354e964b8366,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033974452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096278050
 GameObject:
   m_ObjectHideFlags: 0

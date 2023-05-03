@@ -311,7 +311,6 @@ MonoBehaviour:
   onDamageParticles: {fileID: 7463679270994809317}
   onDestroyParticles: {fileID: 3174793837732041633, guid: 4e2d3d87fa81a74498dba219f0bd62a4,
     type: 3}
-  target: {fileID: 0}
   weapon: {fileID: 236059852655039265}
 --- !u!65 &8943855999770277523
 BoxCollider:
@@ -6149,7 +6148,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.3
+    radiusThickness: 0
     donutRadius: 0.06
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 270, y: 0, z: 0}
@@ -6232,7 +6231,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 3.38
+      value: 2.32
       mode: 0
       spread: 0
       speed:
