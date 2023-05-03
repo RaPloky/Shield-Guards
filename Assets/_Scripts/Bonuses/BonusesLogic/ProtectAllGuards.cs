@@ -33,6 +33,7 @@ public class ProtectAllGuards : Bonus
 
         StartEffectTimer(shieldDuration);
         ReactivateShields(true);
+        PlayActivationParticleSystem();
 
         yield return new WaitForSeconds(shieldDuration);
 

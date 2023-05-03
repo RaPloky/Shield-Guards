@@ -12,6 +12,7 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected GameObject activationButton;
     [SerializeField] protected GameObject bonusChart;
     [SerializeField] protected EarnBonus bonusAmount;
+    [SerializeField] protected ParticleSystem activationParticleSystem;
 
     public bool IsBonusEnabled
     {
@@ -47,4 +48,6 @@ abstract public class Bonus : MonoBehaviour
         bonusAmount.UpdateBonusStatus();
         activationButton.SetActive(status);
     }
+
+    protected void PlayActivationParticleSystem() => activationParticleSystem.Play();
 }

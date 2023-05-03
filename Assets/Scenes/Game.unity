@@ -567,6 +567,7 @@ MonoBehaviour:
   activationButton: {fileID: 1102236105}
   bonusChart: {fileID: 1230057542}
   bonusAmount: {fileID: 1043391617}
+  activationParticleSystem: {fileID: 0}
   guards:
   - {fileID: 1043391615}
   - {fileID: 1120892249}
@@ -20828,7 +20829,7 @@ PrefabInstance:
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: onDisablePS.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
@@ -20854,7 +20855,7 @@ PrefabInstance:
         type: 3}
       propertyPath: onDisablePS.Array.data[4]
       value: 
-      objectReference: {fileID: 176846125}
+      objectReference: {fileID: 1932443532}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: relatedDangerNotifications
@@ -28387,6 +28388,7 @@ MonoBehaviour:
   activationButton: {fileID: 1940356511}
   bonusChart: {fileID: 123075682}
   bonusAmount: {fileID: 1033974455}
+  activationParticleSystem: {fileID: 1932443532}
   guards:
   - {fileID: 1043391615}
   - {fileID: 1120892249}
@@ -29640,6 +29642,7 @@ MonoBehaviour:
   activationButton: {fileID: 1665523922}
   bonusChart: {fileID: 701623415}
   bonusAmount: {fileID: 1120892251}
+  activationParticleSystem: {fileID: 0}
   spawners:
   - {fileID: 8292024737097164860}
   - {fileID: 1961237560}
@@ -32724,6 +32727,12 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+--- !u!198 &1932443532 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4366633498192951469, guid: 1feaee64acede0c44b29354e964b8366,
+    type: 3}
+  m_PrefabInstance: {fileID: 1033974452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1933616571
 PrefabInstance:
   m_ObjectHideFlags: 0
