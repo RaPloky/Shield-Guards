@@ -23,7 +23,9 @@ abstract public class Bonus : MonoBehaviour
     public void DisableBonus()
     {
         IsBonusEnabled = false;
-        effectDurationGO.SetActive(false);
+
+        if (effectDurationGO != null)
+            effectDurationGO.SetActive(false);
     }
 
     protected void AddUsageReward() => EventManager.SendOnScoreUpdated(usageReward);

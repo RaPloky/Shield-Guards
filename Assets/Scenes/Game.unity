@@ -16902,6 +16902,7 @@ GameObject:
   - component: {fileID: 841183864}
   - component: {fileID: 841183863}
   - component: {fileID: 841183866}
+  - component: {fileID: 841183867}
   m_Layer: 7
   m_Name: Planet
   m_TagString: Untagged
@@ -16994,6 +16995,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!135 &841183867
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841183861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.23
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &855924345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 734810017022139928, guid: 95a6d56db49136942a4d273e8ab65569,
