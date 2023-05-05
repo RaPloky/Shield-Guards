@@ -15,11 +15,13 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
+    private Spawner _parentSpawner;
 
     private void Awake()
     {
         _thatTrans = transform;
         _startPos = parentSpawner.position;
+        _parentSpawner = parentSpawner.GetComponent<Spawner>();
 
         if (isMeteor)
             _thatMeteorReference = GetComponent<Meteor>();
@@ -54,10 +56,14 @@ public class ProjectileBehavior : MonoBehaviour
         PlayParticlesOnDisable();
 
         if (isMeteor)
+        {
             StartCoroutine(_thatMeteorReference.DisableThatEnemy());
+            _parentSpawner.ActivateCommonEnemySpawner();
+        }
         else
         {
             PlayParticlesOnDisable();
+            _parentSpawner.ActivateDecoyEnemySpawner();
 
             gameObject.SetActive(false);
             gameObject.transform.position = _startPos;

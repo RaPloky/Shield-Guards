@@ -38,10 +38,13 @@ public class Spawner : MonoBehaviour
         ActiveEnemy = prefabToOperate;
 
         if (isDecoySpawner)
-            StartCoroutine(ActivateDecoyEnemy());
+            ActivateDecoyEnemySpawner();
         else
-            StartCoroutine(ActivateEnemy());
+            ActivateCommonEnemySpawner();
     }
+
+    public void ActivateDecoyEnemySpawner() => StartCoroutine(ActivateDecoyEnemy());
+    public void ActivateCommonEnemySpawner() => StartCoroutine(ActivateEnemy());
 
     private IEnumerator ActivateEnemy()
     {
@@ -76,6 +79,7 @@ public class Spawner : MonoBehaviour
             {
                 prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
+                yield break;
             }
         }
     }
@@ -90,6 +94,7 @@ public class Spawner : MonoBehaviour
             if (IsSpawnAllowed())
             {
                 prefabToOperate.SetActive(true);
+                yield break;
             }
         }
     }
