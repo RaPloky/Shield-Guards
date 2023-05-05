@@ -58,12 +58,10 @@ public class ProjectileBehavior : MonoBehaviour
         if (isMeteor)
         {
             StartCoroutine(_thatMeteorReference.DisableThatEnemy());
-            _parentSpawner.ActivateCommonEnemySpawner();
         }
         else
         {
             PlayParticlesOnDisable();
-            _parentSpawner.ActivateDecoyEnemySpawner();
 
             gameObject.SetActive(false);
             gameObject.transform.position = _startPos;

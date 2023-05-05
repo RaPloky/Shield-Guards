@@ -54,8 +54,6 @@ public class Ufo : Enemy
 
         PlayParticlesOnDisable();
         PlayParticlesOnLaunchedProjectileDisable();
-
-        relatedSpawner.ActivateCommonEnemySpawner();
     }
 
     private void DisableUfo()

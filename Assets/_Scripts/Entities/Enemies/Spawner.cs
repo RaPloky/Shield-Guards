@@ -44,8 +44,8 @@ public class Spawner : MonoBehaviour
             ActivateCommonEnemySpawner();
     }
 
-    public void ActivateDecoyEnemySpawner() => StartCoroutine(ActivateDecoyEnemy());
-    public void ActivateCommonEnemySpawner() => StartCoroutine(ActivateEnemy());
+    private void ActivateDecoyEnemySpawner() => StartCoroutine(ActivateDecoyEnemy());
+    private void ActivateCommonEnemySpawner() => StartCoroutine(ActivateEnemy());
 
     private IEnumerator ActivateEnemy()
     {
@@ -79,7 +79,6 @@ public class Spawner : MonoBehaviour
             {
                 prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
-                yield break;
             }
         }
     }
