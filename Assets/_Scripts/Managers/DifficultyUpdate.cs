@@ -20,10 +20,13 @@ public class DifficultyUpdate : MonoBehaviour
 
     public List<Guard> ActiveGuards => activeGuards;
 
+    private WaitForSeconds DifficultyIncreaseDelay;
+
     private void Awake()
     {
         Instance = this;
         StartCoroutine(IncreaseDifficulty());
+        DifficultyIncreaseDelay = new WaitForSeconds(difficultyIncreaseDelay);
     }
 
     private void OnEnable() => EventManager.OnGuardDischarged += IncreaseEnergyConsumption;
@@ -33,7 +36,7 @@ public class DifficultyUpdate : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(difficultyIncreaseDelay);
+            yield return DifficultyIncreaseDelay;
 
             // message about difficulty increase
 
