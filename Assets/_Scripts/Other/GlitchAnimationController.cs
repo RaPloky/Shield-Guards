@@ -14,7 +14,7 @@ public class GlitchAnimationController : MonoBehaviour
     [SerializeField, Range(0.01f, 0.25f)] private float intensityDelta;
     [Range(1f, 3f)] public float longDelay;
 
-    private float _tempColorDrift, _tempHorizontalShake, _tempScanJitter;
+    private float _tempColorDrift, _tempScanJitter;
 
     private void Awake()
     {
@@ -111,23 +111,36 @@ public class GlitchAnimationController : MonoBehaviour
     public void ConstantColorShake()
     {
         AssignTempColorDrift();
-        AssignTempHorizontalShake();
 
         analogGlitch.colorDrift = 0.3f;
-        analogGlitch.horizontalShake = 0.035f;
     }
 
     public void DisableConstantHorizontalShake()
     {
         analogGlitch.colorDrift = _tempColorDrift;
-        analogGlitch.horizontalShake = _tempHorizontalShake;
     }
 
     public void EnableJitterJump()
     {
         AssignTempScanJitter();
 
-        analogGlitch.scanLineJitter = 0.1f;
+        StartCoroutine(PeriodicScanJitter());
+    }
+
+    private IEnumerator PeriodicScanJitter()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10);
+
+            analogGlitch.scanLineJitter = 0.4f;
+
+            while (analogGlitch.scanLineJitter > 0)
+            {
+                yield return new WaitForSeconds(0.2f);
+                analogGlitch.scanLineJitter -= 0.05f;
+            }
+        }
     }
 
     public void DisableJitterJump()
@@ -142,7 +155,6 @@ public class GlitchAnimationController : MonoBehaviour
         StartCoroutine(Scan(0.4f));
     }
 
-    private void AssignTempHorizontalShake() => _tempHorizontalShake = analogGlitch.horizontalShake;
     private void AssignTempColorDrift() => _tempColorDrift = analogGlitch.colorDrift;
     private void AssignTempScanJitter() => _tempScanJitter = analogGlitch.scanLineJitter;
 }
