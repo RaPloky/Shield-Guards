@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class GainEnergyOnTouch : MonoBehaviour
 {
-    [SerializeField] int energyAddAmount;
+    [SerializeField] private int energyAddAmount;
 
     private Guard _thatGuard;
+
+    public int EnergyAddAmount
+    {
+        get => energyAddAmount;
+        set => energyAddAmount = value;
+    }
 
     private void Awake()
     {

@@ -18,6 +18,18 @@ public class DifficultyUpdate : MonoBehaviour
 
     [SerializeField] private List<Guard> activeGuards;
 
+    [Header("For charger off:")]
+    [SerializeField] private List<GainEnergyOnTouch> energyUpdaters;
+    [SerializeField] private GameObject chargerDestroyedMessage;
+
+
+    [Header("For destroyer off:")]
+    [SerializeField] private GameObject destroyerDestroyedMessage;
+
+
+    [Header("For protector off:")]
+    [SerializeField] private GameObject protectorDestroyedMessage;
+
     public List<Guard> ActiveGuards => activeGuards;
 
     private WaitForSeconds DifficultyIncreaseDelay;
@@ -37,8 +49,6 @@ public class DifficultyUpdate : MonoBehaviour
         while (true)
         {
             yield return DifficultyIncreaseDelay;
-
-            // message about difficulty increase
 
             UpdateSpawnersStats(ufoSpawners);
             UpdateSpawnersStats(meteorSpawners);
@@ -64,4 +74,71 @@ public class DifficultyUpdate : MonoBehaviour
                 consumptionDelayLimit, activeGuards[i].StartConsumptionDelay);
         }
     }
+
+    public void SpecificDifficultyIncrease(GuardType guardType)
+    {
+        if (guardType == GuardType.None)
+        {
+            print("Guard type haven't selected");
+            return;
+        }
+
+        switch (guardType)
+        {
+            case GuardType.Charger:
+                DecreaseEnergyAddAmount();
+                break;
+            case GuardType.Destroyer:
+                IncreaseEnemyHp();
+                break;
+            case GuardType.Protector:
+                IncreaseEnemyDamage();
+                break;
+        }
+    }
+
+    private void DecreaseEnergyAddAmount()
+    {
+        EnableMessage(chargerDestroyedMessage);
+        int energyAddAmountDecrease;
+
+        for (int i = 0; i < energyUpdaters.Count; i++)
+        {
+            energyAddAmountDecrease = energyUpdaters[i].EnergyAddAmount / 4;
+            energyUpdaters[i].EnergyAddAmount -= energyAddAmountDecrease;
+        }
+
+        StartCoroutine(DisableMessage(chargerDestroyedMessage));
+    }
+
+    private void IncreaseEnemyHp()
+    {
+        EnableMessage(destroyerDestroyedMessage);
+
+
+        StartCoroutine(DisableMessage(destroyerDestroyedMessage));
+    }
+
+    private void IncreaseEnemyDamage()
+    {
+        EnableMessage(protectorDestroyedMessage);
+
+
+        StartCoroutine(DisableMessage(protectorDestroyedMessage));
+    }
+
+    private IEnumerator DisableMessage(GameObject destructionMessage)
+    {
+        yield return new WaitForSeconds(3);
+        destructionMessage.SetActive(false);
+    }
+
+    private void EnableMessage(GameObject message)
+    {
+        if (activeGuards.Count == 1)
+            return;
+
+        message.SetActive(true);
+    }
+
 }

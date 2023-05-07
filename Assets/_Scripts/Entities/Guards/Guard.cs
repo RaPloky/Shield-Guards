@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GuardType
+{
+    None,
+    Protector,
+    Charger,
+    Destroyer
+}
+
 public class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
@@ -14,6 +22,7 @@ public class Guard : MonoBehaviour
     [SerializeField] private List<ParticleSystem> onDisablePS;
     [SerializeField] private List<Animator> onDisableCanvasGroupAnimators;
     [SerializeField] private List<Animator> criticalEnergyAlerts;
+    [SerializeField] private GuardType guardType; 
     
     private Animator _animator;
     private int _maxEnergy;
@@ -83,6 +92,9 @@ public class Guard : MonoBehaviour
 
     private void TurnOffGuard()
     {
+        DifficultyUpdate.Instance.SpecificDifficultyIncrease(guardType);
+
+        Invoke(nameof(DisableSelf), 5f);
         StopAllCoroutines();
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
@@ -115,5 +127,10 @@ public class Guard : MonoBehaviour
     {
         for (int i = 0; i < criticalEnergyAlerts.Count; i++)
             criticalEnergyAlerts[i].SetTrigger(triggerName);
+    }
+
+    private void DisableSelf()
+    {
+        gameObject.SetActive(false);
     }
 }
