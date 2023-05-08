@@ -9,7 +9,8 @@ public class EarnChargeBonus : EarnBonus
         _upgradeManager = UpgradeManager.Instance;
         _goal = _upgradeManager.CurrChargeGoalValue;
         Progress = 0;
-        UpdateBonusStatus();
+        UpdateBonusStatus(); 
+        UpdateProgressTip();
     }
 
     private void OnEnable()
@@ -28,9 +29,15 @@ public class EarnChargeBonus : EarnBonus
         {
             Progress += updateProgressAmount;
             UpdateBonusStatus();
+            UpdateProgressTip();
         }
 
         if (Progress >= _goal)
             EnableBonus();
+    }
+
+    public override void UpdateProgressTip()
+    {
+        bonusProgress.text = $"{Progress / 1000:0}k/{_goal / 1000:0}k\nenergy";
     }
 }

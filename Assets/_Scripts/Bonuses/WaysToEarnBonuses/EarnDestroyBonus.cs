@@ -6,6 +6,7 @@ public class EarnDestroyBonus : EarnBonus
         _goal = _upgradeManager.CurrDemolitionGoalValue;
         Progress = 0;
         UpdateBonusStatus();
+        UpdateProgressTip();
     }
 
     private void OnEnable()
@@ -24,10 +25,16 @@ public class EarnDestroyBonus : EarnBonus
         {
             Progress++;
             UpdateBonusStatus();
+            UpdateProgressTip();
         }
 
         if (Progress >= _goal)
             EnableBonus();
+    }
+
+    public override void UpdateProgressTip()
+    {
+        bonusProgress.text = $"{Progress}/{_goal}\nenemies"; 
     }
 
 }

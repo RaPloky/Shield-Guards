@@ -8,6 +8,7 @@ abstract public class EarnBonus : MonoBehaviour
     [SerializeField] protected int enablingReward;
     [SerializeField] protected Image[] progressImages;
     [SerializeField] protected TextMeshProUGUI bonusAmount;
+    [SerializeField] protected TextMeshProUGUI bonusProgress;
 
     protected int _goal;
     protected UpgradeManager _upgradeManager;
@@ -31,4 +32,6 @@ abstract public class EarnBonus : MonoBehaviour
         Progress = 0;
         EventManager.SendOnScoreUpdated(enablingReward);
     }
+
+    abstract public void UpdateProgressTip();
 }

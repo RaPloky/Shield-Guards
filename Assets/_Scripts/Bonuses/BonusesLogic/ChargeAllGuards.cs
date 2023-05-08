@@ -5,8 +5,6 @@ using TMPro;
 public class ChargeAllGuards : Bonus
 {
     [SerializeField] private List<Guard> guards;
-    [SerializeField] private Animator hudAnimatorOnBonusActivation;
-    [SerializeField] private TextMeshProUGUI bonusActivationText;
     private int chargeAmount;
 
     private DifficultyUpdate _difficultyManager;
@@ -15,7 +13,6 @@ public class ChargeAllGuards : Bonus
     {
         _difficultyManager = DifficultyUpdate.Instance;
         chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
-        bonusActivationText.text = $"+{chargeAmount}";
     }
 
     public void ActivateBonus()
@@ -26,15 +23,9 @@ public class ChargeAllGuards : Bonus
         for (int i = 0; i < _difficultyManager.ActiveGuards.Count; i++)
             _difficultyManager.ActiveGuards[i].AddEnergy(chargeAmount);
 
-        ActivateAnimation();
         PlayActivationParticleSystem();
 
         ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
-    }
-
-    private void ActivateAnimation()
-    {
-        hudAnimatorOnBonusActivation.SetTrigger("BonusActivated");
     }
 }

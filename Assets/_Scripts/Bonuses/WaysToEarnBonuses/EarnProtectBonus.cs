@@ -12,7 +12,8 @@ public class EarnProtectBonus : EarnBonus
         Progress = 0;
 
         StartCoroutine(UpdateSecondsSurvived());
-        UpdateBonusStatus();
+        UpdateBonusStatus(); 
+        UpdateProgressTip();
     }
 
     private IEnumerator UpdateSecondsSurvived()
@@ -28,10 +29,16 @@ public class EarnProtectBonus : EarnBonus
             {
                 Progress += surviveTimeUpdateAmount;
                 UpdateBonusStatus();
+                UpdateProgressTip();
             }
 
             if (Progress >= _goal)
                 EnableBonus();
         }
+    }
+
+    public override void UpdateProgressTip()
+    {
+        bonusProgress.text = $"{Progress:0.0}/{_goal:0.0}S";
     }
 }
