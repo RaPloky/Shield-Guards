@@ -40,7 +40,7 @@ abstract public class Enemy : MonoBehaviour
         relatedSpawner.DisableDanger();
     }
 
-    private void UpdateHealthBar()
+    protected void UpdateHealthBar()
     {
         for (int i = 0; i < healthBarBg.Count; i++)
             healthBarBg[i].fillAmount = (float)Health / _startHealth;

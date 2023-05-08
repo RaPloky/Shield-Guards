@@ -24,6 +24,11 @@ public class Meteor : Enemy
         DamageEnemy();
     }
 
+    private void OnEnable()
+    {
+        UpdateHealthBar();
+    }
+
     public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0);

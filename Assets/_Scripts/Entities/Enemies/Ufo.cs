@@ -21,6 +21,11 @@ public class Ufo : Enemy
         _animator = GetComponent<Animator>();
     }
 
+    private void OnEnable()
+    {
+        UpdateHealthBar();
+    }
+
     public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0f);
