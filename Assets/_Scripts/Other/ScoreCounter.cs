@@ -4,7 +4,9 @@ using UnityEngine;
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI justAddedScoreText;
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator justAddedScoreAnimator;
 
     public int Score { get; set; }
 
@@ -26,7 +28,10 @@ public class ScoreCounter : MonoBehaviour
     private void UpdateScoreText(int addedPoints)
     {
         Score += addedPoints;
-        scoreText.text = Score.ToString();
+
+        justAddedScoreText.text = $"+{addedPoints}";
+        justAddedScoreAnimator.SetTrigger("UpdatedScore");
+        scoreText.text = $"${Score}";
         animator.SetTrigger("Update");
     }
 }
