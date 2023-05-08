@@ -602,6 +602,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: timer_bg
+      rect:
+        serializedVersion: 2
+        x: 1895
+        y: 419
+        width: 360
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3111b1b342da934286161d823e9a5f8
+      internalID: 539909055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -624,6 +645,7 @@ TextureImporter:
       restart: -1176876272
       quit: -644791574
       pause: -1741219800
+      timer_bg: 539909055
       music_off: 260258148
       info: -1041034896
       protection_bonus_nobg_filled: -955634596
