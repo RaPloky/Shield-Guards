@@ -2,14 +2,6 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    [Header("Swipe control")]
-    private Vector2 startTouchPosition;
-    private Vector2 currentPosition;
-    private bool stopTouch = false;
-
-    [SerializeField] private float swipeRange;
-    [SerializeField] private float tapRange;
-
     [Header("Camera")]
     [SerializeField, Range(0f, 1f)] float smoothFactor;
     [SerializeField] Transform targetToFollow;
@@ -33,7 +25,6 @@ public class MoveCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        SwipeHorizontal();
         UpdatePosition();
     }
 
@@ -103,36 +94,6 @@ public class MoveCamera : MonoBehaviour
         rightGuard.RelatedDangerNotifications.alpha = 0;
 
         currentGuard.RelatedDangerNotifications.alpha = 1;
-    }
-
-    private void SwipeHorizontal()
-    {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            startTouchPosition = Input.GetTouch(0).position;
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            currentPosition = Input.GetTouch(0).position;
-            Vector2 distance = currentPosition - startTouchPosition;
-
-            if (!stopTouch)
-            {
-                if (distance.x < -swipeRange)
-                {
-                    TurnLeft();
-                    stopTouch = true;
-                }
-                else if (distance.x > swipeRange)
-                {
-                    TurnRight();
-                    stopTouch = true;
-                }
-            }
-
-        }
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            stopTouch = false;
     }
 
     private bool IsGuardActive(Guard guard) => guard.IsHaveEnergy;
