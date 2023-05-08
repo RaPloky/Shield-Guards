@@ -25,12 +25,28 @@ public class DifficultyUpdate : MonoBehaviour
 
     [Header("For destroyer off:")]
     [SerializeField] private GameObject destroyerDestroyedMessage;
+    [SerializeField, Range(0, 1f)] private float guardAttackDecreasePercentage;
 
 
     [Header("For protector off:")]
     [SerializeField] private GameObject protectorDestroyedMessage;
+    [SerializeField, Range(0, 1f)] private float enemyDamageIncreasePercentage;
+
+    private float _enemyDamageIncreasePercentagePropertyValue;
+    private float _guardAttackDecreasePercentagePropertyValue;
 
     public List<Guard> ActiveGuards => activeGuards;
+    public float EnemyDamageIncreasePercentage
+    {
+        get => _enemyDamageIncreasePercentagePropertyValue;
+        set => _enemyDamageIncreasePercentagePropertyValue = Mathf.Clamp(value, 0, 1);
+    }
+
+    public float GuardAttackDecreasePercentage
+    {
+        get => _guardAttackDecreasePercentagePropertyValue;
+        set => _guardAttackDecreasePercentagePropertyValue = Mathf.Clamp(value, 0, 1);
+    }
 
     private WaitForSeconds DifficultyIncreaseDelay;
 
@@ -39,6 +55,8 @@ public class DifficultyUpdate : MonoBehaviour
         Instance = this;
         StartCoroutine(IncreaseDifficulty());
         DifficultyIncreaseDelay = new WaitForSeconds(difficultyIncreaseDelay);
+        _enemyDamageIncreasePercentagePropertyValue = 0;
+        _guardAttackDecreasePercentagePropertyValue = 0;
     }
 
     private void OnEnable() => EventManager.OnGuardDischarged += IncreaseEnergyConsumption;
@@ -115,6 +133,7 @@ public class DifficultyUpdate : MonoBehaviour
     {
         EnableMessage(destroyerDestroyedMessage);
 
+        _guardAttackDecreasePercentagePropertyValue = guardAttackDecreasePercentage;
 
         StartCoroutine(DisableMessage(destroyerDestroyedMessage));
     }
@@ -123,6 +142,7 @@ public class DifficultyUpdate : MonoBehaviour
     {
         EnableMessage(protectorDestroyedMessage);
 
+        _enemyDamageIncreasePercentagePropertyValue = enemyDamageIncreasePercentage;
 
         StartCoroutine(DisableMessage(protectorDestroyedMessage));
     }

@@ -15,13 +15,13 @@ public class ProjectileBehavior : MonoBehaviour
 
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
-    private Spawner _parentSpawner;
+    private DifficultyUpdate _difficultyManager;
 
     private void Awake()
     {
         _thatTrans = transform;
         _startPos = parentSpawner.position;
-        _parentSpawner = parentSpawner.GetComponent<Spawner>();
+        _difficultyManager = DifficultyUpdate.Instance;
 
         if (isMeteor)
             _thatMeteorReference = GetComponent<Meteor>();
@@ -46,7 +46,7 @@ public class ProjectileBehavior : MonoBehaviour
             DisableThatProjectile();
             return;
         }
-        _targetComponent.ConsumptEnergy(energyDamage);
+        _targetComponent.ConsumptEnergy(energyDamage + (int)(energyDamage * _difficultyManager.EnemyDamageIncreasePercentage));
         DisableThatProjectile();
         PlayHitGlitchAnim();
     }
@@ -64,8 +64,7 @@ public class ProjectileBehavior : MonoBehaviour
             PlayParticlesOnDisable();
 
             gameObject.SetActive(false);
-            gameObject.transform.position = _startPos;
-            gameObject.transform.rotation = Quaternion.identity;
+            gameObject.transform.SetPositionAndRotation(_startPos, Quaternion.identity);
         }
     }
 

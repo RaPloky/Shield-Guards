@@ -301,13 +301,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionReward: 800
-  relatedSpawner: {fileID: 0}
   health: 1000
-  damageToUfo: 100
+  damageToEnemy: 100
   healthBarBg:
   - {fileID: 6638016532888370878}
   - {fileID: 8257718161656626302}
   onDamageParticles: {fileID: 7463679270994809317}
+  relatedSpawner: {fileID: 0}
   onDestroyParticles: {fileID: 3174793837732041633, guid: 4e2d3d87fa81a74498dba219f0bd62a4,
     type: 3}
   weapon: {fileID: 236059852655039265}
@@ -5689,7 +5689,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0, b: 0.20189762, a: 1}
+      maxColor: {r: 0.9622642, g: 0.30411178, b: 0.75213736, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

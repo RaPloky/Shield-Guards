@@ -1,38 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Ufo : Enemy
 {
-    [SerializeField] private int health;
-    [SerializeField] private int damageToUfo;
-    [SerializeField] private List<Image> healthBarBg;
-    [SerializeField] private ParticleSystem onDamageParticles;
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private Spawner weapon;
 
-    private Vector3 _startPosition;
-
-    public int Health
-    {
-        get => health;
-        set
-        {
-            health = (int)(Mathf.Clamp(value, 0, float.MaxValue));
-            UpdateHealthBar();
-
-            if (health <= 0)
-                StartCoroutine(DisableThatEnemy());
-        }
-    }
-
     private Transform _thatTrans;
-    private int _startHealth;
     private Animator _animator;
 
     private void Start()
     {
+        _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
 
         _thatTrans = transform;
@@ -68,19 +47,7 @@ public class Ufo : Enemy
         if (GameManager.IsGamePaused)
             return;
 
-        DamageUfo();
-    }
-
-    private void UpdateHealthBar()
-    {
-        for (int i = 0; i < healthBarBg.Count; i++)
-            healthBarBg[i].fillAmount = (float)Health / _startHealth;
-    }
-
-    private void DamageUfo()
-    {
-        Health -= damageToUfo;
-        onDamageParticles.Play();
+        DamageEnemy();
     }
 
     private void PlayParticlesOnDisable()
