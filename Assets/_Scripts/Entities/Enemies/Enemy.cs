@@ -51,6 +51,8 @@ abstract public class Enemy : MonoBehaviour
     protected void DamageEnemy()
     {
         Health -= damageToEnemy - (int)(damageToEnemy * _difficultyManager.GuardAttackDecreasePercentage);
-        onDamageParticles.Play();
+
+        if (onDamageParticles != null)
+            onDamageParticles.Play();
     }
 }

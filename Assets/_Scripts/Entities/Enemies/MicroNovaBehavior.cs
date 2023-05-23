@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MicroNovaBehavior : ProjectileBehavior
 {
     [Header("MicroNova Properties")]
-    [SerializeField] private float _zigZagAmplitude;
     [SerializeField] private float _zigZagFrequency;
 
     private float _timeElapsed = 0;
+    private float _zigZagOffset = 0;
+    private float _zigZagAmplitude = 0;
+    private Vector3 _direction;
+    private Vector3 _updatedPosition;
 
     private void Awake()
     {
@@ -18,14 +19,13 @@ public class MicroNovaBehavior : ProjectileBehavior
     protected override void MoveToTarget()
     {
         _timeElapsed += Time.deltaTime;
+        _zigZagAmplitude = Mathf.Clamp(Mathf.Sin(_timeElapsed), -0.25f, 0.25f);
+        _zigZagOffset = Mathf.PingPong(_timeElapsed * _zigZagFrequency, _zigZagAmplitude);
 
-        float zigzagOffset = Mathf.Sin(_timeElapsed * _zigZagFrequency) * _zigZagAmplitude;
-        Vector3 newPosition = _startPos + speedFactor * Time.deltaTime * (targetTrans.position - _startPos).normalized;
+        _direction = (targetTrans.position - _thatTrans.position).normalized;
+        _updatedPosition = _thatTrans.position + speedFactor * Time.deltaTime * _direction;
 
-        newPosition += _thatTrans.right * zigzagOffset;
-        _thatTrans.position = newPosition;
-
-        // Rotate the Comet to face the target
-        _thatTrans.LookAt(targetTrans);
+        _updatedPosition += _thatTrans.right * _zigZagOffset;
+        _thatTrans.position = _updatedPosition;
     }
 }

@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.35
+      scalar: 0.93
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.95
+      scalar: 1.9
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4790,7 +4790,7 @@ ParticleSystemRenderer:
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
   m_VelocityScale: 0.23
-  m_LengthScale: 0.19
+  m_LengthScale: 1.8
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
@@ -4844,8 +4844,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2711106806615436550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.002379}
+  m_LocalScale: {x: 1.2917, y: 1.2917, z: 1.2917}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7137456724649691698}
@@ -4913,8 +4913,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9
-  m_Center: {x: 0.016743124, y: -0.025943696, z: 0.008156121}
+  m_Radius: 0.51
+  m_Center: {x: 0, y: 0, z: 0.008156121}
 --- !u!95 &2390369044789317746
 Animator:
   serializedVersion: 5
@@ -4981,12 +4981,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b49414c72e7e01438abef3ebfa4d109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 85
+  speedFactor: 90
   energyDamage: 2500
-  isMeteor: 0
-  glitchStrength: 0.85
-  onDisableParticles: {fileID: 0}
+  isFragileTrash: 1
+  glitchStrength: 1
+  onDisableParticles: {fileID: 3634079491701534458, guid: 43027bd1e0e1d374f8f39216d1cb252a,
+    type: 3}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
-  _zigZagAmplitude: 3
-  _zigZagFrequency: 3
+  _zigZagFrequency: 10

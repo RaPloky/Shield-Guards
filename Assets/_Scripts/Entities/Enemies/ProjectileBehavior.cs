@@ -4,7 +4,7 @@ public class ProjectileBehavior : MonoBehaviour
 {
     [SerializeField] protected float speedFactor;
     [SerializeField] private int energyDamage;
-    [SerializeField] private bool isMeteor;
+    [SerializeField] private bool isFragileTrash;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
     [SerializeField] private ParticleSystem onDisableParticles;
     [SerializeField] protected Transform targetTrans;
@@ -28,7 +28,7 @@ public class ProjectileBehavior : MonoBehaviour
         _startPos = parentSpawner.position;
         _difficultyManager = DifficultyUpdate.Instance;
 
-        if (isMeteor)
+        if (isFragileTrash)
             _thatMeteorReference = GetComponent<Meteor>();
     }
 
@@ -48,6 +48,9 @@ public class ProjectileBehavior : MonoBehaviour
 
         if (_targetComponent == null)
         {
+            if (collision.gameObject.CompareTag("Enemy") && isFragileTrash)
+                StartCoroutine(collision.gameObject.GetComponent<Ufo>().DisableThatEnemy());
+
             DisableThatProjectile();
             return;
         }
@@ -60,7 +63,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         PlayParticlesOnDisable();
 
-        if (isMeteor)
+        if (isFragileTrash)
         {
             StartCoroutine(_thatMeteorReference.DisableThatEnemy());
         }
@@ -83,7 +86,7 @@ public class ProjectileBehavior : MonoBehaviour
     private void PlayHitGlitchAnim()
     {
         GlitchAnimationController controller = GlitchAnimationController.Instance;
-        if (isMeteor)
+        if (isFragileTrash)
             controller.SingleDriftAndDigital(0.6f, 0.4f);
         else
             controller.PlayWeakScan();
