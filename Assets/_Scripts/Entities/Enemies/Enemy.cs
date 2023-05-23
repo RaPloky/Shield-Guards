@@ -35,12 +35,12 @@ abstract public class Enemy : MonoBehaviour
         }
     }
 
-    protected void DisableDangerNotifications()
+    protected virtual void DisableDangerNotifications()
     {
         relatedSpawner.DisableDanger();
     }
 
-    protected void UpdateHealthBar()
+    protected virtual void UpdateHealthBar()
     {
         for (int i = 0; i < healthBarBg.Count; i++)
             healthBarBg[i].fillAmount = (float)Health / _startHealth;

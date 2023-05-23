@@ -2,22 +2,27 @@ using UnityEngine;
 
 public class ProjectileBehavior : MonoBehaviour
 {
-    [SerializeField] private float speedFactor;
+    [SerializeField] protected float speedFactor;
     [SerializeField] private int energyDamage;
     [SerializeField] private bool isMeteor;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
     [SerializeField] private ParticleSystem onDisableParticles;
-    [SerializeField] private Transform targetTrans;
+    [SerializeField] protected Transform targetTrans;
     [SerializeField] private Transform parentSpawner;
 
-    private Transform _thatTrans;
-    private Vector3 _startPos;
+    protected Transform _thatTrans;
+    protected Vector3 _startPos;
 
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
     private DifficultyUpdate _difficultyManager;
 
     private void Awake()
+    {
+        SetData();
+    }
+
+    protected void SetData()
     {
         _thatTrans = transform;
         _startPos = parentSpawner.position;
@@ -32,7 +37,7 @@ public class ProjectileBehavior : MonoBehaviour
         MoveToTarget();
     }
 
-    private void MoveToTarget()
+    protected virtual void MoveToTarget()
     {
         _thatTrans.position = Vector3.MoveTowards(_thatTrans.position, targetTrans.position, speedFactor * Time.deltaTime);
     }

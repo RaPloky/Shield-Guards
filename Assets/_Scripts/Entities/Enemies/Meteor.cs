@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class Meteor : Enemy
 {
-    private ProjectileBehavior _projBehaviour;
+    protected ProjectileBehavior _projBehaviour;
 
     private void Awake()
+    {
+        SetData();
+    }
+
+    protected void SetData()
     {
         _difficultyManager = DifficultyUpdate.Instance;
 
