@@ -61,8 +61,6 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void DisableThatProjectile()
     {
-        PlayParticlesOnDisable();
-
         if (isFragileTrash)
         {
             StartCoroutine(_thatMeteorReference.DisableThatEnemy());
