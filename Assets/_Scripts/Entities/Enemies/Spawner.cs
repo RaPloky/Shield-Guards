@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
 
     private WaitForSeconds WaitForSecondsBeforeSpawn;
 
+    public Guard TargetGuard => targetGuard;
     public GameObject ActiveEnemy { get; set; }
     public bool IsSpawnFreezed { get; set; }
 

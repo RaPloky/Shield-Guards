@@ -11,6 +11,7 @@ public enum BonusGoal
     Protection
 }
 
+[RequireComponent(typeof(EnemyInvokeOnGuardLose))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool isMenu;
     [SerializeField, Range(2f, 10f)] private float loseDelay;
     [SerializeField] private Animator shieldAnimator;
+
+    [SerializeField] private EnemyInvokeOnGuardLose enemyInvoke;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -119,9 +122,23 @@ public class GameManager : MonoBehaviour
     {
         ActiveGuardsCount--;
 
-        if (Mathf.Approximately(ActiveGuardsCount, 0))
+        if (IsItTimeToActivateCarriers())
+            ActivateCarriers();
+
+        if (IsItTimeToActivateMicronovas())
+            ActivateMicronovas();
+
+        if (IsGameLosed())
             LoseGame();
     }
+
+    private bool IsItTimeToActivateCarriers() => Mathf.Approximately(ActiveGuardsCount, 2);
+    private void ActivateCarriers() => enemyInvoke.ActivateCarrierSpawners();
+
+    private bool IsItTimeToActivateMicronovas() => Mathf.Approximately(ActiveGuardsCount, 1);
+    private void ActivateMicronovas() => enemyInvoke.ActivateMicronovaSpanwers();
+
+    private bool IsGameLosed() => Mathf.Approximately(ActiveGuardsCount, 0);
 
     private void UpdateEnergyCount()
     {
