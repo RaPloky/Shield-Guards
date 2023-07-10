@@ -55,4 +55,12 @@ abstract public class Enemy : MonoBehaviour
         if (onDamageParticles != null)
             onDamageParticles.Play();
     }
+
+    private void OnMouseDown()
+    {
+        if (GameManager.IsGamePaused)
+            return;
+
+        DamageEnemy();
+    }
 }

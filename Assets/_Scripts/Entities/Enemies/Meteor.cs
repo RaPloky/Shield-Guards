@@ -21,14 +21,6 @@ public class Meteor : Enemy
         SetGlitchController();
     }
 
-    private void OnMouseDown()
-    {
-        if (GameManager.IsGamePaused)
-            return;
-
-        DamageEnemy();
-    }
-
     private void OnEnable()
     {
         UpdateHealthBar();
