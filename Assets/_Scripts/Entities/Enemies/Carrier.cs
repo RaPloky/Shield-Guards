@@ -6,12 +6,18 @@ public class Carrier : Enemy
 {
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private List<Spawner> ufoSpawners;
+    [SerializeField] private List<Transform> movePoints;
+    [SerializeField] private Vector3 velocity = Vector3.zero;
+    [SerializeField] private float speed;
 
     private Transform _thatTrans;
     private Animator _animator;
+    private Transform _nextMoveTarget;
+    private int _movePointIndex;
 
     private void Start()
     {
+        _movePointIndex = 0;
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
 
@@ -23,6 +29,7 @@ public class Carrier : Enemy
 
     private void OnEnable()
     {
+        AssignNextMoveTarget();
         ActivateUFOShields(true);
     }
 
@@ -69,4 +76,25 @@ public class Carrier : Enemy
         onDestroyParticles.Play();
         Destroy(particles, onDestroyParticles.duration);
     }
+
+    private void FixedUpdate()
+    {
+        _thatTrans.LookAt(_nextMoveTarget);
+
+        _thatTrans.position = Vector3.SmoothDamp(_thatTrans.position, _nextMoveTarget.position, ref velocity, speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("MoveTarget"))
+        {
+            _movePointIndex++;
+            if (Mathf.Approximately(_movePointIndex, movePoints.Count))
+                _movePointIndex = 0;
+
+            AssignNextMoveTarget();
+        }
+    }
+
+    private void AssignNextMoveTarget() => _nextMoveTarget = movePoints[_movePointIndex];
 }
