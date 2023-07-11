@@ -10,6 +10,8 @@ public class DifficultyUpdate : MonoBehaviour
 
     [SerializeField] private List<Spawner> ufoSpawners;
     [SerializeField] private List<Spawner> meteorSpawners;
+    [SerializeField] private List<Spawner> carrierSpawners;
+    [SerializeField] private List<Spawner> micronovaSpawners;
 
     [SerializeField, Range(0.01f, 0.05f)] private float spawnChanceIncrease;
     [SerializeField, Range(0.01f, 0.25f)] private float spawnDelayDecrease;
@@ -70,6 +72,8 @@ public class DifficultyUpdate : MonoBehaviour
 
             UpdateSpawnersStats(ufoSpawners);
             UpdateSpawnersStats(meteorSpawners);
+            UpdateSpawnersStats(carrierSpawners);
+            UpdateSpawnersStats(micronovaSpawners);
         }
     }
 
