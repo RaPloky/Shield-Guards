@@ -4414,7 +4414,7 @@ GameObject:
   - component: {fileID: 191422517}
   - component: {fileID: 191422518}
   m_Layer: 0
-  m_Name: Carrier_2
+  m_Name: Carrier_Protector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4434,7 +4434,7 @@ Transform:
   m_Children:
   - {fileID: 1871316698}
   m_Father: {fileID: 450239039}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &191422518
 MonoBehaviour:
@@ -4445,17 +4445,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 191422516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
+  m_Script: {fileID: 11500000, guid: e9cc714fbf6d5d44aa6768914c6ab647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 10
-  launchChance: 0.65
+  spawnDelay: 9.2
+  launchChance: 0.72
   prefabToOperate: {fileID: 1871316699}
   parent: {fileID: 0}
-  targetGuard: {fileID: 1120892249}
+  targetGuard: {fileID: 1033974453}
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  otherCarrierSpawners:
+  - {fileID: 641085393}
+  - {fileID: 1581781153}
 --- !u!1001 &207331864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11278,9 +11281,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1581781152}
   - {fileID: 641085392}
   - {fileID: 191422517}
-  - {fileID: 1581781152}
   m_Father: {fileID: 1556885950}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13201,7 +13204,7 @@ GameObject:
   - component: {fileID: 641085392}
   - component: {fileID: 641085393}
   m_Layer: 0
-  m_Name: Carrier_1
+  m_Name: Carrier_Charger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13221,7 +13224,7 @@ Transform:
   m_Children:
   - {fileID: 3505386509995086857}
   m_Father: {fileID: 450239039}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &641085393
 MonoBehaviour:
@@ -13232,17 +13235,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 641085391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
+  m_Script: {fileID: 11500000, guid: e9cc714fbf6d5d44aa6768914c6ab647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 10
-  launchChance: 0.65
+  spawnDelay: 7.7
+  launchChance: 0.72
   prefabToOperate: {fileID: 4318515373222940339}
   parent: {fileID: 0}
   targetGuard: {fileID: 1043391615}
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  otherCarrierSpawners:
+  - {fileID: 191422518}
+  - {fileID: 1581781153}
 --- !u!1 &644407484
 GameObject:
   m_ObjectHideFlags: 0
@@ -29492,6 +29498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carrier
       objectReference: {fileID: 0}
+    - target: {fileID: 3860943593631886923, guid: 4aae8b08205d42940b2f2d76e23d80cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3860943593631886926, guid: 4aae8b08205d42940b2f2d76e23d80cb,
         type: 3}
       propertyPath: moveAround
@@ -31276,7 +31287,7 @@ GameObject:
   - component: {fileID: 1581781152}
   - component: {fileID: 1581781153}
   m_Layer: 0
-  m_Name: Carrier_3
+  m_Name: Carrier_Destroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31296,7 +31307,7 @@ Transform:
   m_Children:
   - {fileID: 1280337996}
   m_Father: {fileID: 450239039}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1581781153
 MonoBehaviour:
@@ -31307,17 +31318,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1581781151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
+  m_Script: {fileID: 11500000, guid: e9cc714fbf6d5d44aa6768914c6ab647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 10
-  launchChance: 0.65
+  spawnDelay: 6.6
+  launchChance: 0.72
   prefabToOperate: {fileID: 1280337997}
   parent: {fileID: 0}
-  targetGuard: {fileID: 1033974453}
+  targetGuard: {fileID: 1120892249}
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  otherCarrierSpawners:
+  - {fileID: 641085393}
+  - {fileID: 191422518}
 --- !u!1 &1585179194
 GameObject:
   m_ObjectHideFlags: 0
@@ -33264,6 +33278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carrier
       objectReference: {fileID: 0}
+    - target: {fileID: 3860943593631886923, guid: 4aae8b08205d42940b2f2d76e23d80cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3860943593631886926, guid: 4aae8b08205d42940b2f2d76e23d80cb,
         type: 3}
       propertyPath: moveAround
@@ -35203,6 +35222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Carrier
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860943593631886923, guid: 4aae8b08205d42940b2f2d76e23d80cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860943593631886926, guid: 4aae8b08205d42940b2f2d76e23d80cb,
         type: 3}

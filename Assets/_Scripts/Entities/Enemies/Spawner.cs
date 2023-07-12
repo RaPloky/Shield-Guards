@@ -4,18 +4,16 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField, Range(0.1f, 10f)] private float spawnDelay;
-    [SerializeField, Range(0f, 1f)] private float launchChance;
-    [SerializeField] private GameObject prefabToOperate;
+    [SerializeField, Range(0.1f, 10f)] protected float spawnDelay;
+    [SerializeField, Range(0f, 1f)] protected float launchChance;
+    [SerializeField] protected GameObject prefabToOperate;
     [SerializeField] private Transform parent;
-    [SerializeField] private Guard targetGuard;
+    [SerializeField] protected Guard targetGuard;
     [SerializeField] private bool isDecoySpawner;
 
     [Header("Danger notifications")]
     [SerializeField] private bool isProjectileSpawner;
-    [SerializeField] private List<Animator> dangerNotificators;
-
-    private WaitForSeconds WaitForSecondsBeforeSpawn;
+    [SerializeField] protected List<Animator> dangerNotificators;
 
     public Guard TargetGuard => targetGuard;
     public GameObject PrefabToOperate => prefabToOperate;
@@ -34,11 +32,10 @@ public class Spawner : MonoBehaviour
         set => launchChance = Mathf.Clamp01(value);
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         IsSpawnFreezed = false;
         ActiveEnemy = prefabToOperate;
-        WaitForSecondsBeforeSpawn = new WaitForSeconds(SpawnDelay);
 
         if (isDecoySpawner)
             ActivateDecoyEnemySpawner();
@@ -47,13 +44,13 @@ public class Spawner : MonoBehaviour
     }
 
     private void ActivateDecoyEnemySpawner() => StartCoroutine(ActivateDecoyEnemy());
-    private void ActivateCommonEnemySpawner() => StartCoroutine(ActivateEnemy());
+    protected void ActivateCommonEnemySpawner() => StartCoroutine(ActivateEnemy());
 
-    private IEnumerator ActivateEnemy()
+    protected virtual IEnumerator ActivateEnemy()
     {
         while (true)
         {
-            yield return WaitForSecondsBeforeSpawn;
+            yield return new WaitForSeconds(spawnDelay);
 
             if (!targetGuard.IsHaveEnergy)
             {
@@ -89,7 +86,7 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            yield return WaitForSecondsBeforeSpawn;
+            yield return new WaitForSeconds(spawnDelay);
 
             if (IsSpawnAllowed())
             {
@@ -99,7 +96,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void NotifyAboutDanger()
+    protected void NotifyAboutDanger()
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
         {
@@ -117,7 +114,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private bool IsSpawnAllowed()
+    protected bool IsSpawnAllowed()
     {
         float randomChance = Random.Range(0f, 1f);
         return randomChance < launchChance;
