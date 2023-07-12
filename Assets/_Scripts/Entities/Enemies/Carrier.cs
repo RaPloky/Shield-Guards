@@ -8,9 +8,11 @@ public class Carrier : Enemy
     [SerializeField] private List<Spawner> ufoSpawners;
     [SerializeField] private Transform moveAround;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private bool isClockwiseRotation;
 
     private Transform _thatTrans;
     private Animator _animator;
+    private Vector3 _moveDirection;
 
     private void Start()
     {
@@ -18,9 +20,14 @@ public class Carrier : Enemy
         _startHealth = Health;
 
         _thatTrans = transform;
-        //_startPosition = relatedSpawner.transform.position;
+        _startPosition = relatedSpawner.transform.position;
 
         //_animator = GetComponent<Animator>();
+
+        if (isClockwiseRotation)
+            _moveDirection = Vector3.up;
+        else
+            _moveDirection = Vector3.down;
     }
 
     private void OnEnable()
@@ -74,6 +81,6 @@ public class Carrier : Enemy
 
     private void FixedUpdate()
     {
-        _thatTrans.RotateAround(moveAround.position, Vector3.down, rotationSpeed * Time.deltaTime);
+        _thatTrans.RotateAround(moveAround.position, _moveDirection, rotationSpeed * Time.deltaTime);
     }
 }

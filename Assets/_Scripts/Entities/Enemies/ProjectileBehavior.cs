@@ -16,6 +16,7 @@ public class ProjectileBehavior : MonoBehaviour
     private Guard _targetComponent;
     private Meteor _thatMeteorReference;
     private DifficultyUpdate _difficultyManager;
+    private GameObject _collisionGO;
 
     private void Awake()
     {
@@ -44,12 +45,21 @@ public class ProjectileBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        _targetComponent = collision.gameObject.GetComponent<Guard>();
+        _collisionGO = collision.gameObject;
+        _targetComponent = _collisionGO.GetComponent<Guard>();
 
         if (_targetComponent == null)
         {
-            if (collision.gameObject.CompareTag("Enemy") && isFragileTrash)
-                StartCoroutine(collision.gameObject.GetComponent<Ufo>().DisableThatEnemy());
+            if (_collisionGO.CompareTag("Enemy") && isFragileTrash)
+            {
+                Ufo ufo = _collisionGO.GetComponent<Ufo>();
+                Carrier carrier = _collisionGO.GetComponent<Carrier>();
+
+                if (ufo != null)
+                    StartCoroutine(ufo.DisableThatEnemy());
+                else if (carrier != null)
+                    StartCoroutine(carrier.DisableThatEnemy());
+            }
 
             DisableThatProjectile();
             return;
