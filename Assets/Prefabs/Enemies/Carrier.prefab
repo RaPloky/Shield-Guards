@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043323729887263323}
   - component: {fileID: 1043323729887263324}
+  - component: {fileID: 6767977299483727226}
   m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
@@ -227,6 +228,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &6767977299483727226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043323729887263322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d4a2f0b67bde4282eed5d2bd06b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
 --- !u!1 &1043323730539061201
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionReward: 5000
-  health: 1500
+  health: 750
   damageToEnemy: 100
   healthBarBg:
   - {fileID: 1043323730989360624}
@@ -662,6 +676,7 @@ MonoBehaviour:
   - {fileID: 0}
   moveAround: {fileID: 0}
   rotationSpeed: 10
+  isClockwiseRotation: 0
 --- !u!65 &3860943593631886925
 BoxCollider:
   m_ObjectHideFlags: 0

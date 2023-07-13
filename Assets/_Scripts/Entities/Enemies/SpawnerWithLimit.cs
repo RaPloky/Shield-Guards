@@ -28,6 +28,13 @@ public class SpawnerWithLimit : Spawner
             if (IsSpawnAllowed() && !ActiveEnemy.activeSelf 
                 && !IsSpawnFreezed && targetGuard.IsHaveEnergy && !IsOtherCarriersActive())
             {
+                if (_spawnedOnce)
+                {
+                    _spawnedOnce = false;
+                    yield return new WaitForSeconds(spawnDelay);
+                    continue;
+                }
+
                 prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
             }
