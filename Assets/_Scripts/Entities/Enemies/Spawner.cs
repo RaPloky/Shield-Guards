@@ -20,9 +20,6 @@ public class Spawner : MonoBehaviour
     public GameObject ActiveEnemy { get; set; }
     public bool IsSpawnFreezed { get; set; }
 
-    // Prevents enemy to spawn instantly after it's destruction:
-    protected bool _spawnedOnce = false; 
-
     public float SpawnDelay
     {
         get => spawnDelay;
@@ -79,16 +76,8 @@ public class Spawner : MonoBehaviour
 
             if (IsSpawnAllowed() && !ActiveEnemy.activeSelf && !IsSpawnFreezed && targetGuard.IsHaveEnergy)
             {
-                if (_spawnedOnce)
-                {
-                    _spawnedOnce = false;
-                    yield return new WaitForSeconds(spawnDelay);
-                    continue;
-                }
-
                 prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
-                _spawnedOnce = true;
             }
         }
     }

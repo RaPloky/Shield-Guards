@@ -42,6 +42,9 @@ abstract public class Enemy : MonoBehaviour
 
     protected virtual void UpdateHealthBar()
     {
+        if (healthBarBg == null || healthBarBg.Count == 0)
+            return;
+
         for (int i = 0; i < healthBarBg.Count; i++)
             healthBarBg[i].fillAmount = (float)Health / _startHealth;
     }
