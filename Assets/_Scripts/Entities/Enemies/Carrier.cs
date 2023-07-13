@@ -11,7 +11,6 @@ public class Carrier : Enemy
     [SerializeField] private bool isClockwiseRotation;
 
     private Transform _thatTrans;
-    private Animator _animator;
     private Vector3 _moveDirection;
 
     private void Start()
@@ -21,8 +20,6 @@ public class Carrier : Enemy
 
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
-
-        //_animator = GetComponent<Animator>();
 
         if (isClockwiseRotation)
             _moveDirection = Vector3.up;
