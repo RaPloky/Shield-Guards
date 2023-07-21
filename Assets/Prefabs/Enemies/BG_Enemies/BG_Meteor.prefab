@@ -4828,7 +4828,7 @@ GameObject:
   - component: {fileID: 3140151549562389335}
   - component: {fileID: 2823839034702809011}
   m_Layer: 0
-  m_Name: DecoyMeteor
+  m_Name: BG_Meteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4943,9 +4943,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedFactor: 70
   energyDamage: 0
-  isMeteor: 0
+  isFragileTrash: 0
   glitchStrength: 0.025
-  onDisableParticles: {fileID: 3634079491701534458, guid: 52c305697cea3e746b8851b100f031ef,
+  onDisableParticles: {fileID: 3634079491701534458, guid: 2dab0fc89d2806e40bfa40992ecde731,
     type: 3}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
