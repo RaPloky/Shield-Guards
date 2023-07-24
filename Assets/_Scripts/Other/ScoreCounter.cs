@@ -31,7 +31,7 @@ public class ScoreCounter : MonoBehaviour
 
         justAddedScoreText.text = $"+{addedPoints}";
         justAddedScoreAnimator.SetTrigger("UpdatedScore");
-        scoreText.text = $"${Score}";
+        scoreText.text = $"{Score}";
         animator.SetTrigger("Update");
     }
 }
