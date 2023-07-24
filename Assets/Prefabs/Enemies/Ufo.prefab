@@ -10398,6 +10398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
+      propertyPath: ShapeModule.arc.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
       propertyPath: ShapeModule.m_Texture
       value: 
       objectReference: {fileID: 0}
@@ -10409,7 +10414,7 @@ PrefabInstance:
     - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 2.4090009
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
@@ -10439,7 +10444,7 @@ PrefabInstance:
     - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: ShapeModule.randomDirectionAmount
-      value: 0.7
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
@@ -10559,17 +10564,17 @@ PrefabInstance:
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2029886
+      value: 0.6618722
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2029886
+      value: 0.6618722
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4864209
+      value: 0.81781375
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
@@ -10579,12 +10584,12 @@ PrefabInstance:
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01938209
+      value: 0.019383
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.14377
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
