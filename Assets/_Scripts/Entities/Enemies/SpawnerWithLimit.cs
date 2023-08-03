@@ -15,13 +15,10 @@ public class SpawnerWithLimit : Spawner
 
             if (!targetGuard.IsHaveEnergy)
             {
-                Carrier childCarrier = ActiveEnemy.GetComponent<Carrier>();
+                Carrier carrierComponent = ActiveEnemy.GetComponent<Carrier>();
                 DisableDanger();
-                print("Carrier Jet animation!");
-                //childCarrier.PlayDissaperAnim();
-
-                //yield return new WaitForSeconds(ufo.AnimLength);
-                childCarrier.relatedSpawner.enabled = false;
+                print("Carrier apperar animation!");
+                carrierComponent.relatedSpawner.enabled = false;
                 yield break;
             }
 

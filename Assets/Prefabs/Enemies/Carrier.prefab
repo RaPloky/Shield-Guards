@@ -1052,11 +1052,11 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: 0
-          outSlope: 0
+          inSlope: -5.293854
+          outSlope: -5.293854
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.08450711
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -45132,6 +45132,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle_OnDestroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.3915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.3915094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
         type: 3}
