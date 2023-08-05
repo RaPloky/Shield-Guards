@@ -34,6 +34,8 @@ public class DifficultyUpdate : MonoBehaviour
     [SerializeField] private GameObject protectorDestroyedMessage;
     [SerializeField, Range(0, 1f)] private float enemyDamageIncreasePercentage;
 
+    [SerializeField, Range(3f, 5f)] private float desctructMessageDelay;
+
     private float _enemyDamageIncreasePercentagePropertyValue;
     private float _guardAttackDecreasePercentagePropertyValue;
 
@@ -153,7 +155,7 @@ public class DifficultyUpdate : MonoBehaviour
 
     private IEnumerator DisableMessage(GameObject destructionMessage)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(desctructMessageDelay);
         destructionMessage.SetActive(false);
     }
 
