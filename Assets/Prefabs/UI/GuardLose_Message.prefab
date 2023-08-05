@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 4028512683743180886}
   - component: {fileID: 166740026320075597}
   - component: {fileID: 7222359708834828223}
+  - component: {fileID: 2071109917123471927}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -873,6 +874,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!225 &2071109917123471927
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270127370535301864}
+  m_Enabled: 1
+  m_Alpha: 0.9
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &8888388879156366404
 GameObject:
   m_ObjectHideFlags: 0
