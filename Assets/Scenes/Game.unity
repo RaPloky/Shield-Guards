@@ -9565,6 +9565,7 @@ GameObject:
   - component: {fileID: 325206142}
   - component: {fileID: 325206145}
   - component: {fileID: 325206144}
+  - component: {fileID: 325206146}
   m_Layer: 0
   m_Name: Player_Camera
   m_TagString: MainCamera
@@ -9718,6 +9719,21 @@ MonoBehaviour:
   _horizontalShake: 0
   _colorDrift: 0
   _shader: {fileID: 4800000, guid: 86c4380736fa12d4385fb969a9a58c79, type: 3}
+--- !u!114 &325206146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325206135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TraumaExponent: 2.31
+  MaximumAngularShake: {x: 5, y: 5, z: 5}
+  MaximumTranslationShake: {x: 0.75, y: 0.75, z: 0.75}
 --- !u!1 &354160334
 GameObject:
   m_ObjectHideFlags: 0
@@ -21236,6 +21252,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1043391621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043391618}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  MaximumStress: 2
+  Range: 100
 --- !u!1 &1064758212
 GameObject:
   m_ObjectHideFlags: 0
@@ -22194,6 +22225,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1120892255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120892252}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  MaximumStress: 2
+  Range: 100
 --- !u!1001 &1123615160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24399,6 +24445,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475da8b5b47d6bf46814b70aee8e1442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1605569276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033974456}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0
+  MaximumStress: 2
+  Range: 100
 --- !u!1001 &1611244179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28271,6 +28332,7 @@ GameObject:
   - component: {fileID: 6046268535718105121}
   - component: {fileID: 6046268535718105127}
   - component: {fileID: 6046268535718105126}
+  - component: {fileID: 6046268535718105128}
   m_Layer: 0
   m_Name: ShieldFracture_FireCloud
   m_TagString: Untagged
@@ -33140,6 +33202,21 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &6046268535718105128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046268535718105120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b6b88d425f7234aae309cb9a973743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0.5
+  MaximumStress: 3
+  Range: 500
 --- !u!114 &6133235092075932373
 MonoBehaviour:
   m_ObjectHideFlags: 0
