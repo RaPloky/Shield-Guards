@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7137456724649691698}
   - component: {fileID: 7634365315024963383}
   - component: {fileID: 6008948859081484079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521801851031680185}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 1.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4829,7 +4829,7 @@ GameObject:
   - component: {fileID: 4035032480939784337}
   - component: {fileID: 2390369044789317746}
   - component: {fileID: 7417960904271314326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Meteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -7,6 +7,8 @@ public class SpawnerWithLimit : Spawner
     [Header("Other related spawners")]
     [SerializeField] private List<Spawner> otherCarrierSpawners;
 
+    private bool _justSpawned = false;
+
     protected override IEnumerator ActivateEnemy()
     {
         while (true)
@@ -25,8 +27,15 @@ public class SpawnerWithLimit : Spawner
             if (IsSpawnAllowed() && !ActiveEnemy.activeSelf 
                 && !IsSpawnFreezed && targetGuard.IsHaveEnergy && !IsOtherCarriersActive())
             {
+                if (_justSpawned)
+                {
+                    _justSpawned = false;
+                    continue;
+                }
+
                 prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
+                _justSpawned = true;
             }
         }
     }

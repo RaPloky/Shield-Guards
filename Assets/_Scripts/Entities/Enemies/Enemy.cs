@@ -53,6 +53,9 @@ abstract public class Enemy : MonoBehaviour
 
     protected void DamageEnemy()
     {
+        if (IsGameOver())
+            return;
+
         Health -= damageToEnemy - (int)(damageToEnemy * _difficultyManager.GuardAttackDecreasePercentage);
 
         if (onDamageParticles != null)
@@ -66,4 +69,6 @@ abstract public class Enemy : MonoBehaviour
 
         DamageEnemy();
     }
+
+    private bool IsGameOver() => Mathf.Approximately(_difficultyManager.ActiveGuards.Count, 0);
 }

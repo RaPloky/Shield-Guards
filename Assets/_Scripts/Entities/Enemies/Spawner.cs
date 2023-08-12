@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField, Range(0.1f, 10f)] protected float spawnDelay;
+    [SerializeField, Range(0.1f, 20f)] protected float spawnDelay;
     [SerializeField, Range(0f, 1f)] protected float launchChance;
     [SerializeField] protected GameObject prefabToOperate;
     [SerializeField] private Transform parent;
@@ -52,8 +52,10 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForSeconds(spawnDelay);
 
+            // Reject spawn on guard lose:
             if (!targetGuard.IsHaveEnergy)
             {
+                // Case for UFO weapon (also spawner):
                 Ufo ufo = null;
                 if (parent != null)
                     ufo = parent.gameObject.GetComponent<Ufo>();
@@ -82,6 +84,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    // "Decoy" stands for "Background" here:
     private IEnumerator ActivateDecoyEnemy()
     {
         while (true)

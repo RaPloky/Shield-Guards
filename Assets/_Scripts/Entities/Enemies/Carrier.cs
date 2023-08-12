@@ -7,7 +7,7 @@ public class Carrier : Enemy
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private List<Spawner> ufoSpawners;
     [SerializeField] private Transform moveAround;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField, Range(10f, 20f)] private float rotationSpeed;
     [SerializeField] private bool isClockwiseRotation;
 
     private Transform _thatTrans;
@@ -52,19 +52,19 @@ public class Carrier : Enemy
     {
         yield return new WaitForSeconds(0f);
 
+        PlayParticlesOnDisable();
+
         DisableCarrier();
         DisableDangerNotifications();
 
         EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
-
-        PlayParticlesOnDisable();
     }
 
     private void DisableCarrier()
     {
         gameObject.SetActive(false);
-        gameObject.transform.position = _startPosition;
+        _thatTrans.SetPositionAndRotation(_startPosition, Quaternion.identity);
         Health = _startHealth;
     }
 

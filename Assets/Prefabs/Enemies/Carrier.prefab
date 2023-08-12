@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8730819225941587917}
   - component: {fileID: 6925305257141423403}
   - component: {fileID: 3189112478766957309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle_OnDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183612100310159432}
   serializedVersion: 8
-  lengthInSec: 0.2
+  lengthInSec: 0.15
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 45
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1043,8 +1043,8 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 1
-          inSlope: -2
-          outSlope: -2
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -1052,11 +1052,11 @@ ParticleSystem:
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -5.293854
-          outSlope: -5.293854
+          inSlope: -4.0512767
+          outSlope: -4.0512767
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.08450711
+          inWeight: 0.08227855
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1379,7 +1379,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 31226
+        atime0: 9638
         atime1: 65535
         atime2: 0
         atime3: 0
@@ -4881,7 +4881,7 @@ GameObject:
   - component: {fileID: 7907064904039245048}
   - component: {fileID: 2489663152220868384}
   - component: {fileID: 5945763864745955560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9786,7 +9786,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.98}
+  m_AnchoredPosition: {x: 0, y: 6.55}
   m_SizeDelta: {x: 4, y: 0.428}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1043323729887263324
@@ -10205,7 +10205,7 @@ GameObject:
   - component: {fileID: 6320562135646699669}
   - component: {fileID: 6012858589331352623}
   - component: {fileID: 4400439057226053748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_L_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10290,7 +10290,7 @@ GameObject:
   - component: {fileID: 4133015142414467772}
   - component: {fileID: 4000617750975479047}
   - component: {fileID: 4135534416701442457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15172,7 +15172,7 @@ GameObject:
   - component: {fileID: 3860943593631886925}
   - component: {fileID: 3860943593631886924}
   - component: {fileID: 1671285049167443781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Carrier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -15216,13 +15216,14 @@ MonoBehaviour:
   - {fileID: 1043323730979372633}
   onDamageParticles: {fileID: 6925305257141423403}
   relatedSpawner: {fileID: 0}
-  onDestroyParticles: {fileID: 4267297289290241390}
+  onDestroyParticles: {fileID: 3634079491701534458, guid: 8c443c1fccdeb5847bc972de04fb2160,
+    type: 3}
   ufoSpawners:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   moveAround: {fileID: 0}
-  rotationSpeed: 10
+  rotationSpeed: 15
   isClockwiseRotation: 0
 --- !u!65 &3860943593631886925
 BoxCollider:
@@ -15251,7 +15252,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &1671285049167443781
 Animator:
@@ -15284,7 +15285,7 @@ GameObject:
   - component: {fileID: 8395045597335473342}
   - component: {fileID: 3300919398261358223}
   - component: {fileID: 1171936890362103910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_R_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15369,7 +15370,7 @@ GameObject:
   - component: {fileID: 5940565119736930060}
   - component: {fileID: 259097629228422523}
   - component: {fileID: 3192287351086330156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_L_Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15454,7 +15455,7 @@ GameObject:
   - component: {fileID: 4565958881465173032}
   - component: {fileID: 571199068188635773}
   - component: {fileID: 5879747711353231517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20334,7 +20335,7 @@ GameObject:
   - component: {fileID: 748188913120031060}
   - component: {fileID: 7155070228157093004}
   - component: {fileID: 1160797853460712520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20355,7 +20356,6 @@ Transform:
   m_Children:
   - {fileID: 7985868735538666205}
   - {fileID: 8730819225941587917}
-  - {fileID: 3016875927693682084}
   - {fileID: 5359592700918022981}
   m_Father: {fileID: 3764313738065566853}
   m_RootOrder: 0
@@ -20422,7 +20422,7 @@ GameObject:
   - component: {fileID: 4639669094252281402}
   - component: {fileID: 4529908883695090485}
   - component: {fileID: 7086793891206255203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_R_Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20505,7 +20505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3764313738065566853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20520,8 +20520,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4572938997108901439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.43, z: 0}
-  m_LocalScale: {x: 1.5303, y: 1.5303, z: 1.5303}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 748188913120031060}
@@ -20546,7 +20546,7 @@ GameObject:
   - component: {fileID: 4595208505369892526}
   - component: {fileID: 7941303635121784701}
   - component: {fileID: 2196590693191501487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25426,7 +25426,7 @@ GameObject:
   - component: {fileID: 7985868735538666205}
   - component: {fileID: 7167717002867374972}
   - component: {fileID: 4342809336554741682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Engine_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30238,7 +30238,7 @@ GameObject:
   - component: {fileID: 5359592700918022981}
   - component: {fileID: 4670697021962841511}
   - component: {fileID: 3277232077957696311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30258,7 +30258,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 748188913120031060}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -114.55, z: 0}
 --- !u!198 &4670697021962841511
 ParticleSystem:
@@ -35118,7 +35118,7 @@ GameObject:
   - component: {fileID: 2049706661101357403}
   - component: {fileID: 3643814174381915580}
   - component: {fileID: 8346147013904539623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_L_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35203,7 +35203,7 @@ GameObject:
   - component: {fileID: 125688440830467049}
   - component: {fileID: 1096472834522213109}
   - component: {fileID: 264259120449011892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wing_R_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35288,7 +35288,7 @@ GameObject:
   - component: {fileID: 57992646404588422}
   - component: {fileID: 620247584964259893}
   - component: {fileID: 8438710224814175622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40168,7 +40168,7 @@ GameObject:
   - component: {fileID: 4942329654682958600}
   - component: {fileID: 7027551490475032534}
   - component: {fileID: 4299131051063213889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Demon Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40252,7 +40252,7 @@ GameObject:
   - component: {fileID: 708935447405124679}
   - component: {fileID: 1455004480922532726}
   - component: {fileID: 6406112145158797009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Electricity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45121,109 +45121,3 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1001 &8419078514427063357
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 748188913120031060}
-    m_Modifications:
-    - target: {fileID: 183830710287030249, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_Name
-      value: Particle_OnDestroy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.3915094
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.3915094
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0246
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.000000057601163
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.000000057601163
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96835d5eb5db41e4db3509c22531aaa5, type: 3}
---- !u!4 &3016875927693682084 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6703761845655144857, guid: 96835d5eb5db41e4db3509c22531aaa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 8419078514427063357}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4267297289290241390 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5759803808199588179, guid: 96835d5eb5db41e4db3509c22531aaa5,
-    type: 3}
-  m_PrefabInstance: {fileID: 8419078514427063357}
-  m_PrefabAsset: {fileID: 0}

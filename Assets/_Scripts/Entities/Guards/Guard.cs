@@ -11,7 +11,7 @@ public enum GuardType
     Destroyer
 }
 
-public class Guard : MonoBehaviour
+public sealed class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
     [SerializeField] private int consumption;
@@ -93,17 +93,17 @@ public class Guard : MonoBehaviour
     private void TurnOffGuard()
     {
         DifficultyUpdate.Instance.SpecificDifficultyIncrease(guardType);
-
+        DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
+        EventManager.SendOnGuardDischarged();
         Invoke(nameof(DisableSelf), 5f);
+
         StopAllCoroutines();
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
-        DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
 
         DisableParticles();
         DisableCanvasGroups();
         _animator.SetTrigger("Death");
-        EventManager.SendOnGuardDischarged();
     }
 
     public void AddEnergy(int energyAmount) => Energy += energyAmount;
@@ -112,7 +112,7 @@ public class Guard : MonoBehaviour
     private void DisableParticles()
     {
         for (int i = 0; i < onDisablePS.Count; i++)
-            onDisablePS[i].Stop();
+            onDisablePS[i].gameObject.SetActive(false);
     }
 
     private void DisableCanvasGroups()
