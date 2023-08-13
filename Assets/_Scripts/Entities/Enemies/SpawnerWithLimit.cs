@@ -19,7 +19,6 @@ public class SpawnerWithLimit : Spawner
             {
                 Carrier carrierComponent = ActiveEnemy.GetComponent<Carrier>();
                 DisableDanger();
-                print("Carrier apperar animation!");
                 carrierComponent.relatedSpawner.enabled = false;
                 yield break;
             }

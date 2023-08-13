@@ -10550,6 +10550,7 @@ MonoBehaviour:
   isMenu: 0
   loseDelay: 7
   shieldAnimator: {fileID: 905993767}
+  pauseButton: {fileID: 1806046563}
   enemyInvoke: {fileID: 418639303}
 --- !u!4 &418639301
 Transform:
@@ -10578,7 +10579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03434110d196ca499bf42bc997dfd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyIncreaseDelay: 10
+  difficultyIncreaseDelay: 18
   ufoSpawners:
   - {fileID: 1961237560}
   - {fileID: 8292024737097164860}
@@ -25502,6 +25503,18 @@ Transform:
   m_Father: {fileID: 617446655}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -117.296, z: 0}
+--- !u!114 &1806046563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5140966593908424421, guid: 59b8c52056e53a54d85784ad66d73b58,
+    type: 3}
+  m_PrefabInstance: {fileID: 5140966593649288956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1836522538
 GameObject:
   m_ObjectHideFlags: 0
@@ -27865,7 +27878,7 @@ PrefabInstance:
     - target: {fileID: 2533355394111436095, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.359497
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2659268532783839327, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
@@ -28062,6 +28075,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 325206137}
+    - target: {fileID: 5140966595241001709, guid: 59b8c52056e53a54d85784ad66d73b58,
+        type: 3}
+      propertyPath: m_Name
+      value: Score/Effects/Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 5140966595358776113, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -28265,7 +28283,7 @@ PrefabInstance:
     - target: {fileID: 6193174085431388742, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.359497
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6193174086457394191, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}

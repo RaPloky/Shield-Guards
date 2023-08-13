@@ -9,14 +9,18 @@ public class Carrier : Enemy
     [SerializeField] private Transform moveAround;
     [SerializeField, Range(10f, 20f)] private float rotationSpeed;
     [SerializeField] private bool isClockwiseRotation;
+    [SerializeField] private GameObject onSpawnParticles;
 
     private Transform _thatTrans;
     private Vector3 _moveDirection;
+    private float _onSpawnParticlesDuration;
 
     private void Start()
     {
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
+        _onSpawnParticlesDuration = 
+            onSpawnParticles.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().main.duration;
 
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
@@ -29,6 +33,12 @@ public class Carrier : Enemy
 
     private void OnEnable()
     {
+        EnableCarrier();
+    }
+
+    private void EnableCarrier()
+    {
+        PlayParticles(onSpawnParticles);
         ActivateUFOShields(true);
     }
 
@@ -52,7 +62,7 @@ public class Carrier : Enemy
     {
         yield return new WaitForSeconds(0f);
 
-        PlayParticlesOnDisable();
+        PlayParticles(onDestroyParticles);
 
         DisableCarrier();
         DisableDangerNotifications();
@@ -68,12 +78,21 @@ public class Carrier : Enemy
         Health = _startHealth;
     }
 
-    private void PlayParticlesOnDisable()
+    private void PlayParticles(ParticleSystem ps)
     {
-        GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
+        GameObject particles = Instantiate(ps.gameObject, _thatTrans.position, _thatTrans.rotation);
         particles.isStatic = true;
-        onDestroyParticles.Play();
-        Destroy(particles, onDestroyParticles.duration);
+        ps.Play();
+        Destroy(particles, ps.main.duration);
+    }
+
+    private void PlayParticles(GameObject particlesPrefab)
+    {
+        GameObject particles = Instantiate(particlesPrefab, _thatTrans.position, _thatTrans.rotation);
+        ParticleSystem ps = particles.GetComponentInChildren<ParticleSystem>();
+        particles.isStatic = true;
+        ps.Play();
+        Destroy(particles, ps.main.duration);
     }
 
     private void FixedUpdate()

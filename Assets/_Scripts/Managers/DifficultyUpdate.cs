@@ -16,7 +16,8 @@ public class DifficultyUpdate : MonoBehaviour
     [SerializeField, Range(0.01f, 0.05f)] private float spawnChanceIncrease;
     [SerializeField, Range(0.01f, 0.25f)] private float spawnDelayDecrease;
     [SerializeField, Range(0, 0.25f)] private float consumptionDelayDecrease;
-    [SerializeField, Range(0.2f, 0.5f)] private float consumptionDelayLimit; 
+    [SerializeField, Range(0.2f, 0.5f)] private float consumptionDelayLimit;
+    [SerializeField, Range(3f, 5f)] private float desctructMessageDelay;
 
     [SerializeField] private List<Guard> activeGuards;
 
@@ -24,17 +25,13 @@ public class DifficultyUpdate : MonoBehaviour
     [SerializeField] private List<GainEnergyOnTouch> energyUpdaters;
     [SerializeField] private GameObject chargerDestroyedMessage;
 
-
     [Header("For destroyer off:")]
     [SerializeField] private GameObject destroyerDestroyedMessage;
     [SerializeField, Range(0, 1f)] private float guardAttackDecreasePercentage;
 
-
     [Header("For protector off:")]
     [SerializeField] private GameObject protectorDestroyedMessage;
     [SerializeField, Range(0, 1f)] private float enemyDamageIncreasePercentage;
-
-    [SerializeField, Range(3f, 5f)] private float desctructMessageDelay;
 
     private float _enemyDamageIncreasePercentagePropertyValue;
     private float _guardAttackDecreasePercentagePropertyValue;
@@ -161,7 +158,7 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void EnableMessage(GameObject message)
     {
-        if (activeGuards.Count == 1)
+        if (Mathf.Approximately(activeGuards.Count, 1))
             return;
 
         message.SetActive(true);

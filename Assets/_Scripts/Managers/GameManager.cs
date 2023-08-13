@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool isMenu;
     [SerializeField, Range(2f, 10f)] private float loseDelay;
     [SerializeField] private Animator shieldAnimator;
+    [SerializeField] private Button pauseButton;
 
     [SerializeField] private EnemyInvokeOnGuardLose enemyInvoke;
 
@@ -107,6 +109,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Lose()
     {
+        pauseButton.interactable = false;
         shieldAnimator.SetTrigger("GameLosed");
 
         yield return new WaitForSeconds(loseDelay);
