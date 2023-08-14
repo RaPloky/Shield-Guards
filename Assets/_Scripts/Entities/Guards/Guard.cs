@@ -22,6 +22,7 @@ public sealed class Guard : MonoBehaviour
     [SerializeField] private List<ParticleSystem> onDisablePS;
     [SerializeField] private List<Animator> onDisableCanvasGroupAnimators;
     [SerializeField] private List<Animator> criticalEnergyAlerts;
+    [SerializeField] private GameObject bonusIcon;
     [SerializeField] private GuardType guardType; 
     
     private Animator _animator;
@@ -101,6 +102,7 @@ public sealed class Guard : MonoBehaviour
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
 
+        bonusIcon.SetActive(false);
         DisableParticles();
         DisableCanvasGroups();
         _animator.SetTrigger("Death");

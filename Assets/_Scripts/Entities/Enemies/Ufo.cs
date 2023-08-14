@@ -53,7 +53,7 @@ public class Ufo : Enemy
         GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
         particles.isStatic = true;
         onDestroyParticles.Play();
-        Destroy(particles, onDestroyParticles.duration);
+        Destroy(particles, onDestroyParticles.main.duration);
     }
 
     private void PlayParticlesOnLaunchedProjectileDisable()

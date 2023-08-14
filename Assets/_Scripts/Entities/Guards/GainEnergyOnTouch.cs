@@ -5,6 +5,8 @@ public class GainEnergyOnTouch : MonoBehaviour
     [SerializeField] private int energyAddAmount;
 
     private Guard _thatGuard;
+    private GameManager _gameManager;
+    private const int _scoreCutter = 4;
 
     public int EnergyAddAmount
     {
@@ -15,6 +17,7 @@ public class GainEnergyOnTouch : MonoBehaviour
     private void Awake()
     {
         _thatGuard = GetComponent<Guard>();
+        _gameManager = GameManager.Instance;
     }
 
     private void OnMouseDown()
@@ -24,6 +27,6 @@ public class GainEnergyOnTouch : MonoBehaviour
 
         _thatGuard.AddEnergy(energyAddAmount);
         EventManager.SendOnNonBonusEnergyAdded();
-        EventManager.SendOnScoreUpdated(energyAddAmount);
+        EventManager.SendOnScoreUpdated((energyAddAmount / _scoreCutter) * _gameManager.ActiveGuardsCount);
     }
 }

@@ -88,7 +88,7 @@ public class ProjectileBehavior : MonoBehaviour
     {
         GameObject particles = Instantiate(onDisableParticles.gameObject, _thatTrans.position, _thatTrans.rotation);
         onDisableParticles.Play();
-        Destroy(particles, onDisableParticles.duration);
+        Destroy(particles, onDisableParticles.main.duration);
     }
 
     private void PlayHitGlitchAnim()

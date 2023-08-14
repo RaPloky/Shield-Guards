@@ -12,7 +12,6 @@ public enum BonusGoal
     Protection
 }
 
-[RequireComponent(typeof(EnemyInvokeOnGuardLose))]
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -21,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI endScore;
     [SerializeField] private TextMeshProUGUI bestScore;
+    [SerializeField] private TextMeshProUGUI activeGuardsCountUI;
     [SerializeField] private DifficultyUpdate difficultyManager;
     [SerializeField] private bool isMenu;
     [SerializeField, Range(2f, 10f)] private float loseDelay;
@@ -52,7 +52,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         if (!isMenu)
+        {
             ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
+            UpdateActiveGuardsCountUI();
+        }
 
         if (bestScore != null)
         {
@@ -64,12 +67,14 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnGuardDischarged += ReduceActiveGuardsCount;
+        EventManager.OnGuardDischarged += UpdateActiveGuardsCountUI;
         IsGamePaused = false;
     }
 
     private void OnDisable()
     {
         EventManager.OnGuardDischarged -= ReduceActiveGuardsCount;
+        EventManager.OnGuardDischarged -= UpdateActiveGuardsCountUI;
         IsGamePaused = false;
     }
 
@@ -152,4 +157,6 @@ public class GameManager : MonoBehaviour
     }
 
     private void AssignEndScore() => endScore.text = $"you scored: {score.ScoreAmount}";
+    private void UpdateActiveGuardsCountUI() => 
+        activeGuardsCountUI.text = Mathf.Approximately(ActiveGuardsCount, 0) ? string.Empty : $"X{ActiveGuardsCount}";
 }
