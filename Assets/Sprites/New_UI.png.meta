@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg
+      name: bg_1
       rect:
         serializedVersion: 2
-        x: 134
-        y: 1303
-        width: 1055
-        height: 267
+        x: 115
+        y: 1394
+        width: 679
+        height: 176
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,7 +611,7 @@ TextureImporter:
         width: 360
         height: 359
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -619,6 +619,27 @@ TextureImporter:
       bones: []
       spriteID: c3111b1b342da934286161d823e9a5f8
       internalID: 539909055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1203
+        width: 679
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39faf03685970b544873f7a37cc43056
+      internalID: -1365763076
       vertices: []
       indices: 
       edges: []
@@ -639,6 +660,7 @@ TextureImporter:
       destroy_bonus_nobg: -294088403
       ufo_notif_L: -247592541
       danger_notification: 693854069
+      bg_1: -1994749970
       meteor_notif: 1045697913
       destroy_bonus: 68421289
       continue: 1374391265
@@ -652,7 +674,7 @@ TextureImporter:
       protection_bonus_nobg: 1373968988
       music_on: -1461419012
       ufo_notif_R: -1925442754
-      bg: -1994749970
+      bg_2: -1365763076
       back: -899507007
       charging_bonus: 1602498803
       upgrade: -606993101
