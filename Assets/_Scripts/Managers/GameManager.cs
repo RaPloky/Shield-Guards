@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Score score;
+    [SerializeField] private TextMeshProUGUI endScore;
     [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private DifficultyUpdate difficultyManager;
     [SerializeField] private bool isMenu;
@@ -118,7 +119,8 @@ public class GameManager : MonoBehaviour
         if (score.ScoreAmount > PlayerPrefs.GetInt(Score.ScorePref))
             score.UpdateBestScore();
 
-        UpdateEnergyCount();
+        AssignEndScore();
+        AddCurrency();
     }
 
     private void ReduceActiveGuardsCount()
@@ -143,9 +145,11 @@ public class GameManager : MonoBehaviour
 
     private bool IsGameLosed() => Mathf.Approximately(ActiveGuardsCount, 0);
 
-    private void UpdateEnergyCount()
+    private void AddCurrency()
     {
         int storedEnergy = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
         PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount + storedEnergy);
     }
+
+    private void AssignEndScore() => endScore.text = $"you scored: {score.ScoreAmount}";
 }
