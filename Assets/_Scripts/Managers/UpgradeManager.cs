@@ -84,6 +84,7 @@ public class UpgradeManager : MonoBehaviour
     private Dictionary<int, int> AssignBonusGainValues(int gainDecrement, BonusGoal bonusType)
     {
         var valuesDict = new Dictionary<int, int>();
+        // Dummy value:
         int startGoalValue = 0;
         
         switch (bonusType)
@@ -101,8 +102,8 @@ public class UpgradeManager : MonoBehaviour
         // Add default value as first:
         valuesDict.Add(0, startGoalValue);
 
-        for (int i = 1; i <= LevelsLimit; i++)
-            valuesDict.Add(i, startGoalValue -= gainDecrement);
+        for (int levelIndex = 1; levelIndex <= LevelsLimit; levelIndex++)
+            valuesDict.Add(levelIndex, startGoalValue -= gainDecrement);
 
         return valuesDict;
     }
@@ -142,7 +143,7 @@ public class UpgradeManager : MonoBehaviour
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
     private void UpdateCreditsCount() => creditsCount.text = "$" + EnergyValue;
-    private string GetPrice(float price) => price.Equals(UpgradesPrices[^1]) ? "maxed, enjoy!" : "$" + price;
+    private string GetPrice(float price) => price.Equals(UpgradesPrices[^1]) ? "MAXED" : "$" + price;
 
     public void UpdateUpgradePrices()
     {
@@ -162,9 +163,9 @@ public class UpgradeManager : MonoBehaviour
 
     private void AssignGainValues()
     {
-        ChargingGainValues = AssignBonusGainValues(1000, BonusGoal.Charging);
-        DemolitionGainValues = AssignBonusGainValues(2, BonusGoal.Demolition);
-        ProtectionGainValues = AssignBonusGainValues(3, BonusGoal.Protection);
+        ChargingGainValues = AssignBonusGainValues(500, BonusGoal.Charging);
+        DemolitionGainValues = AssignBonusGainValues(1, BonusGoal.Demolition);
+        ProtectionGainValues = AssignBonusGainValues(2, BonusGoal.Protection);
     }
 
     #region "Bonus Descriptions"
