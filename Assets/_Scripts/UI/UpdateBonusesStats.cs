@@ -54,10 +54,10 @@ public class UpdateBonusesStats : MonoBehaviour
 
     public void UpdateDemolitionStatus()
     {
-        demolitionCurrLvl.text = _upgradeManager.DemolitionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DemolitionBonusLvl + 1}" : "lvl max";
-        demolitionNextLvl.text = _upgradeManager.DemolitionBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DemolitionBonusLvl + 2}" : "lvl max";
-        demolitionInfo.text = _upgradeManager.DemolitionDescription + $"\n{_upgradeManager.DemolitionWayToGain}";
-        demolitionUpgradeInfo.text = _upgradeManager.DemolitionNextLvlDesc + $"\n{_upgradeManager.DemolitionNextLvlCondition}";
+        demolitionCurrLvl.text = _upgradeManager.DestroyingBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DestroyingBonusLvl + 1}" : "lvl max";
+        demolitionNextLvl.text = _upgradeManager.DestroyingBonusLvl + 1 < _upgradeManager.LevelsLimit ? $"lvl {_upgradeManager.DestroyingBonusLvl + 2}" : "lvl max";
+        demolitionInfo.text = _upgradeManager.DestroyingDescription + $"\n{_upgradeManager.DestroyingWayToGain}";
+        demolitionUpgradeInfo.text = _upgradeManager.DestroyingNextLvlDesc + $"\n{_upgradeManager.DestroyingNextLvlCondition}";
     }
 
     public void UpdateProtectionStatus()

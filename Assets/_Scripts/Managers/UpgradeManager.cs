@@ -11,6 +11,8 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI chargingPrice;
     [SerializeField] private TextMeshProUGUI destroyingPrice;
     [SerializeField] private TextMeshProUGUI protectionPrice;
+    [SerializeField] private List<TextMeshProUGUI> totalMoneyCount;
+    [SerializeField] private Color notEnoughMoneyColor;
 
     [SerializeField, Range(0, 100000)] private float startUpgradePrice;
     [SerializeField, Range(1, 5)] private float nextUpgradeMultiplier;
@@ -18,12 +20,12 @@ public class UpgradeManager : MonoBehaviour
     private GlitchAnimationController _glitchController;
 
     public static string ChargingBonusLvlPref => "ChargingLvl";
-    public static string DemolitionBonusLvlPref => "DemolitionLvl";
+    public static string DestroyingBonusLvlPref => "DestroyingLvl";
     public static string ProtectionBonusLvlPref => "ProtectionLvl";
     public static string EnergyPref => "EnergyDepletedCount";
 
     public int ChargingBonusLvl => PlayerPrefs.GetInt(ChargingBonusLvlPref, 0);
-    public int DemolitionBonusLvl => PlayerPrefs.GetInt(DemolitionBonusLvlPref, 0);
+    public int DestroyingBonusLvl => PlayerPrefs.GetInt(DestroyingBonusLvlPref, 0);
     public int ProtectionBonusLvl => PlayerPrefs.GetInt(ProtectionBonusLvlPref, 0);
 
     public IDictionary<int, float> ChargingEffectValues { get; private set; }
@@ -37,11 +39,11 @@ public class UpgradeManager : MonoBehaviour
     public int[] UpgradesPrices { get; private set; }
 
     public float CurrChargeEffectValue => ChargingEffectValues[ChargingBonusLvl];
-    public float CurrDemolitionEffectValue => DemolitionEffectValues[DemolitionBonusLvl];
+    public float CurrDemolitionEffectValue => DemolitionEffectValues[DestroyingBonusLvl];
     public float CurrProtectionEffectValue => ProtectionEffectValues[ProtectionBonusLvl];
 
     public int CurrChargeGoalValue => ChargingGainValues[ChargingBonusLvl];
-    public int CurrDemolitionGoalValue => DemolitionGainValues[DemolitionBonusLvl];
+    public int CurrDemolitionGoalValue => DemolitionGainValues[DestroyingBonusLvl];
     public int CurrProtectionGoalValue => ProtectionGainValues[ProtectionBonusLvl];
 
     public int EnergyValue
@@ -57,11 +59,12 @@ public class UpgradeManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        UpgradesPrices = GetUpgradePrices(startUpgradePrice, nextUpgradeMultiplier);
+        UpgradesPrices = SetUpgradePrices(startUpgradePrice, nextUpgradeMultiplier);
         AssignEffectValues();
-        AssignGainValues();        
+        AssignGainValues();
 
-        UpdateCreditsCount();
+        UpdateMoneyCount_PayoutWindows();
+        UpdateMoneyCount_Menu();
         UpdateUpgradePrices();
     }
 
@@ -108,7 +111,7 @@ public class UpgradeManager : MonoBehaviour
         return valuesDict;
     }
 
-    private int[] GetUpgradePrices(float startPrice, float multiplier)
+    private int[] SetUpgradePrices(float startPrice, float multiplier)
     {
         int[] prices = new int[LevelsLimit];
 
@@ -133,23 +136,32 @@ public class UpgradeManager : MonoBehaviour
         _glitchController.PlayStrongScan();
         PlayerPrefs.SetInt(bonusPref, nextLvl);
         PlayerPrefs.SetInt(EnergyPref, EnergyValue -= nextUpgradeCost);
-        UpdateCreditsCount();
+        UpdateMoneyCount_Menu();
+        UpdateMoneyCount_PayoutWindows();
         EventManager.SendOnBonusUpgraded();
     }
 
     public void UpgradeCharging() => UpgradeBonus(ChargingBonusLvl, ChargingBonusLvlPref);
-    public void UpgradeDemolition() => UpgradeBonus(DemolitionBonusLvl, DemolitionBonusLvlPref);
+    public void UpgradeDemolition() => UpgradeBonus(DestroyingBonusLvl, DestroyingBonusLvlPref);
     public void UpgradeProtection() => UpgradeBonus(ProtectionBonusLvl, ProtectionBonusLvlPref);
 
     private bool IsEnoughEnergyToUpgrade(int nextUpgradeCost) => EnergyValue >= nextUpgradeCost;
-    private void UpdateCreditsCount() => creditsCount.text = "$" + EnergyValue;
-    private string GetPrice(float price) => price.Equals(UpgradesPrices[^1]) ? "MAXED" : "$" + price;
+    private void UpdateMoneyCount_Menu() => creditsCount.text = "$" + EnergyValue;
+    private string GetPrice(float price) => price.Equals(UpgradesPrices[^1]) ? "MAXED" : "costs $" + price;
 
     public void UpdateUpgradePrices()
     {
-        chargingPrice.text = GetPrice(UpgradesPrices[ChargingBonusLvl]);
-        destroyingPrice.text = GetPrice(UpgradesPrices[DemolitionBonusLvl]);
-        protectionPrice.text = GetPrice(UpgradesPrices[ProtectionBonusLvl]);
+        var chargingUpgradePrice = UpgradesPrices[ChargingBonusLvl];
+        chargingPrice.text = GetPrice(chargingUpgradePrice);
+        AssignPriceColor(chargingPrice, chargingUpgradePrice, EnergyValue);
+
+        var destroyingUpgradePrice = UpgradesPrices[DestroyingBonusLvl];
+        destroyingPrice.text = GetPrice(destroyingUpgradePrice);
+        AssignPriceColor(destroyingPrice, destroyingUpgradePrice, EnergyValue);
+
+        var protectionUpgradePrice = UpgradesPrices[ProtectionBonusLvl];
+        protectionPrice.text = GetPrice(protectionUpgradePrice);
+        AssignPriceColor(protectionPrice, protectionUpgradePrice, EnergyValue);
     }
 
     public int GetNextLvlPrice(int priceLvl) => UpgradesPrices[priceLvl];
@@ -168,12 +180,26 @@ public class UpgradeManager : MonoBehaviour
         ProtectionGainValues = AssignBonusGainValues(2, BonusGoal.Protection);
     }
 
+    private void UpdateMoneyCount_PayoutWindows()
+    {
+        for (int moneyIndex = 0; moneyIndex < totalMoneyCount.Count; moneyIndex++)
+            totalMoneyCount[moneyIndex].text = $"you got ${EnergyValue}";
+    }
+
+    private void AssignPriceColor(TextMeshProUGUI priceText, int upgradeCost, int totalMoney)
+    {
+        if (upgradeCost > totalMoney)
+            priceText.color = notEnoughMoneyColor;
+        else
+            priceText.color = Color.white;
+    }
+
     #region "Bonus Descriptions"
     public string ChargingDescription => $"Charges all guards by {CurrChargeEffectValue}";
     public string ChargingWayToGain => $"Gains by charging guards for {CurrChargeGoalValue}";
 
-    public string DemolitionDescription => $"Destroys enemies and freeze their appearance for {CurrDemolitionEffectValue}s";
-    public string DemolitionWayToGain => $"Gains by destroying {CurrDemolitionGoalValue} enemies";
+    public string DestroyingDescription => $"Destroys enemies and freeze their appearance for {CurrDemolitionEffectValue}s";
+    public string DestroyingWayToGain => $"Gains by destroying {CurrDemolitionGoalValue} enemies";
 
     public string ProtectionDescription => $"Immune to energy lose by {CurrProtectionEffectValue}s";
     public string ProtectionWayToGain => $"Gains by surviving {CurrProtectionGoalValue}s";
@@ -200,22 +226,22 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    public string DemolitionNextLvlDesc { 
+    public string DestroyingNextLvlDesc { 
         get {
-            if (DemolitionBonusLvl + 1 >= LevelsLimit)
+            if (DestroyingBonusLvl + 1 >= LevelsLimit)
                 return "Bonus maxed";
             else
-                return $"New enemies appear freeze is {DemolitionEffectValues[DemolitionBonusLvl + 1]}s";
+                return $"New enemies appear freeze is {DemolitionEffectValues[DestroyingBonusLvl + 1]}s";
         } 
     } 
-    public string DemolitionNextLvlCondition 
+    public string DestroyingNextLvlCondition 
     {
         get
         {
-            if (DemolitionBonusLvl + 1 >= LevelsLimit)
+            if (DestroyingBonusLvl + 1 >= LevelsLimit)
                 return string.Empty;
             else
-                return $"Enemies destroyed to gain bonus: {DemolitionGainValues[DemolitionBonusLvl + 1]}";
+                return $"Enemies destroyed to gain bonus: {DemolitionGainValues[DestroyingBonusLvl + 1]}";
         }
     } 
 
