@@ -2334,7 +2334,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 718152733}
-  - component: {fileID: 5500793801757637845}
   m_Layer: 5
   m_Name: Upgrade_Charge
   m_TagString: Untagged
@@ -9440,7 +9439,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2509855582446856171}
-  - component: {fileID: 7963053036495421219}
   m_Layer: 5
   m_Name: Upgrade_Protection
   m_TagString: Untagged
@@ -10071,7 +10069,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2509855582888308560}
-  - component: {fileID: 7963053034705500056}
   m_Layer: 5
   m_Name: Upgrade_Destroy
   m_TagString: Untagged
@@ -13115,7 +13112,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2521182605537146197}
-  - component: {fileID: 7974666480196152733}
   m_Layer: 5
   m_Name: Payout_Window
   m_TagString: Untagged
@@ -13300,7 +13296,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2521182605592426793}
-  - component: {fileID: 7974666480268337633}
   m_Layer: 5
   m_Name: Payout_Window
   m_TagString: Untagged
@@ -13831,7 +13826,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2521182605783613296}
-  - component: {fileID: 7974666480375637944}
   m_Layer: 5
   m_Name: Payout_Window
   m_TagString: Untagged
@@ -14586,99 +14580,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &5500793801757637845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718152732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 395601829}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
---- !u!114 &7963053034705500056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2509855582888308561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 2509855583210630376}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
---- !u!114 &7963053036495421219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2509855582446856170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 2509855581420708947}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
---- !u!114 &7974666480196152733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2521182605537146196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 2521182606019868397}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
---- !u!114 &7974666480268337633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2521182605592426792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 2521182605947222673}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
---- !u!114 &7974666480375637944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2521182605783613297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88567150e8f5fae44b1371eda794d6b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 2521182605839858888}
-  ValueInfo: {fileID: 0}
-  ConditionInfo: {fileID: 0}
-  OtherInfo: {fileID: 0}
