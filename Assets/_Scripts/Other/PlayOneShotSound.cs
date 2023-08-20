@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayOneShotSound : MonoBehaviour
@@ -15,15 +13,17 @@ public class PlayOneShotSound : MonoBehaviour
         _globalAudioSource = GameObject.FindGameObjectWithTag("GlobalSFX_Source").GetComponent<AudioSource>();
     }
 
-    public void PlayClip(AudioClip clip)
+    public void PlayClip()
     {
         if (randomizePitch)
-        {
             RandomizePitch();
-            _globalAudioSource.pitch = _randomizedPitch;
-        }
+
         _globalAudioSource.PlayOneShot(clip);
     }
 
-    private void RandomizePitch() => _randomizedPitch = Random.Range(0.9f, 1.1f);
+    private void RandomizePitch()
+    {
+        _randomizedPitch = Random.Range(0.9f, 1.1f);
+        _globalAudioSource.pitch = _randomizedPitch;
+    }
 }
