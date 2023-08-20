@@ -21,6 +21,14 @@ public class PlayOneShotSound : MonoBehaviour
         _globalAudioSource.PlayOneShot(clip);
     }
 
+    public void PlayClip(AudioClip customClip)
+    {
+        if (randomizePitch)
+            RandomizePitch();
+
+        _globalAudioSource.PlayOneShot(customClip);
+    }
+
     private void RandomizePitch()
     {
         _randomizedPitch = Random.Range(0.9f, 1.1f);
