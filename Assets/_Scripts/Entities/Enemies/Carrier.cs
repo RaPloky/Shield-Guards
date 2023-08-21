@@ -37,6 +37,7 @@ public class Carrier : Enemy
 
     private void EnableCarrier()
     {
+        ResetSoundObjBool();
         PlayParticles(onSpawnParticles);
         ActivateUFOShields(true);
     }
@@ -73,6 +74,7 @@ public class Carrier : Enemy
 
     private void DisableCarrier()
     {
+        PauseDisableSoundObjMovement();
         gameObject.SetActive(false);
         _thatTrans.SetPositionAndRotation(_startPosition, Quaternion.identity);
         Health = _startHealth;

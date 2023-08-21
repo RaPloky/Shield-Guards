@@ -18,6 +18,7 @@ abstract public class Enemy : MonoBehaviour
     [SerializeField] protected AudioClip enableSound;
     [SerializeField] protected AudioClip disableSound;
     [SerializeField] protected AudioSource onDisableAS;
+    [SerializeField] protected FollowTarget onDisableAS_Obj;
 
 
     protected DifficultyUpdate _difficultyManager;
@@ -25,6 +26,7 @@ abstract public class Enemy : MonoBehaviour
     protected Vector3 _startPosition;
     protected int _startHealth;
     protected int _upgradedHealth;
+    protected float DisableSoundDuration => disableSound.length;
 
     public Spawner relatedSpawner;
 
@@ -80,4 +82,6 @@ abstract public class Enemy : MonoBehaviour
 
     protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;
     protected void PlayDisableSound() => PlayOneShotSound(disableSound, onDisableAS);
+    protected void PauseDisableSoundObjMovement() => onDisableAS_Obj.EnableMovePause(DisableSoundDuration * 2);
+    protected void ResetSoundObjBool() => onDisableAS_Obj.ResetBool();
 }

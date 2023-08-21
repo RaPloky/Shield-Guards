@@ -25,6 +25,7 @@ public class Ufo : Enemy
 
     private void OnEnable()
     {
+        ResetSoundObjBool();
         UpdateHealthBar();
         PlayOneShotSound(enableSound, ownAudioSource);
     }
@@ -46,6 +47,7 @@ public class Ufo : Enemy
 
     private void DisableUfo()
     {
+        PauseDisableSoundObjMovement();
         gameObject.SetActive(false);
         gameObject.transform.position = _startPosition;
         Health = _startHealth;

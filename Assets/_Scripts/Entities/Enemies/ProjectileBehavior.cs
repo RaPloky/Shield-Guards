@@ -5,10 +5,13 @@ public class ProjectileBehavior : MonoBehaviour
     [SerializeField] protected float speedFactor;
     [SerializeField] private int energyDamage;
     [SerializeField] private bool isFragileTrash;
+    [SerializeField] private bool isBackgroundEnemy;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
     [SerializeField] private ParticleSystem onDisableParticles;
     [SerializeField] protected Transform targetTrans;
     [SerializeField] private Transform parentSpawner;
+    [SerializeField] private AudioClip collisionSound;
+    [SerializeField] private AudioSource collisionAS;
 
     protected Transform _thatTrans;
     protected Vector3 _startPos;
@@ -65,6 +68,7 @@ public class ProjectileBehavior : MonoBehaviour
             return;
         }
         _targetComponent.ConsumptEnergy(energyDamage + (int)(energyDamage * _difficultyManager.EnemyDamageIncreasePercentage));
+        
         DisableThatProjectile();
         PlayHitGlitchAnim();
     }
@@ -82,6 +86,7 @@ public class ProjectileBehavior : MonoBehaviour
             gameObject.SetActive(false);
             gameObject.transform.SetPositionAndRotation(_startPos, Quaternion.identity);
         }
+        PlayCollisionSound();
     }
 
     public void PlayParticlesOnDisable()
@@ -98,5 +103,11 @@ public class ProjectileBehavior : MonoBehaviour
             controller.SingleDriftAndDigital(0.6f, 0.4f);
         else
             controller.PlayWeakScan();
+    }
+
+    private void PlayCollisionSound()
+    {
+        if (!isBackgroundEnemy)
+            collisionAS.PlayOneShot(collisionSound);
     }
 }

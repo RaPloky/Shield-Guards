@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class FollowTarget : MonoBehaviour
 {
@@ -6,13 +7,27 @@ public class FollowTarget : MonoBehaviour
 
     private Transform _trans;
 
+    public bool AllowedToMove { get; set; }
+
     private void Start()
     {
         _trans = transform;
+        AllowedToMove = true;
     }
 
     private void FixedUpdate()
     {
-        _trans.position = target.position;
+        if (AllowedToMove)
+            _trans.position = target.position;
+    }
+
+    public void EnableMovePause(float pauseDuration) => StartCoroutine(PauseMove(pauseDuration));
+    public void ResetBool() => AllowedToMove = true;
+
+    private IEnumerator PauseMove(float pauseDuration)
+    {
+        AllowedToMove = false;
+        yield return new WaitForSeconds(pauseDuration);
+        AllowedToMove = true;
     }
 }

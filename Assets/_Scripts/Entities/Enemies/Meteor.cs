@@ -23,6 +23,7 @@ public class Meteor : Enemy
 
     private void OnEnable()
     {
+        ResetSoundObjBool();
         UpdateHealthBar();
         PlayOneShotSound(enableSound, ownAudioSource);
     }
@@ -43,6 +44,7 @@ public class Meteor : Enemy
 
     private void DisableMeteor()
     {
+        PauseDisableSoundObjMovement();
         gameObject.SetActive(false);
         gameObject.transform.position = _startPosition;
     }

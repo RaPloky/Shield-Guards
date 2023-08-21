@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class MicroNova : Meteor
 {
     private void Awake()
