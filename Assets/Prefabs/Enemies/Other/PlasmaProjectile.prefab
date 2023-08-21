@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1513477787961056831}
   - component: {fileID: 7548396976150015508}
   - component: {fileID: 7490069839662741854}
-  - component: {fileID: 4752740732625501478}
+  - component: {fileID: 6093448024771342678}
   m_Layer: 3
   m_Name: PlasmaProjectile
   m_TagString: Untagged
@@ -4888,7 +4888,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!82 &4752740732625501478
+--- !u!82 &6093448024771342678
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4910,9 +4910,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 13
+  MaxDistance: 15
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -4945,7 +4945,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
