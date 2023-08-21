@@ -10,17 +10,15 @@ public class Carrier : Enemy
     [SerializeField, Range(10f, 20f)] private float rotationSpeed;
     [SerializeField] private bool isClockwiseRotation;
     [SerializeField] private GameObject onSpawnParticles;
+    [SerializeField] private AudioClip onDamageTakenSound;
 
     private Transform _thatTrans;
     private Vector3 _moveDirection;
-    private float _onSpawnParticlesDuration;
 
     private void Start()
     {
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
-        _onSpawnParticlesDuration = 
-            onSpawnParticles.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().main.duration;
 
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
@@ -34,6 +32,7 @@ public class Carrier : Enemy
     private void OnEnable()
     {
         EnableCarrier();
+        PlayOneShotSound(enableSound, ownAudioSource);
     }
 
     private void EnableCarrier()
@@ -63,6 +62,7 @@ public class Carrier : Enemy
         yield return new WaitForSeconds(0f);
 
         PlayParticles(onDestroyParticles);
+        PlayDisableSound();
 
         DisableCarrier();
         DisableDangerNotifications();
@@ -76,6 +76,12 @@ public class Carrier : Enemy
         gameObject.SetActive(false);
         _thatTrans.SetPositionAndRotation(_startPosition, Quaternion.identity);
         Health = _startHealth;
+    }
+
+    protected override void DamageEnemy()
+    {
+        base.DamageEnemy();
+        ownAudioSource.PlayOneShot(onDamageTakenSound);
     }
 
     private void PlayParticles(ParticleSystem ps)

@@ -6,6 +6,7 @@ public class Ufo : Enemy
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private Spawner weapon;
     [SerializeField] private GameObject shield;
+    [SerializeField] private AudioClip onDamageTakenSound;
 
     private Transform _thatTrans;
     private Animator _animator;
@@ -25,20 +26,22 @@ public class Ufo : Enemy
     private void OnEnable()
     {
         UpdateHealthBar();
+        PlayOneShotSound(enableSound, ownAudioSource);
     }
 
     public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0f);
 
+        PlayDisableSound();
+        PlayParticlesOnDisable();
+        PlayParticlesOnLaunchedProjectileDisable();
+
         DisableUfo();
         DisableDangerNotifications();
 
         EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
-
-        PlayParticlesOnDisable();
-        PlayParticlesOnLaunchedProjectileDisable();
     }
 
     private void DisableUfo()
@@ -47,7 +50,13 @@ public class Ufo : Enemy
         gameObject.transform.position = _startPosition;
         Health = _startHealth;
     }
-    
+
+    protected override void DamageEnemy()
+    {
+        base.DamageEnemy();
+        ownAudioSource.PlayOneShot(onDamageTakenSound);
+    }
+
     private void PlayParticlesOnDisable()
     {
         GameObject particles = Instantiate(onDestroyParticles.gameObject, _thatTrans.position, _thatTrans.rotation);

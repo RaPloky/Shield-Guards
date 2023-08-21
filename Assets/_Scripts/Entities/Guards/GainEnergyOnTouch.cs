@@ -3,10 +3,11 @@ using UnityEngine;
 public class GainEnergyOnTouch : MonoBehaviour
 {
     [SerializeField] private int energyAddAmount;
+    [SerializeField] private AudioClip energyAddSound;
+    [SerializeField] private PlayOneShotSound soundSource;
 
     private Guard _thatGuard;
     private GameManager _gameManager;
-    private PlayOneShotSound _soundSource;
     private const int _scoreCutter = 4;
 
     public int EnergyAddAmount
@@ -19,7 +20,6 @@ public class GainEnergyOnTouch : MonoBehaviour
     {
         _thatGuard = GetComponent<Guard>();
         _gameManager = GameManager.Instance;
-        _soundSource = GetComponent<PlayOneShotSound>();
     }
 
     private void OnMouseDown()
@@ -31,6 +31,6 @@ public class GainEnergyOnTouch : MonoBehaviour
         EventManager.SendOnNonBonusEnergyAdded();
         EventManager.SendOnScoreUpdated((energyAddAmount / _scoreCutter) * _gameManager.ActiveGuardsCount);
 
-        _soundSource.PlayClip();
+        soundSource.PlayClip(energyAddSound);
     }
 }

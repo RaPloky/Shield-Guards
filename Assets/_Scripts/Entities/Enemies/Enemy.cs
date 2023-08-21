@@ -10,15 +10,21 @@ abstract public class Enemy : MonoBehaviour
     [SerializeField] protected int destructionReward;
     [SerializeField] protected int health;
     [SerializeField] protected int damageToEnemy;
+
     [SerializeField] protected List<Image> healthBarBg;
     [SerializeField] protected ParticleSystem onDamageParticles;
 
+    [SerializeField] protected AudioSource ownAudioSource;
+    [SerializeField] protected AudioClip enableSound;
+    [SerializeField] protected AudioClip disableSound;
+    [SerializeField] protected AudioSource onDisableAS;
+
+
+    protected DifficultyUpdate _difficultyManager;
     protected GlitchAnimationController _glitchController;
     protected Vector3 _startPosition;
     protected int _startHealth;
     protected int _upgradedHealth;
-
-    protected DifficultyUpdate _difficultyManager;
 
     public Spawner relatedSpawner;
 
@@ -49,9 +55,7 @@ abstract public class Enemy : MonoBehaviour
             healthBarBg[i].fillAmount = (float)Health / _startHealth;
     }
 
-    protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;
-
-    protected void DamageEnemy()
+    protected virtual void DamageEnemy()
     {
         if (IsGameOver())
             return;
@@ -70,5 +74,10 @@ abstract public class Enemy : MonoBehaviour
         DamageEnemy();
     }
 
+
     private bool IsGameOver() => Mathf.Approximately(_difficultyManager.ActiveGuards.Count, 0);
+    protected void PlayOneShotSound(AudioClip clipToPlay, AudioSource source) => source.PlayOneShot(clipToPlay);
+
+    protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;
+    protected void PlayDisableSound() => PlayOneShotSound(disableSound, onDisableAS);
 }

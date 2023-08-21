@@ -24,12 +24,14 @@ public class Meteor : Enemy
     private void OnEnable()
     {
         UpdateHealthBar();
+        PlayOneShotSound(enableSound, ownAudioSource);
     }
 
     public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0);
 
+        PlayDisableSound();
         _projBehaviour.PlayParticlesOnDisable();
 
         DisableMeteor();
