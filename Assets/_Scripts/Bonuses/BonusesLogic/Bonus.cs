@@ -15,6 +15,9 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected List<ParticleSystem> activationParticleSystems;
     [SerializeField] protected GameObject bonusEnabledPS;
     [SerializeField] protected GameObject bonusProgress;
+    [SerializeField] protected AudioClip activationSound;
+    [SerializeField] protected AudioClip bonusReadySound;
+    [SerializeField] protected AudioSource ownSource;
 
     public bool IsBonusEnabled
     {
@@ -56,6 +59,9 @@ abstract public class Bonus : MonoBehaviour
 
         activationButton.SetActive(status);
         bonusEnabledPS.SetActive(status);
+
+        if (status)
+            PlaySound(bonusReadySound);
     }
 
     protected void PlayActivationParticleSystem()
@@ -63,4 +69,6 @@ abstract public class Bonus : MonoBehaviour
         for (int i = 0; i < activationParticleSystems.Count; i++)
             activationParticleSystems[i].Play();
     }
+
+    protected void PlaySound(AudioClip clip) => ownSource.PlayOneShot(clip);
 }

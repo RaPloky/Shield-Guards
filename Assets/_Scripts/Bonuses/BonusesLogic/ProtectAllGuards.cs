@@ -19,6 +19,7 @@ public class ProtectAllGuards : Bonus
         if (!isBonusEnabled)
             return;
 
+        PlaySound(activationSound);
         effectDurationGO.SetActive(true);
         StartCoroutine(ProtectGuards());
 

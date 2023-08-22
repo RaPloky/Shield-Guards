@@ -23,6 +23,7 @@ public class ChargeAllGuards : Bonus
         for (int i = 0; i < _difficultyManager.ActiveGuards.Count; i++)
             _difficultyManager.ActiveGuards[i].AddEnergy(chargeAmount);
 
+        PlaySound(activationSound);
         PlayActivationParticleSystem();
 
         ChangeActivationButtonStatus(false);

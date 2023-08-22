@@ -26,6 +26,7 @@ public class DestroyAllEnemies : Bonus
 
         StartCoroutine(FreezeSpawn());
 
+        PlaySound(activationSound);
         PlayActivationParticleSystem();
         effectDurationGO.SetActive(true);
         StartEffectTimer(spawnFreezeTime);
