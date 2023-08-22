@@ -15,7 +15,7 @@ public class Carrier : Enemy
     private Transform _thatTrans;
     private Vector3 _moveDirection;
 
-    private void Start()
+    private void Awake()
     {
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
