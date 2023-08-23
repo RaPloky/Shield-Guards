@@ -25,6 +25,7 @@ public class ProtectAllGuards : Bonus
 
         ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
+        ResetSoundBool();
     }
 
     private IEnumerator ProtectGuards()

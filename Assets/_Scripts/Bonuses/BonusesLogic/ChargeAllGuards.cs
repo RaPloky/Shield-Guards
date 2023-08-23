@@ -28,5 +28,6 @@ public class ChargeAllGuards : Bonus
 
         ChangeActivationButtonStatus(false);
         isBonusEnabled = false;
+        ResetSoundBool();
     }
 }

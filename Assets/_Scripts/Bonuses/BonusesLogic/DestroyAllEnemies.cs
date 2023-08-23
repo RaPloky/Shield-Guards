@@ -31,7 +31,8 @@ public class DestroyAllEnemies : Bonus
         effectDurationGO.SetActive(true);
         StartEffectTimer(spawnFreezeTime);
         ChangeActivationButtonStatus(false);
-        isBonusEnabled = false;
+        isBonusEnabled = false; 
+        ResetSoundBool();
     }
 
     private IEnumerator FreezeSpawn()

@@ -19,6 +19,8 @@ abstract public class Bonus : MonoBehaviour
     [SerializeField] protected AudioClip bonusReadySound;
     [SerializeField] protected AudioSource ownSource;
 
+    protected bool _soundActivated = false;
+
     public bool IsBonusEnabled
     {
         get => isBonusEnabled;
@@ -60,8 +62,11 @@ abstract public class Bonus : MonoBehaviour
         activationButton.SetActive(status);
         bonusEnabledPS.SetActive(status);
 
-        if (status)
+        if (status && !_soundActivated)
+        {
             PlaySound(bonusReadySound);
+            _soundActivated = true;
+        }
     }
 
     protected void PlayActivationParticleSystem()
@@ -71,4 +76,5 @@ abstract public class Bonus : MonoBehaviour
     }
 
     protected void PlaySound(AudioClip clip) => ownSource.PlayOneShot(clip);
+    protected void ResetSoundBool() => _soundActivated = false;
 }
