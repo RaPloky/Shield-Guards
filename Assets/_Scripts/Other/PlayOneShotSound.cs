@@ -4,6 +4,8 @@ public class PlayOneShotSound : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
     [SerializeField] private bool randomizePitch;
+    [SerializeField] private bool isLocaledAS = false;
+    [SerializeField] private AudioSource localAudioSource;
 
     private AudioSource _globalAudioSource;
     private float _randomizedPitch = 1;
@@ -18,7 +20,10 @@ public class PlayOneShotSound : MonoBehaviour
         if (randomizePitch)
             RandomizePitch();
 
-        _globalAudioSource.PlayOneShot(clip);
+        if (isLocaledAS)
+            localAudioSource.PlayOneShot(clip);
+        else
+            _globalAudioSource.PlayOneShot(clip);
     }
 
     public void PlayClip(AudioClip customClip)
@@ -26,7 +31,10 @@ public class PlayOneShotSound : MonoBehaviour
         if (randomizePitch)
             RandomizePitch();
 
-        _globalAudioSource.PlayOneShot(customClip);
+        if (isLocaledAS)
+            localAudioSource.PlayOneShot(customClip);
+        else
+            _globalAudioSource.PlayOneShot(customClip);
     }
 
     private void RandomizePitch()
