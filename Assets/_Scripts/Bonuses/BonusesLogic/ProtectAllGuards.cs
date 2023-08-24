@@ -42,6 +42,7 @@ public class ProtectAllGuards : Bonus
         for (int i = 0; i < guards.Count; i++)
             guards[i].IsProtectBonusActivated = false;
 
+        PlaySound(activationSound);
         ReactivateShields(false);
     }
 

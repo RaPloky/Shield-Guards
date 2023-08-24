@@ -31,6 +31,7 @@ public sealed class Guard : MonoBehaviour
     private Guard _thatGuard;
     private float _startConsumptionDelay;
     private bool _criticalEnergyActivated;
+    private const float _GAME_START_DELAY = 4f;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
@@ -74,16 +75,21 @@ public sealed class Guard : MonoBehaviour
     {
         IsProtectBonusActivated = false;
         _criticalEnergyActivated = false;
-        _maxEnergy = energy;
         _isHaveEnergy = true;
-        StartCoroutine(ConsumptEnergy());
-        _thatGuard = this;
+
+        _maxEnergy = energy;
         _startConsumptionDelay = ConsumptionDelay;
+
+        _thatGuard = this;
         _animator = GetComponent<Animator>();
+
+        StartCoroutine(ConsumptEnergy());
     }
 
     private IEnumerator ConsumptEnergy()
     {
+        yield return new WaitForSeconds(_GAME_START_DELAY);
+
         while (true)
         {
             yield return new WaitForSeconds(consumptionDelay);
