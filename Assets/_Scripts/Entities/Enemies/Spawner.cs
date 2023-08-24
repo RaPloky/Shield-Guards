@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     [Header("Danger notifications")]
     [SerializeField] private bool isProjectileSpawner;
     [SerializeField] protected List<Animator> dangerNotificators;
+    [SerializeField] private EnemyAlarm alarmType;
 
     public Guard TargetGuard => targetGuard;
     public GameObject PrefabToOperate => prefabToOperate;
@@ -106,6 +107,7 @@ public class Spawner : MonoBehaviour
             dangerNotificators[i].SetBool("DangerOver", false);
             dangerNotificators[i].SetBool("DangerBegin", true);
         }
+        EventManager.SendOnEnemyDeployed(alarmType);
     }
 
     public void DisableDanger()
@@ -115,6 +117,7 @@ public class Spawner : MonoBehaviour
             dangerNotificators[i].SetBool("DangerBegin", false);
             dangerNotificators[i].SetBool("DangerOver", true);
         }
+        EventManager.SendOnEnemyReset(alarmType);
     }
 
     protected bool IsSpawnAllowed()

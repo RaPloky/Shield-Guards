@@ -10,6 +10,8 @@ public class EventManager : MonoBehaviour
     public static Action OnGameLose;
     public static Action OnGuardDischarged;
     public static Action OnBonusUpgraded;
+    public static Action<EnemyAlarm> OnEnemyDeployed;
+    public static Action<EnemyAlarm> OnEnemyReset;
 
     public static void SendOnEnergyValueChanged() => OnEnergyValueChanged?.Invoke();
     public static void SendOnEnemyDisabled() => OnEnemyDestroyed?.Invoke();
@@ -18,4 +20,6 @@ public class EventManager : MonoBehaviour
     public static void SendOnGameLose() => OnGameLose?.Invoke();
     public static void SendOnGuardDischarged() => OnGuardDischarged?.Invoke();
     public static void SendOnBonusUpgraded() => OnBonusUpgraded?.Invoke();
+    public static void SendOnEnemyDeployed(EnemyAlarm alarmType) => OnEnemyDeployed?.Invoke(alarmType);
+    public static void SendOnEnemyReset(EnemyAlarm alarmType) => OnEnemyReset?.Invoke(alarmType);
 }

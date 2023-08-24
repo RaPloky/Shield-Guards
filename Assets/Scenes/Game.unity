@@ -178,6 +178,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &6848718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,6 +802,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &33743845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,6 +2007,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &70604663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,6 +5683,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &123075682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7126560487868097396, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
@@ -5945,6 +5949,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!198 &130336987 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7756663470275699375, guid: 95a6d56db49136942a4d273e8ab65569,
@@ -6295,6 +6300,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &153012793
 GameObject:
   m_ObjectHideFlags: 0
@@ -6348,6 +6354,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!95 &153822536 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5140966593801913268, guid: 59b8c52056e53a54d85784ad66d73b58,
@@ -6647,6 +6654,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &166880503 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5140966593797276171, guid: 59b8c52056e53a54d85784ad66d73b58,
@@ -6803,6 +6811,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &183596782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6942,6 +6951,7 @@ MonoBehaviour:
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 8841422654808717986}
+  alarmType: 3
   otherCarrierSpawners:
   - {fileID: 641085393}
   - {fileID: 1581781153}
@@ -12451,6 +12461,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &220466679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12994,6 +13005,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &275095429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13237,6 +13249,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!95 &298434361 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3520157470407139292, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
@@ -14659,6 +14672,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &356058736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17074,6 +17088,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!114 &452889038 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3018668505823595123, guid: 63536a5c1791b864ab010a2bfaaf760f,
@@ -18135,6 +18150,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!225 &491331870 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 6286198973961759244, guid: 59b8c52056e53a54d85784ad66d73b58,
@@ -18400,6 +18416,57 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
+--- !u!1 &502370548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502370549}
+  - component: {fileID: 502370550}
+  m_Layer: 0
+  m_Name: SoundAlarms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &502370549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502370548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1724335999}
+  - {fileID: 1861091870}
+  - {fileID: 1480112342}
+  m_Father: {fileID: 1556885950}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502370550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502370548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaf7d42c485eea43857c11eb1bb27ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ufoSource: {fileID: 1724336000}
+  meteorSource: {fileID: 1861091871}
+  carrierSource: {fileID: 1480112343}
 --- !u!1001 &504643672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22101,6 +22168,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &635064766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4467002171365261476, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
@@ -22262,6 +22330,7 @@ MonoBehaviour:
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 8841422654808717986}
+  alarmType: 3
   otherCarrierSpawners:
   - {fileID: 191422518}
   - {fileID: 1581781153}
@@ -22318,6 +22387,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &646381313
 GameObject:
   m_ObjectHideFlags: 0
@@ -22371,6 +22441,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!114 &655336190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8284916164695995790, guid: 95a6d56db49136942a4d273e8ab65569,
@@ -22728,6 +22799,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &674641858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5140966594321289534, guid: 59b8c52056e53a54d85784ad66d73b58,
@@ -23945,6 +24017,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &713094518
 GameObject:
   m_ObjectHideFlags: 0
@@ -28181,6 +28254,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &817083311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28424,6 +28498,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &827767264
 GameObject:
   m_ObjectHideFlags: 0
@@ -29872,6 +29947,7 @@ MonoBehaviour:
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &868244062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30434,6 +30510,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &878939764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30917,6 +30994,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &905993762
 GameObject:
   m_ObjectHideFlags: 0
@@ -35718,6 +35796,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &1003117359
 GameObject:
   m_ObjectHideFlags: 0
@@ -35771,6 +35850,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1003987953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37851,6 +37931,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1041976142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44413,6 +44494,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &1230057542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7126560487868097396, guid: b5560cd9f0b5e4b4d90e584be17e71a9,
@@ -45473,6 +45555,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1306093794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45986,6 +46069,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1319542542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46753,6 +46837,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1351707464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46891,6 +46976,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &1370624749
 GameObject:
   m_ObjectHideFlags: 0
@@ -48178,6 +48264,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1433117382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48759,6 +48846,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1452476745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50268,6 +50356,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1478728431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50484,6 +50573,135 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1478871254}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1480112341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480112342}
+  - component: {fileID: 1480112343}
+  m_Layer: 0
+  m_Name: Alarm_Carrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1480112342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480112341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502370549}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1480112343
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480112341}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8182895025060101597, guid: 2f8f9001a79ff7348bfa626342f3f8d5,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4d81e947a11c5a648a295b5ce1712a14, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1485557558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51715,6 +51933,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1 &1553742034
 GameObject:
   m_ObjectHideFlags: 0
@@ -51926,6 +52145,7 @@ Transform:
   - {fileID: 1032123030}
   - {fileID: 2145268224}
   - {fileID: 472212877}
+  - {fileID: 502370549}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52368,6 +52588,7 @@ MonoBehaviour:
   isProjectileSpawner: 0
   dangerNotificators:
   - {fileID: 8841422654808717986}
+  alarmType: 3
   otherCarrierSpawners:
   - {fileID: 641085393}
   - {fileID: 191422518}
@@ -53548,6 +53769,7 @@ MonoBehaviour:
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1643549711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54462,6 +54684,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1679658965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55734,6 +55957,136 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
+--- !u!1 &1724335998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724335999}
+  - component: {fileID: 1724336000}
+  m_Layer: 0
+  m_Name: Alarm_UFO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1724335999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724335998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502370549}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1724336000
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724335998}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8182895025060101597, guid: 2f8f9001a79ff7348bfa626342f3f8d5,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8955b06ac6782854a998515d34e59954, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1724406648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56375,6 +56728,7 @@ MonoBehaviour:
   isDecoySpawner: 0
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1752469292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57844,6 +58198,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1848310105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58093,6 +58448,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &1858162068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58178,6 +58534,135 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1858162068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1861091869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1861091870}
+  - component: {fileID: 1861091871}
+  m_Layer: 0
+  m_Name: Alarm_Meteor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1861091870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861091869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 502370549}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1861091871
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861091869}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -8182895025060101597, guid: 2f8f9001a79ff7348bfa626342f3f8d5,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: ba8891149fb21bd46af963810d638a11, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1863926498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59794,6 +60279,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!198 &1932443532 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4366633498192951469, guid: 1feaee64acede0c44b29354e964b8366,
@@ -60829,6 +61315,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 4125372479817960800}
   - {fileID: 691332819}
+  alarmType: 1
 --- !u!1001 &1970277246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61914,6 +62401,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &2003371457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62781,6 +63269,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!95 &2066179955 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5140966595714793871, guid: 59b8c52056e53a54d85784ad66d73b58,
@@ -64251,6 +64740,7 @@ MonoBehaviour:
   isDecoySpawner: 1
   isProjectileSpawner: 0
   dangerNotificators: []
+  alarmType: 0
 --- !u!1001 &2099750870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65377,6 +65867,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 4125372479817960798}
   - {fileID: 911385672}
+  alarmType: 2
 --- !u!1001 &1043323731708731640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72010,6 +72501,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 1196667264}
   - {fileID: 911385674}
+  alarmType: 2
 --- !u!114 &6133235092192609689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72032,6 +72524,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 4125372479817960797}
   - {fileID: 1196667266}
+  alarmType: 2
 --- !u!1001 &8123457351342800697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72581,6 +73074,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 1196667265}
   - {fileID: 4125372479817960796}
+  alarmType: 1
 --- !u!4 &8292024737097164858
 Transform:
   m_ObjectHideFlags: 0
@@ -72636,6 +73130,7 @@ MonoBehaviour:
   dangerNotificators:
   - {fileID: 1196667263}
   - {fileID: 911385673}
+  alarmType: 1
 --- !u!1 &8564397660256240738 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 540658586215115529, guid: 59b8c52056e53a54d85784ad66d73b58,
