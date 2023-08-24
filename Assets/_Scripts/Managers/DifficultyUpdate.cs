@@ -158,7 +158,7 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void EnableMessage(GameObject message)
     {
-        if (Mathf.Approximately(activeGuards.Count, 1))
+        if (Mathf.Approximately(activeGuards.Count, 0))
             return;
 
         message.SetActive(true);

@@ -31,7 +31,7 @@ public sealed class Guard : MonoBehaviour
     private Guard _thatGuard;
     private float _startConsumptionDelay;
     private bool _criticalEnergyActivated;
-    private const float _GAME_START_DELAY = 4f;
+    private const float _GAME_START_DELAY = 1f;
 
     public int MaxEnergy => _maxEnergy;
     public int Energy
