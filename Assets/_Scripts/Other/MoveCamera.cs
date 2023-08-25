@@ -48,7 +48,8 @@ public class MoveCamera : MonoBehaviour
 
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.up, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.up);
-        
+
+        _source.pitch = 0.95f;
         PlayMoveSound();
     }
 
@@ -63,6 +64,7 @@ public class MoveCamera : MonoBehaviour
         targetToFollow.RotateAround(rotateAroundJoint.position, Vector3.down, angleChange);
         _thatTrans.Rotate(angleChange * Vector3.down);
 
+        _source.pitch = 1.05f;
         PlayMoveSound();
     }
 
