@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(2f, 10f)] private float loseDelay;
     [SerializeField] private Animator shieldAnimator;
     [SerializeField] private Button pauseButton;
-
     [SerializeField] private EnemyInvokeOnGuardLose enemyInvoke;
 
     public static int DefaultChargingGoal => 10000;
@@ -36,6 +35,8 @@ public class GameManager : MonoBehaviour
     private int _activeGuardsCount;
 
     public static bool IsGamePaused;
+
+    private AudioSource _source;
 
     public int ActiveGuardsCount
     {
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
             UpdateActiveGuardsCountUI();
+            _source = GetComponent<AudioSource>();
         }
 
         if (bestScore != null)
@@ -136,10 +138,16 @@ public class GameManager : MonoBehaviour
             ActivateCarriers();
 
         if (IsItTimeToActivateMicronovas())
+        {
             ActivateMicronovas();
+            ActivateHeartbeat(true);
+        }
 
         if (IsGameLosed())
+        {
             LoseGame();
+            ActivateHeartbeat(false);
+        }
     }
 
     private bool IsItTimeToActivateCarriers() => Mathf.Approximately(ActiveGuardsCount, 2);
@@ -154,6 +162,14 @@ public class GameManager : MonoBehaviour
     {
         int storedEnergy = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
         PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount + storedEnergy);
+    }
+
+    private void ActivateHeartbeat(bool isEnabled)
+    {
+        if (isEnabled)
+            _source.Play();
+        else
+            _source.Stop();
     }
 
     private void AssignEndScore() => endScore.text = $"you scored: {score.ScoreAmount}";
