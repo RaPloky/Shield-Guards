@@ -22,10 +22,10 @@ public class Carrier : Enemy
     {
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
-        _startRotation = _thatTrans.rotation;
 
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
+        _startRotation = _thatTrans.rotation;
 
         SetMoveDirection();
     }
