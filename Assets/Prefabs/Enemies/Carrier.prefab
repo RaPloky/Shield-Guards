@@ -15220,6 +15220,7 @@ MonoBehaviour:
   enableSound: {fileID: 8300000, guid: dc9f34f8f8083485187956f1e0a5df2f, type: 3}
   disableSound: {fileID: 8300000, guid: b22bd28e0d69a2a4497b081d68ed1353, type: 3}
   onDisableAS: {fileID: 0}
+  onDisableAS_Obj: {fileID: 0}
   relatedSpawner: {fileID: 0}
   onDestroyParticles: {fileID: 3634079491701534458, guid: 8c443c1fccdeb5847bc972de04fb2160,
     type: 3}
@@ -15304,7 +15305,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 70
+  MaxDistance: 170
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
