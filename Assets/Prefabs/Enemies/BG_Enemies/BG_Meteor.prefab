@@ -4944,8 +4944,11 @@ MonoBehaviour:
   speedFactor: 70
   energyDamage: 0
   isFragileTrash: 0
+  isBackgroundEnemy: 1
   glitchStrength: 0.025
   onDisableParticles: {fileID: 3634079491701534458, guid: 2dab0fc89d2806e40bfa40992ecde731,
     type: 3}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
+  collisionSound: {fileID: 0}
+  collisionAS: {fileID: 0}

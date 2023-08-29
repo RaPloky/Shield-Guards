@@ -53,7 +53,7 @@ public class ProjectileBehavior : MonoBehaviour
 
         if (_targetComponent == null)
         {
-            if (_collisionGO.CompareTag("Enemy") && isFragileTrash)
+            if (_collisionGO.CompareTag("Enemy") && isFragileTrash && !isBackgroundEnemy)
             {
                 Ufo ufo = _collisionGO.GetComponent<Ufo>();
                 Carrier carrier = _collisionGO.GetComponent<Carrier>();

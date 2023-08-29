@@ -12,15 +12,17 @@ public class Carrier : Enemy
     [SerializeField] private GameObject onSpawnParticles;
     [SerializeField] private AudioClip onDamageTakenSound;
     [SerializeField] private List<GameObject> relatedTurnAroundTriggers;
-    [SerializeField] private string turnAroundTriggerTag;
-
+    
+    private readonly string _turnAroundTriggerTag = "TurnAroundTrigger";
     private Transform _thatTrans;
     private Vector3 _moveDirection;
+    private Quaternion _startRotation;
 
     private void Awake()
     {
         _difficultyManager = DifficultyUpdate.Instance;
         _startHealth = Health;
+        _startRotation = _thatTrans.rotation;
 
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
@@ -86,6 +88,7 @@ public class Carrier : Enemy
     {
         _thatTrans.SetPositionAndRotation(_startPosition, Quaternion.identity);
         Health = _startHealth;
+        _thatTrans.rotation = _startRotation;
     }
 
 
@@ -111,7 +114,7 @@ public class Carrier : Enemy
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(turnAroundTriggerTag))
+        if (other.CompareTag(_turnAroundTriggerTag) && IsTriggeredLinkedTriggers(other))
             ChangeMoveDirection();
     }
 
@@ -141,5 +144,15 @@ public class Carrier : Enemy
             _moveDirection = Vector3.up;
         else
             _moveDirection = Vector3.down;
+    }
+
+    private bool IsTriggeredLinkedTriggers(Collider trigger)
+    {
+        for (int index = 0; index < relatedTurnAroundTriggers.Count; index++)
+        {
+            if (trigger.name.Equals(relatedTurnAroundTriggers[index].name))
+                return true;
+        }
+        return false;
     }
 }

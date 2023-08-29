@@ -15235,7 +15235,6 @@ MonoBehaviour:
     type: 3}
   onDamageTakenSound: {fileID: 8300000, guid: ffa45816b43df074790e9986c5b85b3c, type: 3}
   relatedTurnAroundTriggers: []
-  turnAroundTriggerTag: TurnAroundTrigger
 --- !u!65 &3860943593631886925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15247,8 +15246,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.5632277, y: 5.1025734, z: 6.2948914}
-  m_Center: {x: 0, y: 0.7811241, z: 0}
+  m_Size: {x: 12.912357, y: 8.640236, z: 11.635623}
+  m_Center: {x: 0, y: 0.61, z: -0.0936193}
 --- !u!54 &3860943593631886924
 Rigidbody:
   m_ObjectHideFlags: 0
