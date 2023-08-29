@@ -132,6 +132,7 @@ public class Carrier : Enemy
 
         _thatTrans.Rotate(0, 180f, 0);
         PlayParticles(onSpawnParticles);
+        PlayOneShotSound(enableSound, ownAudioSource);
     }
 
     private void SetMoveDirection()
