@@ -82,6 +82,6 @@ abstract public class Enemy : MonoBehaviour
 
     protected void SetGlitchController() => _glitchController = GlitchAnimationController.Instance;
     protected void PlayDisableSound() => PlayOneShotSound(disableSound, onDisableAS);
-    protected void PauseDisableSoundObjMovement() => onDisableAS_Obj.EnableMovePause(DisableSoundDuration * 2);
+    protected void PauseDisableSoundObjMovement() => onDisableAS_Obj.EnableMovePause(DisableSoundDuration * 3);
     protected void ResetSoundObjBool() => onDisableAS_Obj.ResetBool();
 }

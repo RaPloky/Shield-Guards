@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Carrier_Notif
+  m_Controller: {fileID: 9100000, guid: 81ef36d5fd4fd31439f8e67fdb4c34b1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b7fc977843fb58740b79fca60943d9af, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fda2ce92e3bb1054b87748c23946d8d1, type: 2}

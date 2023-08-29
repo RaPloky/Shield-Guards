@@ -7,7 +7,7 @@ public class Carrier : Enemy
     [SerializeField] private ParticleSystem onDestroyParticles;
     [SerializeField] private List<Spawner> ufoSpawners;
     [SerializeField] private Transform moveAround;
-    [SerializeField, Range(10f, 20f)] private float rotationSpeed;
+    [SerializeField, Range(10f, 30f)] private float rotationSpeed;
     [SerializeField] private bool isClockwiseRotation;
     [SerializeField] private GameObject onSpawnParticles;
     [SerializeField] private AudioClip onDamageTakenSound;

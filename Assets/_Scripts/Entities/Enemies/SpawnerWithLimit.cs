@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpawnerWithLimit : Spawner
 {
-    [Header("Other related spawners")]
     [SerializeField] private List<Spawner> otherCarrierSpawners;
 
+    // prevention from spamming "Carrier":
     private bool _justSpawned = false;
 
     protected override IEnumerator ActivateEnemy()
@@ -33,8 +33,8 @@ public class SpawnerWithLimit : Spawner
                 }
 
                 prefabToOperate.SetActive(true);
-                NotifyAboutDanger();
                 _justSpawned = true;
+                NotifyAboutDanger();
             }
         }
     }
