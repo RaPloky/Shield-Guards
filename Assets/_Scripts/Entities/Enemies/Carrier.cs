@@ -11,6 +11,8 @@ public class Carrier : Enemy
     [SerializeField] private bool isClockwiseRotation;
     [SerializeField] private GameObject onSpawnParticles;
     [SerializeField] private AudioClip onDamageTakenSound;
+    [SerializeField] private List<GameObject> relatedTurnAroundTriggers;
+    [SerializeField] private string turnAroundTriggerTag;
 
     private Transform _thatTrans;
     private Vector3 _moveDirection;
@@ -23,28 +25,26 @@ public class Carrier : Enemy
         _thatTrans = transform;
         _startPosition = relatedSpawner.transform.position;
 
-        if (isClockwiseRotation)
-            _moveDirection = Vector3.up;
-        else
-            _moveDirection = Vector3.down;
+        SetMoveDirection();
     }
 
     private void OnEnable()
     {
-        EnableCarrier();
+        ActivateCarrier();
         PlayOneShotSound(enableSound, ownAudioSource);
+        ActivateTurnAroundTriggers(true);
+    }
+    private void OnDisable()
+    {
+        ActivateUFOShields(false);
+        ActivateTurnAroundTriggers(false);
     }
 
-    private void EnableCarrier()
+    private void ActivateCarrier()
     {
         ResetSoundObjBool();
         PlayParticles(onSpawnParticles);
         ActivateUFOShields(true);
-    }
-
-    private void OnDisable()
-    {
-        ActivateUFOShields(false);
     }
 
     private void ActivateUFOShields(bool mode)
@@ -58,6 +58,11 @@ public class Carrier : Enemy
         }
     }
 
+    protected override void DamageEnemy()
+    {
+        base.DamageEnemy();
+        ownAudioSource.PlayOneShot(onDamageTakenSound);
+    }
     public override IEnumerator DisableThatEnemy()
     {
         yield return new WaitForSeconds(0f);
@@ -65,26 +70,24 @@ public class Carrier : Enemy
         PlayParticles(onDestroyParticles);
         PlayDisableSound();
 
-        DisableCarrier();
+        DeactivateCarrier();
         DisableDangerNotifications();
 
         EventManager.SendOnEnemyDisabled();
         EventManager.SendOnScoreUpdated(destructionReward);
     }
-
-    private void DisableCarrier()
+    private void DeactivateCarrier()
     {
         PauseDisableSoundObjMovement();
         gameObject.SetActive(false);
+        ResetStats();
+    }
+    private void ResetStats()
+    {
         _thatTrans.SetPositionAndRotation(_startPosition, Quaternion.identity);
         Health = _startHealth;
     }
 
-    protected override void DamageEnemy()
-    {
-        base.DamageEnemy();
-        ownAudioSource.PlayOneShot(onDamageTakenSound);
-    }
 
     private void PlayParticles(ParticleSystem ps)
     {
@@ -93,7 +96,6 @@ public class Carrier : Enemy
         ps.Play();
         Destroy(particles, ps.main.duration);
     }
-
     private void PlayParticles(GameObject particlesPrefab)
     {
         GameObject particles = Instantiate(particlesPrefab, _thatTrans.position, _thatTrans.rotation);
@@ -106,5 +108,37 @@ public class Carrier : Enemy
     private void FixedUpdate()
     {
         _thatTrans.RotateAround(moveAround.position, _moveDirection, rotationSpeed * Time.deltaTime);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(turnAroundTriggerTag))
+            ChangeMoveDirection();
+    }
+
+    private void ActivateTurnAroundTriggers(bool condition)
+    {
+        for (int index = 0; index < relatedTurnAroundTriggers.Count; index++)
+            relatedTurnAroundTriggers[index].SetActive(condition);
+    }
+
+    private void ChangeMoveDirection()
+    {
+        if (isClockwiseRotation)
+            isClockwiseRotation = false;
+        else if (!isClockwiseRotation)
+            isClockwiseRotation = true;
+
+        SetMoveDirection();
+
+        _thatTrans.Rotate(0, 180f, 0);
+        PlayParticles(onSpawnParticles);
+    }
+
+    private void SetMoveDirection()
+    {
+        if (isClockwiseRotation)
+            _moveDirection = Vector3.up;
+        else
+            _moveDirection = Vector3.down;
     }
 }

@@ -15234,6 +15234,8 @@ MonoBehaviour:
   onSpawnParticles: {fileID: 1459862227383078, guid: cc461484bcafc664fb68be84c1fc6860,
     type: 3}
   onDamageTakenSound: {fileID: 8300000, guid: ffa45816b43df074790e9986c5b85b3c, type: 3}
+  relatedTurnAroundTriggers: []
+  turnAroundTriggerTag: TurnAroundTrigger
 --- !u!65 &3860943593631886925
 BoxCollider:
   m_ObjectHideFlags: 0
