@@ -104,8 +104,8 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
         {
-            dangerNotificators[i].SetBool("DangerOver", false);
             dangerNotificators[i].SetBool("DangerBegin", true);
+            dangerNotificators[i].SetBool("DangerOver", false);
         }
         EventManager.SendOnEnemyDeployed(alarmType);
     }
@@ -114,8 +114,8 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < dangerNotificators.Count; i++)
         {
-            dangerNotificators[i].SetBool("DangerBegin", false);
             dangerNotificators[i].SetBool("DangerOver", true);
+            dangerNotificators[i].SetBool("DangerBegin", false);
         }
         EventManager.SendOnEnemyReset(alarmType);
     }
