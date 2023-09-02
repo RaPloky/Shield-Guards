@@ -522,7 +522,7 @@ TextureImporter:
       name: ufo_notif_R
       rect:
         serializedVersion: 2
-        x: 2532
+        x: 2540
         y: 906
         width: 66
         height: 626
@@ -543,7 +543,7 @@ TextureImporter:
       name: ufo_notif_L
       rect:
         serializedVersion: 2
-        x: 2532
+        x: 2541
         y: 261
         width: 66
         height: 626
@@ -644,6 +644,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Navigation_Right
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 999
+        width: 68
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afdc52c4e432a342b1bcf62cc266310
+      internalID: 2028941498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Navigation_Left
+      rect:
+        serializedVersion: 2
+        x: 2452
+        y: 431
+        width: 68
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e80b3115d7880489b389f5757dfd8d
+      internalID: -1028559473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -665,6 +707,7 @@ TextureImporter:
       destroy_bonus: 68421289
       continue: 1374391265
       restart: -1176876272
+      Navigation_Left: -1028559473
       quit: -644791574
       pause: -1741219800
       timer_bg: 539909055
@@ -677,6 +720,7 @@ TextureImporter:
       bg_2: -1365763076
       back: -899507007
       charging_bonus: 1602498803
+      Navigation_Right: 2028941498
       upgrade: -606993101
       settings: -461243198
       protection_bonus: -169778540

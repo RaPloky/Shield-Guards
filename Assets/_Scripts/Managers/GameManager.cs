@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
             int score = PlayerPrefs.GetInt(Score.ScorePref);
             bestScore.text = score > 0 ? "Best score: " + score : string.Empty;
         }
+
+        PlayBG_Music();
     }
 
     private void OnEnable()
@@ -95,19 +97,26 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         UnpauseGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(LoadDelayedScene(SceneManager.GetActiveScene().name));
     }
 
     public void ExitToMenu()
     {
         UnpauseGame();
-        SceneManager.LoadScene("Menu");
+        StartCoroutine(LoadDelayedScene("Menu"));
     }
 
     public void StartGame()
     {
         UnpauseGame();
-        SceneManager.LoadScene("Game");
+        StartCoroutine(LoadDelayedScene("Game"));
+    }
+
+    private IEnumerator LoadDelayedScene(string sceneName)
+    {
+        BG_Music.Instance.FadeOut();
+        yield return new WaitForSeconds(BG_Music.Instance.FadeDuration);
+        SceneManager.LoadScene(sceneName);
     }
 
     private void LoseGame()
@@ -119,6 +128,7 @@ public class GameManager : MonoBehaviour
     {
         pauseButton.interactable = false;
         shieldAnimator.SetTrigger("GameLosed");
+        BG_Music.Instance.FadeOut();
 
         yield return new WaitForSeconds(loseDelay);
         losePanel.SetActive(true);
@@ -175,4 +185,6 @@ public class GameManager : MonoBehaviour
     private void AssignEndScore() => endScore.text = $"you scored: {score.ScoreAmount}";
     private void UpdateActiveGuardsCountUI() => 
         activeGuardsCountUI.text = Mathf.Approximately(ActiveGuardsCount, 0) ? string.Empty : $"X{ActiveGuardsCount}";
+
+    private void PlayBG_Music() => BG_Music.Instance.StartPlay();
 }

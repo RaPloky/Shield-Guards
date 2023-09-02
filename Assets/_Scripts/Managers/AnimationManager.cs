@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     [SerializeField] private Animator globalAnimator;
+    [SerializeField] private float menuOutDelay;
 
     private GlitchAnimationController _glitchController;
 
@@ -24,7 +25,7 @@ public class AnimationManager : MonoBehaviour
     {
         StartCoroutine(_glitchController.DigitalFadeInAndOut(0.8f, 0.2f));
         globalAnimator.SetTrigger("MenuOut");
-        Invoke(nameof(StartGame), globalAnimator.GetCurrentAnimatorClipInfo(0).Length * 2.5f);
+        Invoke(nameof(StartGame), menuOutDelay);
     }
 
     private void StartGame()
