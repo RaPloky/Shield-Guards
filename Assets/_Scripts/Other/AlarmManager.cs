@@ -12,9 +12,9 @@ public enum EnemyAlarm
 
 public class AlarmManager : MonoBehaviour
 {
-    private bool _isUFO_AlarmActive;
-    private bool _isMeteor_AlarmActive;
-    private bool _isCarrier_AlarmActive;
+    private bool _isUFO_AlarmActive = false;
+    private bool _isMeteor_AlarmActive = false;
+    private bool _isCarrier_AlarmActive = false;
 
     private int _activeUFO_Count = 0;
     private int _activeMeteor_Count = 0;

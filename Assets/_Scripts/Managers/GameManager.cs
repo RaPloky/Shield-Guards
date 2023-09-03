@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator shieldAnimator;
     [SerializeField] private Button pauseButton;
     [SerializeField] private EnemyInvokeOnGuardLose enemyInvoke;
+    [SerializeField] private GameObject heartbeatPanel;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
@@ -35,8 +36,6 @@ public class GameManager : MonoBehaviour
     private int _activeGuardsCount;
 
     public static bool IsGamePaused;
-
-    private AudioSource _source;
 
     public int ActiveGuardsCount
     {
@@ -56,7 +55,6 @@ public class GameManager : MonoBehaviour
         {
             ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
             UpdateActiveGuardsCountUI();
-            _source = GetComponent<AudioSource>();
         }
 
         if (bestScore != null)
@@ -177,9 +175,9 @@ public class GameManager : MonoBehaviour
     private void ActivateHeartbeat(bool isEnabled)
     {
         if (isEnabled)
-            _source.Play();
+            heartbeatPanel.SetActive(true);
         else
-            _source.Stop();
+            heartbeatPanel.SetActive(false);
     }
 
     private void AssignEndScore() => endScore.text = $"you scored: {score.ScoreAmount}";

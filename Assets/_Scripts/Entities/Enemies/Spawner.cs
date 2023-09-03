@@ -79,8 +79,8 @@ public class Spawner : MonoBehaviour
 
             if (IsSpawnAllowed() && !ActiveEnemy.activeSelf && !IsSpawnFreezed && targetGuard.IsHaveEnergy)
             {
-                prefabToOperate.SetActive(true);
                 NotifyAboutDanger();
+                prefabToOperate.SetActive(true);
             }
         }
     }
@@ -102,22 +102,22 @@ public class Spawner : MonoBehaviour
 
     protected void NotifyAboutDanger()
     {
+        EventManager.SendOnEnemyDeployed(alarmType);
         for (int i = 0; i < dangerNotificators.Count; i++)
         {
             dangerNotificators[i].SetBool("DangerBegin", true);
             dangerNotificators[i].SetBool("DangerOver", false);
         }
-        EventManager.SendOnEnemyDeployed(alarmType);
     }
 
     public void DisableDanger()
     {
+        EventManager.SendOnEnemyReset(alarmType);
         for (int i = 0; i < dangerNotificators.Count; i++)
         {
             dangerNotificators[i].SetBool("DangerOver", true);
             dangerNotificators[i].SetBool("DangerBegin", false);
         }
-        EventManager.SendOnEnemyReset(alarmType);
     }
 
     protected bool IsSpawnAllowed()

@@ -16829,7 +16829,6 @@ GameObject:
   - component: {fileID: 418639300}
   - component: {fileID: 418639302}
   - component: {fileID: 418639303}
-  - component: {fileID: 418639304}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -16860,6 +16859,7 @@ MonoBehaviour:
   shieldAnimator: {fileID: 905993767}
   pauseButton: {fileID: 1806046563}
   enemyInvoke: {fileID: 418639303}
+  heartbeatPanel: {fileID: 2075849546}
 --- !u!4 &418639301
 Transform:
   m_ObjectHideFlags: 0
@@ -16942,103 +16942,6 @@ MonoBehaviour:
   - {fileID: 1751802755}
   - {fileID: 862890436}
   - {fileID: 1643139564}
---- !u!82 &418639304
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418639299}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -8182895025060101597, guid: 2f8f9001a79ff7348bfa626342f3f8d5,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7e1e25cd660f24349bff87f159d15992, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.8
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 1.01
-  Pan2D: 0
-  rolloffMode: 1
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!198 &439229783 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 5039311265842273754, guid: 1feaee64acede0c44b29354e964b8366,
@@ -64469,6 +64372,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2074762535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2075849546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2357808809048612751, guid: 59b8c52056e53a54d85784ad66d73b58,
+    type: 3}
+  m_PrefabInstance: {fileID: 5140966593649288956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2076751808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67476,6 +67385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Maskable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2357808809048612751, guid: 59b8c52056e53a54d85784ad66d73b58,
+        type: 3}
+      propertyPath: m_Name
+      value: HeartbeatPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2533355394111436095, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
