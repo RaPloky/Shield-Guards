@@ -144,8 +144,8 @@ TextureImporter:
       name: bg_1
       rect:
         serializedVersion: 2
-        x: 115
-        y: 1394
+        x: 88
+        y: 1356
         width: 679
         height: 176
       alignment: 0
@@ -165,8 +165,8 @@ TextureImporter:
       name: arrow
       rect:
         serializedVersion: 2
-        x: 1387
-        y: 53
+        x: 1359
+        y: 17
         width: 283
         height: 310
       alignment: 0
@@ -183,53 +183,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_off
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 815
-        width: 359
-        height: 358
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f2bdd24a53baf34eaf4c18e6587d2d3
-      internalID: 260258148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_on
-      rect:
-        serializedVersion: 2
-        x: 515
-        y: 815
-        width: 359
-        height: 358
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a600b6a6c4163984d990a13033403031
-      internalID: -1461419012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: settings
       rect:
         serializedVersion: 2
-        x: 909
-        y: 821
+        x: 879
+        y: 784
         width: 358
         height: 358
       alignment: 0
@@ -249,8 +207,8 @@ TextureImporter:
       name: info
       rect:
         serializedVersion: 2
-        x: 1296
-        y: 821
+        x: 1267
+        y: 783
         width: 357
         height: 357
       alignment: 0
@@ -270,8 +228,8 @@ TextureImporter:
       name: menu
       rect:
         serializedVersion: 2
-        x: 1687
-        y: 815
+        x: 1656
+        y: 779
         width: 358
         height: 357
       alignment: 0
@@ -291,8 +249,8 @@ TextureImporter:
       name: charging_bonus
       rect:
         serializedVersion: 2
-        x: 84
-        y: 400
+        x: 70
+        y: 364
         width: 412
         height: 410
       alignment: 0
@@ -312,8 +270,8 @@ TextureImporter:
       name: destroy_bonus
       rect:
         serializedVersion: 2
-        x: 540
-        y: 395
+        x: 511
+        y: 359
         width: 395
         height: 404
       alignment: 0
@@ -333,8 +291,8 @@ TextureImporter:
       name: protection_bonus
       rect:
         serializedVersion: 2
-        x: 1002
-        y: 419
+        x: 976
+        y: 383
         width: 393
         height: 378
       alignment: 0
@@ -351,74 +309,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: protection_bonus_nobg
-      rect:
-        serializedVersion: 2
-        x: 1021
-        y: 0
-        width: 352
-        height: 368
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1961ccd898581b248970e0e8079fc271
-      internalID: 1373968988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: destroy_bonus_nobg
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 0
-        width: 351
-        height: 351
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce557060170886043b6dbe8bf7711e31
-      internalID: -294088403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: charging_bonus_nobg
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 0
-        width: 356
-        height: 342
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 521579ef9a779554d894e637a91cbb37
-      internalID: -969514885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: quit
       rect:
         serializedVersion: 2
-        x: 1296
-        y: 1220
+        x: 1267
+        y: 1181
         width: 357
         height: 357
       alignment: 0
@@ -438,8 +333,8 @@ TextureImporter:
       name: upgrade
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 1220
+        x: 1656
+        y: 1181
         width: 357
         height: 357
       alignment: 0
@@ -459,8 +354,8 @@ TextureImporter:
       name: back
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 36
+        x: 1657
+        y: 0
         width: 357
         height: 357
       alignment: 0
@@ -480,8 +375,8 @@ TextureImporter:
       name: pause
       rect:
         serializedVersion: 2
-        x: 2074
-        y: 1227
+        x: 2043
+        y: 1190
         width: 358
         height: 357
       alignment: 0
@@ -501,8 +396,8 @@ TextureImporter:
       name: continue
       rect:
         serializedVersion: 2
-        x: 2075
-        y: 806
+        x: 2045
+        y: 768
         width: 356
         height: 356
       alignment: 0
@@ -522,8 +417,8 @@ TextureImporter:
       name: ufo_notif_R
       rect:
         serializedVersion: 2
-        x: 2540
-        y: 906
+        x: 2513
+        y: 864
         width: 66
         height: 626
       alignment: 0
@@ -543,8 +438,8 @@ TextureImporter:
       name: ufo_notif_L
       rect:
         serializedVersion: 2
-        x: 2541
-        y: 261
+        x: 2513
+        y: 218
         width: 66
         height: 626
       alignment: 0
@@ -564,8 +459,8 @@ TextureImporter:
       name: restart
       rect:
         serializedVersion: 2
-        x: 2099
-        y: 35
+        x: 2068
+        y: 0
         width: 358
         height: 357
       alignment: 0
@@ -585,8 +480,8 @@ TextureImporter:
       name: meteor_notif
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 433
+        x: 1403
+        y: 396
         width: 387
         height: 341
       alignment: 0
@@ -606,8 +501,8 @@ TextureImporter:
       name: timer_bg
       rect:
         serializedVersion: 2
-        x: 1895
-        y: 419
+        x: 1866
+        y: 383
         width: 360
         height: 359
       alignment: 0
@@ -627,8 +522,8 @@ TextureImporter:
       name: bg_2
       rect:
         serializedVersion: 2
-        x: 112
-        y: 1203
+        x: 85
+        y: 1166
         width: 679
         height: 176
       alignment: 0
@@ -648,12 +543,12 @@ TextureImporter:
       name: Navigation_Right
       rect:
         serializedVersion: 2
-        x: 2455
-        y: 999
+        x: 2425
+        y: 390
         width: 68
         height: 526
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -669,12 +564,12 @@ TextureImporter:
       name: Navigation_Left
       rect:
         serializedVersion: 2
-        x: 2452
-        y: 431
+        x: 2429
+        y: 963
         width: 68
         height: 529
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
