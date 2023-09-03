@@ -32,9 +32,9 @@ public class SpawnerWithLimit : Spawner
                     continue;
                 }
 
+                NotifyAboutDanger();
                 prefabToOperate.SetActive(true);
                 _justSpawned = true;
-                NotifyAboutDanger();
             }
         }
     }
