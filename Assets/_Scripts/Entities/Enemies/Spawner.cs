@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     public float SpawnDelay
     {
         get => spawnDelay;
-        set => spawnDelay = Mathf.Clamp(value, 0.1f, 10f);
+        set => spawnDelay = Mathf.Clamp(value, 0.1f, 20f);
     }
 
     public float LaunchChance
