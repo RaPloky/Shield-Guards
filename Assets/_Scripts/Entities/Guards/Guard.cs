@@ -60,6 +60,7 @@ public sealed class Guard : MonoBehaviour
                 TurnOffGuard();
         }
     }
+    public int Consumption { get => consumption; set => consumption = value; }
     public bool IsHaveEnergy => _isHaveEnergy;
     public bool IsProtectBonusActivated { get; set; }
     public Transform RelatedBonus => relatedBonus.transform;

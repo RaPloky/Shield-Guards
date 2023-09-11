@@ -17181,7 +17181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &450239039
 Transform:
   m_ObjectHideFlags: 0
@@ -30285,7 +30285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &868677463
 Transform:
   m_ObjectHideFlags: 0
@@ -37179,6 +37179,11 @@ PrefabInstance:
       objectReference: {fileID: 978831533}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
+      propertyPath: energy
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1033974457}
@@ -37195,7 +37200,7 @@ PrefabInstance:
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: consumption
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
@@ -37566,6 +37571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3.561218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302015869913822981, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7302015869913822981, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
@@ -38289,6 +38299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
+      propertyPath: energy
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1043391619}
@@ -38305,7 +38320,7 @@ PrefabInstance:
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: consumption
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
@@ -38451,6 +38466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.z
       value: 3.420251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365096598109023071, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1365096598109023071, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
@@ -41177,6 +41197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: energy
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1120892253}
@@ -41193,7 +41218,7 @@ PrefabInstance:
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: consumption
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
@@ -41435,6 +41460,11 @@ PrefabInstance:
       propertyPath: energyAddSound
       value: 
       objectReference: {fileID: 8300000, guid: a4e04e29867f24244b3d27bf5c8b8333, type: 3}
+    - target: {fileID: 8530070319839768931, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8660266266727667351, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51502,7 +51532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1523527767
 Transform:
   m_ObjectHideFlags: 0
@@ -61737,8 +61767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5.9
-  launchChance: 0.58
+  spawnDelay: 0.1
+  launchChance: 0
   prefabToOperate: {fileID: 546441788}
   parent: {fileID: 0}
   targetGuard: {fileID: 1120892249}
@@ -65866,7 +65896,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 1b1a42e5d693bc1489eff352d1975254, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.801
+  m_Volume: 0.461
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -66462,6 +66492,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -518146709782679259, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: chargerComponent
+      value: 
+      objectReference: {fileID: 1043391615}
+    - target: {fileID: -518146709782679259, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: guardsComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -518146709782679259, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: guardsComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 1043391615}
+    - target: {fileID: -518146709782679259, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: guardsComponents.Array.data[1]
+      value: 
+      objectReference: {fileID: 1120892249}
+    - target: {fileID: -518146709782679259, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: guardsComponents.Array.data[2]
+      value: 
+      objectReference: {fileID: 1033974453}
     - target: {fileID: 524288868042466021, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -66572,6 +66627,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 418639300}
+    - target: {fileID: 1026756441827220430, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1026756441893089039, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -66597,6 +66657,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 325206140}
+    - target: {fileID: 1026756442156650795, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026756442156650795, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -85.017136
+      objectReference: {fileID: 0}
     - target: {fileID: 1026756442176114688, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -67061,6 +67131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419909664077372762, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea3b06015ad0e334a9a3bf52e7c0603f, type: 3}
@@ -73364,8 +73439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 8.6
-  launchChance: 0.58
+  spawnDelay: 0.1
+  launchChance: 0
   prefabToOperate: {fileID: 923687986}
   parent: {fileID: 0}
   targetGuard: {fileID: 1033974453}
@@ -73420,8 +73495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5.4
-  launchChance: 0.36
+  spawnDelay: 0.1
+  launchChance: 0
   prefabToOperate: {fileID: 984062082}
   parent: {fileID: 0}
   targetGuard: {fileID: 1043391615}
