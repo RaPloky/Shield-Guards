@@ -37221,6 +37221,11 @@ PrefabInstance:
       objectReference: {fileID: 978831533}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
+      propertyPath: energy
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1033974457}
@@ -37229,6 +37234,11 @@ PrefabInstance:
       propertyPath: bonusIcon
       value: 
       objectReference: {fileID: 1774407500}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: bonusLight
@@ -38331,6 +38341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
+      propertyPath: energy
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1043391619}
@@ -38339,6 +38354,11 @@ PrefabInstance:
       propertyPath: bonusIcon
       value: 
       objectReference: {fileID: 724854325}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: bonusLight
@@ -41219,6 +41239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
+      propertyPath: energy
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1120892253}
@@ -41227,6 +41252,11 @@ PrefabInstance:
       propertyPath: bonusIcon
       value: 
       objectReference: {fileID: 2020972904}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: bonusLight

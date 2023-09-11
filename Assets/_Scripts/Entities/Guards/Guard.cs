@@ -14,6 +14,7 @@ public enum GuardType
 public sealed class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
+    [SerializeField] private int maxEnergy;
     [SerializeField] private int consumption;
     [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
     [SerializeField] private int criticalEnergy;
@@ -26,14 +27,13 @@ public sealed class Guard : MonoBehaviour
     [SerializeField] private GuardType guardType; 
     
     private Animator _animator;
-    private int _maxEnergy;
     private bool _isHaveEnergy;
     private Guard _thatGuard;
     private float _startConsumptionDelay;
     private bool _criticalEnergyActivated;
     private const float _GAME_START_DELAY = 1f;
 
-    public int MaxEnergy => _maxEnergy;
+    public int MaxEnergy => maxEnergy;
     public int Energy
     {
         get => energy;
@@ -42,7 +42,7 @@ public sealed class Guard : MonoBehaviour
             if (IsProtectBonusActivated && value < energy)
                 return;
 
-            energy = Mathf.Clamp(value, 0, _maxEnergy);
+            energy = Mathf.Clamp(value, 0, MaxEnergy);
             EventManager.SendOnEnergyValueChanged();
 
             if (energy <= criticalEnergy && !_criticalEnergyActivated)
@@ -78,7 +78,6 @@ public sealed class Guard : MonoBehaviour
         _criticalEnergyActivated = false;
         _isHaveEnergy = true;
 
-        _maxEnergy = energy;
         _startConsumptionDelay = ConsumptionDelay;
 
         _thatGuard = this;

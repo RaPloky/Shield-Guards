@@ -16889,7 +16889,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418639299}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b03434110d196ca499bf42bc997dfd37, type: 3}
   m_Name: 
@@ -37194,6 +37194,11 @@ PrefabInstance:
       objectReference: {fileID: 9120990868042559522}
     - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196247607529321045, guid: 1feaee64acede0c44b29354e964b8366,
+        type: 3}
       propertyPath: bonusLight
       value: 
       objectReference: {fileID: 2100000, guid: 26ecdc16eaa7dfc4897f314e89844d4f, type: 2}
@@ -38312,6 +38317,11 @@ PrefabInstance:
       propertyPath: bonusIcon
       value: 
       objectReference: {fileID: 7107076026903472869}
+    - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 1135338904735918118, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: bonusLight
@@ -41210,6 +41220,11 @@ PrefabInstance:
       propertyPath: bonusIcon
       value: 
       objectReference: {fileID: 4973751708330427109}
+    - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 5826611165056945936, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: bonusLight
@@ -61767,7 +61782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 0.1
+  spawnDelay: 1
   launchChance: 0
   prefabToOperate: {fileID: 546441788}
   parent: {fileID: 0}
@@ -66908,6 +66923,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453716532591993206, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018746013354493551, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -73439,7 +73484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 0.1
+  spawnDelay: 1
   launchChance: 0
   prefabToOperate: {fileID: 923687986}
   parent: {fileID: 0}
@@ -73495,7 +73540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 0.1
+  spawnDelay: 1
   launchChance: 0
   prefabToOperate: {fileID: 984062082}
   parent: {fileID: 0}

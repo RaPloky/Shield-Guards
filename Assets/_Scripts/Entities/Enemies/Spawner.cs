@@ -122,6 +122,9 @@ public class Spawner : MonoBehaviour
 
     protected bool IsSpawnAllowed()
     {
+        if (Mathf.Approximately(launchChance, 0))
+            return false;
+
         float randomChance = Random.Range(0f, 1f);
         return randomChance < launchChance;
     }

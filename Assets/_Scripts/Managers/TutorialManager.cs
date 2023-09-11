@@ -6,12 +6,15 @@ public enum PopUpIndexes
 {
     // Every number should be the same as 
     // number in related PopUp_X object name
-    AddingEnergyToGuards = 31,
+    AddingEnergyToGuards = 30,
+    TransitionToGameplay = 18,
 }
 
 public class TutorialManager : MonoBehaviour
 {
-    [Header("PopUp 31: Adding energy to Guards")]
+    [Header("PopUp 18: Transition to gameplay")]
+    [SerializeField] private Animator transitionAnim;
+    [Header("PopUp 30: Adding energy to Guards")]
     [SerializeField] private List<Guard> guardsComponents;
 
     [SerializeField] private GameObject[] popUps;
@@ -64,6 +67,9 @@ public class TutorialManager : MonoBehaviour
             default:
                 break;
 
+            case PopUpIndexes.TransitionToGameplay:
+                transitionAnim.SetTrigger("Gameplay_In");
+                break;
             case PopUpIndexes.AddingEnergyToGuards:
                 foreach (Guard guard in guardsComponents)
                     ActivateGuard(guard);
