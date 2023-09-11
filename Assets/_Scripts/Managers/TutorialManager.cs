@@ -6,25 +6,32 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] popUps;
 
-    private int _popIndex;
+    private int _popUpIndex = 0;
+    private int CurrentPopUpIndex { 
+        get => _popUpIndex; 
+        set => _popUpIndex = Mathf.Clamp(value, 0, popUps.Length); 
+    }
 
     private void Update()
     {
-        for (int i = 0; i < popUps.Length; i++)
+        for (int popUpIndex = 0; popUpIndex < popUps.Length; popUpIndex++)
         {
-            if (i == _popIndex)
+            if (popUpIndex == CurrentPopUpIndex)
             {
-                popUps[_popIndex].SetActive(true);
+                popUps[CurrentPopUpIndex].SetActive(true);
             }
             else
             {
-                popUps[i].SetActive(false);
+                popUps[popUpIndex].SetActive(false);
             }
         }
+        ManagePopUps();
+    }
 
-        if (_popIndex == 0)
-        {
-            // if instruction done, then _popIndex++
-        }
+    public void NextPopUp() => CurrentPopUpIndex++;
+
+    private void ManagePopUps()
+    {
+
     }
 }
