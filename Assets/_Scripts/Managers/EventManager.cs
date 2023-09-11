@@ -23,5 +23,5 @@ public class EventManager : MonoBehaviour
     public static void SendOnBonusUpgraded() => OnBonusUpgraded?.Invoke();
     public static void SendOnEnemyDeployed(EnemyAlarm alarmType) => OnEnemyDeployed?.Invoke(alarmType);
     public static void SendOnEnemyReset(EnemyAlarm alarmType) => OnEnemyReset?.Invoke(alarmType);
-    public static void SendOnTutorialPopUpIndexChanger() => OnTutorialPopUpIndexChanged?.Invoke();
+    public static void SendOnTutorialPopUpIndexChanged() => OnTutorialPopUpIndexChanged?.Invoke();
 }

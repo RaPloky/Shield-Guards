@@ -14,8 +14,9 @@ public class TutorialManager : MonoBehaviour
 {
     [Header("PopUp 18: Transition to gameplay")]
     [SerializeField] private Animator transitionAnim;
-    [Header("PopUp 30: Adding energy to Guards")]
+    [Header("PopUp 30/Common: Adding energy to Guards")]
     [SerializeField] private List<Guard> guardsComponents;
+    private bool _completedCharginUpPhase = false;
 
     [SerializeField] private GameObject[] popUps;
 
@@ -28,10 +29,12 @@ public class TutorialManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.OnTutorialPopUpIndexChanged += ManagePopUps;
+        EventManager.OnEnergyValueChanged += CompleteChargingUpTutor;
     }
     private void OnDisable()
     {
         EventManager.OnTutorialPopUpIndexChanged -= ManagePopUps;
+        EventManager.OnEnergyValueChanged -= CompleteChargingUpTutor;
     }
 
     private void Update()
@@ -52,14 +55,26 @@ public class TutorialManager : MonoBehaviour
     public void NextPopUp()
     {
         CurrentPopUpIndex++;
-        EventManager.SendOnTutorialPopUpIndexChanger();
+        EventManager.SendOnTutorialPopUpIndexChanged();
     }
-
+    #region "Custom Instructions"
     private void ActivateGuard(Guard guard)
     {
         guard.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
+    private void CompleteChargingUpTutor()
+    {
+        foreach (Guard guard in guardsComponents)
+        {
+            if (Mathf.Approximately(guard.Energy, guard.MaxEnergy) && !_completedCharginUpPhase)
+            {
+                CurrentPopUpIndex++;
+                _completedCharginUpPhase = true;
+            }
+        }
+    }
+    #endregion
     private void ManagePopUps()
     {
         switch ((PopUpIndexes)CurrentPopUpIndex)

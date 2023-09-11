@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI activeGuardsCountUI;
     [SerializeField] private DifficultyUpdate difficultyManager;
     [SerializeField] private bool isMenu;
+    [SerializeField] private bool isTutorial;
     [SerializeField, Range(2f, 10f)] private float loseDelay;
     [SerializeField] private Animator shieldAnimator;
     [SerializeField] private Button pauseButton;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     public static int DefaultDemolitionGoal => 20;
     public static int DefaultProtectionGoal => 60;
 
-    private int _activeGuardsCount;
+    private int _activeGuardsCount = 0;
 
     public static bool IsGamePaused;
 
@@ -53,7 +54,9 @@ public class GameManager : MonoBehaviour
     {
         if (!isMenu)
         {
-            ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
+            if (!isTutorial)
+                ActiveGuardsCount = difficultyManager.ActiveGuards.Count;
+
             UpdateActiveGuardsCountUI();
         }
 
@@ -150,7 +153,7 @@ public class GameManager : MonoBehaviour
             ActivateMicronovas();
             ActivateHeartbeat(true);
         }
-
+        
         if (IsGameLosed())
         {
             LoseGame();
