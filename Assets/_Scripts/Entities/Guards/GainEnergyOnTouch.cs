@@ -16,7 +16,7 @@ public class GainEnergyOnTouch : MonoBehaviour
         set => energyAddAmount = value;
     }
 
-    private void Awake()
+    private void Start()
     {
         _thatGuard = GetComponent<Guard>();
         _gameManager = GameManager.Instance;
