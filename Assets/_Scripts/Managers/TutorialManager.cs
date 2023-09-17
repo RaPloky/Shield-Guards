@@ -1,22 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public enum PopUpIndexes
-{
-    // Every number should be the same as 
-    // number in related PopUp_X object name
-    AddingEnergyToGuards = 30,
-    TransitionToGameplay = 18,
-}
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
+    private enum TutorialStages
+    {
+        // Every number should be the same as 
+        // number in related PopUp_X object name
+        TransitionToGameplay = 18,
+        AddingEnergyToGuards = 30,
+        TurnOnFullGuardHud = 33,
+        NavigationButtonAppear = 36,
+    }
+
     [Header("PopUp 18: Transition to gameplay")]
     [SerializeField] private Animator transitionAnim;
-    [Header("PopUp 30/Common: Adding energy to Guards")]
+
+    [Header("PopUp 30: Adding energy to Guards")]
     [SerializeField] private List<Guard> guardsComponents;
+
+    [Header("PopUp 33: Informing about other Guards")]
+    [SerializeField] private List<GameObject> hudElementsToTurnOn;
+
     private bool _completedCharginUpPhase = false;
+
+    [Header("PopUp 36: Navigation between Guards")]
+    [SerializeField] private List<GameObject> navigationButtons;
+
+    private bool _completedFullCharge = false;
 
     [SerializeField] private GameObject[] popUps;
 
@@ -28,13 +41,15 @@ public class TutorialManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnTutorialPopUpIndexChanged += ManagePopUps;
-        EventManager.OnEnergyValueChanged += CompleteChargingUpTutor;
+        EventManager.OnTutorialPopUpIndexChanged += ManageTutorialStages;
+        EventManager.OnEnergyValueChanged += CompleteSingleChargingUpTutor;
+        EventManager.OnEnergyValueChanged += CompleteAllChargingUpTutor;
     }
     private void OnDisable()
     {
-        EventManager.OnTutorialPopUpIndexChanged -= ManagePopUps;
-        EventManager.OnEnergyValueChanged -= CompleteChargingUpTutor;
+        EventManager.OnTutorialPopUpIndexChanged -= ManageTutorialStages;
+        EventManager.OnEnergyValueChanged -= CompleteSingleChargingUpTutor;
+        EventManager.OnEnergyValueChanged -= CompleteAllChargingUpTutor;
     }
 
     private void Update()
@@ -58,12 +73,13 @@ public class TutorialManager : MonoBehaviour
         EventManager.SendOnTutorialPopUpIndexChanged();
     }
     #region "Custom Instructions"
-    private void ActivateGuard(Guard guard)
+    private void MakeGuardInteractable(Guard guard)
     {
         guard.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
-    private void CompleteChargingUpTutor()
+    // First guard only:
+    private void CompleteSingleChargingUpTutor()
     {
         foreach (Guard guard in guardsComponents)
         {
@@ -74,20 +90,55 @@ public class TutorialManager : MonoBehaviour
             }
         }
     }
-    #endregion
-    private void ManagePopUps()
+    // All guards:
+    private void CompleteAllChargingUpTutor()
     {
-        switch ((PopUpIndexes)CurrentPopUpIndex)
+        if (_completedFullCharge)
+            return;
+
+        foreach (Guard guard in guardsComponents)
+        {
+            if (!Mathf.Approximately(guard.Energy, guard.MaxEnergy))
+                return;
+        }
+        CurrentPopUpIndex++;
+        _completedFullCharge = true;
+    }
+    #endregion
+    private void ManageTutorialStages()
+    {
+        switch ((TutorialStages)CurrentPopUpIndex)
         {
             default:
                 break;
 
-            case PopUpIndexes.TransitionToGameplay:
+            case TutorialStages.TransitionToGameplay:
                 transitionAnim.SetTrigger("Gameplay_In");
                 break;
-            case PopUpIndexes.AddingEnergyToGuards:
+
+            case TutorialStages.AddingEnergyToGuards:
                 foreach (Guard guard in guardsComponents)
-                    ActivateGuard(guard);
+                    MakeGuardInteractable(guard);
+                break;
+
+            case TutorialStages.TurnOnFullGuardHud:
+                foreach (GameObject hudElement in hudElementsToTurnOn)
+                    hudElement.SetActive(true);
+                break;
+
+            case TutorialStages.NavigationButtonAppear:
+                foreach (GameObject navButton in navigationButtons)
+                {
+                    navButton.SetActive(true);
+                    navButton.GetComponent<Button>().interactable = false;
+                }
+                break;
+
+            // Firstly buttons activates non-interactable
+            // and on next stage they become interactable so here's '+1':
+            case TutorialStages.NavigationButtonAppear + 1:
+                foreach (GameObject navButton in navigationButtons)
+                    navButton.GetComponent<Button>().interactable = true;
                 break;
         }
     }
