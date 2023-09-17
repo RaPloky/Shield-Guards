@@ -36,12 +36,13 @@ abstract public class Enemy : MonoBehaviour
             health = (int)Mathf.Clamp(value, 0, float.MaxValue);
             UpdateHealthBar();
 
-            if (health <= 0)
-                StartCoroutine(DisableThatEnemy());
+            if (health <= 0) 
+                DisableEnemy();
         }
     }
 
     public abstract IEnumerator DisableThatEnemy();
+    public void DisableEnemy() => StartCoroutine(DisableThatEnemy());
     protected virtual void DisableDangerNotifications()
     {
         relatedSpawner.DisableDanger();
