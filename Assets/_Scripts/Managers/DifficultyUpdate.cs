@@ -78,6 +78,9 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void UpdateSpawnersStats(List<Spawner> spawners)
     {
+        if (spawners == null)
+            return;
+
         for (int i = 0; i < spawners.Count; i++)
         {
             spawners[i].LaunchChance += spawnChanceIncrease;
