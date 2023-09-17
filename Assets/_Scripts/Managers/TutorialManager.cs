@@ -12,9 +12,10 @@ public class TutorialManager : MonoBehaviour
         TransitionToGameplay = 18,
         AddingEnergyToGuards = 30,
         TurnOnFullGuardHud = 33,
-        NavigationButtonAppear = 36,
+        NavigationButtonsAppear = 36,
+        NavigationButtonsDissapear = 39,
         IntroducingScore = 44,
-        IntroducingUfo = 55
+        IntroducingUfo = 54
     }
 
     [Header("PopUp 18: Transition to gameplay")]
@@ -32,7 +33,7 @@ public class TutorialManager : MonoBehaviour
     [Header("PopUp 44: Introducing score")]
     [SerializeField] private List<GameObject> scoreObjects;
 
-    [Header("PopUp 55: Introducing Tyrandid marines")]
+    [Header("PopUp 54: Introducing Tyrandid marines")]
     [SerializeField] private List<Spawner> ufoSpawners;
 
     private bool _completedFullCharge = false;
@@ -133,7 +134,7 @@ public class TutorialManager : MonoBehaviour
                     hudElement.SetActive(true);
                 break;
 
-            case TutorialStages.NavigationButtonAppear:
+            case TutorialStages.NavigationButtonsAppear:
                 foreach (GameObject navButton in navigationButtons)
                 {
                     navButton.SetActive(true);
@@ -143,9 +144,14 @@ public class TutorialManager : MonoBehaviour
 
             // Firstly buttons activates non-interactable
             // and on next stage they become interactable so here's '+1':
-            case TutorialStages.NavigationButtonAppear + 1:
+            case TutorialStages.NavigationButtonsAppear + 1:
                 foreach (GameObject navButton in navigationButtons)
                     navButton.GetComponent<Button>().interactable = true;
+                break;
+
+            case TutorialStages.NavigationButtonsDissapear:
+                foreach (GameObject navButton in navigationButtons)
+                    navButton.SetActive(false);
                 break;
 
             case TutorialStages.IntroducingScore:

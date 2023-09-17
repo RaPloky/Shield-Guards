@@ -28,6 +28,9 @@ public class GainEnergyOnTouch : MonoBehaviour
         if (GameManager.IsGamePaused || !_thatGuard.IsHaveEnergy)
             return;
 
+        if (Mathf.Approximately(_thatGuard.Energy, _thatGuard.MaxEnergy))
+            return;
+
         _thatGuard.AddEnergy(energyAddAmount);
         EventManager.SendOnNonBonusEnergyAdded();
         EventManager.SendOnScoreUpdated((energyAddAmount / _scoreCutter) * _gameManager.ActiveGuardsCount);

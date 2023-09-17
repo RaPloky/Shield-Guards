@@ -78,7 +78,7 @@ public class DifficultyUpdate : MonoBehaviour
 
     private void UpdateSpawnersStats(List<Spawner> spawners)
     {
-        if (spawners == null)
+        if (spawners == null || Mathf.Approximately(spawners.Count, 0))
             return;
 
         for (int i = 0; i < spawners.Count; i++)
