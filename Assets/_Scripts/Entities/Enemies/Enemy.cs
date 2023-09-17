@@ -37,12 +37,16 @@ abstract public class Enemy : MonoBehaviour
             UpdateHealthBar();
 
             if (health <= 0) 
-                DisableEnemy();
+                DisableEnemy(true);
         }
     }
 
-    public abstract IEnumerator DisableThatEnemy();
-    public void DisableEnemy() => StartCoroutine(DisableThatEnemy());
+    public abstract IEnumerator DisableThatEnemy(bool destroyedByPlayer);
+    public void DisableEnemy(bool destroyedByPlayer)
+    {
+        if (this.isActiveAndEnabled)
+            StartCoroutine(DisableThatEnemy(destroyedByPlayer));
+    }
     protected virtual void DisableDangerNotifications()
     {
         relatedSpawner.DisableDanger();

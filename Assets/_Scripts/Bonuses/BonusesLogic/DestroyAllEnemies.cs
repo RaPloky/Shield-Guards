@@ -21,7 +21,7 @@ public class DestroyAllEnemies : Bonus
         for (int i = 0; i < _enemies.Length; i++)
         {
             if (_enemies[i].isActiveAndEnabled)
-                StartCoroutine(_enemies[i].DisableThatEnemy());
+                StartCoroutine(_enemies[i].DisableThatEnemy(true));
         }
 
         StartCoroutine(FreezeSpawn());

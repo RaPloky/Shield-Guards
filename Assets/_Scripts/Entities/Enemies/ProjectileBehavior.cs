@@ -4,7 +4,7 @@ public class ProjectileBehavior : MonoBehaviour
 {
     [SerializeField] protected float speedFactor;
     [SerializeField] private int energyDamage;
-    [SerializeField] private bool isFragileTrash;
+    [SerializeField] private bool isFragileTrash; // bad naming, sorry me - it means "ifIsActualEnemy"
     [SerializeField] private bool isBackgroundEnemy;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
     [SerializeField] private ParticleSystem onDisableParticles;
@@ -16,8 +16,8 @@ public class ProjectileBehavior : MonoBehaviour
     protected Transform _thatTrans;
     protected Vector3 _startPos;
 
-    private Guard _targetComponent;
-    private Meteor _thatMeteorReference;
+    private Guard _guard;
+    private Meteor _thatReference;
     private DifficultyUpdate _difficultyManager;
     private GameObject _collisionGO;
 
@@ -33,7 +33,7 @@ public class ProjectileBehavior : MonoBehaviour
         _difficultyManager = DifficultyUpdate.Instance;
 
         if (isFragileTrash)
-            _thatMeteorReference = GetComponent<Meteor>();
+            _thatReference = GetComponent<Meteor>();
     }
 
     private void FixedUpdate()
@@ -49,9 +49,9 @@ public class ProjectileBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _collisionGO = collision.gameObject;
-        _targetComponent = _collisionGO.GetComponent<Guard>();
+        _guard = _collisionGO.GetComponent<Guard>();
 
-        if (_targetComponent == null)
+        if (_guard == null)
         {
             if (_collisionGO.CompareTag("Enemy") && isFragileTrash && !isBackgroundEnemy)
             {
@@ -59,25 +59,25 @@ public class ProjectileBehavior : MonoBehaviour
                 Carrier carrier = _collisionGO.GetComponent<Carrier>();
 
                 if (ufo != null)
-                    StartCoroutine(ufo.DisableThatEnemy());
+                    StartCoroutine(ufo.DisableThatEnemy(false));
                 else if (carrier != null)
-                    StartCoroutine(carrier.DisableThatEnemy());
+                    StartCoroutine(carrier.DisableThatEnemy(false));
             }
 
-            DisableThatProjectile();
+            DisableThatProjectile(false);
             return;
         }
-        _targetComponent.ConsumptEnergy(energyDamage + (int)(energyDamage * _difficultyManager.EnemyDamageIncreasePercentage));
+        _guard.ConsumptEnergy(energyDamage + (int)(energyDamage * _difficultyManager.EnemyDamageIncreasePercentage));
         
-        DisableThatProjectile();
+        DisableThatProjectile(false);
         PlayHitGlitchAnim();
     }
 
-    private void DisableThatProjectile()
+    private void DisableThatProjectile(bool destroyedByPlayer)
     {
         if (isFragileTrash)
         {
-            StartCoroutine(_thatMeteorReference.DisableThatEnemy());
+            StartCoroutine(_thatReference.DisableThatEnemy(destroyedByPlayer));
         }
         else
         {

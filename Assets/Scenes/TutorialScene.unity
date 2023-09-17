@@ -30153,7 +30153,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &862890435
 Transform:
   m_ObjectHideFlags: 0
@@ -54201,7 +54201,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1643139563
 Transform:
   m_ObjectHideFlags: 0
@@ -57215,7 +57215,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1751802754
 Transform:
   m_ObjectHideFlags: 0
@@ -67503,6 +67503,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -8.944
       objectReference: {fileID: 0}
+    - target: {fileID: 5445060813953762616, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_text
+      value: we're calling it "micronova" - it's extremely dangerous tiny star!
+      objectReference: {fileID: 0}
     - target: {fileID: 5740365199388618745, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -67522,6 +67527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203052148261631799, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6670642937731719116, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}

@@ -147,7 +147,7 @@ public class TutorialManager : MonoBehaviour
             foreach (Spawner spawner in spawners)
             {
                 spawner.LaunchChance = 0;
-                spawner.PrefabToOperate.GetComponent<Enemy>().DisableEnemy();
+                spawner.PrefabToOperate.GetComponent<Enemy>().DisableEnemy(false);
             }
         }
 

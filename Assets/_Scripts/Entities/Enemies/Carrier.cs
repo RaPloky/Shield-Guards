@@ -65,7 +65,7 @@ public class Carrier : Enemy
         base.DamageEnemy();
         ownAudioSource.PlayOneShot(onDamageTakenSound);
     }
-    public override IEnumerator DisableThatEnemy()
+    public override IEnumerator DisableThatEnemy(bool destroyedByPlayer)
     {
         yield return new WaitForSeconds(0f);
 
@@ -75,8 +75,11 @@ public class Carrier : Enemy
         DeactivateCarrier();
         DisableDangerNotifications();
 
-        EventManager.SendOnEnemyDisabled();
-        EventManager.SendOnScoreUpdated(destructionReward);
+        if (destroyedByPlayer)
+        {
+            EventManager.SendOnEnemyDisabled();
+            EventManager.SendOnScoreUpdated(destructionReward);
+        }
     }
     private void DeactivateCarrier()
     {

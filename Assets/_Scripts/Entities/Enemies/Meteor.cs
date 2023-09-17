@@ -28,7 +28,7 @@ public class Meteor : Enemy
         PlayOneShotSound(enableSound, ownAudioSource);
     }
 
-    public override IEnumerator DisableThatEnemy()
+    public override IEnumerator DisableThatEnemy(bool destroyedByPlayer)
     {
         yield return new WaitForSeconds(0);
 
@@ -38,8 +38,11 @@ public class Meteor : Enemy
         DisableMeteor();
         DisableDangerNotifications();
 
-        EventManager.SendOnEnemyDisabled();
-        EventManager.SendOnScoreUpdated(destructionReward);
+        if (destroyedByPlayer)
+        {
+            EventManager.SendOnEnemyDisabled();
+            EventManager.SendOnScoreUpdated(destructionReward);
+        }
     }
 
     private void DisableMeteor()
