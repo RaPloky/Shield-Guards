@@ -35,9 +35,16 @@ public class TutorialManager : MonoBehaviour
 
     [Header("PopUp 54: Introducing Tyrandid marines")]
     [SerializeField] private List<Spawner> ufoSpawners;
+    [Header("PopUp XX: Introducing Meteor")]
+    [SerializeField] private List<Spawner> meteorSpawners;
+    [Header("PopUp XX: Introducing Micronova")]
+    [SerializeField] private List<Spawner> micronovaSpawners;
 
     private bool _completedFullCharge = false;
     private bool _completedCharginUpPhase = false;
+    private int _enemySimulationsDestroyed = 0;
+
+    [SerializeField] private int simulationsTresholdToProceed;
 
     [SerializeField] private GameObject[] popUps;
 
@@ -52,12 +59,14 @@ public class TutorialManager : MonoBehaviour
         EventManager.OnTutorialPopUpIndexChanged += ManageTutorialStages;
         EventManager.OnEnergyValueChanged += CompleteSingleChargingUpTutor;
         EventManager.OnEnergyValueChanged += CompleteAllChargingUpTutor;
+        EventManager.OnEnemyDestroyed += UpdateSimulationsDestroyedCount;
     }
     private void OnDisable()
     {
         EventManager.OnTutorialPopUpIndexChanged -= ManageTutorialStages;
         EventManager.OnEnergyValueChanged -= CompleteSingleChargingUpTutor;
         EventManager.OnEnergyValueChanged -= CompleteAllChargingUpTutor;
+        EventManager.OnEnemyDestroyed -= UpdateSimulationsDestroyedCount;
     }
 
     private void Update()
@@ -112,6 +121,31 @@ public class TutorialManager : MonoBehaviour
         CurrentPopUpIndex++;
         _completedFullCharge = true;
     }
+
+    private void UpdateSimulationsDestroyedCount()
+    {
+        _enemySimulationsDestroyed++;
+
+        if (Mathf.Approximately(_enemySimulationsDestroyed, simulationsTresholdToProceed))
+        {
+            DeactivateEnemySpawners();
+            CurrentPopUpIndex++;
+
+            _enemySimulationsDestroyed = 0;
+        }
+    }
+
+    private void DeactivateEnemySpawners()
+    {
+        void Deactivate(List<Spawner> spawners) {
+            foreach (Spawner spawner in spawners)
+                spawner.LaunchChance = 0;
+        }
+
+        Deactivate(ufoSpawners);
+        Deactivate(meteorSpawners);
+        Deactivate(micronovaSpawners);
+    }
     #endregion
     private void ManageTutorialStages()
     {
@@ -151,7 +185,7 @@ public class TutorialManager : MonoBehaviour
 
             case TutorialStages.NavigationButtonsDissapear:
                 foreach (GameObject navButton in navigationButtons)
-                    navButton.SetActive(false);
+                    navButton.GetComponent<Button>().interactable = false;
                 break;
 
             case TutorialStages.IntroducingScore:

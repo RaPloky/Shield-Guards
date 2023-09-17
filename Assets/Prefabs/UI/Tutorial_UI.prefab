@@ -13110,6 +13110,9 @@ MonoBehaviour:
   - {fileID: 1026756442438777442}
   - {fileID: 8910423407181837715}
   ufoSpawners: []
+  meteorSpawners: []
+  micronovaSpawners: []
+  simulationsTresholdToProceed: 0
   popUps:
   - {fileID: 1121820197287066587}
   - {fileID: 1688665858031585698}
@@ -13166,6 +13169,7 @@ MonoBehaviour:
   - {fileID: 4720870401416955295}
   - {fileID: 2460922172333739013}
   - {fileID: 6311130818686847027}
+  - {fileID: 3830815192780767368}
 --- !u!1 &1026756442290142279
 GameObject:
   m_ObjectHideFlags: 0
