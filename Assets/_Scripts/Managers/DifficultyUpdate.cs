@@ -13,8 +13,8 @@ public class DifficultyUpdate : MonoBehaviour
     [SerializeField] private List<Spawner> carrierSpawners;
     [SerializeField] private List<Spawner> micronovaSpawners;
 
-    [SerializeField, Range(0.01f, 0.05f)] private float spawnChanceIncrease;
-    [SerializeField, Range(0.01f, 0.25f)] private float spawnDelayDecrease;
+    [SerializeField, Range(0.0f, 0.05f)] private float spawnChanceIncrease;
+    [SerializeField, Range(0.0f, 0.25f)] private float spawnDelayDecrease;
     [SerializeField, Range(0, 0.25f)] private float consumptionDelayDecrease;
     [SerializeField, Range(0.2f, 0.5f)] private float consumptionDelayLimit;
     [SerializeField, Range(3f, 5f)] private float desctructMessageDelay;

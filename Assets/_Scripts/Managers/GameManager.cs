@@ -171,6 +171,11 @@ public class GameManager : MonoBehaviour
 
     private void AddCurrency()
     {
+        // Player possibly may abuse tutorial for easy
+        // funds, here's prevention:
+        if (isTutorial)
+            return;
+
         int storedEnergy = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
         PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount + storedEnergy);
     }

@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 abstract public class Enemy : MonoBehaviour
 {
-    abstract public IEnumerator DisableThatEnemy();
-
     [SerializeField] protected int destructionReward;
     [SerializeField] protected int health;
     [SerializeField] protected int damageToEnemy;
@@ -43,6 +41,7 @@ abstract public class Enemy : MonoBehaviour
         }
     }
 
+    public abstract IEnumerator DisableThatEnemy();
     protected virtual void DisableDangerNotifications()
     {
         relatedSpawner.DisableDanger();

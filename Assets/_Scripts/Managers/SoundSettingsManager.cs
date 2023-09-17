@@ -6,7 +6,7 @@ public class SoundSettingsManager : MonoBehaviour
 {
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
-    [SerializeField]  private AudioMixer mixer;
+    [SerializeField] private AudioMixer mixer;
 
     private const string MUSIC_PREF = "MusicVolume";
     private const string SFX_PREF = "SFXVolume";

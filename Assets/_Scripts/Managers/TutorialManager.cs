@@ -13,6 +13,8 @@ public class TutorialManager : MonoBehaviour
         AddingEnergyToGuards = 30,
         TurnOnFullGuardHud = 33,
         NavigationButtonAppear = 36,
+        IntroducingScore = 44,
+        IntroducingUfo = 55
     }
 
     [Header("PopUp 18: Transition to gameplay")]
@@ -24,12 +26,17 @@ public class TutorialManager : MonoBehaviour
     [Header("PopUp 33: Informing about other Guards")]
     [SerializeField] private List<GameObject> hudElementsToTurnOn;
 
-    private bool _completedCharginUpPhase = false;
-
     [Header("PopUp 36: Navigation between Guards")]
     [SerializeField] private List<GameObject> navigationButtons;
 
+    [Header("PopUp 44: Introducing score")]
+    [SerializeField] private List<GameObject> scoreObjects;
+
+    [Header("PopUp 55: Introducing Tyrandid marines")]
+    [SerializeField] private List<Spawner> ufoSpawners;
+
     private bool _completedFullCharge = false;
+    private bool _completedCharginUpPhase = false;
 
     [SerializeField] private GameObject[] popUps;
 
@@ -139,6 +146,16 @@ public class TutorialManager : MonoBehaviour
             case TutorialStages.NavigationButtonAppear + 1:
                 foreach (GameObject navButton in navigationButtons)
                     navButton.GetComponent<Button>().interactable = true;
+                break;
+
+            case TutorialStages.IntroducingScore:
+                foreach (GameObject scoreObj in scoreObjects)
+                    scoreObj.SetActive(true);
+                break;
+
+            case TutorialStages.IntroducingUfo:
+                foreach (Spawner ufoSpawner in ufoSpawners)
+                    ufoSpawner.LaunchChance = 1;
                 break;
         }
     }
