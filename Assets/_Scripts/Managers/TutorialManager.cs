@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
+    public static TutorialManager Instance;
+
     private enum TutorialStages
     {
         // Every number should be the same as 
@@ -51,6 +53,8 @@ public class TutorialManager : MonoBehaviour
     private bool _simulationTresholdReached = false;
 
     [SerializeField] private int simulationsTresholdToProceed;
+    [SerializeField] private GameObject eventSystem;
+    [SerializeField] private GameObject goToMenuButton;
 
     [SerializeField] private GameObject[] popUps;
 
@@ -73,6 +77,42 @@ public class TutorialManager : MonoBehaviour
         EventManager.OnEnergyValueChanged -= CompleteSingleChargingUpTutor;
         EventManager.OnEnergyValueChanged -= CompleteAllChargingUpTutor;
         EventManager.OnEnemyDestroyed -= UpdateSimulationsDestroyedCount;
+    }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        // Make tutorial unskippable at first launch:
+        if (!IsTutorialCompletedEver())
+            goToMenuButton.SetActive(false);
+
+        // Makes it possible to go through the tutorial again:
+        if (IsTutorialCompletedEver() && IsTutorialFinished())
+        {
+            // Off any visuals and off any input:
+            Camera.main.gameObject.SetActive(false);
+            eventSystem.SetActive(false);
+
+            GameManager.Instance.ExitToMenu();
+        }
+    }
+
+    private bool IsTutorialFinished()
+    {
+        string _tutorialFinishedStance = PlayerPrefs.GetString(GameManager.Instance.TutorialFinished_Pref, GameManager.Instance.TutorialNotFinishedStance);
+        bool _isTutorialFinished = _tutorialFinishedStance == GameManager.Instance.TutorialFinishedStance;
+        return _isTutorialFinished;
+    }
+
+    private bool IsTutorialCompletedEver()
+    {
+        string _tutorialCompletedEverStance = PlayerPrefs.GetString(GameManager.Instance.TutorialCompletedEver_Pref, GameManager.Instance.TutorialNotCompletedEverStance);
+        bool _isTutorialCompletedEver = _tutorialCompletedEverStance == GameManager.Instance.TutorialCompletedEverStance;
+        return _isTutorialCompletedEver;
     }
 
     private void Update()
@@ -157,6 +197,12 @@ public class TutorialManager : MonoBehaviour
         Deactivate(meteorsSpawners);
         Deactivate(micronovaSpawners);
     }
+
+    public void CompleteTutorial()
+    {
+        PlayerPrefs.SetString(GameManager.Instance.TutorialFinished_Pref, GameManager.Instance.TutorialFinishedStance);
+        PlayerPrefs.SetString(GameManager.Instance.TutorialCompletedEver_Pref, GameManager.Instance.TutorialCompletedEverStance);
+    }
     #endregion
     private void ManageTutorialStages()
     {
@@ -222,6 +268,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case TutorialStages.TutorialEnd:
+                CompleteTutorial();
                 GameManager.Instance.ExitToMenu();
                 break;
         }

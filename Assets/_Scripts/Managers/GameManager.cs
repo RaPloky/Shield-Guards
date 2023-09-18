@@ -35,8 +35,15 @@ public class GameManager : MonoBehaviour
     public static int DefaultProtectionGoal => 60;
 
     private int _activeGuardsCount = 0;
-
     public static bool IsGamePaused;
+
+    public string TutorialFinished_Pref => "TutorialFinished";
+    public string TutorialNotFinishedStance => "notFinished";
+    public string TutorialFinishedStance => "finished";
+
+    public string TutorialCompletedEver_Pref => "TutorialCompletedEver";
+    public string TutorialCompletedEverStance => "completedEver";
+    public string TutorialNotCompletedEverStance => "notCompletedEver";
 
     public int ActiveGuardsCount
     {
@@ -107,10 +114,28 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadDelayedScene("Menu"));
     }
 
+    public void ExitToMenuFromTutotial()
+    {
+        ExitToMenu();
+        TutorialManager.Instance.CompleteTutorial();
+    }
+
     public void StartGame()
     {
         UnpauseGame();
         StartCoroutine(LoadDelayedScene("Game"));
+    }
+
+    public void StartTutorial()
+    {
+        ResetTutorialStance();
+        UnpauseGame();
+        StartCoroutine(LoadDelayedScene("TutorialScene"));
+    }
+
+    private void ResetTutorialStance()
+    {
+        PlayerPrefs.SetString(TutorialFinished_Pref, TutorialNotFinishedStance);
     }
 
     private IEnumerator LoadDelayedScene(string sceneName)
