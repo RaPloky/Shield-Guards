@@ -14,8 +14,8 @@ public class SoundSettingsManager : MonoBehaviour
     private const string MUSIC_PARAMETER = "Music";
     private const string SFX_PARAMETER = "SFX";
 
-    private float MusicSavedValue => PlayerPrefs.GetFloat(MUSIC_PREF, 0);
-    private float SfxSavedValue => PlayerPrefs.GetFloat(SFX_PREF, 0);
+    private float MusicSavedValue => PlayerPrefs.GetFloat(MUSIC_PREF, 0.6f);
+    private float SfxSavedValue => PlayerPrefs.GetFloat(SFX_PREF, 1);
 
     private void Awake()
     {

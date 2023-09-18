@@ -11,6 +11,11 @@ public class TutorialManager : MonoBehaviour
     {
         // Every number should be the same as 
         // number in related PopUp_X object name
+        Effect_1 = 4,
+        Effect_2 = 13,
+        Effect_3 = 15,
+        Effect_4 = 16,
+        Effect_5 = 17,
         TransitionToGameplay = 18,
         AddingEnergyToGuards = 30,
         TurnOnFullGuardHud = 33,
@@ -211,7 +216,30 @@ public class TutorialManager : MonoBehaviour
             default:
                 break;
 
+            #region "Effects"
+            case TutorialStages.Effect_1:
+                GlitchAnimationController.Instance.PlayWeakScan();
+                break;
+
+            case TutorialStages.Effect_2:
+                GlitchAnimationController.Instance.PlayStrongScan();
+                break;
+
+            case TutorialStages.Effect_3:
+                GlitchAnimationController.Instance.PlayStrongScan();
+                break;
+
+            case TutorialStages.Effect_4:
+                GlitchAnimationController.Instance.SingleDriftAndDigital();
+                break;
+
+            case TutorialStages.Effect_5:
+                GlitchAnimationController.Instance.SingleDriftAndDigitalOut();
+                break;
+            #endregion
+
             case TutorialStages.TransitionToGameplay:
+                GlitchAnimationController.Instance.SingleDriftAndDigital();
                 transitionAnim.SetTrigger("Gameplay_In");
                 break;
 
