@@ -11,7 +11,8 @@ public class ProtectAllGuards : Bonus
 
     private void Start()
     {
-        shieldDuration = UpgradeManager.Instance.CurrProtectionEffectValue;
+        if (UpgradeManager.Instance != null)
+            shieldDuration = UpgradeManager.Instance.CurrProtectionEffectValue;
     }
 
     public void ActivateBonus()

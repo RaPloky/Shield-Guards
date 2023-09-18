@@ -7,8 +7,15 @@ public class EarnProtectBonus : EarnBonus
 
     private void Start()
     {
-        _upgradeManager = UpgradeManager.Instance;
-        _goal = _upgradeManager.CurrProtectionGoalValue;
+        if (UpgradeManager.Instance != null)
+        {
+            _upgradeManager = UpgradeManager.Instance;
+            _goal = _upgradeManager.CurrChargeGoalValue;
+        }
+        else
+        {
+            _goal = int.MaxValue;
+        }
         Progress = 0;
 
         StartCoroutine(UpdateSecondsSurvived());

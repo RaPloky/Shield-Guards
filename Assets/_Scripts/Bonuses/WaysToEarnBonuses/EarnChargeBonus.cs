@@ -6,8 +6,15 @@ public class EarnChargeBonus : EarnBonus
 
     private void Start()
     {
-        _upgradeManager = UpgradeManager.Instance;
-        _goal = _upgradeManager.CurrChargeGoalValue;
+        if (UpgradeManager.Instance != null)
+        {
+            _upgradeManager = UpgradeManager.Instance;
+            _goal = _upgradeManager.CurrChargeGoalValue;
+        }
+        else
+        {
+            _goal = int.MaxValue;
+        }
         Progress = 0;
         UpdateBonusStatus(); 
         UpdateProgressTip();

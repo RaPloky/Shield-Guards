@@ -12,7 +12,8 @@ public class ChargeAllGuards : Bonus
     private void Start()
     {
         _difficultyManager = DifficultyUpdate.Instance;
-        chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
+        if (UpgradeManager.Instance != null)
+            chargeAmount = (int)UpgradeManager.Instance.CurrChargeEffectValue;
     }
 
     public void ActivateBonus()

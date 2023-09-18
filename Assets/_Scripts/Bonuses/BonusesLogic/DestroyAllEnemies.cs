@@ -10,7 +10,8 @@ public class DestroyAllEnemies : Bonus
 
     private void Start()
     {
-        spawnFreezeTime = UpgradeManager.Instance.CurrDemolitionEffectValue;
+        if (UpgradeManager.Instance != null)
+            spawnFreezeTime = UpgradeManager.Instance.CurrDemolitionEffectValue;
     }
 
     public void ActivateBonus()
