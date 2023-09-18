@@ -4914,7 +4914,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.51
+  m_Radius: 1.02
   m_Center: {x: 0, y: 0, z: 0.008156121}
 --- !u!95 &2390369044789317746
 Animator:
@@ -4973,6 +4973,7 @@ MonoBehaviour:
   enableSound: {fileID: 8300000, guid: 9fc03a91b5216b74394a6166059d68f2, type: 3}
   disableSound: {fileID: 8300000, guid: be016e70580e91c4f8a8f9e7701b00d4, type: 3}
   onDisableAS: {fileID: 0}
+  onDisableAS_Obj: {fileID: 0}
   relatedSpawner: {fileID: 0}
 --- !u!114 &1979717153829053535
 MonoBehaviour:
@@ -4989,11 +4990,14 @@ MonoBehaviour:
   speedFactor: 90
   energyDamage: 2500
   isFragileTrash: 1
+  isBackgroundEnemy: 0
   glitchStrength: 1
   onDisableParticles: {fileID: 3634079491701534458, guid: 43027bd1e0e1d374f8f39216d1cb252a,
     type: 3}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
+  collisionSound: {fileID: 0}
+  collisionAS: {fileID: 0}
   _zigZagFrequency: 10
 --- !u!82 &1546470088678751654
 AudioSource:
