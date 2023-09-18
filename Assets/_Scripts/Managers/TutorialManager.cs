@@ -16,7 +16,9 @@ public class TutorialManager : MonoBehaviour
         IntroducingScore = 44,
         IntroducingUfo = 54,
         IntroducingMeteor = 58,
-        IntroducingMicronovas = 62
+        IntroducingMicronovas = 62,
+        TurnOfSimulation = 67, // gameplay tutorial end
+        TutorialEnd = 69
     }
 
     [Header("PopUp 18: Transition to gameplay")]
@@ -213,6 +215,14 @@ public class TutorialManager : MonoBehaviour
                 _simulationTresholdReached = false;
                 foreach (Spawner spawner in micronovaSpawners)
                     spawner.LaunchChance = 1;
+                break;
+
+            case TutorialStages.TurnOfSimulation:
+                transitionAnim.SetTrigger("Gameplay_Out");
+                break;
+
+            case TutorialStages.TutorialEnd:
+                GameManager.Instance.ExitToMenu();
                 break;
         }
     }

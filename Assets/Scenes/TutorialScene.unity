@@ -3171,6 +3171,11 @@ PrefabInstance:
       propertyPath: collisionSound
       value: 
       objectReference: {fileID: 8300000, guid: be016e70580e91c4f8a8f9e7701b00d4, type: 3}
+    - target: {fileID: 1979717153829053535, guid: 2c896f31640afda43b8bbbd8de8b7678,
+        type: 3}
+      propertyPath: glitchStrength
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2711106806615436550, guid: 2c896f31640afda43b8bbbd8de8b7678,
         type: 3}
       propertyPath: m_Name
@@ -12246,6 +12251,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 5eb47c2e5bfc95b4caf44b65964a0522, type: 3}
     - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
         type: 3}
+      propertyPath: glitchStrength
+      value: 0.353
+      objectReference: {fileID: 0}
+    - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
+        type: 3}
       propertyPath: onDisableParticles
       value: 
       objectReference: {fileID: 3634079491701534458, guid: 2dab0fc89d2806e40bfa40992ecde731,
@@ -20877,6 +20887,11 @@ PrefabInstance:
       propertyPath: collisionSound
       value: 
       objectReference: {fileID: 8300000, guid: be016e70580e91c4f8a8f9e7701b00d4, type: 3}
+    - target: {fileID: 1979717153829053535, guid: 2c896f31640afda43b8bbbd8de8b7678,
+        type: 3}
+      propertyPath: glitchStrength
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2711106806615436550, guid: 2c896f31640afda43b8bbbd8de8b7678,
         type: 3}
       propertyPath: m_Name
@@ -22845,6 +22860,11 @@ PrefabInstance:
       propertyPath: collisionSound
       value: 
       objectReference: {fileID: 8300000, guid: 5eb47c2e5bfc95b4caf44b65964a0522, type: 3}
+    - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
+        type: 3}
+      propertyPath: glitchStrength
+      value: 0.353
+      objectReference: {fileID: 0}
     - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
         type: 3}
       propertyPath: onDisableParticles
@@ -27790,6 +27810,11 @@ PrefabInstance:
       propertyPath: collisionSound
       value: 
       objectReference: {fileID: 8300000, guid: be016e70580e91c4f8a8f9e7701b00d4, type: 3}
+    - target: {fileID: 1979717153829053535, guid: 2c896f31640afda43b8bbbd8de8b7678,
+        type: 3}
+      propertyPath: glitchStrength
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2711106806615436550, guid: 2c896f31640afda43b8bbbd8de8b7678,
         type: 3}
       propertyPath: m_Name
@@ -30182,7 +30207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 3
   launchChance: 0
   prefabToOperate: {fileID: 768521900}
   parent: {fileID: 0}
@@ -54230,7 +54255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 3
   launchChance: 0
   prefabToOperate: {fileID: 586024694}
   parent: {fileID: 0}
@@ -54402,6 +54427,11 @@ PrefabInstance:
       propertyPath: collisionSound
       value: 
       objectReference: {fileID: 8300000, guid: 5eb47c2e5bfc95b4caf44b65964a0522, type: 3}
+    - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
+        type: 3}
+      propertyPath: glitchStrength
+      value: 0.353
+      objectReference: {fileID: 0}
     - target: {fileID: 2823839034702809011, guid: b5ecea957b5cd044e853677c0447af60,
         type: 3}
       propertyPath: onDisableParticles
@@ -57244,7 +57274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 3
   launchChance: 0
   prefabToOperate: {fileID: 104977088}
   parent: {fileID: 0}
@@ -66545,7 +66575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 2.5
   launchChance: 0
   prefabToOperate: {fileID: 207331866}
   parent: {fileID: 0}
@@ -66693,6 +66723,16 @@ PrefabInstance:
       propertyPath: hudElementsToTurnOn.Array.data[1]
       value: 
       objectReference: {fileID: 1450376167}
+    - target: {fileID: 64758707017047369, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 76192965947563528, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 135558244549690386, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -67198,6 +67238,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1373165281482432751, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1395260570837876028, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -67528,6 +67573,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6069580937422062753, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145837167406494894, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6203052148261631799, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -67799,6 +67854,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8950283452515064913, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191233637202413659, guid: ea3b06015ad0e334a9a3bf52e7c0603f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 100
@@ -73561,7 +73621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 2.5
   launchChance: 0
   prefabToOperate: {fileID: 1644340232}
   parent: {fileID: 0}
@@ -73584,7 +73644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e30e2100e284ef4bb227eeec830f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 2.5
   launchChance: 0
   prefabToOperate: {fileID: 665350990}
   parent: {fileID: 0}
