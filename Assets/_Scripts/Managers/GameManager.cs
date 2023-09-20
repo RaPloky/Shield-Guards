@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
 
             UpdateActiveGuardsCountUI();
         }
+        else if (isMenu)
+            LoadBannerAd();
 
         if (bestScore != null)
         {
@@ -88,6 +90,11 @@ public class GameManager : MonoBehaviour
         EventManager.OnGuardDischarged -= ReduceActiveGuardsCount;
         EventManager.OnGuardDischarged -= UpdateActiveGuardsCountUI;
         IsGamePaused = false;
+    }
+
+    private void LoadBannerAd()
+    {
+        LoadBanner.Instance.LoadTheBanner();
     }
 
     public void PauseGame()

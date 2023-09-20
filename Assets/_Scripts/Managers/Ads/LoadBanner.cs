@@ -5,9 +5,16 @@ using UnityEngine.Advertisements;
 
 public class LoadBanner : MonoBehaviour
 {
+    public static LoadBanner Instance;
+
     [SerializeField] private string unitID;
 
     private readonly BannerPosition bannerPos = BannerPosition.BOTTOM_CENTER;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
