@@ -204,7 +204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: info
+      name: credits
       rect:
         serializedVersion: 2
         x: 1267
@@ -590,7 +590,7 @@ TextureImporter:
         width: 376
         height: 373
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -611,7 +611,7 @@ TextureImporter:
         width: 1268
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -650,10 +650,10 @@ TextureImporter:
       pause: -1741219800
       timer_bg: 539909055
       music_off: 260258148
-      info: -1041034896
       protection_bonus_nobg_filled: -955634596
       protection_bonus_nobg: 1373968988
       slider_button: -772852812
+      credits: -1041034896
       music_on: -1461419012
       ufo_notif_R: -1925442754
       bg_2: -1365763076
