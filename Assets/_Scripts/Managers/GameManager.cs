@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject goToMenuPanel;
+    [SerializeField] private GameObject navigationCanvas;
     [SerializeField] private Score score;
     [SerializeField] private TextMeshProUGUI endScore;
     [SerializeField] private TextMeshProUGUI bestScore;
@@ -29,12 +31,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button pauseButton;
     [SerializeField] private EnemyInvokeOnGuardLose enemyInvoke;
     [SerializeField] private GameObject heartbeatPanel;
+    [SerializeField] private CanvasGroup doubleRewardButton;
 
     public static int DefaultChargingGoal => 10000;
     public static int DefaultDemolitionGoal => 20;
     public static int DefaultProtectionGoal => 60;
 
     private int _activeGuardsCount = 0;
+    private int _currencyToAdd = 0;
     public static bool IsGamePaused;
 
     public string TutorialFinished_Pref => "TutorialFinished";
@@ -53,7 +57,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
         Instance = this;
     }
 
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         EventManager.OnGuardDischarged += ReduceActiveGuardsCount;
         EventManager.OnGuardDischarged += UpdateActiveGuardsCountUI;
+        EventManager.OnRewardAdWatched += DoubleCurrency;
         IsGamePaused = false;
     }
 
@@ -92,11 +96,20 @@ public class GameManager : MonoBehaviour
     {
         EventManager.OnGuardDischarged -= ReduceActiveGuardsCount;
         EventManager.OnGuardDischarged -= UpdateActiveGuardsCountUI;
+        EventManager.OnRewardAdWatched -= DoubleCurrency;
         IsGamePaused = false;
+
+        AddCurrency();
     }
 
     private void LoadBannerAd() => LoadBanner.Instance.LoadTheBanner();
     private void HideBannerAd() => LoadBanner.Instance.HideBanner();
+    private void DoubleCurrency()
+    {
+        _currencyToAdd *= 2;
+        doubleRewardButton.interactable = false;
+        doubleRewardButton.alpha = 0;
+    }
 
     public void PauseGame()
     {
@@ -120,6 +133,9 @@ public class GameManager : MonoBehaviour
     {
         UnpauseGame();
         StartCoroutine(LoadDelayedScene("Menu"));
+
+        if (goToMenuPanel != null)
+            goToMenuPanel.SetActive(true);
     }
 
     public void ExitToMenuFromTutotial()
@@ -148,8 +164,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadDelayedScene(string sceneName)
     {
+        LoadBanner.Instance.HideBanner();
+
         BG_Music.Instance.FadeOut();
         yield return new WaitForSeconds(BG_Music.Instance.FadeDuration);
+
         SceneManager.LoadScene(sceneName);
     }
 
@@ -160,6 +179,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Lose()
     {
+        navigationCanvas.SetActive(false);
         pauseButton.interactable = false;
         shieldAnimator.SetTrigger("GameLosed");
         BG_Music.Instance.FadeOut();
@@ -175,7 +195,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadInterstitialAd(3f));
         Invoke(nameof(LoadBannerAd), 4f);
 
-        AddCurrency();
+        _currencyToAdd = score.ScoreAmount;
     }
 
     private IEnumerator LoadInterstitialAd(float delay)
@@ -219,8 +239,8 @@ public class GameManager : MonoBehaviour
         if (isTutorial)
             return;
 
-        int storedEnergy = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
-        PlayerPrefs.SetInt(UpgradeManager.EnergyPref, score.ScoreAmount + storedEnergy);
+        int playerCurrencyCount = PlayerPrefs.GetInt(UpgradeManager.EnergyPref, 0);
+        PlayerPrefs.SetInt(UpgradeManager.EnergyPref, playerCurrencyCount + _currencyToAdd);
     }
 
     private void ActivateHeartbeat(bool isEnabled)

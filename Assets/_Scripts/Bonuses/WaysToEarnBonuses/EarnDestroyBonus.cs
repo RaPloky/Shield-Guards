@@ -5,7 +5,7 @@ public class EarnDestroyBonus : EarnBonus
         if (UpgradeManager.Instance != null)
         {
             _upgradeManager = UpgradeManager.Instance;
-            _goal = _upgradeManager.CurrChargeGoalValue;
+            _goal = _upgradeManager.CurrDemolitionGoalValue;
         }
         else
         {

@@ -5,7 +5,14 @@ using UnityEngine.Advertisements;
 
 public class LoadRewarded : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+    public static LoadRewarded Instance;
+
     [SerializeField] private string unitID;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void LoadAd()
     {
@@ -36,7 +43,10 @@ public class LoadRewarded : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowL
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         if (placementId.Equals(unitID) && showCompletionState.Equals(UnityAdsCompletionState.COMPLETED))
-            print("Rewarded show completed! Take rewards");
+        {
+            print("Completed rewarded ad");
+            EventManager.SendOnRewardAdWatched();
+        }
     }
 
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)

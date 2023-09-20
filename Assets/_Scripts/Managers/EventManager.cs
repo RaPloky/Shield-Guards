@@ -13,6 +13,7 @@ public class EventManager : MonoBehaviour
     public static Action<EnemyAlarm> OnEnemyDeployed;
     public static Action<EnemyAlarm> OnEnemyReset;
     public static Action OnTutorialPopUpIndexChanged;
+    public static Action OnRewardAdWatched;
 
     public static void SendOnEnergyValueChanged() => OnEnergyValueChanged?.Invoke();
     public static void SendOnEnemyDisabled() => OnEnemyDestroyed?.Invoke();
@@ -24,4 +25,5 @@ public class EventManager : MonoBehaviour
     public static void SendOnEnemyDeployed(EnemyAlarm alarmType) => OnEnemyDeployed?.Invoke(alarmType);
     public static void SendOnEnemyReset(EnemyAlarm alarmType) => OnEnemyReset?.Invoke(alarmType);
     public static void SendOnTutorialPopUpIndexChanged() => OnTutorialPopUpIndexChanged?.Invoke();
+    public static void SendOnRewardAdWatched() => OnRewardAdWatched?.Invoke();
 }

@@ -10,7 +10,7 @@ public class EarnProtectBonus : EarnBonus
         if (UpgradeManager.Instance != null)
         {
             _upgradeManager = UpgradeManager.Instance;
-            _goal = _upgradeManager.CurrChargeGoalValue;
+            _goal = _upgradeManager.CurrProtectionGoalValue;
         }
         else
         {
