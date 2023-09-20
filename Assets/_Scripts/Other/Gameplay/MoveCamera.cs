@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveCamera : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class MoveCamera : MonoBehaviour
     [SerializeField] private Guard currentGuard;
     [SerializeField] private Guard rightGuard;
 
+    [Header("Controls")]
+    [SerializeField] private Button goLeftButt;
+    [SerializeField] private Button goRightButt;
+
     private float _posX;
     private float _posZ;
     private Transform _thatTrans;
@@ -24,6 +29,16 @@ public class MoveCamera : MonoBehaviour
     {
         _thatTrans = transform;
         _source = GetComponent<AudioSource>();
+    }
+
+    private void OnEnable()
+    {
+        EventManager.OnGuardDischarged += ReEnableControls;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnGuardDischarged -= ReEnableControls;
     }
 
     private void FixedUpdate()
@@ -77,6 +92,7 @@ public class MoveCamera : MonoBehaviour
         rightGuard = _tempCurrent;
 
         ReactivateNotifications();
+        ReEnableControls();
     }
 
     private void SwapGuardsOnSwapRight()
@@ -88,6 +104,7 @@ public class MoveCamera : MonoBehaviour
         rightGuard = _tempLeft;
 
         ReactivateNotifications();
+        ReEnableControls();
     }
 
     private void AssignTempGuards()
@@ -103,6 +120,19 @@ public class MoveCamera : MonoBehaviour
         rightGuard.RelatedDangerNotifications.alpha = 0;
 
         currentGuard.RelatedDangerNotifications.alpha = 1;
+    }
+
+    private void ReEnableControls()
+    {
+        if (!leftGuard.IsHaveEnergy)
+            goLeftButt.interactable = false;
+        else
+            goLeftButt.interactable = true;
+
+        if (!rightGuard.IsHaveEnergy)
+            goRightButt.interactable = false;
+        else
+            goRightButt.interactable = true;
     }
 
     private bool IsGuardActive(Guard guard) => guard.IsHaveEnergy;

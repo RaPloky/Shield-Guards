@@ -15,14 +15,19 @@ public sealed class Guard : MonoBehaviour
 {
     [SerializeField] private int energy;
     [SerializeField] private int maxEnergy;
+    [SerializeField] private int rangeOfStartEnergyDifference; // start every game with different energy amount
+
     [SerializeField] private int consumption;
     [SerializeField, Range(0.5f, 1f)] private float consumptionDelay;
     [SerializeField] private int criticalEnergy;
+    [SerializeField] private List<Animator> criticalEnergyAlerts;
+
     [SerializeField] private Bonus relatedBonus;
     [SerializeField] private CanvasGroup relatedDangerNotifications;
+
     [SerializeField] private List<ParticleSystem> onDisablePS;
     [SerializeField] private List<Animator> onDisableCanvasGroupAnimators;
-    [SerializeField] private List<Animator> criticalEnergyAlerts;
+
     [SerializeField] private GameObject bonusIcon;
     [SerializeField] private GuardType guardType; 
     
@@ -83,7 +88,16 @@ public sealed class Guard : MonoBehaviour
         _thatGuard = this;
         _animator = GetComponent<Animator>();
 
+        Invoke(nameof(AddRandomEnergyAmount), 0.05f);
+
         StartCoroutine(ConsumptEnergy());
+    }
+
+    private void AddRandomEnergyAmount()
+    {
+        int randomEnergyDifference = Random.Range(-rangeOfStartEnergyDifference, rangeOfStartEnergyDifference);
+        randomEnergyDifference -= randomEnergyDifference % 10;
+        Energy += randomEnergyDifference;
     }
 
     private IEnumerator ConsumptEnergy()
@@ -101,12 +115,12 @@ public sealed class Guard : MonoBehaviour
     {
         DifficultyUpdate.Instance.SpecificDifficultyIncrease(guardType);
         DifficultyUpdate.Instance.RemoveGuardFromList(ref _thatGuard);
-        EventManager.SendOnGuardDischarged();
         Invoke(nameof(DisableSelf), 5f);
 
         StopAllCoroutines();
         _isHaveEnergy = false;
         relatedBonus.DisableBonus();
+        EventManager.SendOnGuardDischarged();
 
         bonusIcon.SetActive(false);
         DisableParticles();
