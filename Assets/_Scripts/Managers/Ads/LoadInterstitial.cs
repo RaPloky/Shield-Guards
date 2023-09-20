@@ -5,7 +5,14 @@ using UnityEngine.Advertisements;
 
 public class LoadInterstitial : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
+    public static LoadInterstitial Instance;
+
     [SerializeField] private string unitID;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void LoadAd()
     {

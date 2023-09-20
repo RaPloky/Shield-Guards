@@ -43,7 +43,7 @@ public class LoadBanner : MonoBehaviour
         Debug.LogError("Banner failed to load: " + error);
     }
 
-    private void ShowBannerAd()
+    public void ShowBannerAd()
     {
         BannerOptions bannerLoadOptions = new BannerOptions
         {
@@ -53,6 +53,11 @@ public class LoadBanner : MonoBehaviour
         };
 
         Advertisement.Banner.Show(unitID, bannerLoadOptions);
+    }
+
+    public void HideBanner()
+    {
+        Advertisement.Banner.Hide();
     }
 
     private void OnBannerShow()

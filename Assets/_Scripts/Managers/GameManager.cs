@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour
         else if (isMenu)
             LoadBannerAd();
 
+        if (!isMenu && !isTutorial)
+            HideBannerAd();
+
         if (bestScore != null)
         {
             int score = PlayerPrefs.GetInt(Score.ScorePref);
@@ -92,10 +95,8 @@ public class GameManager : MonoBehaviour
         IsGamePaused = false;
     }
 
-    private void LoadBannerAd()
-    {
-        LoadBanner.Instance.LoadTheBanner();
-    }
+    private void LoadBannerAd() => LoadBanner.Instance.LoadTheBanner();
+    private void HideBannerAd() => LoadBanner.Instance.HideBanner();
 
     public void PauseGame()
     {
@@ -170,7 +171,17 @@ public class GameManager : MonoBehaviour
             score.UpdateBestScore();
 
         AssignEndScore();
+
+        StartCoroutine(LoadInterstitialAd(3f));
+        Invoke(nameof(LoadBannerAd), 4f);
+
         AddCurrency();
+    }
+
+    private IEnumerator LoadInterstitialAd(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        LoadInterstitial.Instance.LoadAd();
     }
 
     private void ReduceActiveGuardsCount()
