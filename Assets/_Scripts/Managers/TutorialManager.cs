@@ -234,7 +234,7 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             case TutorialStages.Effect_5:
-                GlitchAnimationController.Instance.SingleDriftAndDigitalOut();
+                GlitchAnimationController.Instance.SingleDriftAndDigital();
                 break;
             #endregion
 
