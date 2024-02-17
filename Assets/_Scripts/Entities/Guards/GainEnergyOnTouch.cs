@@ -33,7 +33,7 @@ public class GainEnergyOnTouch : MonoBehaviour
 
         _thatGuard.AddEnergy(energyAddAmount);
         EventManager.SendOnNonBonusEnergyAdded();
-        EventManager.SendOnScoreUpdated((energyAddAmount / _scoreCutter) * _gameManager.ActiveGuardsCount);
+        EventManager.SendOnScoreUpdated((energyAddAmount / _scoreCutter) * (int)Mathf.Pow(_gameManager.ActiveGuardsCount, 2));
 
         _soundSource.PlayOneShot(energyAddSound);
     }

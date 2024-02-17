@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
+    [SerializeField] private PlayOneShotSound osSound;
     public static TutorialManager Instance;
 
     private enum TutorialStages
@@ -139,6 +140,8 @@ public class TutorialManager : MonoBehaviour
     {
         CurrentPopUpIndex++;
         EventManager.SendOnTutorialPopUpIndexChanged();
+
+        osSound.PlayClip();
     }
     #region "Custom Instructions"
     private void MakeGuardInteractable(Guard guard)

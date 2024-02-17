@@ -9852,7 +9852,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.6531954, z: 4.432873}
+  m_Size: {x: 2.5, y: 1.65, z: 5.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8647790268363607348
 MonoBehaviour:
@@ -9881,14 +9881,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energy: 5000
+  maxEnergy: 0
+  rangeOfStartEnergyDifference: 0
   consumption: 100
   consumptionDelay: 1
   criticalEnergy: 0
+  criticalEnergyAlerts: []
   relatedBonus: {fileID: 0}
   relatedDangerNotifications: {fileID: 0}
   onDisablePS: []
   onDisableCanvasGroupAnimators: []
-  criticalEnergyAlerts: []
   bonusIcon: {fileID: 0}
   guardType: 1
 --- !u!114 &1056842409593145694

@@ -4,7 +4,7 @@ public class PlayOneShotSound : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
     [SerializeField] private bool randomizePitch;
-    [SerializeField] private bool isLocaledAS = false;
+    [SerializeField] private bool isLocaledAS = false; // AS stands for AudioSource
     [SerializeField] private AudioSource localAudioSource;
 
     private AudioSource _globalAudioSource;
