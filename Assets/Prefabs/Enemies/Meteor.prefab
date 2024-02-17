@@ -4949,12 +4949,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedFactor: 65
-  energyDamage: 500
+  energyDamage: 750
   isFragileTrash: 1
+  isBackgroundEnemy: 0
   glitchStrength: 0.708
   onDisableParticles: {fileID: 0}
   targetTrans: {fileID: 0}
   parentSpawner: {fileID: 0}
+  collisionSound: {fileID: 0}
+  collisionAS: {fileID: 0}
 --- !u!114 &4035032480939784337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4977,6 +4980,7 @@ MonoBehaviour:
   enableSound: {fileID: 8300000, guid: 9fc03a91b5216b74394a6166059d68f2, type: 3}
   disableSound: {fileID: 8300000, guid: 5eb47c2e5bfc95b4caf44b65964a0522, type: 3}
   onDisableAS: {fileID: 0}
+  onDisableAS_Obj: {fileID: 0}
   relatedSpawner: {fileID: 0}
 --- !u!95 &2390369044789317746
 Animator:
