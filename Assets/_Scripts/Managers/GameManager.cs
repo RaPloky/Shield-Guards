@@ -80,7 +80,10 @@ public class GameManager : MonoBehaviour
         if (bestScore != null)
         {
             int score = PlayerPrefs.GetInt(Score.ScorePref);
-            bestScore.text = score > 0 ? "Best score: " + score : string.Empty;
+            if (isMenu)
+                bestScore.text = score > 0 ? "Best score: " + score : "No score yet";
+            else
+                bestScore.text = score > 0 ? "Best: " + score : string.Empty;
         }
 
         PlayBG_Music();
