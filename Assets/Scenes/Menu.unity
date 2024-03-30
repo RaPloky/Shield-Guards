@@ -344,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 804578519542270772, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_text
-      value: characters, story, general support
+      value: characters, story, ui, general support
       objectReference: {fileID: 0}
     - target: {fileID: 804578519542270775, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 804578519542270775, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 7.9027867
+      value: 14.2024975
       objectReference: {fileID: 0}
     - target: {fileID: 804578519542270775, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -374,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 804578519542270775, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.9513934
+      value: -7.1012487
       objectReference: {fileID: 0}
     - target: {fileID: 804578519983569570, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -489,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 804578520558825120, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_text
-      value: Volodymyr "Cyber Chelik" Kulinchenko, 2023
+      value: Volodymyr "Cyber Chelik" Kulinchenko, 2024
       objectReference: {fileID: 0}
     - target: {fileID: 804578520558825123, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 804578520558825123, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 22.537212
+      value: 16.237503
       objectReference: {fileID: 0}
     - target: {fileID: 804578520558825123, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -519,7 +519,7 @@ PrefabInstance:
     - target: {fileID: 804578520558825123, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -19.171392
+      value: -22.321249
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc14469db66c8847a3a6da5f5060eef, type: 3}
@@ -3760,7 +3760,7 @@ GameObject:
   - component: {fileID: 340415366}
   - component: {fileID: 340415367}
   m_Layer: 5
-  m_Name: BG
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3784,7 +3784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -175.03763}
+  m_AnchoredPosition: {x: 100, y: -174.50002}
   m_SizeDelta: {x: 170.15, y: 185.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340415364
@@ -3968,7 +3968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -43.787598}
+  m_AnchoredPosition: {x: 100, y: -43.6084}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391420937
@@ -15506,7 +15506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -306.28772}
+  m_AnchoredPosition: {x: 100, y: -305.3917}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024782033
@@ -16725,7 +16725,7 @@ PrefabInstance:
     - target: {fileID: 804578519542270772, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_text
-      value: idea, programming, modeling, ui
+      value: idea, programming, modeling, UI
       objectReference: {fileID: 0}
     - target: {fileID: 804578519542270775, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
@@ -16870,7 +16870,7 @@ PrefabInstance:
     - target: {fileID: 804578520558825120, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}
       propertyPath: m_text
-      value: Oleksandr "RaPloky" Syvyryn, 2023
+      value: Oleksandr "RaPloky" Syvyryn, 2024
       objectReference: {fileID: 0}
     - target: {fileID: 804578520558825123, guid: afc14469db66c8847a3a6da5f5060eef,
         type: 3}

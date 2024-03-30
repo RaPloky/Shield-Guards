@@ -4,7 +4,9 @@ public class ProjectileBehavior : MonoBehaviour
 {
     [SerializeField] protected float speedFactor;
     [SerializeField] private int energyDamage;
-    [SerializeField] private bool isFragileTrash; // bad naming, sorry me - it means "ifIsActualEnemy"
+    // bad naming, forgive me - it means "ifIsActualEnemy" to gameplay.
+    // If set to no that it means that this is a decoration:
+    [SerializeField] private bool isFragileTrash; 
     [SerializeField] private bool isBackgroundEnemy;
     [SerializeField, Range(0f, 1f)] private float glitchStrength;
     [SerializeField] private ParticleSystem onDisableParticles;
