@@ -262,4 +262,6 @@ public class GameManager : MonoBehaviour
         activeGuardsCountUI.text = Mathf.Approximately(ActiveGuardsCount, 0) ? string.Empty : $"X{ActiveGuardsCount}";
 
     private void PlayBG_Music() => BG_Music.Instance.StartPlay();
+
+    public void QuitGame() => Application.Quit();
 }
