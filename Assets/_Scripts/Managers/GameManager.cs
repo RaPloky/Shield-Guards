@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         set => _activeGuardsCount = value;
     }
 
+    [System.Obsolete]
     private void Awake()
     {
         Application.targetFrameRate = Screen.currentResolution.refreshRate;
