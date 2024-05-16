@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField, Range(0.1f, 20f)] protected float spawnDelay;
     [SerializeField, Range(0f, 1f)] protected float launchChance;
+    [SerializeField, Range(0f, 2f)] protected float delayBetweenNotifAndSpawn = 0;
     [SerializeField] protected GameObject prefabToOperate;
     [SerializeField] private Transform parent;
     [SerializeField] protected Guard targetGuard;
@@ -80,6 +81,8 @@ public class Spawner : MonoBehaviour
             if (IsSpawnAllowed() && !ActiveEnemy.activeSelf && !IsSpawnFreezed && targetGuard.IsHaveEnergy)
             {
                 NotifyAboutDanger();
+                yield return new WaitForSeconds(delayBetweenNotifAndSpawn);
+
                 prefabToOperate.SetActive(true);
             }
         }
