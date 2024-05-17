@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class MicroNovaBehavior : ProjectileBehavior
 {
-    [Header("MicroNova Properties")]
-    [SerializeField] private float _zigZagFrequency;
+    [Header("Sin movement")]
+    [SerializeField] private float _amplitude = 1.0f; // Controls the height of the sine wave
+    [SerializeField] private float _frequency = 2.0f; // Controls the number of cycles per second
 
-    private float _timeElapsed = 0;
-    private float _zigZagOffset = 0;
-    private float _zigZagAmplitude = 0;
     private Vector3 _direction;
-    private Vector3 _updatedPosition;
+    private float _timeOffset;
+    private float _yOffset;
 
     private void Awake()
     {
@@ -18,14 +17,11 @@ public class MicroNovaBehavior : ProjectileBehavior
 
     protected override void MoveToTarget()
     {
-        _timeElapsed += Time.deltaTime;
-        _zigZagAmplitude = Mathf.Clamp(Mathf.Sin(_timeElapsed), -0.25f, 0.25f);
-        _zigZagOffset = Mathf.PingPong(_timeElapsed * _zigZagFrequency, _zigZagAmplitude);
+        _direction = (targetTrans.position - transform.position).normalized;
 
-        _direction = (targetTrans.position - _thatTrans.position).normalized;
-        _updatedPosition = _thatTrans.position + speedFactor * Time.deltaTime * _direction;
+        _timeOffset = Time.time * _frequency;
+        _yOffset = Mathf.Sin(_timeOffset) * _amplitude;
 
-        _updatedPosition += _thatTrans.right * _zigZagOffset;
-        _thatTrans.position = _updatedPosition;
+        transform.position += _direction * speedFactor * Time.deltaTime + new Vector3(_yOffset, 0, 0);
     }
 }
