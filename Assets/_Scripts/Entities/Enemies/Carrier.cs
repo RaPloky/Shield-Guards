@@ -8,15 +8,20 @@ public class Carrier : Enemy
     [SerializeField] private List<Spawner> ufoSpawners;
     [SerializeField] private Transform moveAround;
     [SerializeField, Range(10f, 30f)] private float rotationSpeed;
-    [SerializeField] private bool isClockwiseRotation;
     [SerializeField] private GameObject onSpawnParticles;
     [SerializeField] private AudioClip onDamageTakenSound;
-    [SerializeField] private List<GameObject> relatedTurnAroundTriggers;
     
-    private readonly string _turnAroundTriggerTag = "TurnAroundTrigger";
     private Transform _thatTrans;
     private Vector3 _moveDirection;
     private Quaternion _startRotation;
+    private bool _isClockwiseRotation 
+    { 
+        get
+        {
+            int direction = (int)Random.Range(0, 1);
+            return Mathf.Approximately(direction, 1);
+        } 
+    }
 
     private void Awake()
     {
@@ -34,12 +39,10 @@ public class Carrier : Enemy
     {
         ActivateCarrier();
         PlayOneShotSound(enableSound, ownAudioSource);
-        ActivateTurnAroundTriggers(true);
     }
     private void OnDisable()
     {
         ActivateUFOShields(false);
-        ActivateTurnAroundTriggers(false);
     }
 
     private void ActivateCarrier()
@@ -115,47 +118,12 @@ public class Carrier : Enemy
     {
         _thatTrans.RotateAround(moveAround.position, _moveDirection, rotationSpeed * Time.deltaTime);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag(_turnAroundTriggerTag) && IsTriggeredLinkedTriggers(other))
-            ChangeMoveDirection();
-    }
-
-    private void ActivateTurnAroundTriggers(bool condition)
-    {
-        for (int index = 0; index < relatedTurnAroundTriggers.Count; index++)
-            relatedTurnAroundTriggers[index].SetActive(condition);
-    }
-
-    private void ChangeMoveDirection()
-    {
-        if (isClockwiseRotation)
-            isClockwiseRotation = false;
-        else if (!isClockwiseRotation)
-            isClockwiseRotation = true;
-
-        SetMoveDirection();
-
-        _thatTrans.Rotate(0, 180f, 0);
-        PlayParticles(onSpawnParticles);
-        PlayOneShotSound(enableSound, ownAudioSource);
-    }
 
     private void SetMoveDirection()
     {
-        if (isClockwiseRotation)
+        if (_isClockwiseRotation)
             _moveDirection = Vector3.up;
         else
             _moveDirection = Vector3.down;
-    }
-
-    private bool IsTriggeredLinkedTriggers(Collider trigger)
-    {
-        for (int index = 0; index < relatedTurnAroundTriggers.Count; index++)
-        {
-            if (trigger.name.Equals(relatedTurnAroundTriggers[index].name))
-                return true;
-        }
-        return false;
     }
 }
