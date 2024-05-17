@@ -14441,7 +14441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a54ce478c77944eb6e3f7e34823fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothFactor: 0.5
+  smoothFactor: 0.9
   targetToFollow: {fileID: 497984196}
   rotateAroundJoint: {fileID: 841183865}
   angleChange: 120
@@ -38672,7 +38672,7 @@ PrefabInstance:
     - target: {fileID: 8647790268363607348, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
       propertyPath: energyAddAmount
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9055274209521193011, guid: 1feaee64acede0c44b29354e964b8366,
         type: 3}
@@ -39554,7 +39554,7 @@ PrefabInstance:
     - target: {fileID: 3018668505823595123, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
       propertyPath: energyAddAmount
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3248636956311845677, guid: 63536a5c1791b864ab010a2bfaaf760f,
         type: 3}
@@ -42656,7 +42656,7 @@ PrefabInstance:
     - target: {fileID: 8284916164695995790, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
       propertyPath: energyAddAmount
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8660266266727667351, guid: 95a6d56db49136942a4d273e8ab65569,
         type: 3}
@@ -70402,6 +70402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.0003414154
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720888769567332893, guid: 59b8c52056e53a54d85784ad66d73b58,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6193174085431388742, guid: 59b8c52056e53a54d85784ad66d73b58,
         type: 3}
