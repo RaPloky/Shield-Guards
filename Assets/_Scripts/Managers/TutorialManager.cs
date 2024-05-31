@@ -220,17 +220,6 @@ public class TutorialManager : MonoBehaviour
                 break;
 
             #region "Effects"
-            case TutorialStages.Effect_1:
-                GlitchAnimationController.Instance.PlayWeakScan();
-                break;
-
-            case TutorialStages.Effect_2:
-                GlitchAnimationController.Instance.PlayStrongScan();
-                break;
-
-            case TutorialStages.Effect_3:
-                GlitchAnimationController.Instance.PlayStrongScan();
-                break;
 
             case TutorialStages.Effect_4:
                 GlitchAnimationController.Instance.SingleDriftAndDigital();

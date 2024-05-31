@@ -21,11 +21,6 @@ public class GlitchAnimationController : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        EnableJitterJump();
-    }
-
     public void SingleDriftAndDigital(float digitalStartIntensity, float colorDriftStartIntensity)
     {
         StartCoroutine(DigitalFadeOut(digitalStartIntensity));
@@ -97,17 +92,6 @@ public class GlitchAnimationController : MonoBehaviour
         }
     }
 
-    private IEnumerator Scan(float scanStrength)
-    {
-        analogGlitch.scanLineJitter = scanStrength;
-        while (analogGlitch.scanLineJitter > 0)
-        {
-            yield return new WaitForSeconds(shortDelay);
-            analogGlitch.scanLineJitter = Mathf.Clamp(analogGlitch.scanLineJitter - intensityDelta, 0, 1);
-        }
-        analogGlitch.scanLineJitter = _tempScanJitter;
-    }
-
     public void ConstantColorShake()
     {
         AssignTempColorDrift();
@@ -120,39 +104,9 @@ public class GlitchAnimationController : MonoBehaviour
         analogGlitch.colorDrift = _tempColorDrift;
     }
 
-    public void EnableJitterJump()
-    {
-        AssignTempScanJitter();
-
-        StartCoroutine(PeriodicScanJitter());
-    }
-
-    private IEnumerator PeriodicScanJitter()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(10);
-
-            analogGlitch.scanLineJitter = 0.4f;
-
-            while (analogGlitch.scanLineJitter > 0)
-            {
-                yield return new WaitForSeconds(0.2f);
-                analogGlitch.scanLineJitter -= 0.05f;
-            }
-        }
-    }
-
     public void DisableJitterJump()
     {
         analogGlitch.scanLineJitter = _tempScanJitter;
-    }
-
-    public void PlayStrongScan() => StartCoroutine(Scan(0.85f));
-    public void PlayWeakScan()
-    {
-        StartCoroutine(ColorDriftFadeOut(0.3f));
-        StartCoroutine(Scan(0.4f));
     }
 
     private void AssignTempColorDrift() => _tempColorDrift = analogGlitch.colorDrift;

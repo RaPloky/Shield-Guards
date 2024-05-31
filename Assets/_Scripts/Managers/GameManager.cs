@@ -172,7 +172,9 @@ public class GameManager : MonoBehaviour
     {
         LoadBanner.Instance.HideBanner();
 
-        BG_Music.Instance.FadeOut();
+        if (BG_Music.Instance != null)
+            BG_Music.Instance.FadeOut();
+
         yield return new WaitForSeconds(BG_Music.Instance.FadeDuration);
 
         SceneManager.LoadScene(sceneName);
@@ -261,7 +263,11 @@ public class GameManager : MonoBehaviour
     private void UpdateActiveGuardsCountUI() => 
         activeGuardsCountUI.text = Mathf.Approximately(ActiveGuardsCount, 0) ? string.Empty : $"X{ActiveGuardsCount}";
 
-    private void PlayBG_Music() => BG_Music.Instance.StartPlay();
+    private void PlayBG_Music()
+    {
+        if (BG_Music.Instance != null)
+            BG_Music.Instance.StartPlay();
+    }
 
     public void QuitGame() => Application.Quit();
 }

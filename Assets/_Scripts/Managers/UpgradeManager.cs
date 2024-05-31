@@ -133,7 +133,6 @@ public class UpgradeManager : MonoBehaviour
         if (!IsEnoughEnergyToUpgrade(nextUpgradeCost))
             return;
 
-        _glitchController.PlayStrongScan();
         PlayerPrefs.SetInt(bonusPref, nextLvl);
         PlayerPrefs.SetInt(EnergyPref, EnergyValue -= nextUpgradeCost);
         UpdateMoneyCount_Menu();

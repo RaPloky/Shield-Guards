@@ -103,8 +103,6 @@ public class ProjectileBehavior : MonoBehaviour
         GlitchAnimationController controller = GlitchAnimationController.Instance;
         if (isFragileTrash)
             controller.SingleDriftAndDigital(0.6f, 0.4f);
-        else
-            controller.PlayWeakScan();
     }
 
     private void PlayCollisionSound()
