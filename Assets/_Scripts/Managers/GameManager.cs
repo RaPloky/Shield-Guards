@@ -175,7 +175,10 @@ public class GameManager : MonoBehaviour
         if (BG_Music.Instance != null)
             BG_Music.Instance.FadeOut();
 
-        yield return new WaitForSeconds(BG_Music.Instance.FadeDuration);
+        if (BG_Music.Instance != null)
+            yield return new WaitForSeconds(BG_Music.Instance.FadeDuration);
+        else
+            yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(sceneName);
     }
