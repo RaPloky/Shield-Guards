@@ -108,8 +108,8 @@ public class GameManager : MonoBehaviour
         AddCurrency();
     }
 
-    private void LoadBannerAd() => LoadBanner.Instance.LoadTheBanner();
-    private void HideBannerAd() => LoadBanner.Instance.HideBanner();
+    private void LoadBannerAd() => LoadBanner.Instance?.LoadTheBanner();
+    private void HideBannerAd() => LoadBanner.Instance?.HideBanner();
     private void DoubleCurrency()
     {
         _currencyToAdd *= 2;
@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadDelayedScene(string sceneName)
     {
-        LoadBanner.Instance.HideBanner();
+        LoadBanner.Instance?.HideBanner();
 
         if (BG_Music.Instance != null)
             BG_Music.Instance.FadeOut();
